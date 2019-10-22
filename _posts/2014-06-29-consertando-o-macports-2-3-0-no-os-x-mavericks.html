@@ -1,0 +1,66 @@
+---
+layout: post
+title: Consertando o Macports 2.3.0 no OS X Mavericks
+date: 2014-06-29 12:54:45.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Internet
+- Tutoriais
+tags:
+- MacPorts
+- OS X
+- OS X Mavericks
+meta:
+  _edit_last: '13386696'
+  geo_public: '0'
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _thumbnail_id: '2386'
+  _oembed_ac5dd1e4324adfdcb935bb7dfdeda83e: "{{unknown}}"
+  _oembed_640159913787bc2e85e817b6b4365413: "{{unknown}}"
+  _publicize_job_id: '19172328663'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2014/06/29/consertando-o-macports-2-3-0-no-os-x-mavericks/"
+---
+<p>Uma das medidas de manutenção que realizo semanalmente em meu macbook é a atualização do macports e dos pacotes que instalo através dele.</p>
+<p><!--more--></p>
+<p>Mas nesta última semana, estava ocorrendo o seguinte erro:</p>
+<p>[caption id="attachment_2368" align="aligncenter" width="640"]<a href="https://craftmind.files.wordpress.com/2014/06/screen-shot-2014-06-29-at-11-31-41-am.png"><img class="wp-image-2368 size-large" src="{{ site.baseurl }}/assets/screen-shot-2014-06-29-at-11-31-41-am.png?w=640" alt="Erro na atualização do Macports 2.3.0" width="640" height="231" /></a> Erro na atualização do Macports 2.3.0[/caption]</p>
+<p>Procurando pela internet, descobri que há um patch que pode ser aplicado ao arquivo macports.tcl (que fica em /opt/local/libexec/macports/lib/macports1.0) e que resolve o problema. Se você não sabe o que é um patch ou sabe mas nunca utilizou, talvez não seja a melhor idéia utizar um. Neste caso, se você fizer algo de errado - além de "quebrar" a sua instalação do macports, pode também comprometer os ports que você já tem instalado. Então, como a solução é bastante simples, vou mostrar quais são os arquivos que você precisa alterar para ter o seu macports funcionando novamente. Para isso, siga os passos abaixo:</p>
+<p><strong>1) Backup do arquivo original</strong></p>
+<p>Como dito anteriormente, o arquivo de configuração do marports que está com problemas é o "/opt/local/libexec/macports/lib/macports1.0/macports.tcl". Para fazer um backup desse arquivo, abra o terminal e execute os seguintes comandos:</p>
+<pre>$ cd /opt/local/libexec/macports/lib/macports1.0</pre>
+<pre>$ sudo cp macports.tcl macports.tcl.bak</pre>
+<p><strong>2) Editando o arquivo macports.tcl</strong></p>
+<p>Para resolver o problema com a atualização do macports, abra o arquivo macports.tcl e adicione as seguintes linhas no arquivo:</p>
+<p>Na linha "2498", adicione a seguinte linha:</p>
+<pre>set verboseflag "-v"</pre>
+<p>E na linha "2501", adicione a seguinte linha:</p>
+<pre>set verboseflag ""</pre>
+<p>Salve e feche o arquivo editado.</p>
+<p>Fazendo isto, certifique-se de que o seu arquivo possui as mesmas linhas a seguir:</p>
+<p>[caption id="attachment_2369" align="aligncenter" width="640"]<a href="https://craftmind.files.wordpress.com/2014/06/screen-shot-2014-06-29-at-11-45-27-am.png"><img class="wp-image-2369 size-full" src="{{ site.baseurl }}/assets/screen-shot-2014-06-29-at-11-45-27-am.png" alt="Aspecto final do arquivo macports.tcl depois das alterações." width="640" height="132" /></a> Aspecto final do arquivo macports.tcl depois das alterações.[/caption]</p>
+<p>Observe as duas linhas alteradas (2498 e 2501). Estas alterações permitem que a flag "-v" seja verificada quando o comando "sudo port selfupdate" é executado.</p>
+<p><strong>3) Atualizando o macports</strong></p>
+<p>Depois das alterações, execute a atualização do macports ("sudo port selfupdate" ou "sudo port -d sync").</p>
+<p>[caption id="attachment_2370" align="aligncenter" width="640"]<a href="https://craftmind.files.wordpress.com/2014/06/screen-shot-2014-06-29-at-11-34-35-am.png"><img class="wp-image-2370 size-full" src="{{ site.baseurl }}/assets/screen-shot-2014-06-29-at-11-34-35-am.png" alt="Atualizando o macports, problema resolvido!" width="640" height="233" /></a> Atualizando o macports, problema resolvido![/caption]</p>
+<p>Com o macports atualizado, basta atualizar os seus pacotes ("sudo port update outdated").</p>
+<p>É isso!</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="https://trac.macports.org/ticket/43821" target="_blank">https://trac.macports.org/ticket/43821</a></li>
+<li><a href="https://trac.macports.org/changeset/120382" target="_blank">https://trac.macports.org/changeset/120382</a></li>
+</ul>

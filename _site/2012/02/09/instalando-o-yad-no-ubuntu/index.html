@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Instalando o YAD no Ubuntu « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Esta dica é simples, e deve servir também para as versões mais recentes e não muito distantes da versão 11.04 do Ubuntu. O YAD - Yet Another Dialog, um fork ...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/02/09/instalando-o-yad-no-ubuntu/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Instalando o YAD no Ubuntu</h1>
+    <p class="post-meta">Feb 9, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Esta dica é simples, e deve servir também para as versões mais recentes e não muito distantes da versão 11.04 do Ubuntu. O <a href="http://code.google.com/p/yad/" target="_blank">YAD - Yet Another Dialog</a>, um fork do projeto <a href="http://library.gnome.org/users/zenity/stable/" target="_blank">Zenity</a>, fornece uma forma simples e fácil de criar interfaces gráficas para os seus scripts em Shell, aproveitando a biblioteca GTK do projeto Gnome.</p>
+<p>Para instalar o YAD, você vai precisar do pacote de desenvolvimento da biblioteca GTK, o libgtk2.0-dev. Para instalar:</p>
+<pre>$ sudo apt-get install libgtk2.0-dev</pre>
+<p>Depois disso, basta baixar o <a href="http://code.google.com/p/yad/downloads/detail?name=yad-0.16.3.tar.xz" target="_blank">pacote de instalação do YAD</a> e seguir a instalação com os tradicionais "configure, make e make install":</p>
+<pre>$ tar Jxvf yad-0.16.3.tar.xz
+$ cd yad-0.16.3
+$ ./configure --prefix=/opt/yad-0.16.3
+$ make
+$ sudo make install</pre>
+<p>No comando "configure" eu especifiquei uma pasta de instalação "/opt/yad-0.16.3", porque prefiro instalar todos os meu programas-fonte no /opt, mas se vocẽ preferir, pode escolher qualquer outro local, desde que configure o PATH para enxergar o local da instalação. Para isso, basta editar o arquivo "/etc/bash.bashrc" e acrescentar as seguintes linhas no final:</p>
+<pre>$ sudo vim /etc/bash.bashrc
+###
+# YAD
+export PATH="/opt/yad-0.16.3/bin":${PATH}
+export MANPATH="/opt/yad-0.16.3/share/man":${MANPATH}</pre>
+<p>Feito isso, basta fazer um teste:</p>
+<pre>$ yad --text-info --fontname="Purisa" --wrap --filename=/home/carlos/texto</pre>
+<p>E o resultado é:</p>
+<p><a href="http://craftmind.wordpress.com/2012/02/09/instalando-o-yad-no-ubuntu/screenshot-yad/" rel="attachment wp-att-1460"><img class="aligncenter size-full wp-image-1460" title="Screenshot-YAD" src="/cfbastarz/assets/screenshot-yad.png" alt="" width="202" height="164" /></a></p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

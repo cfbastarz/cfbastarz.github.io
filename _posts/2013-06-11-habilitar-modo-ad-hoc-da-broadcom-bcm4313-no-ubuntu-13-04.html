@@ -1,0 +1,34 @@
+---
+layout: post
+title: Habilitar modo Ad-Hoc da Broadcom BCM4313 no Ubuntu 13.04
+date: 2013-06-11 23:33:51.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- ad-hoc
+- bcm4313
+- ubuntu 13.04
+meta:
+  _publicize_pending: '1'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2013/06/11/habilitar-modo-ad-hoc-da-broadcom-bcm4313-no-ubuntu-13-04/"
+---
+<p>Para habilitar o modo ad-hoc (para fazer uma rede ponto-a-ponto) da placa wireless Broadcom bcm4313, descobri que era necessário instalar um pacote extra no Ubuntu 13.04.</p>
+<p>Para identificar a placa:</p>
+<pre style="margin:0;font-size:12px;">$ lspci | grep -i broadcom</pre>
+<pre style="margin:0;font-size:12px;">02:00.0 Network controller: Broadcom Corporation BCM4313 802.11b/g/n Wireless LAN Controller (rev 01)</pre>
+<p>E para atualizar e instalar o pacote faltante:</p>
+<pre>$ sudo apt-get update</pre>
+<pre>$ sudo <span style="font-size:12px;">apt-get install bcmwl-kernel-source</span></pre>
+<p>E pronto!</p>

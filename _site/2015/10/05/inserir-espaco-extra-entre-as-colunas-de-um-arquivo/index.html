@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Inserir espaço extra entre as colunas de um arquivo « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Ah o SED (e o AWK também)!Estava lidando com arrays escritos em arquivos texto, mas a formatação desses arquivos não era muito boa. Dependendo da magnitude d...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2015/10/05/inserir-espaco-extra-entre-as-colunas-de-um-arquivo/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Inserir espaço extra entre as colunas de um arquivo</h1>
+    <p class="post-meta">Oct 5, 2015 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "geo_public"=>"0", "_thumbnail_id"=>"2529", "_publicize_job_id"=>"15516094855"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Ah o SED (e o AWK também)!</p>
+<p>Estava lidando com arrays escritos em arquivos texto, mas a formatação desses arquivos não era muito boa. Dependendo da magnitude do número no array, não sobrava espaço entre uma coluna e outra.</p>
+<p><!--more--></p>
+<p>Veja:</p>
+<pre>-0.11 -0.40 0.53 0.53 3.74E-02-0.48 9.93E-02-0.14 -4.58E-02-6.53E-02 4.20E-02
+-0.15 -0.31 0.25 -0.28 -0.77 0.21 -0.21 -0.16 -0.18 4.08E-02-6.06E-02
+-0.22 -0.39 0.12 -0.20 0.25 2.82E-02-0.49 0.54 0.37 9.66E-03 0.11 
+-0.24 -0.34 -4.19E-02-0.37 0.35 -1.05E-02 0.29 9.77E-02-0.60 -8.60E-02-0.32 
+-0.20 -0.35 -0.12 -6.43E-02 9.69E-03 0.27 0.59 -0.12 0.30 0.32 0.44 
+-0.23 -0.23 -0.23 0.30 0.16 0.44 -0.18 -0.42 0.18 -0.48 -0.22 
+-0.32 -7.84E-02-0.51 -0.14 -9.25E-02-0.60 -0.15 -0.29 0.20 0.23 -0.18 
+-0.36 8.16E-02-0.34 0.30 -0.13 -2.42E-02-0.17 0.21 -0.47 -0.14 0.58 
+-0.40 0.18 -4.76E-03 0.43 -0.15 0.22 0.13 0.37 3.90E-02 0.39 -0.49 
+-0.44 0.35 0.20 -0.25 -0.16 -0.18 0.33 0.14 0.28 -0.57 9.28E-03
+-0.42 0.37 0.40 -0.15 0.34 0.13 -0.26 -0.41 -9.80E-02 0.32 0.16</pre>
+<p>Para poder fazer um gráfico com as colunas desses arquivos, seria necessário acrescentar um espaço extre entre as colunas, de forma que os elementos (1,5) e (1,6) pudessem estar representados como "3.74E-02" e "-0.48", ao invés de "3.74E-02-0.48".</p>
+<p>Com o sed, é simples fazer essa modificação. Neste caso, estou considerando que as colunas possuem um tamanho fixo, e no meu caso, as colunas tem 9 posições.</p>
+<p>Portanto:</p>
+<pre>$ cat arquivo.txt | sed 's/\(.\{9\}\)/\1 /g'</pre>
+<p>E o resultado:</p>
+<pre>-0.11 -0.40 0.53 0.53 3.74E-02 -0.48 9.93E-02 -0.14 -4.58E-02 -6.53E-02 4.20E-02 
+-0.15 -0.31 0.25 -0.28 -0.77 0.21 -0.21 -0.16 -0.18 4.08E-02 -6.06E-02 
+-0.22 -0.39 0.12 -0.20 0.25 2.82E-02 -0.49 0.54 0.37 9.66E-03 0.11 
+-0.24 -0.34 -4.19E-02 -0.37 0.35 -1.05E-02 0.29 9.77E-02 -0.60 -8.60E-02 -0.32 
+-0.20 -0.35 -0.12 -6.43E-02 9.69E-03 0.27 0.59 -0.12 0.30 0.32 0.44 
+-0.23 -0.23 -0.23 0.30 0.16 0.44 -0.18 -0.42 0.18 -0.48 -0.22 
+-0.32 -7.84E-02 -0.51 -0.14 -9.25E-02 -0.60 -0.15 -0.29 0.20 0.23 -0.18 
+-0.36 8.16E-02 -0.34 0.30 -0.13 -2.42E-02 -0.17 0.21 -0.47 -0.14 0.58 
+-0.40 0.18 -4.76E-03 0.43 -0.15 0.22 0.13 0.37 3.90E-02 0.39 -0.49 
+-0.44 0.35 0.20 -0.25 -0.16 -0.18 0.33 0.14 0.28 -0.57 9.28E-03 
+-0.42 0.37 0.40 -0.15 0.34 0.13 -0.26 -0.41 -9.80E-02 0.32 0.16</pre>
+<p>Se forem vários arquivos e eles possuírem alguma expressão regular no nome, basta fazer:</p>
+<pre>$ for i in `ls *out*`; do cat $i | sed 's/\(.\{9\}\)/\1 /g' &gt; $i.form; done</pre>
+<p>É isso!</p>
+<p><strong>Referência:</strong></p>
+<ul>
+<li><a href="http://www.unix.com/shell-programming-and-scripting/142815-insert-space-between-characters-using-sed.html" target="_blank">http://www.unix.com/shell-programming-and-scripting/142815-insert-space-between-characters-using-sed.html</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

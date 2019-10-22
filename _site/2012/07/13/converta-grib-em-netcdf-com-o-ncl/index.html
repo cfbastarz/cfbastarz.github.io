@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Converta arquivos em GRIB para NetCDF com o NCL « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Essa é rápida:Para converter um arquivo em GRIB para NetCDF utilizando o NCL (para a instalação no Mac OS X Lion, clique aqui), basta fazer:$ ncl_convert2nc ...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/07/13/converta-grib-em-netcdf-com-o-ncl/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Converta arquivos em GRIB para NetCDF com o NCL</h1>
+    <p class="post-meta">Jul 13, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Essa é rápida:</p>
+<p>Para converter um arquivo em GRIB para NetCDF utilizando o NCL (para a instalação no Mac OS X Lion, <a href="http://craftmind.wordpress.com/2012/07/13/ncarg-no-mac-os-x/" target="_blank">clique aqui</a>), basta fazer:</p>
+<pre>$ ncl_convert2nc arquivo.grib</pre>
+<p>Exemplo:</p>
+<p><a href="http://craftmind.wordpress.com/2012/07/13/converta-grib-em-netcdf-com-o-ncl/screen-shot-2012-07-13-at-12-32-47-am/" rel="attachment wp-att-1723"><img class="aligncenter size-full wp-image-1723" title="Screen Shot 2012-07-13 at 12.32.47 AM" src="/cfbastarz/assets/screen-shot-2012-07-13-at-12-32-47-am.png" alt="" width="545" height="146" /></a>Neste exemplo, utilizamos o arquivo "ERAInter.10u.1.5x1.5-19790101_19790102.grib" (um arquivo GRIB comum) para gerarmos o arquivo "ERAInter.10u.1.5x1.5-19790101_19790102.nc", um arquivo NetCDF. Ambos podem ser abertos no GrADS, sendo que o GRIB precisa de um arquivo descritor (ctl) e o NetCDF não, pois ele contém um cabeçalho com as informações que estão no ctl do GRIB.</p>
+<p>Para abrir o NetCDF no GrADS (versão 2.0+):</p>
+<pre>$ grads -blc "sdfopen arquivo.nc"</pre>
+<p>Para abrir o GRIB no GrADS (versão 2.0+):</p>
+<pre>$ grads -blc "open arquivo.ctl"</pre>
+<p>É isso!</p>
+<p>PS.: Para fazer o contrário, ou seja, converter de NetCDF para GRIB, <a href="http://craftmind.wordpress.com/2012/07/13/converta-arquivos-em-netcdf-para-grib-com-o-cdo/" target="_blank">clique aqui</a>.</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

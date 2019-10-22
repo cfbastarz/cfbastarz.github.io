@@ -1,0 +1,48 @@
+---
+layout: post
+title: Quick fix for dropbox icons appearance (Linux)
+date: 2017-01-15 20:26:00.000000000 -02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- dropbox
+- hardcode-tray
+- icons
+- inkscape
+- Linux
+- papirus
+- Tudo
+tags: []
+meta:
+  _publicize_job_id: '791454773'
+  _edit_last: '13386696'
+  geo_public: '0'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2017/01/15/quick-fix-for-dropbox-icons-appearance-linux/"
+---
+<p>If you tried to use the <a href="https://github.com/bil-elmoussaoui/Hardcode-Tray">hardcode-tray</a> script to fix the appearance of the tray icons under Linux desktops, you may have noticed that dropbox icons still look the same. This might happen if you install dropbox from <a href="https://www.dropbox.com/install-linux">here</a>, instead from your linux official repository. If this is your case, you can use this easy fix to get the correct icons:</p>
+<ol>
+<li>First you need to locate the correct dropbox icons within your icon theme installation. In my case, I am using the <a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme">Papirus</a> icon theme. On my Linux, they are located at "/usr/share/icons/Papirus/";</li>
+<li>Under the Papirus directory, you will find a folder named "22x22/panel", where are the target dropbox icons. Note that I'm using the "22x22" size. Copy the following icons to "~$USER/.dropbox-dist/dropbox-lnx.x86_64-20.3.15/images/hicolor/16x16/status". Note that your dropbox version might be different!</li>
+<li>Convert the SVG icons to PNG (it got to be PNG, otherwise dropbox will show no icons in the system tray). Use the following command to convert the icons properly:</li>
+</ol>
+<p>[code language="plain"]inkscape -z -e output.png -w 22 -h 22 input.svg</p>
+<p>[/code]</p>
+<p>This command will get the job done. But as dropbox use several icons to indicate each state, then you have to use the same command to convert each icon. To get all icons converted at once, use a modified version of this command:</p>
+<p>[code language="plain"]for i in $(ls *svg); do j=$(echo $i | sed &quot;s,.svg,,g&quot;); inkscape -z -e $j.png -w 22 -h 22 $i; done</p>
+<p>[/code]</p>
+<p>This command list all SVG files, strip the ".svg" extension; run the inkscape command and done! Note that the icons will be converted to 22px x 22px. If this is not your case, just change the output size accordingly.</p>
+<p>Images:</p>
+<p><strong>Before</strong></p>
+<p><img class="aligncenter" src="{{ site.baseurl }}/assets/1484246670.png" alt="img-alternative-text" align="middle" /></p>
+<p><strong>After</strong></p>
+<p><img class="aligncenter" src="{{ site.baseurl }}/assets/1484246685.png" alt="img-alternative-text" align="middle" /></p>
+<p>Thats all!</p>

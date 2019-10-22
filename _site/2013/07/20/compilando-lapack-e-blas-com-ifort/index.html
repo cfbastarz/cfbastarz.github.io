@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Compilando LAPACK e BLAS com ifort « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Este tutorial é muito simples e mostra como compilar as bibliotecas de Álgebra Linear BLAS e LAPACK do netlib (http://www.netlib.org) utilizando os compilado...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2013/07/20/compilando-lapack-e-blas-com-ifort/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Compilando LAPACK e BLAS com ifort</h1>
+    <p class="post-meta">Jul 20, 2013 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "geo_public"=>"0", "_publicize_pending"=>"1", "_oembed_768b03db735fbb583ff89a7d728f1b72"=>"{{unknown}}", "_oembed_1a0f7d3d38a7d81f89a8ce0f689188d1"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Este tutorial é muito simples e mostra como compilar as bibliotecas de Álgebra Linear <a href="http://www.netlib.org/blas/" target="_blank">BLAS</a> e <a href="http://www.netlib.org/lapack/index.html" target="_blank">LAPACK</a> do netlib (<a href="http://www.netlib.org" target="_blank">http://www.netlib.org</a>) utilizando os compiladores C e fortran da Intel (icc e ifort).</p>
+<p>Tanto para Linux (Ubuntu 11.04) quanto no OS X (Mountain Lion), os procedimentos são os mesmos:</p>
+<pre>$ wget -c http://www.netlib.org/lapack/lapack-3.4.2.tgz
+$ tar -zxvf lapack-3.4.2.tgz
+$ cd lapack-3.4.2
+$ cp INSTALL/make.inc.ifort ./make.inc
+$ make lapacklib
+$ make blaslib</pre>
+<p>Como resultado da compilação, duas bibliotecas (libs) deverão ser criadas:</p>
+<ul>
+<li>liblapack.a</li>
+<li>librefblas.a</li>
+</ul>
+<p>Dependendo da sua aplicação, pode ser necessário atribuir algum valor para a variável "LAPACK_PATH" indicando o caminho das libs que foram geradas. Se a compilação das libs foi feita em /home/user/lapack-3.4.2, então, pode-se fazer:</p>
+<pre>$ export LAPACK_PATH=/home/user/lapack-3.4.2</pre>
+<p>Este comando pode ser incluído no seu ~/.bashrc ou mesmo em /etc/bash.bashrc.</p>
+<p><strong>Referência:</strong></p>
+<ul>
+<li><a href="http://idolinux.blogspot.com.br/2012/03/building-scalapack-with-lapack-blas-and.html" target="_blank">http://idolinux.blogspot.com.br/2012/03/building-scalapack-with-lapack-blas-and.html</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

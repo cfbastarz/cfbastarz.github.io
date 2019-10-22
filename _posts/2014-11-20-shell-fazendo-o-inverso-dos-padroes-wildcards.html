@@ -1,0 +1,51 @@
+---
+layout: post
+title: 'Shell: fazendo o inverso dos padrões (wildcards)'
+date: 2014-11-20 01:57:24.000000000 -02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- Shell
+- wildcars
+meta:
+  _edit_last: '13386696'
+  _thumbnail_id: '2405'
+  geo_public: '0'
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _publicize_job_id: '19172258844'
+  _oembed_dbaaa115d2185dc71f1487641a9b22be: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2014/11/20/shell-fazendo-o-inverso-dos-padroes-wildcards/"
+---
+<p>Essa dica é simples, mas é aquela que você sempre quis saber. Se você sempre soube dela, parabéns, você aprendeu o Shell direito. Ou não :)</p>
+<p>Suponha que você queira listar (ou copiar, mover, apagar etc) todos os arquivos de uma pasta, cujos nomes NÃO contenham um determinado padrão.</p>
+<p><!--more--></p>
+<p>Fazer isto considerando o padrão, é trivial. Por exemplo:</p>
+<pre>$ ls *2014*</pre>
+<p>O comando acima, lista todos os arquivos que possuam o padrão “2014” no nome. Pela lógica, para fazer o inverso - ou melhor, o contrário disso, poderíamos utilizar um comando como o seguinte, de forma a recuperar todos os arquivos que NÃO contenham o padrão “2014” no nome:</p>
+<pre>$ ls !(*2014*)</pre>
+<p>E o resultado desse comando, deveria ser uma lista com todos os arquivos que não contenham o padrão “2014” no nome. Mas isso, a princípio, não funciona no Shell padrão. Eu disse a princípio, porque na verdade, ele funciona!</p>
+<p>Para que esta função do Shell seja habilitada, você deve executar o seguinte comando para poder usar o operador lógico “!” (negação) e então inverter a lógica dos wildcards:</p>
+<pre>$ shopt -s extglob</pre>
+<p>Com isso, o comando "ls !(*2014*)” deve funcionar e você será capaz de listar todos os arquivos que não contenham o padrão "2014" no nome!</p>
+<p>O comando "shopt" permite que algumas extensões do Shell sejam habilitadas e, neste caso em específico, o modificador "-s" indica a habilitação da função "extglob" estendendo as o funções de busca através de padrões (wildcards). Mas conhecer as outras opções do comando "shopt", basta digitar "man shopt" ou simplesmente "shopt" para saber quais opções estão habilitadas no seu Shell.</p>
+<p><strong>Referência:</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/216995/how-can-i-use-inverse-or-negative-wildcards-when-pattern-matching-in-a-unix-linu" target="_blank">http://stackoverflow.com/questions/216995/how-can-i-use-inverse-or-negative-wildcards-when-pattern-matching-in-a-unix-linu</a></li>
+</ul>

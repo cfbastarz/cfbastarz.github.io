@@ -1,0 +1,48 @@
+---
+layout: post
+title: 'Erro: cannot open source file "asm/param.h"'
+date: 2011-09-06 10:46:53.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Tudo
+- Tutoriais
+tags:
+- Compilação
+- Header
+- ifort
+- MPICH2
+meta:
+  _edit_last: '13386696'
+  _wpas_skip_ms: '1'
+  _wpas_skip_fb: '1'
+  _wpas_skip_twitter: '1'
+  _thumbnail_id: '1197'
+  _oembed_0b1d0f554ba849697919bcf082c19953: "{{unknown}}"
+  _oembed_b819c2a604d5e20e09240434c57bdc9b: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2011/09/06/catastrophic-error-cannot-open-source-file-asmparam-h/"
+---
+<p>Quando fui compilar o MPICH2 no meu notebook, ao rodar o comando make, me deparei com a seguinte mensagem de erro:</p>
+<pre>/usr/include/linux/param.h(4): catastrophic error: cannot open source file "asm/param.h"
+  #include &lt;asm/param.h&gt;
+                        ^</pre>
+<p>Isso aconteceu porque a versão da <strong>asm*</strong> instalada no meu Ubuntu 11.04 não era a mesma que o MPICH2 estava procurando. Para resolver este problema, basta criar um link simbólico do <strong>asm-generic</strong> para o <strong>asm</strong>:</p>
+<pre>sudo ln -s /usr/include/asm-generic /usr/include/asm</pre>
+<p>Depois, basta rodar o cmando make novamente para recompilar o MPICH2.</p>
+<p><strong>*ASM:</strong></p>
+<p>Procurando sobre o ASM, decobri que ele é um conjunto de funções geralmente escrito em linguagem Assembly (no linux utilizado em linguagem C) para facilitar a portabilidade do kernel para outros tipos de sistemas/plataformas.</p>
+<p>Referências:</p>
+<ul>
+<li><a href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/778047">https://bugs.launchpad.net/ubuntu/+source/linux/+bug/778047</a></li>
+<li><a href="http://stackoverflow.com/questions/3247770/what-is-the-linux-2-6-3x-x-include-asm-generic-for">http://stackoverflow.com/questions/3247770/what-is-the-linux-2-6-3x-x-include-asm-generic-for</a></li>
+</ul>

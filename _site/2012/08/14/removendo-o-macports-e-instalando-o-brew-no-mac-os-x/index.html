@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Removendo o MacPorts e instalando o HomeBrew no Mac OS X « Carlos Frederico Bastarz</title>
+  <meta name="description" content="O MacPorts e o HomeBrew são gerenciadores de pacotes em linha de comando para o Mac OS X no mesmo estilo do apt-get para os sistemas baseados no Debian, ou o...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/08/14/removendo-o-macports-e-instalando-o-brew-no-mac-os-x/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Removendo o MacPorts e instalando o HomeBrew no Mac OS X</h1>
+    <p class="post-meta">Aug 14, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "_oembed_5249f2dde3385cef3b5126158d3e527f"=>"{{unknown}}", "_oembed_45e89fc537817fc793c02e215eec5820"=>"{{unknown}}", "_oembed_bf13087ca60882de5a0372eaf7aac339"=>"{{unknown}}", "_oembed_ecc2f2129a6831035d7b3cdd8dbd7123"=>"{{unknown}}", "_oembed_245e8bcd05919d2f8bcb476602f3b4a9"=>"{{unknown}}", "_oembed_6e366d9fb2596deba833d9769bb9e41c"=>"{{unknown}}", "_oembed_df4851477ad3a34ca7f1cd3929e9da02"=>"{{unknown}}", "_oembed_890096ee19afc624537dfbf3ebb9f137"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>O MacPorts e o HomeBrew são gerenciadores de pacotes em linha de comando para o Mac OS X no mesmo estilo do apt-get para os sistemas baseados no Debian, ou o yum no Fedora, zipper no OpenSuse, emerge no Gentoo, swaret ou gslapt no Slackware etc :)</p>
+<p>Quando comecei a fuçar no Mac OS, senti falta de um gerenciador de pacotes tal como o apt-get, que resolve facilmente as dependências dos pacotes e facilita imensamente o trabalho de se instalar programas no Linux. Depois de procurar um pouco acabei encontrando quatro opções:</p>
+<ul>
+<li><a href="http://www.finkproject.org" target="_blank">Fink</a></li>
+<li><a href="http://rudix.org" target="_blank">Rudix</a></li>
+<li><a href="http://mxcl.github.com/homebrew/" target="_blank">HomeBrew</a></li>
+<li><a href="http://www.macports.org" target="_blank">MacPorts</a></li>
+</ul>
+<p>Cada um desses programas tem suas características no tratamento das dependências dos pacotes e na forma de baixar, configurar e compilar; além disso, alguns são mais simples - como Rudix (que é dos brasileiros <a href="http://rudamoura.com" target="_blank">Rudá Moura</a> e Leonardo Santagada), que já traz os pacotes pré-compilados e instala apenas os executáveis e outros mais sofisticados - como o MacPorts, o Fink e o HomeBrew. O MacPorts, por exemplo, é baseado no Ports do FreeBSD e é mantido com o apoio voluntário de alguns desenvolvedores da Apple - o que é bastante interessante, e recebe muitas contribuições dos usuários e tem uma biblioteca de programas bastante completa sendo (em minha opinião) a base de programas-fonte mais completa disponível para o Mac OS X.</p>
+<p>Este artigo, no entando, tratará especificamente sobre a remoção do MacPorts (para um guia de instalação, clique <a href="http://www.macports.org/install.php" target="_blank">aqui</a> - em inglês) e a instalação do HomeBrew. Estou fazendo isso porque nos últimos tempos tenho encontrado alguns problemas de atualização do MacPorts e para não ficar muito tempo com o mesmo problema nas mãos, resolvi testar o HomeBrew para o gerenciamento dos programas que preciso instalar.</p>
+<p>Antes de mais nada, é importante que você saiba que os procedimentos que vou tomar neste tutorial, irão remover completamente TODOS os pacotes que você instalou através do MacPorts, incluindo o próprio MacPorts. Além disso, algum programa que você tenha instalado sem utilizar o MacPorts e que utilize alguma biblioteca dinâmica instalada através dele, poderá deixar de funcionar. Então, você pode utilizar este tutorial apenas como uma última tentativa para resolver algum eventual problema. Faça por sua própria conta e risco!</p>
+<p><strong>Removendo o MacPorts</strong></p>
+<p>Para remover o MacPorts por completo, utilizaremos dois comandos, realizando a desinstalação em duas etapas:</p>
+<ol>
+<li>Removendo os pacotes que foram instalados: talvez você queira apenas "resetar" o MacPorts, removendo todos os pacotes instalados mas mantendo a instalação do MacPorts no seu Mac OS;</li>
+<li>Removendo a instalação do MacPorts: aí sim tudo o que o MacPorts tem será removido, incluindo os pacotes;</li>
+</ol>
+<p>Para remover os pacotes instalados através do MacPorts, utilize o comando:</p>
+<pre>$ sudo port -fp uninstall installed</pre>
+<p>Com isso, os pacotes que você baixou pelo MacPorts (exemplo, sudo port install wget) serão removidos. Dependendo da quantidade de pacotes instalados, esta operação poderá demorar um pouco.</p>
+<p>Para remover todo o MacPorts (e tudo que veio junto com ele), utilize o comando:</p>
+<pre>$ sudo rm -rf \
+/opt/local \
+/Applications/DarwinPorts \
+/Applications/MacPorts \
+/Library/LaunchDaemons/org.macports.* \
+/Library/Receipts/DarwinPorts*.pkg \
+/Library/Receipts/MacPorts*.pkg \
+/Library/StartupItems/DarwinPortsStartup \
+/Library/Tcl/darwinports1.0 \
+/Library/Tcl/macports1.0 \
+~/.macports</pre>
+<p>Depois disso, bye-bye MacPorts! Se o seu objetivo era remover o MacPorts, pode parar por aqui. Se quiser instalar o HomeBrew, basta seguir as instruções abaixo.</p>
+<p><strong>Instalando o HomeBrew</strong></p>
+<p>O HomeBrew, em comparação com o MacPorts, é mais espartano para instalar: ele não tem um instalador e tudo é feito via linha de comando. Na verdade ele tem um script de instalação que está disponível no GitHub. Para instalar, execute o comando no terminal (lembrando que para isto, você precisa do XCode Command Line Tools para ter acesso ao git, ruby, subversion etc):</p>
+<pre>$ ruby &lt;(curl -fsSkL raw.github.com/mxcl/homebrew/go)</pre>
+<p>[caption id="attachment_1752" align="aligncenter" width="534"]<a href="http://craftmind.wordpress.com/2012/08/14/removendo-o-macports-e-instalando-o-brew-no-mac-os-x/screen-shot-2012-08-14-at-6-50-07-pm-2/" rel="attachment wp-att-1752"><img class="size-full wp-image-1752" title="Screen Shot 2012-08-14 at 6.50.07 PM" src="/cfbastarz/assets/screen-shot-2012-08-14-at-6-50-07-pm1.png" alt="" width="534" height="324" /></a> Instalação do HomeBrew: simples e rápida[/caption]</p>
+<p>É só isso, bem fácil e rápido. O complicado, vem depois.</p>
+<p>Depois de baixar e instalar o HomeBrew, é ALTAMENTE recomendado executar o comando "brew doctor" antes mesmo de atualizar a base de dados do brew e instalar qualquer programa. O HomeBrew não utiliza o sudo para obter permissão de escrita em determinadas áreas do sistema; você pode utilizar fazer um "brew install wget" sem precisar ser root ou usar o sudo. Isso significa que ele escreve em áreas reservadas do sistema sem misturar os binários nativos do shell do Mac OS com os binários que você irá criar com a instalação de programas; além disso, ao invés de copiar os executáveis criados na compilação dos programas, ele apenas cria links simbólicos. Isso é um vantagem quando se quer manter o sistema saudável e minimamente organizado. Por isso é tão importante executar o "brew doctor" antes de mais nada:</p>
+<pre>$ brew doctor</pre>
+<p>Com isso, o "Doctor Brew" irá apontar uma série de problemas (principalmente de permissões) que você deve resolver antes de começar a usar o HomeBrew. Por exemplo:</p>
+<p>[caption id="attachment_1753" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/08/14/removendo-o-macports-e-instalando-o-brew-no-mac-os-x/screen-shot-2012-08-14-at-6-53-41-pm/" rel="attachment wp-att-1753"><img class="size-full wp-image-1753" title="Screen Shot 2012-08-14 at 6.53.41 PM" src="/cfbastarz/assets/screen-shot-2012-08-14-at-6-53-41-pm.png" alt="" width="545" height="267" /></a> Doutor Brew em ação: organizando o sistema[/caption]</p>
+<p>É bastante importante alientar que nesta situação cada um pode ter problemas diferentes apontados pelo "brew doctor". No meu caso houve vários, mas eu pude resolver todos. Nos casos em que é necessário alterar a permissão como sugerido pela mensagem "You should probably `chown` them", você poderá usar o seguindo comando:</p>
+<pre>$ sudo chow -R carlos /usr/local/share/man/*</pre>
+<p>Isso fará com que o usuário "carlos" se torne dono da pasta "man" em "/usr/local/share" e das pastas que estiverem dentro de "man" - este comando será executado recursivamente.</p>
+<p>A menos que você tente resolver todos os problemas de uma só vez (se for possível), e importante que você execute o comando "brew doctor" novamente depois de tentar resolver o problema indicado, para ter certeza de que tudo está sendo resolvido. Tome muito cuidado com as bibliotecas dinâmicas - você pode apagá-las (o que não é uma boa idéia, a menos que você saiba o que está fazendo), pois com certeza irá estragar a instalação de algum outro programa. Por exemplo, no meu caso, eu havia instalado o programa ncargs (NCAR Graphics) no Mac OS X sem utilizar o MacPorts, mas alguns executáveis dele foram lincados com algumas bibliotecas dinâmicas do gfortran, que foi instalado pelo MacPorts. Resultado, o comando "ncl" do programa ncargs não funciona mais. Portanto, tome muito cuidado!!!</p>
+<p>Outro ponto importante, é a configuração do seu PATH: talvez você tenha que adicionar dois caminhos utilizados pelo HomeBrew a ele. Por exemplo, no meu ".bas_profile" (que fica oculto no meu home), na última linha do arquivo eu adicionei o seguinte:</p>
+<pre>export PATH="/usr/local/sbin":${PATH}
+export PATH="/usr/local/bin":${PATH}</pre>
+<p>Depois disso, basta salvar e fechar o arquivo e recarregar as variáveis de ambiente do seu shell:</p>
+<pre>$ source .bash_profile</pre>
+<p>Isso poderá auxiliar na solução dos problemas apontados pelo "brew doctor".</p>
+<p>Quando todos os problemas forem resolvidos, o "brew doctor" exibirá a seguinte mensagem:</p>
+<pre>Your system is raring to brew.</pre>
+<p>Com isso, tudo está pronto para o primeiro update e depois para a instalação dos seus programas. Para fazer o primeiro update, basta fazer:</p>
+<pre>$ brew update</pre>
+<p>E depois, se tudo der certo :P instale os programas que você precisar. Por exemplo, instale o programa wget:</p>
+<pre>$ brew install wget</pre>
+<p>Isso é tudo, se precisar de mais ajuda, basta digitar "brew --help" no terminal. Ah, o termo "FORMULA" utilizado pelo HomeBrew se refere a uma rotina para a instalação de algum programa. Portanto, se você digitar "brew install wget", wget será o nome da FORMULA que você estará utilizando para instalar o pacote wget-1.14.tar.gz.</p>
+<p>Apenas como curiosidade, o termo "HomeBrew" é utilizado para alguma coisa caseira, feita em casa.</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="http://guide.macports.org/#installing.macports.uninstalling" target="_blank">http://guide.macports.org/#installing.macports.uninstalling</a></li>
+<li><a href="http://mxcl.github.com/homebrew/" target="_blank">http://mxcl.github.com/homebrew/</a></li>
+<li><a href="http://pedromenezes.com/conheca-o-homebrew-o-melhor-gerenciador-de-pacotes-para-mac-os" target="_blank">http://pedromenezes.com/conheca-o-homebrew-o-melhor-gerenciador-de-pacotes-para-mac-os</a></li>
+<li><a href="http://pt.wikipedia.org/wiki/Homebrew" target="_blank">http://pt.wikipedia.org/wiki/Homebrew</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

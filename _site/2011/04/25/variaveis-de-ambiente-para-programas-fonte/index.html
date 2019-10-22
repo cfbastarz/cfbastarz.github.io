@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Variáveis de ambiente para programas-fonte « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Sempre que se instala um programa a partir do código-fonte, o próximo passo é configurar o PATH, ou seja, deve-se dizer ao sistema que há um novo programa di...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2011/04/25/variaveis-de-ambiente-para-programas-fonte/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Variáveis de ambiente para programas-fonte</h1>
+    <p class="post-meta">Apr 25, 2011 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "_wpas_skip_twitter"=>"1", "_wpas_skip_fb"=>"1", "_wpas_skip_ms"=>"1", "_thumbnail_id"=>"1183"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Sempre que se instala um programa a partir do código-fonte, o próximo passo é configurar o PATH, ou seja, deve-se dizer ao sistema que há um novo programa disponível e que os seus executáveis estão em determinado local. Para isso, basta adicionar os executáveis à variável PATH, dentro do .bashrc (considerando-se que o shell padrão seja o Bash):</p>
+<pre>export PATH="/pasta/onde/estao/os/executaveis":${PATH}</pre>
+<p>Com isso já pode-se utilizar o novo programa, chamando-o a partir do terminal. Mas e se o programa possuir páginas de manuais, aquelas em que se digita “man comando” no terminal para consultar? Neste caso, a variável a ser incrementada é a MANPATH:</p>
+<pre>export MANPATH="/pasta/onde/estao/os/manuais":${MANPATH}</pre>
+<p>Em alguns outros casos, especialmente o de bibliotecas, é necessário informar ao sistema onde as bibliotecas se encontram, caso elas estejam fora do /usr/lib ou /lib. Deve-se, portanto, incrementar a variável LIBRARY_PATH:</p>
+<pre>export LIBRARY_PATH="/pasta/onde/estao/as/bibliotecas":${LIBRARY_PATH}</pre>
+<p>Da mesma forma, alguns programas possuem uma pasta chamada "include", que podem conter headers (ou cabeçalhos - "programas" necessários para a inicialização de um outro programa), e que são importantes para o sistema. Estes arquivos podem ser disponibilizados para o sistema através da variável C_INCLUDE_PATH:</p>
+<pre>export C_INCLUDE_PATH="/local/onde/se/encontra/a/pasta/include":${C_INCLUDE_PATH}</pre>
+<p>Se você programa em Python e quer utilizar algumas funções de dentro dos seus programas como se fossem programas ou funções do próprio shell, pode-se declarar a variável PYTHONPATH com o local onde estão os seus programas/scripts em Python:</p>
+<pre>export PYTHONPATH="/local/onde/estao/os/seus/programas/scripts/em/python"</pre>
+<p>É isso! Estas são as três principais variáveis de ambiente que podem ser incrementadas para se adicionar programas compilados a partir do código-fonte.</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

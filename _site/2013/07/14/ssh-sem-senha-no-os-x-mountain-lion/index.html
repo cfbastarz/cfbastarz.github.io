@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SSH sem senha no OS X Mountain Lion « Carlos Frederico Bastarz</title>
+  <meta name="description" content="O SSH é um serviço de rede que permite fazer um login seguro em máquinas remotas. Basicamente, informa-se o login, o nome (ou endereço) da máquina à qual des...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2013/07/14/ssh-sem-senha-no-os-x-mountain-lion/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">SSH sem senha no OS X Mountain Lion</h1>
+    <p class="post-meta">Jul 14, 2013 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_publicize_pending"=>"1", "_oembed_9f628f4a0a63ecd9532c81e372b8e00e"=>"{{unknown}}", "_oembed_303ed15b2baf9ebeb88094bdb5ca23be"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>O SSH é um serviço de rede que permite fazer um login seguro em máquinas remotas. Basicamente, informa-se o login, o nome (ou endereço) da máquina à qual deseja-se conectar e depois a senha. Dependendo do uso que se faz do SSH, pode ser necessário e/ou conveniente configurar o software para guardar as senha com uma chave pública de forma que o login é feito de forma automática, sem a necessidade de perdir uma senha a cada pedido de login. De forma semelhante, quando trabalha-se com processamente paralelo utiizando, por exemplo, o MPI, é necessário que a máquina seja configurada para fazer o login no localhost sem pedir senha. Neste caso, isto acontece porque cluster são geralmente configurados em rede e para que a compilação possa aproveitar os processadores das diferentes máquinas localmente, é necessário que todas as máquinas sejam acessíveis na rede. Você consegue imaginar como seria a compilação e a execução de uma grande software de forma paralela em um ambiente de rede e tendo que digitar a senha de login das máquinas a todo instante? No caso dos processadores multicore, a situação é bastante semelhante: os softwares que podem tirar vantagem de máquinas com este tipo de processadore, enxergam cada um dos cores como um processador independente. Então, torna-se necessário configuarar a máquina em questão para que ela possa acessar ela mesma através do terminal via SSH. Confuso? É um pouco, mas é bastante simples.</p>
+<p>Em uma máquina Linux, podemos gerar uma chave pública com os seguintes comandos:</p>
+<pre>$ ssh-keygen -t rsa </pre>
+<pre>$ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys2</pre>
+<p>No OS X Mountain Lion, o processo é bastante semelhante e requer uma configuração adicional:</p>
+<pre>$ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa</pre>
+<pre>$ cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys</pre>
+<p>Mas para que tudo funcione, é preciso configurar o OS X Mountain Lion para permitir logins remotos. Para isto, basta abrir o painel de "Preferências do Sistema" (System Preferences), clicar no ícone "Compartilhamento" (Sharing) e marcar a opção "Login Remoto" (Remote Login).</p>
+<p><img style="display:block;margin-left:auto;margin-right:auto;" title="syspref.png" src="/cfbastarz/assets/syspref.png" alt="Painel de Preferências do Sistema" width="600" height="492" border="0" /></p>
+<p>Depois disso, basta testar:</p>
+<pre>$ ssh localhost</pre>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/7134535/setup-passphraseless-ssh-to-localhost-on-os-x">http://stackoverflow.com/questions/7134535/setup-passphraseless-ssh-to-localhost-on-os-x</a></li>
+<li><a href="http://www.vivaolinux.com.br/dica/SSH-sem-senha/">http://www.vivaolinux.com.br/dica/SSH-sem-senha/</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

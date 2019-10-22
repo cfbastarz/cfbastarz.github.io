@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Calculando diferença entre duas datas no formato YYYYMMDDHH (Shell) « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Neste post vou apresentar um script que escrevi há alguns meses atrás para calcular a diferença entre duas datas quaisquer, no formato YYYYMMDDHH (ou seja, n...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Calculando diferença entre duas datas no formato YYYYMMDDHH (Shell)</h1>
+    <p class="post-meta">Feb 23, 2018 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "geo_public"=>"0", "_publicize_job_id"=>"15056562007", "timeline_notification"=>"1519389272"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Neste post vou apresentar um script que escrevi há alguns meses atrás para calcular a diferença entre duas datas quaisquer, no formato YYYYMMDDHH (ou seja, no formato ANO, MÊS, DIA, HORA SINÓTICA).</p>
+<h1>Exemplo</h1>
+<p>Qual a diferença (em dias ou em horas) entre as datas "2013010100" e "2013011512"?</p>
+<p>O script irá calcular a diferença entre estas duas datas e o resultado será dado em dias e em horas:</p>
+<pre>$ ./calc_date_diff.ksh 2013010100 2013011512</pre>
+<p>14 dia(s) e 12 hora(s) ou 348 hora(s)</p>
+<h1>Script</h1>
+<p>O script possui o seguinte algorítmo:</p>
+<ol>
+<li>Recebe as duas datas pela linha de comando;</li>
+<li>As datas são fornecidas como argumentos para a função datediff;</li>
+<li>Na função datediff, são separados os anos, os meses, os dias e os horários sinóticos;</li>
+<li>A partir disso, são formatadas as datas data1 e data2 no formato 'YYYY-MM-DD HH:mm:ss UTC';</li>
+<li>Verifica se a data2 é maior ou menor do que data1; se data2 for maior do que data1,</li>
+<li>Verifica se HH da data2 é igual a zero e se não é igual a HH da data1;
+<ol>
+<li>Se esta verificação for verdadeira, então a diferença entre HH (horas) das datas Informadas será calculada por 24-HH da data1;</li>
+<li>Caso contrário, a diferença entre HH (horas) das datas será calculada pela diferença entre os HH da data2 e data1;</li>
+</ol>
+</li>
+<li>Se HH da data1 for igual a zero e HH da data2 não for igual a HH da data1, então a diferença entre HH das datas é calculada por 24 menos HH da data2;
+<ol>
+<li>Caso contrário, esta diferença será calculada pela diferença entre HH da data2 e data1.</li>
+</ol>
+</li>
+</ol>
+<p>[code language="bash"]<br />
+#! /bin/ksh</p>
+<p>#set -o xtrace</p>
+<p>data_anl=${1}<br />
+data_fct=${2}</p>
+<p>datediff(){</p>
+<p>  yyyy_anl=$(echo ${data_anl} | cut -c 1-4)<br />
+  mm_anl=$(echo ${data_anl} | cut -c 5-6)<br />
+  dd_anl=$(echo ${data_anl} | cut -c 7-8)<br />
+  hh_anl=$(echo ${data_anl} | cut -c 9-10)</p>
+<p>  yyyy_fct=$(echo ${data_fct} | cut -c 1-4)<br />
+  mm_fct=$(echo ${data_fct} | cut -c 5-6)<br />
+  dd_fct=$(echo ${data_fct} | cut -c 7-8)<br />
+  hh_fct=$(echo ${data_fct} | cut -c 9-10)</p>
+<p>  data1=$(date -d &quot;${yyyy_anl}-${mm_anl}-${dd_anl} ${hh_anl}:00:00 UTC&quot; &quot;+%s&quot;)<br />
+  data2=$(date -d &quot;${yyyy_fct}-${mm_fct}-${dd_fct} ${hh_fct}:00:00 UTC&quot; &quot;+%s&quot;)</p>
+<p>  if [ ${data2} -gt ${data1} ]<br />
+  then<br />
+    if [ ${hh_fct} -eq &quot;0&quot; -a ${hh_fct} -ne ${hh_anl} ]<br />
+    then<br />
+      hh_diff=$(( 24-${hh_anl} ))<br />
+    else<br />
+      hh_diff=$(( ${hh_fct}-${hh_anl} ))<br />
+    fi<br />
+  else<br />
+    if [ ${hh_anl} -eq &quot;0&quot; -a ${hh_fct} -ne ${hh_anl} ]<br />
+    then<br />
+      hh_diff=$(( 24-${hh_fct} ))<br />
+    else<br />
+      hh_diff=$(( ${hh_anl}-${hh_fct} ))<br />
+    fi<br />
+  fi</p>
+<p>  dd_diff=$(((${data2}-${data1}) / 86400))</p>
+<p>  hh_tot=$((${dd_diff}*24+${hh_diff}))</p>
+<p>}</p>
+<p>datediff ${data_anl} ${data_fct}</p>
+<p>echo &quot;${dd_diff} dia(s) e ${hh_diff} hora(s) ou ${hh_tot} hora(s)&quot;</p>
+<p>exit 0<br />
+[/code]</p>
+<p>É isso!</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

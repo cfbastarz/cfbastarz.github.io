@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Comando weather no OS X (condições do tempo) « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Você sabia que é possível verificar as condições observadas de tempo a partir de estações meteorológicas pela linha de comando? No Linux é simples: basta ins...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2014/02/16/comando-weather-no-os-x-previsao-do-tempo/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Comando weather no OS X (condições do tempo)</h1>
+    <p class="post-meta">Feb 16, 2014 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "_publicize_job_id"=>"19172366058", "geo_public"=>"0", "_wpas_skip_facebook"=>"1", "_wpas_skip_google_plus"=>"1", "_wpas_skip_twitter"=>"1", "_wpas_skip_linkedin"=>"1", "_wpas_skip_tumblr"=>"1", "_wpas_skip_path"=>"1", "_thumbnail_id"=>"2400", "_oembed_4d500081fc46f9135e6baaa54d56025c"=>"{{unknown}}", "_oembed_ff81dc23a5657948d15c9c4a9a214f07"=>"{{unknown}}", "_oembed_f44c732fa810a487b285dbda5f614b4e"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Você sabia que é possível verificar as condições observadas de tempo a partir de estações meteorológicas pela linha de comando? No Linux é simples: basta instalar o programa "weather".</p>
+<p><!--more--></p>
+<p>Se você utiliza o Debian ou derivados, instale com o comando:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ sudo apt-get install weather-util weather-util-data</p>
+<p>[/sourcecode]</p>
+<p><span style="line-height:1.5em;">A utilização do comando é bastante simples. Por exemplo, para verificar a situação do tempo na cidade de Guaratinguetá/SP, basta digitar no terminal "weather SBGW" e obter as condições de tempo, veja abaixo:</span></p>
+<p>[caption id="attachment_2228" align="aligncenter" width="636"]<a href="http://craftmind.files.wordpress.com/2014/02/screen-shot-2014-02-16-at-4-58-03-pm.png"><img class="size-full wp-image-2228" src="/cfbastarz/assets/screen-shot-2014-02-16-at-4-58-03-pm.png" alt="Recebendo as condições observadas do tempo com o comando weather para a cidade de Guaratinguetá/SP" width="636" height="344" /></a> Recebendo as condições observadas do tempo com o comando weather para a cidade de Guaratinguetá/SP[/caption]</p>
+<p>SBGW é um código internacional de aviação civil (<a href="http://www.icao.int" target="_blank">ICAO - International Civil Aviation Organization</a>) que identifica os aeroportos no mundo inteiro. Para saber mais sobre a estrutura dos códigos ICAO, clique <a href="http://en.wikipedia.org/wiki/ICAO_airport_code" target="_blank">aqui</a>.</p>
+<p>Por algum motivo, o pacote weather não está disponível nos repositórios do macports. Mas você pode baixar o pacote manualmente e instalar no seu OS X. Para isto, basta seguir os passos abaixo:</p>
+<p><strong>1) Obtendo o pacote "weather"</strong></p>
+<p>Entre na página <a href="http://fungi.yuggoth.org/weather/src/" target="_blank">http://fungi.yuggoth.org/weather/src/</a> e baixe a versão mais recente. Enquanto escrevo, a versão mais nova é a versão <a href="http://fungi.yuggoth.org/weather/src/weather-2.0.tar.gz" target="_blank">2.0</a>.</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ wget -c http://fungi.yuggoth.org/weather/src/weather-2.0.tar.gz</p>
+<p>[/sourcecode]</p>
+<p><strong>2) Instalação</strong></p>
+<p>Para instalar o pacote, basta descompactá-lo em uma pasta qualquer. Sugiro que coloque em /opt. Portanto, a partir da pasta onde você baixou o pacote do programa weather, faça:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ sudo tar -zxvf weather-2.0.tar.gz -C /opt</p>
+<p>[/sourcecode]</p>
+<p>E altere ao dono do diretório criado para o seu próprio usuário:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ sudo chown -R USER /opt/weather-2.0</p>
+<p>[/sourcecode]</p>
+<p>No comando acima, USER é o seu nome de usuário.</p>
+<p>Feito isto, basta adicionar o programa ao PATH para que seja possível executar o comando weather a partir de qualquer pasta. Para isto, basta fazer:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ vim ~/.profile</p>
+<p>[/sourcecode]</p>
+<p>E adicione as seguintes linhas ao final do arquivo:</p>
+<p>[sourcecode language="bash"]</p>
+<p># Weather</p>
+<p>export PATH=&amp;amp;quot;/opt/weather-2.0&amp;amp;quot;:${PATH}</p>
+<p>export MANPATH=&amp;amp;quot;/opt/weather-2.0/man&amp;amp;quot;:${MANPATH}</p>
+<p>[/sourcecode]</p>
+<p>Observe que adicionamos também os manuais ao MANPATH do sistema, assim pode-se consultar o manual do comando. Mas para que ele funcione devidamente, são necessários alguns ajustes. Primeiro, entre na pasta de instalação do weather em /opt/weather-2.0 e crie a pasta man:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ cd /opt/weather-2.0</p>
+<p>$ mkdir man</p>
+<p>[/sourcecode]</p>
+<p>Depois, entre na pasta "man" criada e crie mais outras duas pastas:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ cd man/</p>
+<p>$ mkdir man1 man5</p>
+<p>[/sourcecode]</p>
+<p>Veja que dentro da pasta "man", há duas novas pastas criadas "man1" e "man5", onde serão colocados dois arquivos que estão na raiz da pasta de configuração do weather: "weatherrc.5" e  "weather.1". Basta mover cada um dos arquivos para a pasta correta, da seguinte forma:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ cd /opt/weather-2.0</p>
+<p>$ mv weatherrc.5 man/man5</p>
+<p>$ mv weather.1 man/man1</p>
+<p>[/sourcecode]</p>
+<p>Depois de criadas as pastas e configurado o PATH, para que o comando funcione, é necessário abrir uma nova aba ou um novo terminal. Ou  executar o comando:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ source ~/.profile</p>
+<p>[/sourcecode]</p>
+<p><strong>3) Utilização do comando weather</strong></p>
+<p>O comado weather é bastante simples e direto de se utilizar. O primeiro uso é aquele que já foi mostrado no início do post: basta escolher uma estação a partir do código ICAO e executar "weather CODIGO".</p>
+<p>Basicamente, as informações que o weather mostra para uma estação ICAO, são as seguintes:</p>
+<p>[caption id="attachment_2231" align="aligncenter" width="603"]<a href="http://craftmind.files.wordpress.com/2014/02/screen-shot-2014-02-16-at-7-00-43-pm.png"><img class="size-full wp-image-2231" src="/cfbastarz/assets/screen-shot-2014-02-16-at-7-00-43-pm.png" alt="Informações recuperadas pelo weather para a estação SBGW" width="603" height="158" /></a> Informações recuperadas pelo weather para a estação SBGW[/caption]</p>
+<p><strong>Linha 3:</strong> Current conditions at Guaratingueta, Brazil (SBGW) 22-47S 045-12W 537M</p>
+<p>Condições atuais em Guaratinguetá, Brasil (SBGW - código ICAO) latitudes 22S-47S, longitudes 45W-12W (onde W - West, refere-se a oeste) altitude de 537M (metros acima do nível do mar)</p>
+<p><strong>Linha 4:</strong> Last updated Feb 16, 2014 - 04:00 PM EST / 2014.02.16 21000 UTC, refere-se à data e horário da última atualização: neste caso, dia 16 de fevereiro de 2014 às 04:00 EST (Eastern Standad Time, ou seja, 2 horas a menos entre o horário de Brasília e qualquer local que esteja na zona EST - eg., Nova Iorque) ou 2100 UTC (Universal Time Coordinate, ou seja, 3 horas a mais em relação ao horário de Brasília).</p>
+<p><strong><strong>Linha 5</strong>:</strong> Temperature: 68 F (20 C) - temperatura de 68 graus Fahrenheit, o equivalente a 20 graus Celsius</p>
+<p><strong><strong>Linha 6</strong>:</strong> Relative Humiditty: 88% - umidade relativa do ar, em 88%</p>
+<p><strong><strong>Linha 7</strong>:</strong> Wind: from the S (190 degrees) at 6 MPH (5 KT) - direção do vento de "South" (ou seja, de Sul) a 190 graus, a uma intensidade (velocidade) de 6 milhas por hora ou 5 nós (ou seja, ~2,68 metros por segundo)</p>
+<p><strong><strong>Linha 8</strong>:</strong> Weather: light rain, mist - chuva fraca, chuvisco</p>
+<p><strong>Linha 9:</strong> Sky conditions: overcast - Condições de céu: encoberto</p>
+<p><strong>4) Manuais</strong></p>
+<p>Para mais informações sobre a utilização do comando weather, basta ler o manual:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ man weather</p>
+<p>[/sourcecode]</p>
+<p>e para as configurações, basta ler o manual:</p>
+<p>[sourcecode language="bash"]</p>
+<p>$ man weatherrc</p>
+<p>[/sourcecode]</p>
+<p>Outras informações, podem ser encontradas no site do programa.</p>
+<p>É isso!</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="http://www.omgubuntu.co.uk/2014/02/get-weather-forecast-terminal-linux" target="_blank">http://www.omgubuntu.co.uk/2014/02/get-weather-forecast-terminal-linux</a></li>
+<li><a href="http://fungi.yuggoth.org/weather/" target="_blank">http://fungi.yuggoth.org/weather/</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

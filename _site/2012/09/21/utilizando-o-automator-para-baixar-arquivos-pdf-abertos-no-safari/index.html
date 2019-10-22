@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Utilizando o Automator para baixar arquivos PDF abertos no Safari « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Sabe quando você está pesquisando no google e vai abrindo um monte de abas com arquivos PDF e no final quer salvar tudo? Se você abrir muitas abas, então ter...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/09/21/utilizando-o-automator-para-baixar-arquivos-pdf-abertos-no-safari/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Utilizando o Automator para baixar arquivos PDF abertos no Safari</h1>
+    <p class="post-meta">Sep 21, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "_oembed_c148cc92a0b4e0f7dcec2f06d423bd4b"=>"{{unknown}}", "_oembed_82c0f76c29e8ca2f9e9f449572de8855"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Sabe quando você está pesquisando no google e vai abrindo um monte de abas com arquivos PDF e no final quer salvar tudo? Se você abrir muitas abas, então terá que repetir o processo de salvar os arquivos muitas vezes. Ao invés de fazer isso, você pode usar o Automator para baixar tudo!</p>
+<p>Eis a situação:</p>
+<p>[caption id="attachment_1786" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/09/21/utilizando-o-automator-para-baixar-arquivos-pdf-abertos-no-safari/abas-3/" rel="attachment wp-att-1786"><img class="size-full wp-image-1786" title="abas" src="/cfbastarz/assets/abas2.png" alt="" width="545" height="315" /></a> Abas com os arquivos PDF para salver[/caption]</p>
+<p>Vamos utilizar o Automator para facilitar o processo:</p>
+<p><strong>1) Abra o automator, ele está na pasta "Applications";</strong></p>
+<p><strong>2) Na janela do Automator, há uma lista de ações. Clique em "Internet".</strong> Uma nova lista de ações irá surgir, nós utilizaremos duas delas: "Get Specified URLs" e "Download URLs". A primeira ação servirá para adicionarmos as URLs (endereços) dos arquivos PDF que estão abertos nas abas - neste caso estamos considerando que os arquivos são links diretos para os arquivos (eg. http://www.blablabla.com/arquivo.pdf); a segunda ação irá fazer o download dos arquivos nas URLs. Para isso, arraste as ações "Get Specified URLs" e "Download URLs" - nesta ordem, para o painel à direita na janela do Automator:</p>
+<p>[caption id="attachment_1787" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/09/21/utilizando-o-automator-para-baixar-arquivos-pdf-abertos-no-safari/janela_automator/" rel="attachment wp-att-1787"><img class="size-full wp-image-1787" title="janela_automator" src="/cfbastarz/assets/janela_automator.png" alt="" width="545" height="305" /></a> Lista das ações a serem executas pelo automator[/caption]</p>
+<p>Com isso, basta adicionarmos as URLs ao painel "Get Specified URLs". Para isso, basta selecionar a aba com o arquivo PDF no Safari e em seguida clicar no botão "Add" (ou Adicionar). Faremos isso para cada aba aberta. Embora possa parecer não muito eficiente, esse processo é rápido:</p>
+<p>[caption id="attachment_1788" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/09/21/utilizando-o-automator-para-baixar-arquivos-pdf-abertos-no-safari/screen-shot-2012-09-21-at-7-04-52-pm/" rel="attachment wp-att-1788"><img class="size-full wp-image-1788" title="Screen Shot 2012-09-21 at 7.04.52 PM" src="/cfbastarz/assets/screen-shot-2012-09-21-at-7-04-52-pm.png" alt="" width="545" height="340" /></a> Adicionando as URLs[/caption]</p>
+<p><strong>3) Depois disso, basta clicar no botão "Run" (ou Executar). O Automator irá salvar os arquivos na pasta especificada na ação "Download URLs".</strong></p>
+<p><strong>Referência:</strong></p>
+<p><a href="https://discussions.apple.com/thread/2210819?start=0&amp;tstart=0" target="_blank">https://discussions.apple.com/thread/2210819?start=0&amp;tstart=0</a></p>
+<p>&nbsp;</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

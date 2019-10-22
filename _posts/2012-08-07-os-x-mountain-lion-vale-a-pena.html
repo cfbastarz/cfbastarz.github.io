@@ -1,0 +1,90 @@
+---
+layout: post
+title: 'OS X Mountain Lion: vale a pena!'
+date: 2012-08-07 22:46:44.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- Lion
+- Mac OS X
+- memória
+- Mountain Lion
+- OS X
+- page in
+- page out
+- purge
+- RAM
+- swap
+- vm size
+- vm_stat
+meta:
+  _edit_last: '13386696'
+  _oembed_f00b3655d64a1031de46f598d4f452c2: "{{unknown}}"
+  _oembed_fdb972b00018975cf92769d72a609aa5: "{{unknown}}"
+  _oembed_67a99b2a2da7340df0d415cb24e6f4fa: "{{unknown}}"
+  _oembed_b56146115d40717ba76f670b3c29467f: "{{unknown}}"
+  _oembed_e1082bb2659f39425c1315073db9fce8: "{{unknown}}"
+  _oembed_c2cd26248f5ce4b44801671316b6ff39: "{{unknown}}"
+  _oembed_9f0433c8dfab0bf0c31f2b1f56a396bd: "{{unknown}}"
+  _oembed_fb7e7d0f97ea08955732be0a4758b0db: "{{unknown}}"
+  _oembed_f7bb0716c1208cee830f0fecbb9b8535: "{{unknown}}"
+  _oembed_37a377030bfb542f5a3b01744d704cd8: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/08/07/os-x-mountain-lion-vale-a-pena/"
+---
+<p>Há alguns meses atrás comprei um macbook pro de 13'' com 4GB de memória RAM e com Mac OS X Lion. Nos primeiros dias de utilização, não pude deixar de esconder uma certa desconfiança em relação do Mac OS X Lion, pois este não apresentava o desempenho que eu esperava. Por duas vezes, o macbook travou em situações em que vários programas estavam abertos; em outras situações (mais comuns) me irritava a lentidão de algumas animações do sistema e a beach ball of death (quando o aquele cursor colorido de espera fica girando indefinidamente esperando algum programa responder). Isso me irritou bastante, e percebi que os 4GB de RAM do macbook não eram suficientes. Resolvi colocar 8GB de RAM no macbook e ver se conseguiria um pouco mais de fôlego. O desempenho melhorou bastante, mas os pageouts continuaram e alguns programas ainda eram lentos, o que pude comprovar com a quantidade de pageouts que havia no sistema, mesmo com memória RAM de sobra:</p>
+<p>[caption id="attachment_1739" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/08/07/os-x-mountain-lion-vale-a-pena/screen-shot-2012-08-05-at-1-15-10-pm/" rel="attachment wp-att-1739"><img class="size-full wp-image-1739" title="Screen Shot 2012-08-05 at 1.15.10 PM" src="{{ site.baseurl }}/assets/screen-shot-2012-08-05-at-1-15-10-pm.png" alt="" width="545" height="144" /></a> Pageouts excessivos no Mac OS X Lion: gerenciamento de memória ruim...[/caption]</p>
+<p>Com o lançamento dos previews do OS X Mountain Lion, fui acompanhando o depoimentos de quem estava testando e o consenso era de que a nova versão do Mac OS X - ou melhor OS X, já estava mais estável em termos de gerenciamento de memória. Fiz o upgrade - um tanto quanto receoso pois tratava-se de uma versão recém-lançada e eis minha surpresa:</p>
+<p>[caption id="attachment_1740" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/08/07/os-x-mountain-lion-vale-a-pena/screen-shot-2012-08-01-at-7-12-55-pm/" rel="attachment wp-att-1740"><img class="size-full wp-image-1740" title="Screen Shot 2012-08-01 at 7.12.55 PM" src="{{ site.baseurl }}/assets/screen-shot-2012-08-01-at-7-12-55-pm.png" alt="" width="545" height="138" /></a> Sem pageouts no OS X Mountain Lion: enquanto tem memória RAM disponível, nada de lentidão no sistema![/caption]</p>
+<p>Com o OS X Mountain Lion, meu macbook pro ficou bastante rápido e confiável, uma vez que não enfrento mais lentidões por conta dos excessivos pageouts que o Mac OS X Lion insistia em criar. Memória RAM tem que ser usada, até o último byte; se o sistema operacional não consegue utilizar de forma eficiente os seus 2, 4, 6 ou 8GB que você tem, o investimento não vale à pena!</p>
+<p>Ok, com as declarações acima, dá pra ver que o OS X Mountain Lion é mais eficiente no gerenciamento de memória, mas o que o page out realmente representa?</p>
+<p>Segundo as informações da Apple (neste <a href="http://support.apple.com/kb/HT1342?viewlocale=en_US&amp;locale=en_US" target="_blank">link</a>), as funções de cada um desses elementos é a seguinte:</p>
+<ul>
+<li><strong>VM size</strong>: é a quantidade total de memória virtual para todos os processos executados no Mac OS</li>
+<li><strong>Page out</strong>: é a quantidade de informação que saiu da memória RAM e foi para o disco rígido (quanto mais, pior)</li>
+<li><strong>Page in</strong>: é a quantidade de informação que sai do disco rígido e volta para a memória RAM, quando a memória antes ocupada, é liberada</li>
+<li><strong>Swap used</strong>: é a quantidade de informação copiada para o arquivo de paginação (swap file) no disco rígido</li>
+</ul>
+<p>Além disso, outras informações que o monitor de atividades do Mac OS fornece em relação ao uso da memória RAM, são:</p>
+<ul>
+<li><strong>Free</strong>: é a quantidade de memória RAM que não está sendo utilizada</li>
+<li><strong>Wired</strong>: é quantidade de memória RAM que está sendo utiliza e que não pode ser movida para o disco rígido (este valor depende dos programas que estão abertos)</li>
+<li><strong>Active</strong>: é a quantidade de memória RAM recentemente utilizada</li>
+<li><strong>Inactive</strong>: semelhante a active, é a quantidade de memória RAM que foi recentemente utilizada mas que ainda não foi liberada</li>
+<li><strong>Used</strong>: é a quantidade total de memória RAM utilizada pelo Mac OS</li>
+</ul>
+<p><strong>Comandos úteis:</strong></p>
+<p>Caso seja necessário forçar a liberação da memória "inativa" do Mac OS, você pode utilizar o comando purge. Para isso, basta abrir o terminal do Mac OS X e digitar:</p>
+<pre>$ purge</pre>
+<p><del><span style="color:#ff0000;">*No OS X 10.8.1 este comando está com um bug (na verdade você não consegue executá-lo, obtendo a seguinte mensagem:</span></p>
+<p></del></p>
+<pre>[ERROR] &lt;CPPathUtils.c:526&gt; The device-file for this operating system, 'osx-12.1.0.xml', was not found. An attempt to revert to a previous revision of the OS device-file: 'osx-12.0.0.xml' has been made. Please file a Radar report with Apple, on the 'CoreProfile' component, version 'X'.</pre>
+<p><span style="color:#339966;">*O problema acima já foi resolvido e o comando purge funciona sem problemas no OS X 10.8.2.</span></p>
+<p>Depois que o comando purge for executado, alguns programas podem ficar mais lentos na inicialização, pois terão sido removidos da memória RAM.</p>
+<p>Exemplo de um antes e depois do comando purge:</p>
+<p>[caption id="attachment_1744" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/08/07/os-x-mountain-lion-vale-a-pena/screen-shot-2012-08-07-at-9-34-38-pm/" rel="attachment wp-att-1744"><img class="size-full wp-image-1744" title="Screen Shot 2012-08-07 at 9.34.38 PM" src="{{ site.baseurl }}/assets/screen-shot-2012-08-07-at-9-34-38-pm.png" alt="" width="545" height="145" /></a> Antes de rodar o comando purge: observe a quantidade de memória inativa (inactive, em azul) utilizada[/caption]</p>
+<p>[caption id="attachment_1745" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/08/07/os-x-mountain-lion-vale-a-pena/screen-shot-2012-08-07-at-9-36-14-pm/" rel="attachment wp-att-1745"><img class="size-full wp-image-1745" title="Screen Shot 2012-08-07 at 9.36.14 PM" src="{{ site.baseurl }}/assets/screen-shot-2012-08-07-at-9-36-14-pm.png" alt="" width="545" height="146" /></a> Depois de rodar o comando purge, a quantidade de memória inativa (em azul) é liberada[/caption]</p>
+<p>Outro comando útil, mas para o monitoramento da memória RAM, é o comando vm_stat. Para utilizá-lo, basta abrir o terminal e digitar:</p>
+<pre>$ vm_stat</pre>
+<p>Para fazer com que o comando seja atualizado automaticamente, digamos, a cada 3 segundos, basta fazer:</p>
+<pre>$ vm_stat 3</pre>
+<p>e assim por diante.</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="http://support.apple.com/kb/HT1342?viewlocale=en_US&amp;locale=en_US" target="_blank">http://support.apple.com/kb/HT1342?viewlocale=en_US&amp;locale=en_US</a></li>
+<li><a href="http://macintoshhowto.com/hardware/does-my-mac-need-more-memory.html" target="_blank">http://macintoshhowto.com/hardware/does-my-mac-need-more-memory.html</a></li>
+<li><a href="http://osxdaily.com/2010/10/29/does-your-mac-need-more-memory-how-to-know-if-you-need-a-ram-upgrade/" target="_blank">http://osxdaily.com/2010/10/29/does-your-mac-need-more-memory-how-to-know-if-you-need-a-ram-upgrade/</a></li>
+<li><a href="http://osxdaily.com/2007/05/16/quickly-check-mac-os-xs-virtual-memory-usage/" target="_blank">http://osxdaily.com/2007/05/16/quickly-check-mac-os-xs-virtual-memory-usage/</a></li>
+<li><a href="http://osxdaily.com/2010/10/08/mac-virtual-memory-swap/" target="_blank">http://osxdaily.com/2010/10/08/mac-virtual-memory-swap/</a></li>
+</ul>

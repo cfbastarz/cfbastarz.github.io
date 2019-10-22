@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BatteryStatus no Gnome « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Quando comprei o meu HP G42, a primeira tarefa foi atualizar o sistema operacional. De cara, instalei o Ubuntu (na época 10.04). No post install, além de ter...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2011/02/25/batterystatus-no-gnome/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">BatteryStatus no Gnome</h1>
+    <p class="post-meta">Feb 25, 2011 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "_thumbnail_id"=>"1194", "_wpas_skip_fb"=>"1", "_wpas_skip_twitter"=>"1", "_wpas_skip_ms"=>"1", "_oembed_c8cdeb93f1b403b8a9f69803ca91c7d0"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Quando comprei o meu HP G42, a primeira tarefa foi atualizar o sistema operacional. De cara, instalei o Ubuntu (na época 10.04). No post install, além de ter que instalar o driver da placa de som (que só saía pelo fone de ouvido :/) tive que resolver um problema relacionado à bateria: o marcador de estado da bateria, só mostrava “Laptop battery (estimating…)”, como na imagem abaixo:</p>
+<p><a href="http://craftmind.wordpress.com/2011/02/25/batterystatus-no-gnome/batterystatus_velho/" rel="attachment wp-att-1152"><img class="aligncenter size-full wp-image-1152" title="batterystatus_velho" src="/cfbastarz/assets/batterystatus_velho.png" alt="" width="281" height="54" /></a></p>
+<p>Em um primeiro momento pensei que fosse necessaŕio fazer uma atualização e tudo estaria resolvido. Mas como tudo que tem graça, tem que ter um pouco de esforço. Para resolver o problema, instalei um medidor de bateria alternativo, que também é mantido pelo projeto Gnome: o BatteryStatus (<a href="http://live.gnome.org/BatteryStatus" rel="noreferrer">http://live.gnome.org/BatteryStatus</a>). Com ele é possível saber qual é o nível relativo da carga da bateria (eg, 90%, 50%, 12% etc). O problema é que ele não consegue calcular o tempo de descarga completa da bateria. Isso se deve ao fato de que alguns modelos de notebook da HP possuem modelos de bateria que simplesmente não informam qual é o tempo exato até a descarga. Então, o problema não é com o linux, mas com o hardware.</p>
+<p>Para instalar (em qualquer versão do Ubuntu, a partir da 10.04 – nunca testei nas versões anteriores), basta adicionar o ppa, atualizar a lista de pacotes e instalar o programa:</p>
+<pre>$ sudo add-apt-repository ppa:iaz/battery-status
+$ sudo apt-get update
+$ sudo apt-get install battery-status</pre>
+<p>Feito isto, basta digitar Alt+F2 e digitar “/usr/lib/battery-status/battery-status –indicator”.</p>
+<p><a href="http://craftmind.wordpress.com/2011/02/25/batterystatus-no-gnome/batterystatus_novo/" rel="attachment wp-att-1153"><img class="aligncenter size-full wp-image-1153" title="batterystatus_novo" src="/cfbastarz/assets/batterystatus_novo.png" alt="" width="368" height="197" /></a></p>
+<p>Para que o BatteryStatus do Gnome funcione corretamente, permitindo que a energia do notebook possa ser realmente gerenciada através dele, falta a pitada final: configurar o gerenciador de energia através do gconf-editor. Para isso, basta seguir os passos abaixo:</p>
+<ol>
+<li>Abra o gconf-editor e vá para /&gt;apps&gt;battery_status</li>
+<li>Selecione a opção power_manager</li>
+</ol>
+<p><a href="http://craftmind.wordpress.com/2011/02/25/batterystatus-no-gnome/bsgnome/" rel="attachment wp-att-1154"><img class="aligncenter size-full wp-image-1154" title="bsgnome" src="/cfbastarz/assets/bsgnome.png" alt="" width="594" height="489" /></a></p>
+<p>Pronto, agora o BatteryStatus do Gnome está corretamente funcionando e mostrando o tempo restante da bateria corretamente.</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

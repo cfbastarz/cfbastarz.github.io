@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Habilitando o servidor Apache com PHP no Mac OS X Lion « Carlos Frederico Bastarz</title>
+  <meta name="description" content="O Mac OS X Lion já vem com o servidor web Apache e o PHP instalados por padrão. Para habilitá-los, primeiro edite o arquivo httpd.conf em /etc/apache2e decom...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/05/17/habilitando-o-servidor-apache-com-php-no-mac-os-x-lion/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Habilitando o servidor Apache com PHP no Mac OS X Lion</h1>
+    <p class="post-meta">May 17, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "tagazine-media"=>"a:7:{s:7:\"primary\";s:65:\"https://craftmind.files.wordpress.com/2012/05/painel_controle.jpg\";s:6:\"images\";a:2:{s:65:\"https://craftmind.files.wordpress.com/2012/05/painel_controle.jpg\";a:6:{s:8:\"file_url\";s:65:\"https://craftmind.files.wordpress.com/2012/05/painel_controle.jpg\";s:5:\"width\";s:3:\"668\";s:6:\"height\";s:3:\"561\";s:4:\"type\";s:5:\"image\";s:4:\"area\";s:6:\"374748\";s:9:\"file_path\";s:0:\"\";}s:66:\"https://craftmind.files.wordpress.com/2012/05/compartilhamento.jpg\";a:6:{s:8:\"file_url\";s:66:\"https://craftmind.files.wordpress.com/2012/05/compartilhamento.jpg\";s:5:\"width\";s:3:\"668\";s:6:\"height\";s:3:\"548\";s:4:\"type\";s:5:\"image\";s:4:\"area\";s:6:\"366064\";s:9:\"file_path\";s:0:\"\";}}s:6:\"videos\";a:0:{}s:11:\"image_count\";s:1:\"2\";s:6:\"author\";s:8:\"13386696\";s:7:\"blog_id\";s:8:\"12997071\";s:9:\"mod_stamp\";s:19:\"2012-05-17 20:42:16\";}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>O Mac OS X Lion já vem com o servidor web Apache e o PHP instalados por padrão. Para habilitá-los, primeiro edite o arquivo <strong>httpd.conf</strong> em <strong>/etc/apache2</strong>e decomente a linha "LoadModule php5_module libexec/apache2/libphp5.so". Para isto, basta remover o "#" do começo da linha:</p>
+<pre>$ cd /etc/apache2
+$ sudo vim httpd.conf
+LoadModule php5_module libexec/apache2/libphp5.so</pre>
+<p>Isso irá garantir que ao iniciarmos o Apache, ele carregará os módulos do PHP.</p>
+<p>Para habilitar o servidor Apache, abra o Painel de Controle do Mac OS X e clique em Compartilhamento (Sharing):</p>
+<p>[caption id="attachment_1559" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/05/17/habilitando-o-servidor-apache-com-php-no-mac-os-x-lion/painel_controle/" rel="attachment wp-att-1559"><img class="size-full wp-image-1559" title="painel_controle" src="/cfbastarz/assets/painel_controle.jpg" alt="" width="545" height="457" /></a> Painel de Controle do Mac OS X Lion: clique em Sharing (Compartilhamento) para habilitar o servidor web Apache[/caption]</p>
+<p>[caption id="attachment_1560" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/05/17/habilitando-o-servidor-apache-com-php-no-mac-os-x-lion/compartilhamento/" rel="attachment wp-att-1560"><img class="size-full wp-image-1560" title="compartilhamento" src="/cfbastarz/assets/compartilhamento.jpg" alt="" width="545" height="447" /></a> Opções de compartilhamento do Mac OS X Lion: clique em "Web Sharing" para ativar o Apache[/caption]</p>
+<p>Com isso, você será capaz de utilizar o seu Mac OS X Lion como servidor, podendo inclusive fornecer o endereço indicado (em azul) para qualquer computador da sua rede ou da internet para acessar o conteúdo que você quiser disponibilizar, como uma página html, imagens e vídeos. Também, é possível acessar o enderço http://localhost normalmente. Sua pasta web, diferentemente do Linux que ficava em /var/www, fica em ~usuario/Sites.</p>
+<p>É isso!</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

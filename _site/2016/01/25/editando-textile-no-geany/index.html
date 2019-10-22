@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Editando Textile no Geany « Carlos Frederico Bastarz</title>
+  <meta name="description" content="IntroduçãoO Textile é uma linguagem de marcação própria para hypertexto do tipo Wiki. É simples e fácil de usar, sendo muito mais prática do que o HTML. Assi...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2016/01/25/editando-textile-no-geany/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Editando Textile no Geany</h1>
+    <p class="post-meta">Jan 25, 2016 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "geo_public"=>"0", "_publicize_job_id"=>"19113718185", "_thumbnail_id"=>"2741"}</p>
+  </header>
+
+  <article class="post-content">
+    <h2>Introdução</h2>
+<p>O <a href="http://txstyle.org/" target="_blank">Textile</a> é uma linguagem de marcação própria para hypertexto do tipo <a href="https://pt.wikipedia.org/wiki/Wiki" target="_blank">Wiki</a>. É simples e fácil de usar, sendo muito mais prática do que o <a href="http://www.w3schools.com/html/" target="_blank">HTML</a>. Assim como no <a href="https://daringfireball.net/projects/markdown/" target="_blank">Markdown</a> (uma outra linguagem de marcação - veja um post sobre o Markdown <a href="https://craftmind.wordpress.com/2014/04/14/markdown-mathjax-uma-alternativa-ao-latex/" target="_blank">aqui</a>), o Textile permite que você se concentre no conteúdo que está escrevendo, e não na linguagem em si. Linguagens como o HTML, requerem que você saiba exatamente quais são as tags que devem ser utilizadas, obrigando o programador a se concentrar muito mais nas estruturas da linguagem do que no conteúdo em sí. É claro que ninguém escreve textos utilizando as tags do HTML, e é por isso que as linguagem de marcação, como o Textile, existem.</p>
+<p><!--more--></p>
+<p>No meu trabalho temos o costume de utilizar o <a href="http://www.redmine.org/" target="_blank">Redmine</a>, um excelente gerenciador de projetos, com suporte ao <a href="https://pt.wikipedia.org/wiki/Subversion" target="_blank">SVN</a> (subversion) e outras ferramentes de versionamento de código. Nele temos a opção de criar páginas Wiki para documentar os processos envolvidos nos desenvolvimentos e o Textile é a linguagem utilizada. Muitas vezes ocorre de eu querer escrever um texto fora do Redmine e utilizar o que escrevi para coloborar na documentação de algum processo. Se eu não estiver preocupado em escrever para apenas depois formatar, então abro o bloco de notas ou mesmo um editor de textos mais avançado e escrevo o que precisar. Depois que o texto estiver pronto, copio e colo na Wiki do Redmine e formato por lá mesmo, utilizando as ferramentas de edição que ele oferece. Mas e se eu quiser escrever e formatar direto em Textile, comofaz? Uma opção que encontrei foi com o super editor <a href="http://www.geany.org/" target="_blank">Geany</a>, e é esta que vou mostrar aqui.</p>
+<p>O Geany é uma excelente <a href="https://en.wikipedia.org/wiki/Integrated_development_environment" target="_blank">IDE</a> (do inglês "Integrated Development Environment") para programação e oferece suporte para diversas linguagens, possibilitando a compilação através de <a href="https://en.wikipedia.org/wiki/Makefile" target="_blank">Makefiles</a> dentro da própria IDE. Além disso, posso utilizar o Geany para editar em Textile e "compilar" meus textos, de forma a visualizá-los em HTML dentro de um navegador, se eu quiser. A vantagem de se utilizar o Geany para esta tarefa, desta maneira (utilizando o HTML), é que eu posso  incluir <a href="http://www.w3schools.com/css/" target="_blank">CSS</a> (do inglês "Cascading Style Sheets", ou simplesmente Folhas de Estilo) e tornar meu texto visualmente mais bonito, ou com o estilo que eu bem entender.</p>
+<p>Para podermos utilizar o Geany com suporte ao Textile, ie., de forma a podermos "compilar" um texto Textile e mostrar o resultado em uma página HTML, vamos precisar do <a href="http://www.w3schools.com/php/" target="_blank">PHP</a>.</p>
+<h2><strong>Instalação rápida do PHP(5)</strong></h2>
+<p>Neste artigo, estou assumindo que você esteja trabalhado no Ubuntu (minha versão é a 15.10 - Wily Werewolf). Para instalar o PHP, você pode procurar nos repositórios da sua distribuição. Como o objetivo deste artigo não é propriamente mostrar como instalar o PHP, vou utilizar um <a href="http://askubuntu.com/questions/4983/what-are-ppas-and-how-do-i-use-them" target="_blank">PPA</a> de um terceiro para instalar o PHP5. Se você já possui o PHP instalado e funcionando em sua máquina, você pode pular para a próxima seção.</p>
+<p>Para instalar o PHP5 no Ubuntu 15.10, utilize os comando abaixo:</p>
+<pre>$ sudo add-apt-repository ppa:ondrej/php5
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install php5</pre>
+<p>Observe que aqui estamos instalando apenas o PHP. A maioria dos tutoriais que mostram como instalar o PHP, mostram como instalar um servidor Web completo - uma tarefa um pouco mais complexa.</p>
+<h2><strong>Preparando o Geany</strong></h2>
+<p>Uma vez que temos o suporte a PHP instalado na máquina, vamos preparar o Geany a compilar um texto escrito em Textile. O primeiro passo, é obter uma cópia do plugin textile para o PHP. Para isso, iremos utilizar o seguinte comando para baixar os pacotes necessários. Sugiro que você baixe o pacote a seguir em um local seguro, onde você não corra o risco de apagar por engano. No meu caso, vou baixar na mesma pasta em que pretendo trabalhar com meus textos em Textile (eg., /home/carlos/Textile):</p>
+<pre>$ cd /home/carlos/Textile</pre>
+<pre>$ svn export http://textpattern.googlecode.com/svn/development/4.x/ textpattern-read-only</pre>
+<p>Depois disso, precisaremos procurar pelo script "classTextile.php" e lincá-lo na pasta corrente:</p>
+<pre>$ find . -name classTextile.php</pre>
+<pre>$ ln -s ./textpattern-read-only/textpattern/lib/classTextile.php .</pre>
+<p>Feito o link, iremos apenas criar um script chamado "textile.php" que irá ficar na mesma pasta que o "classTextile.php". O conteúdo deste novo script será (copie o conteúdo abaixo, cole no arquivo e salve com o nome "textile.php"):</p>
+<p>[code language="php"]<br />
+&amp;lt;?php</p>
+<p>// takes a filename from the commandline and converts its contents<br />
+// to a html format</p>
+<p>require_once('classTextile.php');</p>
+<p>$textile = new Textile;</p>
+<p>$file_parts = pathinfo($argv[1]);</p>
+<p>$wiki = file_get_contents($file_parts['basename']);</p>
+<p>$html = $textile-&amp;gt;TextileThis($wiki);</p>
+<p>file_put_contents($file_parts['filename'].&amp;quot;.html&amp;quot;, $html);</p>
+<p>// For untrusted user input, use TextileRestricted instead:<br />
+// echo $textile-&amp;gt;TextileRestricted($in);</p>
+<p>?&amp;gt;<br />
+[/code]<br />
+Com isso, iremos configurar o Geany de forma a obtermos um comando que utilize o script "textile.php" para compilar os nossos textos com marcação Textile, fazendo uso da classe "classTextile.php" que acabamos lincamos. Para isso, abra o Geany e no menu "Build" (meu Ubuntu está em inglês), clique na opção "Set Build Commands":</p>
+<p>[caption id="attachment_2568" align="aligncenter" width="271"]<img class="wp-image-2568 size-full" src="/cfbastarz/assets/menu_005.png" alt="Menu_005" width="271" height="218" /> No menu "Build" do Geany, aponte o mouse para "Set Build Commands".[/caption]</p>
+<p>Na janela que abrir, clique no primeiro botão logo abaixo de "Label", e digite um rótulo para o novo comando a ser criado, no meu caso, escolhi "Make Textile". Além disso, insira o comando abaixo no campo à direita do botão criado:</p>
+<pre>php textile.php %f</pre>
+<p>Este é o comando que será executado quando clicarmos na opção "Make Textile" que irá aparecer no meu "Build" quando um arquivo Textile estiver sendo editado.</p>
+<p>[caption id="attachment_2573" align="aligncenter" width="562"]<img class="wp-image-2573 size-full" src="/cfbastarz/assets/set-build-commands_012.png" alt="Set Build Commands_012" width="562" height="509" /> Na caixa de edição dos comandos, defina um label para o novo comando "Make Textile" e insira o comando "php textile.php %f".[/caption]</p>
+<p>Com estas opções ajustadas, chegou a hora de editar um documento utilizando a marcação Textile. Para isso, crie um novo arquivo no Geany e a salve com a extensão ".txl" (na realidade, pode ser outra), mas é importante que o nome do arquivo seja "wiki". Para mostrar o exemplo deste artigo, o arquivo que estou editando está <a href="https://github.com/textile/textile-mark/blob/master/README.textile" target="_blank">aqui</a>.</p>
+<p>[caption id="attachment_2574" align="aligncenter" width="700"]<img class="wp-image-2574 size-full" src="/cfbastarz/assets/wiki-txl-home-carlos-documents-inpe2016-gdad-spcon-texto-wiki-geany_011.png" alt="wiki.txl - -home-carlos-Documents-INPE2016-GDAD-SPCON-Texto Wiki - Geany_011" width="700" height="609" /> No Geany, digite o texto com a marcação Textile e salve o arquivo com o nome "wiki.txl".[/caption]</p>
+<p>Com o documento aberto, clique novamente no menu "Build" e veja que uma nova opção surgiu: "Make Textile", que é justamente a opção para o comando que inserimos anteriormente para podermos "compilar" nosso documento escrito com marcação Textile.</p>
+<p>[caption id="attachment_2571" align="aligncenter" width="271"]<img class="wp-image-2571 size-full" src="/cfbastarz/assets/menu_009.png" alt="Menu_009" width="271" height="218" /> Depois de digitar o texto na janela de edição do Geany, clique no menu "Build" e aponte o mouse para o novo comando criado "Make Textile".[/caption]</p>
+<p>Para se certificar de que a compilação ocorreu corretamente, no rodapé do editor deverá surgir a seguinte mensagem em azul:</p>
+<p>[caption id="attachment_2576" align="aligncenter" width="700"]<img class="size-full wp-image-2576" src="/cfbastarz/assets/selection_013.png" alt="Uma vez que o comando é completado com sucesso, você verá a mensagem abaixo, em azul." width="700" height="142" /> Uma vez que o comando é completado com sucesso, você verá a mensagem abaixo, em azul.[/caption]</p>
+<p>Se tudo correu bem, você deverá obter um arquivo chamado "wiki.html" que poderá ser aberto no seu navegador. Este arquivo será criado na mesma pasta em que o arquivo "wiki.txl" foi salvo.</p>
+<p>[caption id="attachment_2575" align="aligncenter" width="700"]<img class="wp-image-2575 size-full" src="/cfbastarz/assets/mozilla-firefox_0101.png" alt="Mozilla Firefox_010" width="700" height="665" /> Com o documento compilado, abre o arquivo "wiki.html" no seu navegador e veja o resultado![/caption]</p>
+<h2>Conclusão</h2>
+<p>Neste artigo vimos como utilizar a IDE do Geany para escrevermos textos com marcação Textile sem a necessidade de termos uma Wiki instalada no computador (e sem termos que instalar um servidor Web para isso). O Geany tem muitas possibilidades e funcionalidades e isso permite que novos formatos possam ser utilizados por ele.</p>
+<p>Utilizando uma página em HTML para visualizar o arquivo formatado, é ainda possível modificá-lo e adicionar marcação CSS para modificar a apresentação do texto.</p>
+<p>É isso!</p>
+<h2><strong>Referências</strong></h2>
+<ul>
+<li><a href="http://wiki.geany.org/using_geany_a_textile_wiki_editor" target="_blank">http://wiki.geany.org/using_geany_a_textile_wiki_editor</a></li>
+<li><a href="http://askubuntu.com/questions/462673/installing-php-5-3-in-ubuntu-14-04" target="_blank">http://askubuntu.com/questions/462673/installing-php-5-3-in-ubuntu-14-04</a></li>
+<li><a href="https://code.google.com/p/textpattern/source/browse/development/4.x/textpattern/lib/classTextile.php?r=3359" target="_blank">https://code.google.com/p/textpattern/source/browse/development/4.x/textpattern/lib/classTextile.php?r=3359</a></li>
+<li><a href="https://github.com/textile/textile-mark/blob/master/README.textile" target="_blank">https://github.com/textile/textile-mark/blob/master/README.textile</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

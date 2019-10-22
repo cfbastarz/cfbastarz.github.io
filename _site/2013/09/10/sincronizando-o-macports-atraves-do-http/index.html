@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sincronizando o Macports através do HTTP « Carlos Frederico Bastarz</title>
+  <meta name="description" content="O Macports é uma espécie de apt-get do (Mac) OS X: com ele é possível instalar praticamente todo o software de linha de comando (e alguns gráficos também) qu...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2013/09/10/sincronizando-o-macports-atraves-do-http/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Sincronizando o Macports através do HTTP</h1>
+    <p class="post-meta">Sep 10, 2013 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "_publicize_pending"=>"1", "_oembed_5c35f578b9eb80358e54853a1c04aa62"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>O Macports é uma espécie de apt-get do (Mac) OS X: com ele é possível instalar praticamente todo o software de linha de comando (e alguns gráficos também) que você precisa. Eu uso muito ela para instalar software como wget, ncft, grads, ncl, cdo, nco, core-utils, grep, sed, awk etc. Clique <a href="http://craftmind.wordpress.com/?s=macports&amp;submit=Pesquisa">aqui</a> para encontrar todos os post relacionado ao Macports.</p>
+<p>Por default, o Macports utiliza o rsync para fazer a atualização dos pacotes disponíveis, mas dependendo da rede em que o seu Mac está conectado, não é possível utilizar o rsync e, consequentemente, não é possível atualizar a lista de pacotes disponíveis:</p>
+<pre>$ sudo port selfupdate
+Password:
+---&gt;  Updating MacPorts base sources using rsync
+Error: Error synchronizing MacPorts sources: command execution failed
+Please run `port -v selfupdate' for details.
+Error: /opt/local/bin/port: port selfupdate failed: Error synchronizing MacPorts sources: command execution failed</pre>
+<p>No entanto, é possível fazer a sincronização dos pacotes através do protocolo HTTP. Para isto, basta fazer (considerando que o seu Macports está instalado em /opt/local):</p>
+<p><strong>1) Modificar o arquivo /opt/local/etc/macports/sources.conf a adicionar a linha abaixo:</strong></p>
+<pre>https://distfiles.macports.org/ports.tar.gz [default]</pre>
+<p>O arquivo deve ficar assim:</p>
+<pre>#rsync://rsync.macports.org/release/tarballs/ports.tar [default]
+https://distfiles.macports.org/ports.tar.gz [default]</pre>
+<p><strong>2) Atualizar a lista de pacotes do Macports com o comando:</strong></p>
+<pre>$ sudo port -d sync</pre>
+<p>Pronto, Macports funcionando novamente!</p>
+<p><strong>Referência:</strong></p>
+<ul>
+<li><a href="http://trac.macports.org/wiki/howto/PortTreeTarball" target="_blank">http://trac.macports.org/wiki/howto/PortTreeTarball</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

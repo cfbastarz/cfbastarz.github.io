@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Configurando o terminal do Mac OS X « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Por default o aplicativo Terminal do Mac OS X vem meio pelado, praticamente sem nenhuma configuração em termos de PS1 =)Quem vem do Linux com certeza acaba s...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/05/03/configurando-o-terminal-do-mac-os-x/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Configurando o terminal do Mac OS X</h1>
+    <p class="post-meta">May 3, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Por default o aplicativo Terminal do Mac OS X vem meio pelado, praticamente sem nenhuma configuração em termos de PS1 =)</p>
+<p>Quem vem do Linux com certeza acaba sentido um pouco de desconforto e logo toca para a configuração mais fina para logo se sentir em casa. No meu caso, gosto que meu PS1 mostre a informação da pasta em que estou navegando, com os devidos espaços entre barras e o $ para que eu possa facilmente selecionar e color o caminho em que estou, caso precise:</p>
+<p>[caption id="attachment_1526" align="aligncenter" width="378"]<a href="http://craftmind.wordpress.com/2012/05/03/configurando-o-terminal-do-mac-os-x/terminal2/" rel="attachment wp-att-1526"><img class="size-full wp-image-1526" title="terminal2" src="/cfbastarz/assets/terminal2.jpg" alt="" width="378" height="79" /></a> PS1 e cores configuradas no Terminal do Mac OS X[/caption]</p>
+<p>Para isso, é necessário modificar o arquico .basrh ou .bash_profile (a diferença entre os dois é que um serve para o shell interativo - aquele que você usa quando abre uma nova aba no terminal e que é o padrão do Mac OS X, e o outro para o shell login - aquele que é usado usa quando você entro no init3 do Linux, por exemplo). Como eu não gosto de misturar muito as coisas, prefiro colocar as minhas configurações pessoais no meu .bashrc, pois assim restrinjo qualquer tipo de problema relacionado à configuração do shell à minha conta de usuário.</p>
+<p>Para configurar da forma mais correta e segura, basta editar o arquivo .bash_profile e adicionar as seguintes linhas:</p>
+<pre>if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi</pre>
+<p>As instruções que estão dentro do if, fazem com que o arquivo .bashrc seja parseado (comando source - vai exportar variáveis e executar quaisquer comando que estejam dentro do seu .bashrc), caso ele exista.</p>
+<p>Feito isto, basta configurar o arquivo .bashrc. No meu caso, eu adicionei as seguintes instruções, tal como eu utilizava no shell do meu Ubuntu:</p>
+<pre># Faz com que o histórico seja incrementado:
+shopt -s histappend
+# Habilita as cores no terminal:
+use_color=true
+# Ajusta o PS1:
+if ${use_color} ; then
+  if [[ ${EUID} == 0 ]] ; then
+    PS1='\[33[01;31m\]\h\[33[01;34m\] \W \$\[33[00m\] '
+  else
+    PS1='\[33[01;32m\]\u@\h\[33[01;34m\] \w \$\[33[00m\] '
+  fi
+else
+  if [[ ${EUID} == 0 ]] ; then
+    # show root@ when we don't have colors
+    PS1='\u@\h \W \$ '
+  else
+    PS1='\u@\h \w \$ '
+  fi
+fi</pre>
+<p>Depois de fazer as alterações, basta dar um source no seu .bashrc ou simplesmente fechar e reabrir o Terminal. Neste caso, vale lembrar que para realmente encerrar a aplicação, basta apontar para a barra de menus, clicar em Terminal e depois clicar em Quit/Encerrar/Fechar Terminal.</p>
+<p>Basicamente é isso. Com certeza há outras formas de se customizar o Terminal do Mac OS X, mas essa é simples e direta, sem muitos rodeios.</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

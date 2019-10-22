@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Instalando GCC, GFORTRAN, ZLIB, HDF5, NETCDF4 e OpenMPI no Mac OS X « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Quem trabalha com programas compilados a partir do código fonte sem ter a disposição um gerenciador de pacotes tal como o apt-get ou o port sabe o trabalho q...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/10/07/instalando-gcc-gfortran-zlib-hdf5-netcdf4-e-openmpi-no-mac-os-x/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Instalando GCC, GFORTRAN, ZLIB, HDF5, NETCDF4 e OpenMPI no Mac OS X</h1>
+    <p class="post-meta">Oct 7, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "geo_public"=>"0", "_oembed_da9df02a05d53ab102bd8dac30d475e9"=>"{{unknown}}", "_oembed_ff08a210090c8a383a127ec87e0baf8b"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Quem trabalha com programas compilados a partir do código fonte sem ter a disposição um gerenciador de pacotes tal como o apt-get ou o port sabe o trabalho que dá instalar os pré-requisitos e dependências para preparar o ambiente de execução do programa principal. Muitas vezes, os gerenciadores de pacotes facilitam, automatizando as tarefas e principalmente, tratando automaticamente as dependências dos pacotes. Mas nem tudo são vantagens: muitas vezes, há a necessidade de se instalar um novo compilador e nem sempre será possível fazer com que todos os outros pacotes instalados sejam recompilados utilizando as bibliotecas e utilitários do novo compilador; ou ainda, pode ser que seja mais complicado fazer com que o gerenciador de pacotes utilize o novo compilador para recriar os novos executáveis etc (para ver como fazer com que o HomeBrew do Mac OS X trabalhe com um compilador diferente do gfortran clique <a href="http://craftmind.wordpress.com/2012/08/14/instalando-o-mpich2-pelo-homebrew-compilado-com-o-ifort/" target="_blank">aqui</a>).</p>
+<p>O objetivo deste post é tentar mostrar uma forma objetiva de se utilizar o <a href="http://www.macports.org" target="_blank">MacPorts</a> para a instalação de alguns programas, mantendo-se mais de um compilador fortran instalado na máquina. Com isso, pode-se pensar na vantagem de se instalar um programa pelo MacPorts ou manualmente. Em ambos os casos a instalação é feita a partir do código fonte, mas com a diferença de que pode-se especificar o local, o compilador e as bibliotecas (versões) a serem utilizadas.</p>
+<p>Para exemplificar, serão instalados os pacotes <a href="http://gcc.gnu.org" target="_blank">gcc</a>, <a href="http://gcc.gnu.org/wiki/GFortran" target="_blank">gfortran</a>, <a href="http://www.zlib.net" target="_blank">zlib</a>, <a href="http://www.hdfgroup.org/HDF5/" target="_blank">hdf5</a>, <a href="http://www.unidata.ucar.edu/downloads/netcdf/netcdf-4_0/index.jsp" target="_blank">netcdf4</a> e <a href="http://www.open-mpi.org" target="_blank">openmpi</a> no Mac OS X. É possível pensar da mesma forma em qualquer sistema tipo UNIX em que se tem (ou não) um gerenciador de pacotes. Salienta-se, no entanto, que a instalação de alguns pacotes pode levar algumas horas, como é o caso da compilação do pacote gcc.</p>
+<p>O gcc é um conjunto de programas essenciais para um sistema em que serão compilados quaisquer tipos de programas a partir do código fonte. Este pacote possui compiladores para as linguagens C, C++ e fortran. Há diversas versões disponíveis do gcc e a que será utilizada será a versão 4.4, sendo que a última versão mais recente (até outubro de 2012, pelo menos) é a versão 4.8. Sua compilação não é muito complicada, sendo feita com a utilização típica dos comandos <strong>configure</strong>, <strong>make</strong> e <strong>make install</strong>. Mas como o gcc é o pacote base para a instalação dos demais, ele será instalado primeiro e isso será feito a partir do MacPorts (se você não tem o MacPorts instalado, baixe o instalador correto para o seu Mac OS X <a href="http://www.macports.org/install.php" target="_blank">aqui</a>), que já ajusta todas as flags de compilação e otimização automaticamente.</p>
+<p><strong>Para instalar o gcc4.4 no Mac OS X utilizando o MacPorts, basta fazer:</strong></p>
+<pre>$ sudo port install gcc44</pre>
+<p>Como mencionado acima, o gcc é um pacote que traz os compiladores das linguagens C, C++ e fortran. Este comando poderá demorar várias horas para terminar de ser executado, portanto é uma boa idéia deixar esta tarefa para ser feita durante a noite. A compilação do gcc4.4 é feita através do compilador nativo do Mac OS X, uma versão do gcc (versão 4.2.1 no OS X Mountain Lion) fornecida pela Apple, que vem junto com o Xcode4.X.</p>
+<p>Depois da instalação do gcc4.4, é necessário fazer com que toda a suíte trazida pelo gcc4.4 esteja disponível no shell do Mac OS X por padrão. Para isso, basta fazer:</p>
+<pre>$ sudo port select gcc mp-gcc44</pre>
+<p>Este comando fará com que as versões dos compiladores do gcc não conflitem (eg, gcc4.2 nativo com o gfortran4.4 instalado pelo port) e que tudo passe a ser compilado com a mesma versão dos programas da suíte do gcc. Para testar os comandos, basta abrir uma nova aba ou um novo terminal e digitar os comandos:</p>
+<pre>$ gcc -v
+$ g++ -v
+$ gfortran -v</pre>
+<p>Em todos os casos, as versões devem ser identificadas como "gcc version 4.4.7 (MacPorts gcc44 4.4.7_6)". É possível que algum número de versão se altere caso alguma atualização do port seja feita.</p>
+<p>Com o gcc4.4 instalado e configurado, é possível começar a instalação dos programas zlib, hdf5, netcdf4 e openmpi. O programa zlib é um software de compressão, uma espécie de "zip", que pode ser utilizado por qualquer outro programa que trabalhe com algum formato padronizado que utilize compressão; o hdf e o netcdf são bibliotecas utilizadas para armazenamento de dados geofísicos. Eles serão instalados por uma necessidade específica, e este pode não ser o seu caso. O openmpi é uma implementação aberta do mpi (<a href="http://www.google.com.br/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CCAQFjAA&amp;url=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMessage_Passing_Interface&amp;ei=kLFxUImjFqHu0gGvsID4DA&amp;usg=AFQjCNFza1vKnEf_ha9dT1FVJWCmPqR6Yw" target="_blank">Message Passing Interface</a>) e é utilizado para executar programas em paralelo. Entre estes quatro programas, o openmpi é o único que tem dependência apenas do compilador C, C++ e fortran instalados na máquina; os demais possuem uma ordem específica de compilação, a qual será abordada mais adiante. É importante ressaltar que todos estes programas estão disponíveis na árvore de programas do MacPorts. No entanto, eles serão compilados manualmente com o gcc4.4 para permitir, porteriormente, que sejam também compilados com outros compiladores (eg., pgi, intel), caso haja necessidade.</p>
+<p><strong>Para a instalação do openmpi, é necessário obter o pacote da última versão do openmpi (atualmente na versão 1.6.2), descompactar e executar o comando:</strong></p>
+<pre>$ wget -c http://repository.timesys.com/buildsources/o/openmpi/openmpi-1.6.2/openmpi-1.6.2.tar.bz2
+$ tar -xvf openmpi-1.6.2.tar.bz2
+$ cd openmpi-1.6.2
+$ ./configure CC=gcc CXX=g++ F77=gfortran FC=gfortran \ 
+--prefix=/opt/openmpi-gcc_gfortran4.4</pre>
+<p>O último comando irá compilar o openmpi com as flags CC, CXX, F77 e FC que indicam, respectivamente, os compiladores que serão utilizados no processo (gcc, g++ e gfortran). Observe que não foi necessário especificar a versão do gcc, pois isso já foi feito anteriormente com um comando interno do MacPorts (port select). O argumento "--prefix" permite especificar o local em que serão instalados os executáveis e demais arquivos criados na compilação do openmpi. É importante escolher um nome que reflita a configuração escolhida para a compilação do pacote, por exemplo, "openmpi-gcc_gfortran4.4". Caso seja necessário instalar uma nova versão do gcc, uma nova compilação do openmpi será necessária para que se possa utilizar os comando mpif90, mpicc, mpicpp etc com a versão correta dos compiladores C, C++ e fortran. Isso é necessário porque nem sempre os módulos e bibliotecas são compatíveis entre as diferentes versões dos compiladores.</p>
+<p>Depois de configurar o openmpi, basta executar os dois comandos abaixo para iniciar a compilação do pacote e finalizar a instalação, respectivamente:</p>
+<pre>$ make all
+$ sudo make install</pre>
+<p>Com isso, o programa openmpi estará instalado. Os executáveis estarão em /opt/openmpi-gcc_gfortran4.4/bin. Para fazer com que esta versão seja a versão padrão disponível no seu Mac OS X, basta exportar as variáveis de ambiente necessárias, conforme este <a href="http://craftmind.wordpress.com/2011/04/25/variaveis-de-ambiente-para-programas-fonte/" target="_blank">post</a>. Caso você tenha outras versões do openmpi instalada, basta ajustar as variáveis de ambiente (PATH, MANPATH, C_INCLUDE_PATH e LIBRARY_PATH) para refletir os caminhos da instalação desejada.</p>
+<p>Para a instalação do netcdf4, é necessário instalar o hdf5. Mas para instalar o hdf5, é necessário instalar primeiro a zlib.</p>
+<p><strong>A instalação da zlib é bastante simples e rápida também. Para baixar, configurar e instalar, execute:</strong></p>
+<pre>$ wget -c http://zlib.net/zlib-1.2.7.tar.gz
+$ tar -zxvf zlib-1.2.7.tar.gz
+$ cd zlib-1.2.7
+$ ./configure --prefix=/opt/zlib-gcc_gfortran-4.4 
+$ sudo make check install</pre>
+<p><strong>Com a zlib instalada, o próximo passo é a compilação do hdf5. Para baixar, configurar e instalar, basta fazer:</strong></p>
+<pre>$ wget -c http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/src/hdf5-1.8.9.tar.gz
+$ tar -zxvf hdf5-1.8.9.tar.gz
+$ cd hdf5-1.8.9
+$ ./configure --with-zlib=/opt/zlib-gcc_gfortran-4.4 \ 
+--prefix=/opt/hdf5-1.8.9-gcc_gfortran-4.4
+$ sudo make check install</pre>
+<p><strong>Com o hdf5 instalado, finalmente pode-se instalar o netcdf4. Para baixar, configurar e instalar, basta fazer:</strong></p>
+<pre>$ wget -c http://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-4.0.1.tar.gz
+$ tar -zxvf netcdf-4.0.1.tar.gz
+$ cd netcdf-4.0.1
+$ ./configure CPPFLAGS="-I/opt/zlib-gcc_gfortran-4.4/include \
+-I/opt/hdf5-1.8.9-gcc_gfortran-4.4/include" \ 
+LDFLAGS="-L/opt/zlib-gcc_gfortran-4.4/lib \ 
+-L/opt/hdf5-1.8.9-gcc_gfortran-4.4/lib" \ 
+--prefix=/opt/netcdf-4.0.1-gcc_gfortran-4.4
+$ sudo make check install</pre>
+<p>Observe que na instalação do netcdf4, foram especificadas as flags CPPFLAGS e LDFLAGS que representam, respectivamente, as pastas include e lib das instalações da zlib e do hdf5.</p>
+<p>Feito isto, seu sistema estará pronto para utilizar o netcdf4, hdf5, zlib e openmpi. Estas mesmas instruções podem ser aplicadas em um sistema Linux ou BSD.</p>
+<p><strong>Referências</strong></p>
+<ul>
+<li><a href="https://sites.google.com/site/dwhipp/tutorials/installing-open-mpi-on-mac-os-x" target="_blank">https://sites.google.com/site/dwhipp/tutorials/installing-open-mpi-on-mac-os-x</a></li>
+<li><a href="http://www.unidata.ucar.edu/software/netcdf/docs/netcdf-install/Quick-Instructions.html" target="_blank">http://www.unidata.ucar.edu/software/netcdf/docs/netcdf-install/Quick-Instructions.html</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fazendo um loop entre duas datas no Python « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Quem trabalha com análise de dados sabe que muitas vezes é necessário agilizar o processo de organização e compreensão através de programas e scripts que sej...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2015/10/09/fazendo-um-loop-entre-duas-data-no-python/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Fazendo um loop entre duas datas no Python</h1>
+    <p class="post-meta">Oct 9, 2015 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"geo_public"=>"0", "_edit_last"=>"13386696", "_publicize_job_id"=>"15645363267", "_thumbnail_id"=>"2538"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Quem trabalha com análise de dados sabe que muitas vezes é necessário agilizar o processo de organização e compreensão através de programas e scripts que sejam capazes de entender padrões. A utilização de scripts Shell são uma poderosa ferramenta e programas em linguagens de alto nível como C e FORTRAN permitem o processamento eficiente dos dados representados. Em muitas ocasiões, dependendo das suas habilidades computacionais e da sua proficiência em algum tipo de linguagem, você será capaz de trabalhar com esta(s) linguagem(ns), aplicando conceitos de forma quase exclusiva, sem a necessidade de recorrer a linguagens adicionais e tornar a solução do problema excessivamente complicada.</p>
+<p><!--more--></p>
+<p>Python é uma linguagem de programação que une as potencialidades de um script Shell e um programa de linguagem de alto nível: com ela, é possível criar sctipts e programas que analisam e processam dados, utilizando o mesmo framework.</p>
+<p>Neste post vou mostrar algo mais simples, mas que pode ser aplicado ao seu problema e incrementado para fazer a análise dos seus dados.</p>
+<p>O objetivo é criar um script em linguagem Python em que seja realizado um loop entre duas datas formatadas. Em linguagem literal, escreveremos algo como:</p>
+<pre>Enquanto Data for menor do que Data_Final, execute:
+    Procedimentos</pre>
+<p>O formato da data deverá ser: YYYYMMDDHH, ou seja, o dia de hoje "09 de Outubro de 2015", será representado como "2015100900", considerando o horário 00UTC (apenas como exemplo). O incremento das horas será feito da seguinte maneira:</p>
+<pre>2015100900 +12 = 2015100912</pre>
+<p>de forma que:</p>
+<pre>2015100912 +12 = 2015101000</pre>
+<p>ou seja, a cada duas somas de 12 horas (24 horas ou 1 dia), teremos um incremento de 1 dia.</p>
+<p>No Python, podemos utilizar o módulo "datetime" para manipular datas e os formatos; além disso, podemos utilizar também a função "timedelta" para fazer o incremento das horas.</p>
+<p>Juntando as idéias e as informações iniciais em um script Python, chegamos no seguinte:</p>
+<p>[code language="python"]<br />
+#!/usr/bin/env python</p>
+<p>from datetime import datetime, timedelta</p>
+<p>datai = datetime.strptime(&quot;2015100900&quot;, &quot;%Y%m%d%H&quot;)<br />
+dataf = datetime.strptime(&quot;2015102900&quot;, &quot;%Y%m%d%H&quot;)</p>
+<p>delta = 12<br />
+data = datai</p>
+<p>while (data &lt;= dataf):</p>
+<p>    print data.strftime(&quot;%Y%m%d%H&quot;)<br />
+    data = data + timedelta(hours=delta)<br />
+[/code]</p>
+<p>No script acima, utilizamos a função "strptime" para poder formatar a data utilizando o padrão %Y%m%d%H (clique <a href="http://www.tutorialspoint.com/python/time_strptime.htm" target="_blank">aqui</a> para saber mais), que é o mesmo que YYYYMMDDHH, ou seja, 4 dígitos para o ano; dois para o mês, dia e hora. O loop é bastante literal, sendo indicado pela instrução "while (data &lt;= dataf)". Enquanto o teste "data &lt;= dataf" for verdadeiro, a data será impressa no formato indicado e logo em seguida será incrementada em 12 horas. Quando a condição "data &lt;= dataf" for falsa (ou seja, quando "data &gt; dataf"), o loop é encerrado e o script pára.</p>
+<p>É isso!</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="https://pymotw.com/2/datetime/" target="_blank">https://pymotw.com/2/datetime/</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ajustando as propriedades de visualização de todas as pastas no Finder utilizando o Automator « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Título grande, né?No Finder (gerenciador de arquivos do Mac OS) é possível ajustar as propriedades de visualização dos arquivos para a pasta atual, mas não p...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Ajustando as propriedades de visualização de todas as pastas no Finder utilizando o Automator</h1>
+    <p class="post-meta">Sep 21, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "_oembed_18d8d8295082180d418e73dc09853d8d"=>"{{unknown}}", "_oembed_9da9030a8d1eb04f5385caaff22c882e"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Título grande, né?</p>
+<p>No Finder (gerenciador de arquivos do Mac OS) é possível ajustar as propriedades de visualização dos arquivos para a pasta atual, mas não para todas as pastas que você tiver. Isso é um problema, pois no não há uma opção para fazer com que todas as pastas tenham o mesmos tipo de visualização por padrão. Porém, isso é perfeitamente possível com o Automator, que é um software do próprio Mac OS X para automatizar algumas tarefas do sistema, entre elas, a forma como as pastas são visualizadas no Finder.</p>
+<p>Vamos ao passo a passo:</p>
+<p><strong>1) Abra uma pasta (de preferência o seu Home), clique com o botão direito (se estiver utilizando um mouse) ou com dois dedos no trackpad e selecione a opção "Show View Options" (ou Mostrar opções de visualização):</strong></p>
+<p>[caption id="attachment_1770" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator/screen-shot-2012-09-21-at-9-14-02-am/" rel="attachment wp-att-1770"><img class="size-full wp-image-1770" title="Screen Shot 2012-09-21 at 9.14.02 AM" src="/cfbastarz/assets/screen-shot-2012-09-21-at-9-14-02-am.png" alt="" width="545" height="356" /></a> Ajuste inicial das configurações de visualização de pastas no Finder[/caption]</p>
+<p><strong>2) Na janelinha que se abrir, ajuste as preferências da forma como quer que todas as pastas sejam mostradas (lembrando que é possível fazer com que outras pastas - como a pasta de imagens, sejam mostradas de outra forma):</strong></p>
+<p>[caption id="attachment_1774" align="aligncenter" width="211"]<a href="http://craftmind.wordpress.com/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator/screen-shot-2012-09-21-at-9-07-33-am-4/" rel="attachment wp-att-1774"><img class="size-full wp-image-1774" title="Screen Shot 2012-09-21 at 9.07.33 AM" src="/cfbastarz/assets/screen-shot-2012-09-21-at-9-07-33-am3.png" alt="" width="211" height="287" /></a> Ajuste das preferências de visualização[/caption]</p>
+<p><strong>3) Abra o Automator - ele está na pasta "Applications" (ou Aplicativos):</strong></p>
+<p>[caption id="attachment_1775" align="aligncenter" width="113"]<a href="http://craftmind.wordpress.com/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator/screen-shot-2012-09-21-at-9-23-07-am/" rel="attachment wp-att-1775"><img class="size-full wp-image-1775" title="Screen Shot 2012-09-21 at 9.23.07 AM" src="/cfbastarz/assets/screen-shot-2012-09-21-at-9-23-07-am.png" alt="" width="113" height="101" /></a> Automator :)[/caption]</p>
+<p><strong>4) Arraste a pasta com as opções de visualização que você ajustou para o painel direito do Automator:</strong></p>
+<p>[caption id="attachment_1778" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator/drag-fw/" rel="attachment wp-att-1778"><img class="size-full wp-image-1778" title="drag.fw" src="/cfbastarz/assets/drag-fw.png" alt="" width="545" height="340" /></a> Arraste a pasta para dentro do workflow[/caption]</p>
+<p><strong>5) No próprio Automator, selecione (no painel da esquerda) o item "Files &amp; Folders" (ou Arquivos e Pastas), no submenu que aparecer no painel do meio, clique e arraste o item "Set Folder Views" (ou Ajustar Visualização de Pastas) para o painel da direita, logo abaixo da pasta que você havia arrastado anteriormente com as configurações que você ajustou:</strong></p>
+<p>[caption id="attachment_1776" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator/automator-fw/" rel="attachment wp-att-1776"><img class="size-full wp-image-1776" title="automator.fw" src="/cfbastarz/assets/automator-fw.png" alt="" width="545" height="389" /></a> Executando a tarefa no Automator[/caption]</p>
+<p><strong>6) Reveja as opções, ajuste o que precisar e clique no botão "Run"(ou Executar) na janela do Automator:</strong></p>
+<p>[caption id="attachment_1779" align="aligncenter" width="196"]<a href="http://craftmind.wordpress.com/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator/screen-shot-2012-09-21-at-1-16-31-pm/" rel="attachment wp-att-1779"><img class="size-full wp-image-1779" title="Screen Shot 2012-09-21 at 1.16.31 PM" src="/cfbastarz/assets/screen-shot-2012-09-21-at-1-16-31-pm.png" alt="" width="196" height="65" /></a> Pressione o botão "Run" (ou Executar)[/caption]</p>
+<p>Feito isso, o Automator irá executar as configurações escolhidas para todas as pastas do Finder. Isso poderá demorar um certo tempo, dependendo da quantidades de pastas e arquivos que você tiver em seu computador.</p>
+<p><strong>Referência:</strong></p>
+<ul>
+<li><a href="http://macs.about.com/od/usingyourmac/ss/Setting-Finder-Views-For-Folders-And-Sub-Folders_4.htm" target="_blank">http://macs.about.com/od/usingyourmac/ss/Setting-Finder-Views-For-Folders-And-Sub-Folders_4.htm</a></li>
+<li><a href="http://macosxautomation.com/automator/index.html" target="_blank">http://macosxautomation.com/automator/index.html</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

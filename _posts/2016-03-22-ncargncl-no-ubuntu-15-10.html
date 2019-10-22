@@ -1,0 +1,120 @@
+---
+layout: post
+title: NCARG/NCL no Ubuntu 15.10
+date: 2016-03-22 21:08:43.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- NCARG
+- NCL
+- Ubuntu 15.10
+meta:
+  _thumbnail_id: '2733'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '21029554921'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2016/03/22/ncargncl-no-ubuntu-15-10/"
+---
+<p>Esta dica é rápida, e é para quem precisa utilizar o <a href="https://www.ncl.ucar.edu" target="_blank">NCL</a> no <a href="http://www.ubuntu.com" target="_blank">Ubuntu</a> 15.10. O NCL (NCAR Command Language) pode ser instalado através do apt-get com o seguinte comando:</p>
+<pre>$ sudo apt-get install ncl-ncarg</pre>
+<p>Quando você tenta executar algum script com o NCL logo após tê-lo instalado com o comando acima, você pode receber a seguinte mensagem:</p>
+<p><!--more--></p>
+<pre>$ ncl gsi_be_plots.ncl
+ Copyright (C) 1995-2015 - All Rights Reserved
+ University Corporation for Atmospheric Research
+ NCAR Command Language Version 6.3.0
+ The use of this software is governed by a License Agreement.
+ See http://www.ncl.ucar.edu/ for more details.
+ fatal:Could not open ($NCARG_ROOT/nclscripts/csm/gsn_code.ncl)
+ fatal:error at line 1 in file gsi_be_plots.ncl</pre>
+<pre>fatal:syntax error: line -1 before or near</pre>
+<pre>^</pre>
+<pre>fatal:error in statement</pre>
+<p>Ou seja, não funciona "de primeira" e é um problema de instalação. Para contornar este problema, é necessário exportar duas variáveis de ambiente para o ncl, que podem ser inseridas dentro do seu ".bashrc". Por padrão, quando instalado a partir dos repositório do Ubuntu, o executável do ncl fica armazenado em "/usr/bin/ncl" e os demais arquivos da distribuição ficam em "/usr/share/ncarg". Segundo o manual do ncl, a variável "NCARG_ROOT" deve ser exportada refletindo o caminho que aponta para o executável, e é aí que a solução do problema falha:</p>
+<pre>export NCARG_ROOT="/usr/bin"</pre>
+<p>Neste caso, a solução do problema de inicialização do ncl falha porque o executável está fora da pasta "/usr/share/ncl", onde estão os arquivos auxiliares da distribuição. Então, você pode pensar em exportar a variável "NCARG_ROOT" da seguinte forma:</p>
+<p>Esta dica é rápida, e é para quem precisa utilizar o NCL no Ubuntu 15.10. O NCL (NCAR Command Language) pode ser instalado através do apt-get com o seguinte comando:</p>
+<pre>$ sudo apt-get install ncl-ncarg</pre>
+<p>Quando você inicia o NCL logo após tê-lo instalado com o comando acim, você recebe a seguinte mensagem:</p>
+<pre>$ ncl
+ Copyright (C) 1995-2015 - All Rights Reserved
+ University Corporation for Atmospheric Research
+ NCAR Command Language Version 6.3.0
+ The use of this software is governed by a License Agreement.
+ See http://www.ncl.ucar.edu/ for more details.
+ warning:Unable to Get System Resource File Name?
+ warning:Unable to load System Resource File (null)
+ fatal:GetSysAppDir:Unable to get a default value for the system App Resource directory
+ warning:["Resources.c":734]:Unable to set appSysDir to default value - Using NULL
+ fatal:GetSysAppDir:Unable to get a default value for the system App Resource directory
+ warning:["Resources.c":734]:Unable to set appSysDir to default value - Using NULL
+ warning:Unable to Get System Resource File Name?
+ warning:WorkstationClassInitialize:Unable to access rgb color database - named colors unsupported:[errno=2]
+ NDV_COLORMAP_PATH environment variable not set:
+ defaulting to .:$NCARG_ROOT/lib/ncarg/colormaps
+ warning:["Palette.c":1844]:NhlLoadColormapFiles: Invalid directory encountered in colormap path specification
+ Segmentation fault</pre>
+<p>Ou seja, não funciona "de primeira". Para contornar este problema, é necessário exportar duas variáveis de ambiente para o ncl, que podem ser inseridas dentro do seu ".bashrc". Por padrão, quando instalado a partir dos repositório do Ubuntu, o executável do ncl fica armazenado em "/usr/bin/ncl" e os demais arquivos da distribuição ficam em "/usr/share/ncarg". Segundo o manual do ncl, a variável "NCARG_ROOT" deve ser exportada refletindo o caminho que aponta para o executável, e é aí que a solução do problema falha:</p>
+<pre>export NCARG_ROOT="/usr/share/ncarg"</pre>
+<p>Da mesma forma, não vai funcionar porque o executável continua fora da pasta. Então, por que não criar uma pasta "bin" dentro de "/usr/share/ncarg" e fazer um link simbólico de "/usr/bin/ncl" para "/usr/share/ncarg/bin/ncl"? Não vai funcionar também, porque o executável vai continuar dentro de "/usr/bin".</p>
+<p>Então, como resolver? A melhor forma que encontrei, foi baixando o pacote pré-compilado do ncl para o Debian aqui.</p>
+<p>Para instalar este pacote, siga os passos abaixo:</p>
+<p>Cria uma pasta chama "ncarg" em "/opt"</p>
+<pre>$ sudo mkdir -p /opt/ncarg</pre>
+<p>Altera o dono da pasta para o usuário:</p>
+<pre>$ sudo chown usuario -R /opt/ncarg</pre>
+<p>Descompacte o arquivo baixado para a pasta criada:</p>
+<pre>$ tar -zxvf arquivo.tar.gz -C /opt/ncarg</pre>
+<p>Todos os executáveis, bibliotecas e demais arquivos e scripts necessários para a utilização do ncl estarão, portanto, em "/opt/ncarg".</p>
+<p>Não se esqueça de exportar a variável de ambiente "NCARG_ROOT", apontando-a para a pasta "/opt/ncarg"; introduza o seguinte comando no seu ".bashrc":</p>
+<pre>export NCARG_ROOT="/opt/ncarg"</pre>
+<p>Abra uma nova seção do terminal, ou simplesmente dê um "source" no seu ".bashrc". Tente executar o comando "ncl":</p>
+<pre>$ ncl
+ ncl: error while loading shared libraries: librtmp.so.0: cannot open shared object file: No such file or directory</pre>
+<p>Mais um problema! Precisamos da "librtmp". Para instalá-la, precisamos dos seguintes pacotes: "librtmp1" e "librtmp-dev":</p>
+<pre>$ sudo apt-get librtmp0 librtpm-dev</pre>
+<p>Neste ponto, com a biblioteca instalada, você ainda não será capaz de abrir o ncl. A versão da biblioteca que o ncl utiliza é "0", e a que está nos respositórios do Ubuntu 15.10, é a versão "1". Então, para resolver este último detalhe, faça um link simbólico da biblioteca instalada para o local correto ("/usr/lib") e com o nome correto ("librtmp.so.0"). Para descobrir onde foi instalada a biblioteca librtmp, digite o comando:<br />
+$ locate "librtmp"</p>
+<p>E para fazer o link simbólico, digite:</p>
+<pre>$ cd /usr/lib</pre>
+<pre>$ sudo ln -s /usr/lib/x86_64-linux-gnu/librtmp.so.1 librtmp.so.0</pre>
+<p>Agora você será capaz de abrir o ncl, mas ainda sim vai receber uma mensagem de erro:</p>
+<pre>$ ncl
+ Copyright (C) 1995-2015 - All Rights Reserved
+ University Corporation for Atmospheric Research
+ NCAR Command Language Version 6.3.0
+ The use of this software is governed by a License Agreement.
+ See http://www.ncl.ucar.edu/ for more details.
+ warning:Unable to Get System Resource File Name?
+ warning:Unable to load System Resource File (null)
+ fatal:GetSysAppDir:Unable to get a default value for the system App Resource directory
+ warning:["Resources.c":734]:Unable to set appSysDir to default value - Using NULL
+ fatal:GetSysAppDir:Unable to get a default value for the system App Resource directory
+ warning:["Resources.c":734]:Unable to set appSysDir to default value - Using NULL
+ warning:Unable to Get System Resource File Name?
+ warning:WorkstationClassInitialize:Unable to access rgb color database - named colors unsupported:[errno=2]
+ NDV_COLORMAP_PATH environment variable not set:
+ defaulting to .:$NCARG_ROOT/lib/ncarg/colormaps
+ warning:["Palette.c":1844]:NhlLoadColormapFiles: Invalid directory encountered in colormap path specification
+ Segmentation fault</pre>
+<p>Para resolver isso, exporte duas variáveis de ambiente (coloque-as dentro do seu .bashrc): "NCARG_ROOT" e "NDV_COLORMAP_PATH":</p>
+<pre>export NCARG_ROOT="/opt/ncarg"
+ export NDV_COLORMAP_PATH="/opt/ncarg/colormaps"</pre>
+<p>Abra uma nova seção do terminal e utilize o ncl.</p>
+<p>É isso!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

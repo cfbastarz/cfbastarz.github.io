@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Migrando o Macports para o OS X Yosemite « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Ontém (16/10/2014) foi liberada a versão 10.10 do OS X, batizada de Yosemite. Se você usa o Macports e fez a atualização para o Yosemite, pode estar experien...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2014/10/17/migrando-o-macports-para-o-os-x-yosemite/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Migrando o Macports para o OS X Yosemite</h1>
+    <p class="post-meta">Oct 17, 2014 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_thumbnail_id"=>"2373", "_edit_last"=>"13386696", "geo_public"=>"0", "_oembed_7e750f56df3c965dc17a5a1752631596"=>"{{unknown}}", "_oembed_91ee546fb07c9e3f71133c4a93855d63"=>"{{unknown}}", "_oembed_bc7008130ed38274b7dbd97db5c0c926"=>"{{unknown}}", "_oembed_2de87d9b692ef0c88b535fa45177a3c0"=>"{{unknown}}", "_oembed_a01687dcbc91b93c9e2965f79a8ca179"=>"{{unknown}}", "_publicize_job_id"=>"19172323763", "_oembed_43889d5a9ce0e55feabc77641012261c"=>"{{unknown}}", "_oembed_0a14cae952cb7b1293b76f9dfd526e9e"=>"{{unknown}}", "_oembed_71d33f4a7da5e5b3476d24fd06ea8ba1"=>"{{unknown}}", "_oembed_ecd258f7fac336903f7fd7b92e97f3ca"=>"{{unknown}}", "_oembed_bc77815e01042585e11225f0dbbb3be5"=>"{{unknown}}", "_oembed_4fee4da5f3ce9c8ba3d28d2e2a70b473"=>"{{unknown}}", "_oembed_eb1e86df69360b67179c2c85aa103e63"=>"{{unknown}}", "_oembed_bde86d4eccf333415a983c83ce46bf9c"=>"{{unknown}}", "_oembed_accb6145ac186257b23b0ba7eafc839a"=>"{{unknown}}", "_oembed_546230931c8eb136e83233e7af72f4aa"=>"{{unknown}}", "_oembed_22f2093e577ba5d2c522291df6678c5f"=>"{{unknown}}", "_oembed_1eed49e4116c13e1acc8709b759c78c6"=>"{{unknown}}", "_oembed_7e5ce17a3292b91267b60b5d91b5249d"=>"{{unknown}}", "_oembed_b96ae99e5f1baa0dcc673cc73feb3205"=>"{{unknown}}", "_oembed_41355e9293948b7fe3170566657ffe93"=>"{{unknown}}", "_oembed_93deb3103f81b1df34ca040ebf1e4079"=>"{{unknown}}", "_oembed_45a00b1d93e271b7e73e5be06e374359"=>"{{unknown}}", "_oembed_fcf7bef414187a4dc99bcfbfbf155b96"=>"{{unknown}}", "_oembed_375673229fb1612efbfd974d95bdf36e"=>"{{unknown}}", "_oembed_23bd562f500f060c657d76bebc273066"=>"{{unknown}}", "_oembed_7b5f106285c192aab556379c674eba2c"=>"{{unknown}}", "_oembed_49c71068901ecd0dbfdb72302a4e0d61"=>"{{unknown}}", "_oembed_5c376c0aeac0ec507c7864cd3190c751"=>"{{unknown}}", "_oembed_c3133f529724c3584bf04224df63e8f6"=>"{{unknown}}", "_oembed_48a59a6bff7203944ed5e97c1b5601e7"=>"{{unknown}}", "_oembed_f4975a9cc67cdccfe1c1f4fc56952637"=>"{{unknown}}", "_oembed_298476e84e77d455a787772bc78d3d39"=>"{{unknown}}", "_oembed_173c2db438b7da517ef3a5ec394c6a84"=>"{{unknown}}", "_oembed_2a79efecb51ded2f7f805e38eaecbebb"=>"{{unknown}}", "_oembed_b062235a114ecc597c57c5869d664332"=>"{{unknown}}", "_oembed_6667d64ca642c1efc53b0711e12e2242"=>"{{unknown}}", "_oembed_8c2f6e413f81c3abf32bb272f028e9e5"=>"{{unknown}}", "_oembed_642bfde7717ca4f4b1f85423fbea8a5a"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Ontém (16/10/2014) foi liberada a versão 10.10 do OS X, batizada de Yosemite. Se você usa o Macports e fez a atualização para o Yosemite, pode estar experienciando alguns problemas.</p>
+<p><!--more--></p>
+<p>Logo após a atualização do OS X, fiz a atualização dos meus ports com o comando de praxe:</p>
+<pre>$ sudo port -d sync</pre>
+<p>… e recebi a seguinte mensagem:</p>
+<pre>Error: Current platform "darwin 14" does not match expected platform "darwin 13"
+Error: If you upgraded your OS, please follow the migration instructions: https://trac.macports.org/wiki/Migration
+OS platform mismatch
+while executing
+"mportinit ui_options global_options global_variations"
+Error: /opt/local/bin/port: Failed to initialize MacPorts, OS platform mismatch</pre>
+<p>Da mesma forma como descrito <a href="https://trac.macports.org/ticket/44107">aqui</a>.</p>
+<p>Para solucionar este problema, é bastante simples: basta instalar o <a href="https://distfiles.macports.org/MacPorts/MacPorts-2.3.2-10.10-Yosemite.pkg">pacote correto</a> do Macports para o OS X Yosemite.</p>
+<p>Depois de reinstalado, fui tentar novamente atualizar os meus ports. Ok, tudo funcionando! O problema que surgiu, foi quando tentei fazer o upgrade dos meus ports, com o comando:</p>
+<pre>$ sudo port upgrade outdated</pre>
+<p>Com isso, recebi a seguinte mensagem de erro no Terminal e acompanhada da caixa de diálogo a seguir (em todas as vezes que executei o comando):</p>
+<pre>---&gt; Building antlr
+Error: org.macports.build for port antlr returned: command execution failed
+Please see the log file for port antlr for details:
+ /opt/local/var/macports/logs/_opt_local_var_macports_sources_distfiles.macports.org_ports_lang_antlr/antlr/main.log
+Error: Unable to upgrade port: 1
+To report a bug, follow the instructions in the guide:
+ http://guide.macports.org/#project.tickets</pre>
+<div style="text-align:center;">
+<p>[caption id="" align="aligncenter" width="500"]<img src="/cfbastarz/assets/wpid-screen-shot-2014-10-17-at-4-13-06-pm.png" alt="" width="500" height="254" /> Caixa de diálogo apresentando o erro, referente à versão do Java oficial para o OS X Yosemite.[/caption]</p>
+</div>
+<div style="text-align:left;">Pesquisando na interwebs, descobri que a versão do Java estava desatualizada. Instalei a versão 8u25 do JRE e nada! Foi então que neste <a href="http://forums.macrumors.com/showthread.php?t=1757743">link</a>, alguém indicou a instalação do <a href="http://www.java.net/download/jdk8u40/archive/b09/binaries/jre-8u40-ea-bin-b09-macosx-x86_64-07_oct_2014.dmg">JRE</a> e <a href="http://www.java.net/download/jdk8u40/archive/b09/binaries/jdk-8u40-ea-bin-b09-macosx-x86_64-07_oct_2014.dmg">JDK</a>, ambos na versão 8u40, que na verdade é um pré-release e problema resolvido!</div>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Criando um repositório SVN local « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Para criar um repositório SVN é fácil. Basta escolher um local da máquina e rodar o seguinte comando:$ svnadmin create nome_do_repositorioCom isso, é criada ...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2011/04/25/criando-um-repositorio-svn-local/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Criando um repositório SVN local</h1>
+    <p class="post-meta">Apr 25, 2011 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "_thumbnail_id"=>"1185", "_wpas_skip_twitter"=>"1", "_wpas_skip_fb"=>"1", "_wpas_skip_ms"=>"1"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Para criar um repositório SVN é fácil. Basta escolher um local da máquina e rodar o seguinte comando:</p>
+<pre>$ svnadmin create nome_do_repositorio</pre>
+<p>Com isso, é criada uma pasta de nome “nome_do_repositorio” que é o repositório propriamente dito. Para utilizá-lo, tem que configurar dois arquivos: o svnserve.conf e o passwd. Ambos os arquivos estão dentro da pasta conf, dentro do repositório. No svnserve.conf, temos que configurar as permissões de leitura/escrita, o arquivo que conterá as senhas de acesso e o nome do repsoitório (realm), como se segue:</p>
+<pre>[general]
+ ### These options control access to the repository for unauthenticated
+ ### and authenticated users.  Valid values are "write", "read",
+ ### and "none".  The sample settings below are the defaults.
+ anon-access = read
+ auth-access = write
+### If SASL is enabled (see below), this file will NOT be used.
+ ### Uncomment the line below to use the default password file.
+ password-db = passwd
+### This option specifies the authentication realm of the repository.
+ ### If two repositories have the same authentication realm, they should
+ ### have the same password database, and vice versa.  The default realm
+ ### is repository's uuid.
+ realm = Repositório local</pre>
+<p>No arquivo passwd.conf, adicionamos os usuários que terão acesso ao repositório, como abaixo:</p>
+<pre>carlos = carlos.</pre>
+<p>Para ativar o repositório basta rodar o seguinte comando:</p>
+<pre>$ svnserve -d -r /pasta/onde/esta/o/repositorio</pre>
+<p>No comando svnserve, o modificador “-d” é para daemon e “-r” é para indicar onde está o repositírio. Fácil não?</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

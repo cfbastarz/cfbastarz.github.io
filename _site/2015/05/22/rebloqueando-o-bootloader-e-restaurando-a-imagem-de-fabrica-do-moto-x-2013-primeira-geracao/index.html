@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rebloqueando o bootloader e restaurando a imagem de fábrica do Moto X (2013, primeira geração) « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Pois bem jovem incauto gafanhoto: você desbloqueou o bootloader do seu Moto X 2013 de primeira geração, instalou uma custom recovery, instalou uma custom rom...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2015/05/22/rebloqueando-o-bootloader-e-restaurando-a-imagem-de-fabrica-do-moto-x-2013-primeira-geracao/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Rebloqueando o bootloader e restaurando a imagem de fábrica do Moto X (2013, primeira geração)</h1>
+    <p class="post-meta">May 22, 2015 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_thumbnail_id"=>"2512", "_rest_api_published"=>"1", "_rest_api_client_id"=>"-1", "_publicize_job_id"=>"10877360338", "_oembed_887e39247cc6a2758996511a0a670740"=>"{{unknown}}", "_oembed_409f647cf0d7ac319f3187cfa92e2813"=>"{{unknown}}", "_oembed_d2e18f3729e73dfbe3af9d8d48ca8373"=>"{{unknown}}", "_oembed_6ac57613b6f01d27304b95934c20873b"=>"{{unknown}}", "_oembed_54d81d5bec1b7a149054936dabe73fb8"=>"{{unknown}}", "_oembed_9ff73450b14341fde3234a70e86b2b45"=>"{{unknown}}", "_oembed_f1f9171549998caeec838554caa20ead"=>"{{unknown}}", "_oembed_98c36225dc1b0c4c2fe087936486b016"=>"{{unknown}}", "_oembed_27cd7983947ec867b66d433ce67f104f"=>"{{unknown}}", "_oembed_c7f2e3cde784c5754e5082fb38d088be"=>"{{unknown}}", "_oembed_3a4a722be4d60fd044364cb6acfc4a99"=>"{{unknown}}", "_oembed_237f7b1925b9b75c40dfd7790fcd34eb"=>"{{unknown}}", "_oembed_9780a7709fd627199bcab9743c25d114"=>"{{unknown}}", "_oembed_1abeeaf9f2a106e4335ca8b839660e24"=>"{{unknown}}"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Pois bem jovem incauto gafanhoto: você desbloqueou o bootloader do seu Moto X 2013 de primeira geração, instalou uma custom recovery, instalou uma custom rom e se arrependeu. Ou apenas quer reverter as alterações. Sei bem como é isso.</p>
+<p><!--more--></p>
+<p>Para rebloquear o bootloader e restaurar a imagem de fábrica do seu Moto X (2013), siga as instruções abaixo, mas preste atenção aos seguintes detalhes:</p>
+<ol>
+<li>Este procedimento não é tão simples, se você não sabe o que está fazendo, pare por aqui, abra o Facebook e seja feliz. Ou seja sábio e vá ler um livro.</li>
+<li>Se você é curioso o suficiente, continue e resolva o seu problema, mas leia com atenção o aviso mais abaixo!</li>
+<li>Você vai utilizar o programa fastboot pela linha de comando;</li>
+<li>Os links para os arquivos e programas, estão no próprio texto, portanto, leia com atenção!</li>
+<li>Meu Moto X é a versão <a href="https://www.youtube.com/watch?v=xOCdM7O8aSI" target="_blank">Developer Edition (XT1053)</a>, americana e portanto a minha firmware pode não ser a mesma que a sua. Aliás, estou considerando que você já possui imagem (ou rom) do seu aparelho para o procedimento de restauração.</li>
+</ol>
+<p>Apesar destes detalhes acredito que o procedimento seja o mesmo para rebloquear o bootloader e restaurar a <a href="https://motorola-global-portal.custhelp.com/app/standalone/bootloader/recovery-images" target="_blank">imagem de fábrica de qualquer versão do Moto X (2013, primeira geração)</a>. Mas por que você quer fazer isso? Porque sim, ou porque você precisa/quer vender ou seu telefone. Ou por questões de segurança.</p>
+<p><span style="color:#ff0000;"><strong>PARE: Se você não sabe o que é fastboot, bootloader, imagem de fábrica ou Android, pare por aqui. Não serei responsável por quaisquer danos causado a você ou ao seu aparelho ao seguir este tutorial.</strong></span></p>
+<p>Depois deste simpático aviso, mais alguns detalhes a saber. A primeira coisa a saber, é que a motorola possui um fastboot específico (o <a href="http://forum.xda-developers.com/moto-g-2014/development/unix-mfastboot-linux-mac-os-x-how-to-t2941888" target="_blank">mfastboot</a>), ou seja, se você utilizar o fastboot que vem no SDK da Google, é muito provável que não vá funcionar. Então é preciso utilizar uma versão do fastboot fornecida pela própria Motorola. Além disso, rebloquear o bootloader e restaurar a imagem de fábrica do seu Moto X (2013) não vai fazer com que a mensagem de bootloader desbloqueado desapareça! Mas por que? Porque a Motorola decidiu que se  você desbloqueou o seu aparelho uma vez, não faz sentido (para ela) que ele volte a ser desbloqueado. Mas essa é a minha visão, e como eu utilizo a Developer Edition, pode ser que a minha imagem do Android seja assim. Mas pode ser que não. Então quer dizer que mesmo rebloqueando o bootloader, meu aparelho vai continuar com a mensagem de bootloader bloqueado? Sim, mas você pode instalar a <a href="http://forum.xda-developers.com/moto-x/general/4-4-3-remove-unlocked-bootloader-message-t2548566" target="_blank">imagem de boot original</a> (<a href="http://forum.xda-developers.com/showpost.php?p=53098892&amp;postcount=355" target="_blank">ou alguma outra</a>), assim fica tudo conforme: aparelho com bootloader bloqueado e imagem de boot original.</p>
+<p>Antes de mais nada, considerando que você já tem o mfastboot instalado no seu Linux ou OS X (ou mesmo Windows), coloque o seu aparelho no modo fastboot (desligue o aparelho, e depois pressione o botão power e ao mesmo tempo segure o botão volume para baixo, segure ambos por alguns segundos e depois solte) e conecte o aparelho via USB ao computador. Verifique se <a href="https://motorola-global-portal.custhelp.com/app/answers/prod_detail/a_id/94931/p/30,6720,8696/reg/2298017" target="_blank">todos os drivers</a> estão corretamente instalados no seu computador. Abra o terminal e digite o seguinte comando, para se certificar que ele foi reconhecido e está em pronto para receber os comandos e arquivos que serão enviados a ele:</p>
+<pre>$ mfastboot devices</pre>
+<p>O resultado desse comando deve ser algo como uma seqüência de números identificando o seu aparelho. Se você não receber um código, há algum problema e o seu aparelho não foi reconhecido. Verifique novamente se todos os drivers estão corretamente instalados no seu computador! Agora vamos ao passo-a-passo.</p>
+<p>Digite os seguintes comandos no terminal, em ordem:</p>
+<pre>$ mfastboot oem lock begin 
+$ mfastboot flash partition gpt.bin
+$ mfastboot flash motoboot motoboot.img
+$ mfastboot flash logo logo.bin
+$ mfastboot flash boot boot.img
+$ mfastboot flash recovery recovery.img
+$ mfastboot flash system system.img
+$ mfastboot flash modem NON-HLOS.bin
+$ mfastboot erase modemst1
+$ mfastboot erase modemst2
+$ mfastboot flash fsg fsg.mbn
+$ mfastboot erase userdata
+$ mfastboot erase cache
+$ mfastboot oem lock</pre>
+<p>Observe que o primeiro comando "mfastboot oem lock begin" é mandatário; se você se esquecer dele, o último comando "mfastboot oem lock" vai falhar! Além disso, observe que os arquivos "gpt.bin", motoboot.img", "logo.bin" etc, são os arquivos que vem no seu pacote de imagem de restauração do seu telefone. Você deve apontar o caminho para eles, de forma que o comando mfastboot possa encontrá-los. O arquivo "logo.bin" pode ser substituído por outro do mesmo formato, mas com a imagem que você quer. A original que vem no pacote de restauração, é <a href="https://motorola-global-portal.custhelp.com/euf/assets/images/bootloader/WARNING_WITH_EXCEPTION.png" target="_blank">aquela com a mensagem de bootloader desbloqueado</a>. É neste momento que você escolhe uma imagem alternativa. Depois de todos os estes comandos, basta executar o próximo comando para reiniciar seu aparelho:</p>
+<pre>$ mfastboot reboot</pre>
+<p>É isso, depois é só reconfigurar novamente o seu Android.</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="http://forum.xda-developers.com/moto-x/general/4-4-3-remove-unlocked-bootloader-message-t2548566" target="_blank">http://forum.xda-developers.com/moto-x/general/4-4-3-remove-unlocked-bootloader-message-t2548566</a></li>
+<li><a href="http://forum.xda-developers.com/moto-x/general/noob-guide-unroot-relock-bootloader-vzw-t2571786" target="_blank">http://forum.xda-developers.com/moto-x/general/noob-guide-unroot-relock-bootloader-vzw-t2571786</a></li>
+</ul>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>

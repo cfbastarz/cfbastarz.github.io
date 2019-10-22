@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NTFS no Mac OS X Lion « Carlos Frederico Bastarz</title>
+  <meta name="description" content="Nativamente, o Mac OS X não oferece suporte ao sistema de arquivos NTFS que é o padrão no Windows. Se você usa computadores com sistemas diferentes, principa...">
+
+  <link rel="stylesheet" href="/cfbastarz/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cfbastarz/2012/05/06/ntfs-no-mac-os-x-lion/">
+  <link rel="alternate" type="application/rss+xml" title="Carlos Frederico Bastarz" href="http://localhost:4000/cfbastarz/feed.xml" />
+</head>
+
+
+  <body>
+
+    <div class="header-placeholder"></div>
+<header class="header">
+  <div class="wrapper">
+    <div id="sidebar-toggle">TOC</div>
+    <a class="site-title" href="/cfbastarz/">Carlos Frederico Bastarz</a>
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/cfbastarz/about/">Sobre</a>
+      
+        
+        <a class="page-link" href="/cfbastarz/category/">Categorias</a>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="col-main">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">NTFS no Mac OS X Lion</h1>
+    <p class="post-meta">May 6, 2012 • {"login"=>"craftmind", "email"=>"cfbastarz@gmail.com", "display_name"=>"cfbastarz", "first_name"=>"", "last_name"=>""} • {"_edit_last"=>"13386696", "geo_public"=>"0"}</p>
+  </header>
+
+  <article class="post-content">
+    <p>Nativamente, o Mac OS X não oferece suporte ao sistema de arquivos NTFS que é o padrão no Windows. Se você usa computadores com sistemas diferentes, principalmente Windows, pode querer manter um HD externo em NTFS para que possa utilizar no Mac OS X, no Linux e no Windows. No Linux, o suporte à leitura e escrita já é bem suportado e conhecido; no Mac OS X - pelo menos até a versão Snow Leopard, também. O problema começa a surgir no Mac OS X Lion devido à falta de atualização do programa MacFuse que provia o suporte de leitura e escrita em partições NTFS. Por isso, projetos em paralelo surgiram e hoje temos disponível o OSXFuse, que faz o papel do MacFuse nas versões mais recentes do Mac OS X, tal como o Lion. Vale lembrar que o OSXFuse mantém retrocompatibilidade com as outras versões do Mac OS X.</p>
+<p><strong>Instalação</strong></p>
+<p>Para habilitar o suporte à leitura e escrita em partições NTFS no Mac OS X Lion, você vai precisar instalar primeiro o <a href="https://github.com/osxfuse/osxfuse/downloads" target="_blank">OSXFuse</a> - que na verdade funciona como uma espécie de gerenciador de plugins onde os plugins são os diferentes sistemas de arquivamento que se deseja habilitar no Mac OS X.</p>
+<p>[caption id="attachment_1539" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/05/06/ntfs-no-mac-os-x-lion/osxfuse-2/" rel="attachment wp-att-1539"><img class="size-full wp-image-1539" title="osxfuse" src="/cfbastarz/assets/osxfuse1.jpg" alt="" width="545" height="386" /></a> Instalação do OSXFuse[/caption]</p>
+<p>Em seguida, basta instalar o <a href="http://sourceforge.net/projects/catacombae/files/NTFS-3G%20for%20Mac%20OS%20X/2010.10.2/ntfs-3g-2010.10.2-macosx.dmg/download" target="_blank">NTFS-3G</a> que realmente traz a biblioteca do NTFS para o Mac OS X.</p>
+<p>[caption id="attachment_1540" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/05/06/ntfs-no-mac-os-x-lion/ntfs-3g/" rel="attachment wp-att-1540"><img class="size-full wp-image-1540" title="ntfs-3g" src="/cfbastarz/assets/ntfs-3g.jpg" alt="" width="545" height="386" /></a> Instalação do NTFS-3G[/caption]</p>
+<p>Depois de instalado o NTFS-3G, é recomendada a reinicialização do Mac.</p>
+<p><strong>Uso</strong></p>
+<p>Para começar a formatar seus discos em NTFS, basta utilizar o próprio Disk Utility ou qualquer programa de sua preferência:</p>
+<p>[caption id="attachment_1535" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/05/06/ntfs-no-mac-os-x-lion/disk_utility_ntfs/" rel="attachment wp-att-1535"><img class="size-full wp-image-1535" title="disk_utility_ntfs" src="/cfbastarz/assets/disk_utility_ntfs.jpg" alt="" width="545" height="472" /></a> Formatando em NTFS com o Disk Utility do Mac OS X Lion[/caption]</p>
+<p><strong>Sobre o suporte</strong></p>
+<p>Nos meus testes, consegui formatar um disco externo IDE de 80GB em NTFS utilizando o Disk Utility do Mac OS X Lion, tal como esperado. Mas logo depois da formatação, surgiu a seguinte mensagem:</p>
+<p>[caption id="attachment_1534" align="aligncenter" width="420"]<a href="http://craftmind.wordpress.com/2012/05/06/ntfs-no-mac-os-x-lion/disk_utility_mensagem/" rel="attachment wp-att-1534"><img class="size-full wp-image-1534" title="disk_utility_mensagem" src="/cfbastarz/assets/disk_utility_mensagem.jpg" alt="" width="420" height="203" /></a> Mensagem de aviso do Disk Utility do Mac OS X[/caption]</p>
+<p><strong>EDIT (21/05/2015):</strong> Para evitar esta mensagem, instale também o pacote "<a href="https://github.com/bfleischer/fuse_wait/downloads" target="_blank">Fuse Wait</a>".</p>
+<p>Tirando isso, não tive outros problemas. Parece que este solução "gratuíta" do NTFS-3G não é tão bem polida quando a <a href="https://secure.avangate.com/order/checkout.php?CART_ID=5548ef88feeaf7c86eb56060832c879b" target="_blank">versão paga do Tuxera</a>.</p>
+<p>É isso!</p>
+
+  </article>
+  
+  
+
+
+
+
+</div>
+
+        </div>
+        <div class="col-second">
+          <div class="col-box col-box-author">
+  <img class="avatar" src="https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80" alt="Carlos Frederico Bastarz">
+  <div class="col-box-title name">Carlos Frederico Bastarz</div>
+  <p>Tecnologista CPTEC/INPE.</p>
+  <p class="contact">
+    
+    
+    
+    <a href="mailto:cfbastarz@gmail.com">Email</a>
+    
+    <a href="https://github.com/cfbastarz">GitHub</a>
+    
+  </p>
+</div>
+
+<div class="col-box">
+  <div class="col-box-title">Newest Posts</div>
+  <ul class="post-list">
+    
+      <li><a class="post-link" href="/cfbastarz/archivers/Equa%C3%A7%C3%A3o-de-an%C3%A1lise">Equação De Análise</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+      <li><a class="post-link" href="/cfbastarz/2018/10/15/memoria/">Memória</a></li>
+    
+  </ul>
+</div>
+
+<div class="col-box post-toc hide">
+  <div class="col-box-title">TOC</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+<div class="wrapper">
+&copy; 2019 Carlos Frederico Bastarz
+</div>
+</footer>
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<script src="/cfbastarz/js/easybook.js"></script>
+
+
+  </body>
+
+</html>
