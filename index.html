@@ -1,36 +1,45 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>AlephZero at Site44</title>
-<link type="text/css" rel="stylesheet" href="estilo.css"/>
-<script type="text/javascript" src="scripts/shCore.js"></script>
-<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
-<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
-<script type="text/javascript">SyntaxHighlighter.all();</script>
-</head>
-<body>
-<h1>AlephZero</h1>
-<br />
-<h2>catastrophic error: cannot open source file "malloc.h"</h2>
-<p>I got this error when trying to compile the bacio library and the compiler coudn't open the malloc.h header. This happen on OS X Mountain Lion:</p>
-<pre class="brush: shell;">
-bacio.v1.3.c(14): catastrophic error: cannot open source file "malloc.h"
-  #include 
-         ^
+---
+layout: default
+---
 
-compilation aborted for bacio.v1.3.c (code 4)
-make[1]: *** [bacio.v1.3.o] Error 4
-make: *** [linux] Error 2
-</pre>
-<p>Searching on the internet, I figured out a solution and it is a modification on a routine, which worked perfectly for my case. All you need to do is open the problematic routine source file (in my case "bacio.v1.3.c"), search for the line with "malloc.h" and make the following modification:</p>
-<pre class="brush: cpp;">
-#if !defined(__APPLE__)
-#include 
-#endif
-</pre>
-<p>By doing that the malloc.h header can be find on the OS X Mountain Lion!</p>
-<address>Posted on: Sun Feb 24 14:43:53 BRT 2013</address>
-<br />
-</body>
-</html>
+<div class="home">
+  <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a>
+  <h1 class="page-heading">Artigos</h1>
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        
+        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div>
+
+        <div class="post-excerpt">
+          {%   if post.content contains site.excerpt_separator or post.content != post.excerpt %}{{ post.excerpt }}
+          {%   else %}{{ post.content | lstrip | split: "
+" | first }}{% endif %}
+          <p>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Ler Mais &raquo;</a>
+          </p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  
+  <!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">ANTERIOR</a>
+  {% else %}
+    <span class="previous">ANTERIOR</span>
+  {% endif %}
+  <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">PRÓXIMO</a>
+  {% else %}
+    <span class="next ">PRÓXIMO</span>
+  {% endif %}
+</div>
+
+</div>
