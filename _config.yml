@@ -9,10 +9,10 @@ description: >
 # Your information
 email: cfbastarz@gmail.com
 author: Carlos Frederico Bastarz
-avatar: "https://br.gravatar.com/craftmind"
-profile: One sentence introducing yourself.
+#avatar: "https://br.gravatar.com/craftmind"
+profile: Meu site pessoal.
 #twitter_username: twitter_username
-#github_username:  github_username
+github_username:  cfbastarz
 profile_links:
   Email: "mailto:cfbastarz@gmail.com"
   GitHub: "https://github.com/cfbastarz"
