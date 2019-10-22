@@ -1,16 +1,16 @@
 # Site settings
 title: Carlos Frederico Bastarz
-url: "https://cptec-inpe-br.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
-baseurl: "/cfbastarz" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
-#timezone: Asia/Chongqing
+url: "https://cfbastarz.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
+#baseurl: "/cfbastarz" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
+timezone: America/Brasilia
 description: >
-  Previsão Numérica de Tempo por Conjuntos.
+  Página pessoal de Carlos Frederico Bastarz
 
 # Your information
 email: cfbastarz@gmail.com
 author: Carlos Frederico Bastarz
 avatar: "https://s.gravatar.com/avatar/1573e6ecaedd8b5a641dce5d582efd56?s=80"
-profile: Tecnologista CPTEC/INPE.
+profile: Eu.
 #twitter_username: twitter_username
 #github_username:  github_username
 profile_links:

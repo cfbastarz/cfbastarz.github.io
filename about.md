@@ -1,9 +1,9 @@
 ---
 layout: page
-title: About
+title: Sobre
 permalink: /about/
 ---
 
-Welcome to this website!
+Bem vindo!
 
-> This website is using [laobubu](http://laobubu.net)'s theme: [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook)
+> Este site utiliza o tema [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook) produzido por [laobubu](http://laobubu.net).
