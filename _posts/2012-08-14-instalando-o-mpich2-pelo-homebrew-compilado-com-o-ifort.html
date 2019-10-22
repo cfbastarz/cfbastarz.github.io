@@ -1,0 +1,39 @@
+---
+layout: post
+title: Instalando o MPICH2 pelo HomeBrew compilado com o Ifort
+date: 2012-08-14 22:17:26.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Tudo
+- Tutoriais
+tags:
+- fortran
+- HomeBrew
+- icc
+- ifort
+- MPICH2
+meta:
+  _edit_last: '13386696'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/08/14/instalando-o-mpich2-pelo-homebrew-compilado-com-o-ifort/"
+---
+<p>Uma das vantagens dos gerenciadores de pacotes disponíveis para o Mac OS X (e.g., Fink, HomeBrew, MacPorts) está na compilação de todos os pacotes, gerando executáveis rápidos e 100% compatíveis com as instruções do processador e com o ambiente de execução. Por outro lado, esta vantagem é contrabalançada pelas diversas opções disponíveis para o ambiente de compilação (flags de compilação). O HomeBrew é um desses gerenciadores e você pode especificar algumas opções de compilação, por exemplo, o compilador fortran a ser utilizado na compilação de um pacote. Um caso interessante é a compilação do pacote MPICH2. Se você compilar com o gfortran, então todos os executáveis gerados na compilação do MPICH2 serão lincados com as bibliotecas do gcc e com os headers do gfortran. Isso seria um padrão para o caso de haver apenas o gfortran como compilador fortran na máquina. Mas você pode querer compilar o MPICH2 com o ifort, o compilador fortan da Intel ou mesmo com o g95 ou pgi.</p>
+<p>No linux, esse tipo de instalação seria mais ou menos assim, considerando-se o bash como shell e o ifort como compilador fortran:</p>
+<pre>$ export FC=ifort ICC=icc
+$ make
+$ make check
+$ sudo make install</pre>
+<p>No caso da instalação do MPICH2 pelo HomeBrew, utilizando-se o ifort como compilador padrão, as instruções são semelhantes:</p>
+<pre>$ export FC=ifort ICC=icc CPP=icc
+$ brew install mpich2 --default-fortran-flags</pre>
+<p>Só isso. O modificador "--default-fortran-flags" ajusta as variáveis FCFLAGS e FFLAGS (que são variáveis que otimizam a compilação de um código fortran) com valores compatíveis com um compilador nos padrões do gcc, como é o caso do ifort e o icc.</p>

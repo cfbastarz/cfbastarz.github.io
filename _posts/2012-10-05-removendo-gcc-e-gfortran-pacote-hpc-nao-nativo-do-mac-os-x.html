@@ -1,0 +1,41 @@
+---
+layout: post
+title: Removendo GCC e GFORTRAN (pacote HPC, não nativo) do Mac OS X
+date: 2012-10-05 20:20:03.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Tudo
+- Tutoriais
+tags:
+- GCC
+- GFORTRAN
+- HPC
+- Mac OS X
+meta:
+  _edit_last: '13386696'
+  _oembed_a872e113cd0e03d72726152434fea520: "{{unknown}}"
+  _oembed_da4dce81d5cd99b77be66aa9e3a412a2: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/10/05/removendo-gcc-e-gfortran-pacote-hpc-nao-nativo-do-mac-os-x/"
+---
+<p>Se você instalou os pacotes do gcc e do gfortran no seu Mac OS X disponíveis no site <a href="http://hpc.sourceforge.net" target="_blank">http://hpc.sourceforge.net</a> deve ter percebido que a instalação é bastante simples, mas a desinstalação é um pouco mais complicada. Como os pacotes estão no formato .tar.gz, então não é um desinstalador que remova todos os arquivos que foram instaladas. No site <a href="http://web.mit.edu/mfloyd/www/computing/mac/gfortran/" target="_blank">http://web.mit.edu/mfloyd/www/computing/mac/gfortran/</a> é uma dica que é a seguinte:</p>
+<pre>$ sudo rm -f `tar tfz [tar-file]`</pre>
+<p>Este comando lista todo o conteúdo do arquivo [tar-file] (eg., gcc-mtlion.tar.gz) e executa o comando rm -rf com permissão de superusuário. Mas há uma falha: o comando não é bem executado porque a listagem dos arquivos que estão dentro do arquivo tar não inclui a barra "/" no início, fazendo com que o arquivo "usr/local/bin/gcc" seja apagado ao invés do arquivo "/usr/local/bin/gcc". Portanto, esse comando não funciona porque o arquivo "/usr/local/bin/gcc" não existe!</p>
+<p>Para resolver isso, utilize o comando abaixo:</p>
+<pre>$ for i in `tar tfz [tar-file]`; do sudo rm -rf '/'$i; done</pre>
+<p>No comando acima, listamos o conteúdo do arquivo [tar-file] (eg., gcc-mtlion.tar.gz) e utilizamos o comando for para executar o comando "sudo rm -rf '/'$i" em todos os arquivos que forem listados, incluindo a barra "/" no início.</p>
+<p><strong>Referências</strong></p>
+<ul>
+<li><a href="http://web.mit.edu/mfloyd/www/computing/mac/gfortran/" target="_blank">http://web.mit.edu/mfloyd/www/computing/mac/gfortran/</a></li>
+<li><a href="http://hpc.sourceforge.net" target="_blank">http://hpc.sourceforge.net</a></li>
+</ul>

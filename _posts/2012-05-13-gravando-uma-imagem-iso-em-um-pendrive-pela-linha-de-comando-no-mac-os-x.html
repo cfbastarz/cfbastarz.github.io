@@ -1,0 +1,52 @@
+---
+layout: post
+title: Gravando uma imagem iso em um pendrive pela linha de comando no Mac OS X
+date: 2012-05-13 21:33:52.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- dd
+- iso
+- Mac OS X
+meta:
+  _edit_last: '13386696'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/05/13/gravando-uma-imagem-iso-em-um-pendrive-pela-linha-de-comando-no-mac-os-x/"
+---
+<p>Para gravar uma imagem iso em um pendrive pela linha de comando no Mac OS X, siga os seguintes passos:</p>
+<p>1) Insira o pendrive e no terminal, digite:</p>
+<pre>$ diskutil list</pre>
+<p>Este comando irá listar todos os discos e partições do seu computador.</p>
+<p>2) Verifique o nome do disco alvo (exemplo: /dev/disk1):</p>
+<pre>/dev/disk0
+ #: TYPE NAME SIZE IDENTIFIER
+ 0: GUID_partition_scheme *500.1 GB disk0
+ 1: EFI 209.7 MB disk0s1
+ 2: Apple_HFS Macintosh HD 499.2 GB disk0s2
+ 3: Apple_Boot Recovery HD 650.0 MB disk0s3
+/dev/disk1
+ #: TYPE NAME SIZE IDENTIFIER
+ 0: FDisk_partition_scheme *1.0 GB disk1
+ 1: DOS_FAT_32 UBUNTU 1.0 GB disk1s1</pre>
+<p>3) A seguir, desmonte o disco com o comando:</p>
+<pre>$ sudo diskutil unmountDisk /dev/disk1</pre>
+<p>4) Para gravar a imagem, utilize o comando dd:</p>
+<pre>$ sudo dd if=/path/para/o/arquivo.iso of=/dev/disk1 bs=1M
+1 bs=1m
+701+1 records in
+701+1 records out
+735358976 bytes transferred in 606.272778 secs (1212918 bytes/sec)</pre>
+<p>Aguarde alguns minutos e pronto!</p>
+<p>Se a mensagem abaixo aparecer, não se preocupe, porque provavelmente o sistema de arquivos que foi descompactado no pendrive (no caso o ext4 do ubuntu) não pode ser lido nativamente pelo Mac OS X:</p>
+<p>[caption id="attachment_1551" align="aligncenter" width="446"]<a href="http://craftmind.wordpress.com/2012/05/13/gravando-uma-imagem-iso-em-um-pendrive-pela-linha-de-comando-no-mac-os-x/mensagem/" rel="attachment wp-att-1551"><img class="size-full wp-image-1551" title="mensagem" src="{{ site.baseurl }}/assets/mensagem.jpg" alt="" width="446" height="158" /></a> Se você não quiser montar o pendrive, basta clicar em "Ignore" ou em "Eject"[/caption]</p>

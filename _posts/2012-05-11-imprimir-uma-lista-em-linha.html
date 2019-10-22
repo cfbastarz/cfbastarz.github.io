@@ -1,0 +1,38 @@
+---
+layout: post
+title: Imprimir uma lista em linha
+date: 2012-05-11 14:26:40.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- sed
+- seq
+meta:
+  _edit_last: '13386696'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/05/11/imprimir-uma-lista-em-linha/"
+---
+<p>Nota mental:</p>
+<p>Com o comando seq, podemos listar uma sequência entre dois números inteiros quaisquer:</p>
+<pre>$ seq 5
+1
+2
+3
+4
+5</pre>
+<p>Mas como fazer para imprimir na horizontal (em linha): "1 2 3 4 5"?</p>
+<p>Com o sed, dá:</p>
+<pre>$ seq 5 | sed -e :a -e "{N; s,\n, ,g; ta}"
+1 2 3 4 5</pre>
+<p>Fim!</p>

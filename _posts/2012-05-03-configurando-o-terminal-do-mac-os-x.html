@@ -1,0 +1,59 @@
+---
+layout: post
+title: Configurando o terminal do Mac OS X
+date: 2012-05-03 22:08:32.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- ".bashrc"
+- bash_profile
+- Mac OS X
+- PS1
+- Terminal
+meta:
+  _edit_last: '13386696'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/05/03/configurando-o-terminal-do-mac-os-x/"
+---
+<p>Por default o aplicativo Terminal do Mac OS X vem meio pelado, praticamente sem nenhuma configuração em termos de PS1 =)</p>
+<p>Quem vem do Linux com certeza acaba sentido um pouco de desconforto e logo toca para a configuração mais fina para logo se sentir em casa. No meu caso, gosto que meu PS1 mostre a informação da pasta em que estou navegando, com os devidos espaços entre barras e o $ para que eu possa facilmente selecionar e color o caminho em que estou, caso precise:</p>
+<p>[caption id="attachment_1526" align="aligncenter" width="378"]<a href="http://craftmind.wordpress.com/2012/05/03/configurando-o-terminal-do-mac-os-x/terminal2/" rel="attachment wp-att-1526"><img class="size-full wp-image-1526" title="terminal2" src="{{ site.baseurl }}/assets/terminal2.jpg" alt="" width="378" height="79" /></a> PS1 e cores configuradas no Terminal do Mac OS X[/caption]</p>
+<p>Para isso, é necessário modificar o arquico .basrh ou .bash_profile (a diferença entre os dois é que um serve para o shell interativo - aquele que você usa quando abre uma nova aba no terminal e que é o padrão do Mac OS X, e o outro para o shell login - aquele que é usado usa quando você entro no init3 do Linux, por exemplo). Como eu não gosto de misturar muito as coisas, prefiro colocar as minhas configurações pessoais no meu .bashrc, pois assim restrinjo qualquer tipo de problema relacionado à configuração do shell à minha conta de usuário.</p>
+<p>Para configurar da forma mais correta e segura, basta editar o arquivo .bash_profile e adicionar as seguintes linhas:</p>
+<pre>if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi</pre>
+<p>As instruções que estão dentro do if, fazem com que o arquivo .bashrc seja parseado (comando source - vai exportar variáveis e executar quaisquer comando que estejam dentro do seu .bashrc), caso ele exista.</p>
+<p>Feito isto, basta configurar o arquivo .bashrc. No meu caso, eu adicionei as seguintes instruções, tal como eu utilizava no shell do meu Ubuntu:</p>
+<pre># Faz com que o histórico seja incrementado:
+shopt -s histappend
+# Habilita as cores no terminal:
+use_color=true
+# Ajusta o PS1:
+if ${use_color} ; then
+  if [[ ${EUID} == 0 ]] ; then
+    PS1='\[33[01;31m\]\h\[33[01;34m\] \W \$\[33[00m\] '
+  else
+    PS1='\[33[01;32m\]\u@\h\[33[01;34m\] \w \$\[33[00m\] '
+  fi
+else
+  if [[ ${EUID} == 0 ]] ; then
+    # show root@ when we don't have colors
+    PS1='\u@\h \W \$ '
+  else
+    PS1='\u@\h \w \$ '
+  fi
+fi</pre>
+<p>Depois de fazer as alterações, basta dar um source no seu .bashrc ou simplesmente fechar e reabrir o Terminal. Neste caso, vale lembrar que para realmente encerrar a aplicação, basta apontar para a barra de menus, clicar em Terminal e depois clicar em Quit/Encerrar/Fechar Terminal.</p>
+<p>Basicamente é isso. Com certeza há outras formas de se customizar o Terminal do Mac OS X, mas essa é simples e direta, sem muitos rodeios.</p>

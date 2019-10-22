@@ -1,0 +1,41 @@
+---
+layout: post
+title: 'Comando não encontrado: add-apt-repository (Ubuntu 12.10)'
+date: 2013-03-10 15:55:15.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- add-apt-repository
+- Ubuntu Server 12.10
+meta:
+  _edit_last: '13386696'
+  _publicize_pending: '1'
+  _oembed_1cb2bea7fa0114fcb529d83366474058: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2013/03/10/comando-nao-encontrado-add-apt-repository-ubuntu-12-10/"
+---
+<p>Esta é rápida:</p>
+<p>Estava utilizando o Ubuntu Server 12.10 e queria adicionar um repositório novo utilizando o comando "sudo add-apt-repository", quando obtive o seguinte erro:</p>
+<pre>“add-apt-repository” command not found</pre>
+<p>Para resolver, instalei os seguintes pacotes:</p>
+<ul>
+<li>python-software-properties</li>
+<li>software-properties-common</li>
+</ul>
+<p>Para instalar, basta fazer:</p>
+<pre>$ sudo apt-get install python-software-properties software-properties-common</pre>
+<p>É isso!&nbsp;
+<p></p>
+<p><strong>Referência:</strong>&nbsp;</p>
+<p><a href="http://blog.xrmplatform.org/solution-for-add-apt-repository-command-not-found-ubuntu-12-10-server/" target="_blank">http://blog.xrmplatform.org/solution-for-add-apt-repository-command-not-found-ubuntu-12-10-server/</a></p>

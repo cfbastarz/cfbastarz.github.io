@@ -1,0 +1,139 @@
+---
+layout: post
+title: Baixe a reanálise ERA Interim do ECMWF utilizando um script Perl
+date: 2012-07-04 23:17:42.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Tudo
+- Tutoriais
+tags:
+- ECMWF
+- ERA Interim
+- GRIB
+- MARS
+- Perl
+- Python
+- reanálise
+meta:
+  _edit_last: '13386696'
+  _oembed_981ef17f46309303870b1a4befc3d6e8: "{{unknown}}"
+  _oembed_3cddc4a9c2dd08305241bd1913614d33: "{{unknown}}"
+  _oembed_4f608624495cc2e67e3af24444c0af1f: "{{unknown}}"
+  _oembed_24c976c0f40095655ba0fc4c5e60d58f: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/07/04/baixe-a-reanalise-era-interim-do-ecmwf-utilizando-um-script-perl/"
+---
+<p>Recentemente precisei baixar alguns dados da Renálise do ERA Interim para estudo. No site, é oferecido um formulário onde pode-se selecionar o período, variáveis, níveis etc. Com essa seleção, um script server-side processa o seu pedido, gera um arquivo em GRIB e, dependendo do seu pedido, converte o GRIB em NETCDF. Perfeito! Mas e se você quiser baixar tudo? e uma quantidade colossal de dados e com certeza vai demandar uma quantidade colossal de espaço e tempo. Portanto, vamos considerar que você queira baixar um período grande, contendo alguns anos, níveis e variáveis, algo suficiente para que você queira e precise fazer um script.</p>
+<p>O primeiro passo, portanto, é entrar em <a href="http://data-portal.ecmwf.int/data/d/interim_daily/" target="_blank">http://data-portal.ecmwf.int/data/d/interim_daily/ </a>e depois clicar no link indicado na imagem abaixo:</p>
+<p><a href="http://craftmind.wordpress.com/2012/07/04/baixe-a-reanalise-era-interim-do-ecmwf-utilizando-um-script-perl/screen-shot-2012-07-04-at-9-34-02-pm/" rel="attachment wp-att-1692"><img class="aligncenter size-full wp-image-1692" title="Screen Shot 2012-07-04 at 9.34.02 PM" src="{{ site.baseurl }}/assets/screen-shot-2012-07-04-at-9-34-02-pm.png" alt="" width="545" height="86" /></a>Você será redirecionado para uma nova página contendo um script simples em Python e outras duas opções em Perl, que são as opções que nós iremos usar.</p>
+<p><a href="http://craftmind.wordpress.com/2012/07/04/baixe-a-reanalise-era-interim-do-ecmwf-utilizando-um-script-perl/screen-shot-2012-07-04-at-9-42-42-pm/" rel="attachment wp-att-1693"><img class="aligncenter size-full wp-image-1693" title="Screen Shot 2012-07-04 at 9.42.42 PM" src="{{ site.baseurl }}/assets/screen-shot-2012-07-04-at-9-42-42-pm.png" alt="" width="545" height="368" /></a>Os scripts que nos interessam estão mais ao final da página. Mas para utilizá-los, nós necessitaremos de alguns softwares instalados no computador. Vamos precisar do Perl (uma linguagem de programação em scripts modular) e de dois módulos básicos: o libdate-calc-perl e o DataServer do ECMWF que deve ser baixado no link indicado pelo retângulo vermelho da imagem acima.</p>
+<p>Para instalar estes pacotes no seu Linux (vou considerar o Ubuntu), faça o seguinte:</p>
+<p><strong>1) Instale o Perl:</strong></p>
+<pre>$ sudo apt-get install perl</pre>
+<p><strong>2) Instale o módulo libdate-calc-perl:</strong></p>
+<pre>$ sudo apt-get install libdate-calc-perl</pre>
+<p><strong>3) Baixe o módulo DataServer do ECMWF em <a href="http://tigge.ecmwf.int/ECMWF_DataServer.tar" target="_blank">http://tigge.ecmwf.int/ECMWF_DataServer.tar</a></strong></p>
+<p><strong>4) Desempacote o arquivo <a href="http://tigge.ecmwf.int/ECMWF_DataServer.tar" target="_blank">ECMWF_DataServer.tar</a> na pasta /usr/share/perl/&lt;versao_do_seu_perl&gt;:</strong></p>
+<pre>$ sudo tar -xvf <a href="http://tigge.ecmwf.int/ECMWF_DataServer.tar" target="_blank">ECMWF_DataServer.tar</a> -C /usr/share/perl/&lt;versao_do_seu_perl&gt;</pre>
+<p>Se você estiver utilizando o Mac OS X (vou considerar o Lion), você precisará apenas instalar o módulo DataServer do ECMWF na pasta /System/Library/Perl/5.12:</p>
+<pre>$ sudo tar -xvf ECMWF_DataServer.tar -C /System/Library/Perl/5.12</pre>
+<p>Feito isto, copie o segundo script em Perl (é o último script da página) da página que você abriu (a página que contém os scripts) e cole em um arquivo vazio no seu computador:</p>
+<pre>#!/usr/bin/perl -Ipath_to_where_ECMWF::DataServer_is_installed
+use ECMWF::DataServer;
+use Date::Calc qw(Add_Delta_Days Delta_Days);
+use strict;
+
+my $client = ECMWF::DataServer-&gt;new(
+    portal =&gt; 'http://data-portal.ecmwf.int/data/d/dataserver/',
+    token  =&gt; 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    email  =&gt; 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyy',
+);
+
+# This is the start date. Modify as required
+my ($year, $month, $day) = (2009, 01, 01);
+# This is the end date. Modify as required
+my @enddate = (2009, 01, 02);
+
+while (Delta_Days(@date, @enddate) &gt;= 0) {
+
+  my $date = sprintf("%d-%02d-%02d", $year, $month, $day);
+
+  $client-&gt;retrieve( 
+    dataset  =&gt; "interim_daily",
+    step     =&gt; "0",
+    levtype  =&gt; "pl",
+    type     =&gt; "an",
+    param    =&gt; "130.128",
+    levelist =&gt; "500/1000",
+    area     =&gt; "60/-120/30/-60",
+    date     =&gt; "$date",
+    time     =&gt; "00/12",
+    target   =&gt; "data_${date}.grib",
+    );
+
+  # move to next day
+  ($year, $month, $day) = Add_Delta_Days($year, $month, $day, 1);
+
+}</pre>
+<p>Para este script, devem ser observadas as sequências 'xxxxxx...' e 'yyyyy...' para as variáveis "token" e "email", respectivamente. Estas são variáveis utilizadas pelo módulo DataServer do ECMWF para autenticar a sua conexão ao servidor do centro. Quando você abrir esta página, será gerada automaticamente um token (uma espécie de senha) específica para o email que você forneceu anteriormente. Portanto, esses 'yyyyy...' e esses 'xxxxx...' não aparecem na página, mas sim o seu email (que você de ter informado) e um token gerado automaticamente. Uma outra informação importante, é que para executar corretamente o script, você precisar corrigir uma falha. Veja:</p>
+<pre>$ ./script_perl.pl
+Global symbol "@date" requires explicit package name at ./script_perl.pl line 17.
+Execution of ./script_perl.pl aborted due to compilation errors.</pre>
+<p>Ou seja, a variável "@date" é usada, mas não está declarada. Então, para consertarmos isso, basta acrescentar a linha em negrito abaixo dentro do seu script:</p>
+<pre>my ($year, $month, $day) = (2009, 01, 01);
+<strong>my @date = (2009, 01, 01);</strong></pre>
+<p>Com isso, será possível executar novamente o script e baixar os seus dados. Você pode alterar o script de acordo com as suas necessidades, bastando seguir a sintaxe do <a href="http://www.ecmwf.int/services/archive/" target="_blank">MARS</a>, que é um programa com linguagem própria criado para coletar os dados dentro do banco de dados do ECMWF.</p>
+<p>O script corrigido fica assim:</p>
+<pre>#!/usr/bin/perl -Ipath_to_where_ECMWF::DataServer_is_installed
+use ECMWF::DataServer;
+use Date::Calc qw(Add_Delta_Days Delta_Days);
+use strict;
+
+my $client = ECMWF::DataServer-&gt;new(
+    portal =&gt; 'http://data-portal.ecmwf.int/data/d/dataserver/',
+    token  =&gt; 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    email  =&gt; 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyy',
+);
+
+# This is the start date. Modify as required
+my ($year, $month, $day) = (2009, 01, 01);
+my @date = (2009, 01, 01);
+# This is the end date. Modify as required
+my @enddate = (2009, 01, 02);
+
+while (Delta_Days(@date, @enddate) &gt;= 0) {
+
+  my $date = sprintf("%d-%02d-%02d", $year, $month, $day);
+
+  $client-&gt;retrieve( 
+    dataset  =&gt; "interim_daily",
+    step     =&gt; "0",
+    levtype  =&gt; "pl",
+    type     =&gt; "an",
+    param    =&gt; "130.128",
+    levelist =&gt; "500/1000",
+    area     =&gt; "60/-120/30/-60",
+    date     =&gt; "$date",
+    time     =&gt; "00/12",
+    target   =&gt; "data_${date}.grib",
+    );
+
+  # move to next day
+  ($year, $month, $day) = Add_Delta_Days($year, $month, $day, 1);
+
+}</pre>
+<p>Com tudo corrigido, o script mostra as seguintes saídas:</p>
+<p>[caption id="attachment_1694" align="aligncenter" width="545"]<a href="http://craftmind.wordpress.com/2012/07/04/baixe-a-reanalise-era-interim-do-ecmwf-utilizando-um-script-perl/screen-shot-2012-07-04-at-10-10-42-pm/" rel="attachment wp-att-1694"><img class="size-full wp-image-1694" title="Screen Shot 2012-07-04 at 10.10.42 PM" src="{{ site.baseurl }}/assets/screen-shot-2012-07-04-at-10-10-42-pm.png" alt="" width="545" height="79" /></a> (Clique para ampliar)[/caption]
+<p>Em meus testes, notei que o servidor do ECMWF é um pouco instável, portanto você poderá experimentar alguns "Connection Timeout", por parte do módulo DataServer do ECMWF, responsável pela autenticação da conexão entre o seu computador e o servidor do ECMWF.</p>
+<pre>500 read timeout at ECMWF/DataServer.pm line 35.</pre>
+<p>É isso!</p>

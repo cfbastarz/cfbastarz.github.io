@@ -1,0 +1,51 @@
+---
+layout: post
+title: 'Erro: no such instruction: `vzeroupper'' do PGF90 12.8-1'
+date: 2012-08-24 03:15:41.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Tudo
+- Tutoriais
+tags:
+- AVX
+- fortran
+- Intel
+- IvyBridge
+- pgf90
+- PGI
+- SandyBridge
+- vzeroupper
+meta:
+  _edit_last: '13386696'
+  _oembed_bf26bfe6b4dbd78106eccdf05e93bc49: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/08/24/erro-no-such-instruction-vzeroupper-do-pgf90-12-8-1/"
+---
+<p>Recentemente instalei a versão trial do compilador fortran do Portland Group (PGI) para compilar um pacote. No primeiro teste (com um programa Hello World), ocorreu o seguinte erro:</p>
+<pre>$ pgf90 teste.f90
+NOTE: your trial license will expire in 14 days, 0.939 hours.
+NOTE: your trial license will expire in 14 days, 0.939 hours.
+teste.f90:74:no such instruction: `vzeroupper'
+teste.f90:83:no such instruction: `vzeroupper'
+teste.f90:90:no such instruction: `vzeroupper'
+teste.f90:97:no such instruction: `vzeroupper'
+teste.f90:101:no such instruction: `vzeroupper'
+teste.f90:107:no such instruction: `vzeroupper'
+teste.f90:234:no such instruction: `vzeroupper'</pre>
+<p>O que é muito estranho, pois o programa hello world contém apenas uma instrução para imprimir uma linha na tela. Dando uma olhada aqui e alí, encontrei a solução <a href="http://www.pgroup.com/userforum/viewtopic.php?t=2794&amp;sid=3fb09a8305d263e7694c5c20887035b8" target="_blank">aqui</a>, e a sugestão foi acrescentar a opção  "-tp=nehalem-64" na compilação:</p>
+<pre>$ pgf90 -tp=nehalem-64 teste.f90
+NOTE: your trial license will expire in 14 days, 0.901 hours.
+NOTE: your trial license will expire in 14 days, 0.901 hours.</pre>
+<p>Ou seja, o "a.out" (programa compilado) foi criado e funciona sem problemas. Este problema pode afetar máquinas Linux ou Mac OS X com processador Intel, especialmente com o chip SandyBridge. Meu Macbook Pro é de 2011 e tem processador Intel com chip Sandybridge e a Apple não atualizou (ainda...) o Xcode (que fornece acesso a algumas instruções básicas do processador) para suportar as instruções AVX presentes a partir dos chips SandyBridge (o que é ridículo, pois já temos os novos chips IvyBridge...). Então, esta solução força o compilador a interpretar o chip como um modelo mais antigo, ou mais ou menos isso :)</p>
+<p><strong>Referência:</strong></p>
+<p><a href="http://www.pgroup.com/userforum/viewtopic.php?t=2794&amp;sid=3fb09a8305d263e7694c5c20887035b8" target="_blank">http://www.pgroup.com/userforum/viewtopic.php?t=2794&amp;sid=3fb09a8305d263e7694c5c20887035b8</a></p>

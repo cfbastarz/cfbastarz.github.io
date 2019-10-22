@@ -1,0 +1,50 @@
+---
+layout: post
+title: Sincronizando o Macports através do HTTP
+date: 2013-09-10 15:13:56.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Internet
+- Tudo
+- Tutoriais
+tags:
+- http
+- MacPorts
+- rsync
+meta:
+  _edit_last: '13386696'
+  _publicize_pending: '1'
+  _oembed_5c35f578b9eb80358e54853a1c04aa62: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2013/09/10/sincronizando-o-macports-atraves-do-http/"
+---
+<p>O Macports é uma espécie de apt-get do (Mac) OS X: com ele é possível instalar praticamente todo o software de linha de comando (e alguns gráficos também) que você precisa. Eu uso muito ela para instalar software como wget, ncft, grads, ncl, cdo, nco, core-utils, grep, sed, awk etc. Clique <a href="http://craftmind.wordpress.com/?s=macports&amp;submit=Pesquisa">aqui</a> para encontrar todos os post relacionado ao Macports.</p>
+<p>Por default, o Macports utiliza o rsync para fazer a atualização dos pacotes disponíveis, mas dependendo da rede em que o seu Mac está conectado, não é possível utilizar o rsync e, consequentemente, não é possível atualizar a lista de pacotes disponíveis:</p>
+<pre>$ sudo port selfupdate
+Password:
+---&gt;  Updating MacPorts base sources using rsync
+Error: Error synchronizing MacPorts sources: command execution failed
+Please run `port -v selfupdate' for details.
+Error: /opt/local/bin/port: port selfupdate failed: Error synchronizing MacPorts sources: command execution failed</pre>
+<p>No entanto, é possível fazer a sincronização dos pacotes através do protocolo HTTP. Para isto, basta fazer (considerando que o seu Macports está instalado em /opt/local):</p>
+<p><strong>1) Modificar o arquivo /opt/local/etc/macports/sources.conf a adicionar a linha abaixo:</strong></p>
+<pre>https://distfiles.macports.org/ports.tar.gz [default]</pre>
+<p>O arquivo deve ficar assim:</p>
+<pre>#rsync://rsync.macports.org/release/tarballs/ports.tar [default]
+https://distfiles.macports.org/ports.tar.gz [default]</pre>
+<p><strong>2) Atualizar a lista de pacotes do Macports com o comando:</strong></p>
+<pre>$ sudo port -d sync</pre>
+<p>Pronto, Macports funcionando novamente!</p>
+<p><strong>Referência:</strong></p>
+<ul>
+<li><a href="http://trac.macports.org/wiki/howto/PortTreeTarball" target="_blank">http://trac.macports.org/wiki/howto/PortTreeTarball</a></li>
+</ul>

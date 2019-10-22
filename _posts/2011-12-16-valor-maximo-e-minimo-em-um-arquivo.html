@@ -1,0 +1,55 @@
+---
+layout: post
+title: Valor Máximo e Mínimo em um arquivo
+date: 2011-12-16 12:22:02.000000000 -02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Tudo
+- Tutoriais
+tags:
+- Korn Shell
+- máximo e mínimo
+- Shell
+- valor máximo
+- valor mínimo
+meta:
+  _edit_last: '13386696'
+  geo_public: '0'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2011/12/16/valor-maximo-e-minimo-em-um-arquivo/"
+---
+<p>Esses dias estava precisando saber qual era o valor máximo e o mínimo dentro de um arquivo com centenas de números. Em Korn Shell, não há uma função reservada para fazer este tipo de verificação, então tive que procurar algum script que o fizesse. Acabei encontrando um por aí que não fazia exatamente o que eu queria, mas que comparava dois números inteiros. Dei uma modificada e acabei com isso aqui:</p>
+<p>[sourcecode language="bash"]</p>
+<p>#! /bin/sh</p>
+<p>#set -o xtrace</p>
+<p>max=0</p>
+<p>while read valor</p>
+<p>do</p>
+<p>val=&quot;$(echo ${valor})&quot;</p>
+<p>if [ ${val} -gt ${max} ]</p>
+<p>then</p>
+<p>max=${val}</p>
+<p>fi</p>
+<p>done &lt; teste</p>
+<p>min=${max}</p>
+<p>while read valor</p>
+<p>do</p>
+<p>val=&quot;$(echo ${valor})&quot;</p>
+<p>if [ ${val} -lt ${min} ]</p>
+<p>then</p>
+<p>min=${val}</p>
+<p>fi</p>
+<p>done &lt; teste</p>
+<p>echo &quot;valor maximo e ${max}&quot; echo &quot;valor minimo e ${min}&quot;</p>
+<p>[/sourcecode]</p>
+<p>Para testar, basta escrever alguns valores (um por linha) em um arquivo texto chamado teste e executar o script na mesma pasta ;)</p>
