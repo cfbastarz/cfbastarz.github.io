@@ -12,7 +12,7 @@ author: Carlos Frederico Bastarz
 avatar: "cfbastarz2.png"
 profile: Meu site pessoal.
 #twitter_username: twitter_username
-github_username: cfbastarz
+#github_username: cfbastarz
 profile_links:
   Email: "mailto:cfbastarz@gmail.com"
   GitHub: "https://github.com/cfbastarz"
@@ -27,8 +27,8 @@ excerpt_separator: <!--more-->
 
 header:
   links:             # Links on the header. Link to in-site page with a slash as prefix
-    About: /about/
-    Category: /category/
+    Sobre: /about/
+    Categorias: /category/
 
 permalink: /archivers/:title
 plugins:
