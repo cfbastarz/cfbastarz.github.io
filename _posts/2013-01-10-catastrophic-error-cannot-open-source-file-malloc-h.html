@@ -1,0 +1,53 @@
+---
+layout: post
+title: 'catastrophic error: cannot open source file "malloc.h"'
+date: 2013-01-10 18:18:54.000000000 -02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- bacio.v1.3.c
+- Mac OS X
+- malloc.h
+meta:
+  _edit_last: '13386696'
+  _publicize_pending: '1'
+  _oembed_38573b41902bfb59aa87aa37e4b4670d: "{{unknown}}"
+  _oembed_154a323d9274f0f5f2b3162ce59e3ff2: "{{unknown}}"
+  _oembed_0a241379c148608f0af17e9f82fb7db1: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2013/01/10/catastrophic-error-cannot-open-source-file-malloc-h/"
+---
+<p>Esse erro apareceu quando uma rotina que eu estava tentando compilar não conseguiu abrir o "malloc.h" (uma função para alocamento de memória) no OS X Mountain Lion:</p>
+<pre>bacio.v1.3.c(14): catastrophic error: cannot open source file "malloc.h"
+  #include 
+                     ^
+
+compilation aborted for bacio.v1.3.c (code 4)
+make[1]: *** [bacio.v1.3.o] Error 4
+make: *** [linux] Error 2</pre>
+<p>Pesquisando na internet, encontrei que uma solução é modificar a rotina com um condicional, o qual funcionou perfeitamente para o meu caso. Basta fazer o seguinte: abra a rotina que está dando o problema (no meu caso, uma rotina chamada "bacio.v1.3.c"), localize a linha de include do "malloc".h e edite da seguinte forma:</p>
+<p><strong>Forma original:</strong></p>
+<pre>#include</pre>
+<p><strong>Forma modificada:</strong></p>
+<pre>#if !defined(__APPLE__)
+#include 
+#endif</pre>
+<p>Fazendo isso, o header "malloc.h" poderá ser encontrado no Mac OS, que fica alocado em "/usr/include/sys".</p>
+<p>É isso!</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="http://code.google.com/p/gil-contributions/issues/attachmentText?id=9&amp;aid=90001000&amp;name=patch.diff&amp;token=1K_Hd3RrRHPPTMORjKqmQni0iv8%3A1357837426761" target="_blank">http://code.google.com/p/gil-contributions/issues/attachmentText?id=9&amp;aid=90001000&amp;name=patch.diff&amp;token=1K_Hd3RrRHPPTMORjKqmQni0iv8%3A1357837426761</a></li>
+<li><a href="http://hintsforums.macworld.com/showthread.php?t=2023" target="_blank">http://hintsforums.macworld.com/showthread.php?t=2023</a></li>
+<li><a href="http://www.idevgames.com/forums/thread-3429.html" target="_blank">http://www.idevgames.com/forums/thread-3429.html</a></li>
+</ul>

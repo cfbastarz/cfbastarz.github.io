@@ -1,0 +1,92 @@
+---
+layout: post
+title: 'Markdown + MathJax: Uma alternativa ao LaTeX'
+date: 2014-04-14 23:16:14.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Internet
+- Tudo
+- Tutoriais
+tags:
+- GitHub Pages
+- LaTeX
+- Markdown
+- MathJax
+- Notepad
+- Scriptogr.am
+- TextEdit
+- Wordpress
+- WYSIWYG
+meta:
+  _edit_last: '13386696'
+  _publicize_job_id: '19172332724'
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _thumbnail_id: '2388'
+  _oembed_ffcddd448d4b301a8fe99e6cbc40b199: "{{unknown}}"
+  _oembed_b20031cba356eeb69448f03cc8a28f55: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2014/04/14/markdown-mathjax-uma-alternativa-ao-latex/"
+---
+<p>Recentemente o <a href="https://daringfireball.net/projects/markdown/" target="_blank">Markdown</a> vem demonstrando - com sua simplicidade (e elegância), como uma <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">sintaxe</a> de texto puro pode ser objetiva e produtiva. Exemplos de sua aplicação vão desde editores de texto estilo desktop até os mais simplificados editores embarcados em smartphones e tablets. Além disso, alguns serviços disponibilizam o Markdown como alternativa a outras linguagens. Como exemplo, pode-se citar <a href="http://scriptogr.am" target="_blank">Scriptogr.am</a>,  <a href="https://pages.github.com" target="_blank">GitHub Pages</a> e <a href="http://en.blog.wordpress.com/2013/11/19/markdown/" target="_blank">Wordpress</a>. Marcar um texto ao invés de formatá-lo é uma tarefa muito mais simples, pois escreve-se o texto na forma como ele deve ser apresentado. Nada de ter que escrever e depois formatar, basta "marcar". O <a href="http://www.latex-project.org" target="_blank">LaTeX</a> é uma destas linguagens que facilitam a vida de quem escreve textos científicos, principalmente quando há a necessidade de se inserir equações. Mas muitas vezes, a sua complexidade acaba contradizendo o seu principal mote: o de manter o foco no conteúdo, e não na aplicação. Textos muito grandes em editores <a href="http://en.wikipedia.org/wiki/WYSIWYG" target="_blank">WYSIWYG</a> é uma tarefa que demanda paciência, e digitar equações, demanda mais paciência ainda.</p>
+<p><!--more--></p>
+<p>Originalmente, o Markdown não inclui renderização de equações, tal como o LaTeX; o LaTeX, foi feito para isto. Mas se o caso for escrever textos pequenos, ou apenas documentar uma derivação matemática, o Markdown pode resolver, desde que se esteja utilizando um editor Markdown que apresente a capacidade de renderizar equações LaTeX. Alternativamente ao LaTeX, considerando-se uma instalação local padrão, algumas alternativas estão disponíveis, como por exemplo, o <a href="http://www.mathjax.org" target="_blank">MathJax</a>. O MathJax é um script server-side que permite renderizar equações escritas em LaTeX em qualquer browser (que tenha a capacidade de interpretar JavaScript). O MathJax pode também ser utilizado para renderizar equações LaTeX offline (e sem a necessidade de se configurar o Apache e toda a parafernalha de um servidor).</p>
+<p>Portanto, este artigo tem por objetivo apresentar uma alternativa rápida de ser configurada e que vai lhe permitir escrever qualquer tipo de texto utilizando a sintaxe Markdown para marcar o seu texto e a sintaxe LaTeX para escrever equações. As instruções apresentadas a seguir poderão ser aplicadas em qualquer sistema operacional (Windows, Linux e OS X).</p>
+<p><strong>Editor Markdown</strong></p>
+<p>O primeiro passo para começar a escrever na sintaxe Markdown, é escolher um editor que lhe confira a habilidade de renderizar o seu texto (clique <a href="http://mashable.com/2013/06/24/markdown-tools/" target="_blank">aqui</a> para um review sobre editores Markdown em diversas plataformas). Isto é exatamente o que os editores WYSIWYG fazem: renderizar o texto de acordo com a suas opções. Um editor Markdown tipicamente renderiza em tempo real o que você escreve. Por exemplo, no OS X há o excelente editor <a href="http://mouapp.com" target="_blank">Mou</a>:</p>
+<p>[caption id="attachment_2332" align="aligncenter" width="640"]<a href="http://craftmind.files.wordpress.com/2014/04/screen-shot-2014-04-14-at-9-23-31-pm.png"><img class="wp-image-2332 size-large" src="{{ site.baseurl }}/assets/screen-shot-2014-04-14-at-9-23-31-pm.png?w=640" alt="" width="640" height="447" /></a> Editor Mou (para OS X): renderização Markdown em tempo real[/caption]</p>
+<p>Embora o Mou tenha esta característica de renderizar a marcação em tempo real, qualquer editor de texto pode ser utilizado para escrever em Markdown. O problema de se utilizar um editor de texto puro (como o <a href="http://en.wikipedia.org/wiki/Notepad_(software)" target="_blank">Notepad</a> ou <a href="http://en.wikipedia.org/wiki/TextEdit" target="_blank">TextEdit</a>) é que estes não renderizam a marcação, então é necessário utilizar algum outro artifício para visualizar o documento pronto, talvez o <a href="http://johnmacfarlane.net/pandoc/" target="_blank">pandoc</a> (um programa de linha de comando capaz de manipular qualquer tipo de arquivo contendo texto) seja uma boa alternativa.</p>
+<p>Considerando-se que um editor Markdown seja utilizado (o que facilita a visualização dos resultados), o próximo passo é incluir matemática com sintaxe LaTeX no meio da sintaxe do Markdown. Para isto, será utilizado o MathJax de forma offline.</p>
+<p><strong>MathJax offline</strong></p>
+<p>Baixe o MathJax a partir de <a href="http://www.mathjax.org/download/" target="_blank">http://www.mathjax.org/download/</a> e role a página até o "Current Version" (enquanto escrevo, a versão mais atual é 2.3, com 32.9MB de tamanho) e baixe o arquivo. Com o arquivo em seu computador, descompacte e deixe em um local adequado. Se você está utilizando um sistema tipo UNIX, talvez seja interessante alocar a pasta descompactada em /opt ou em /var/www (se você está acostumado a configurar um servidor, então colocar este tipo de aplicação em /var/www faz mais sentido). Verifique dentro da pasta compactada que várias outras pastas e arquivos estão disponíveis. O arquivo (script) que nos interessa é o MathJax.js.</p>
+<p><strong>Markdown + MathJax</strong></p>
+<p>Para fazer com que seja possível utilizar a sintaxe LaTeX para renderizar equações junto com a sintaxe Markdown, insira as seguintes linhas no cabeçalho do seu arquivo (veja na imagem acima um exemplo):</p>
+<p>[sourcecode language="javascript"]<br />
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;/opt/mathjax/MathJax.js?config=TeX-AMS_HTML&amp;quot;<br />
+ MathJax.Hub.Config({<br />
+   tex2jax: {<br />
+     inlineMath: [ ['$','$'], [&amp;quot;\\(&amp;quot;,&amp;quot;\\)&amp;quot;] ],<br />
+     displayMath: [ ['$$','$$'], [&amp;quot;\\[&amp;quot;,&amp;quot;\\]&amp;quot;] ],},<br />
+   TeX: {equationNumbers: {<br />
+     autoNumber: &amp;quot;AMS&amp;quot;<br />
+   }},<br />
+ });<br />
+&amp;lt;/script&amp;gt;<br />
+$\newcommand{\const}{\mathrm{const}}$<br />
+[/sourcecode]</p>
+<p>As linhas acima invocam o script MathJax.js que está na pasta /opt/mathjax (observe que o caminho para o script MahJax.js deve ser indicado em src="caminho"). As linhas seguintes, fazem com que sejam definidos "escapes" de forma que seja possível escrever matemática em sintaxe LaTeX (neste caso, tudo o que estiver entre os delimitadores $ $, será interpretado como uma estrutura LaTeX). Para testar, experimente escrever alguma equação.</p>
+<p>Em LaTeX, podemos escrever uma equação no corpo do texto da seguinte forma, utilizando a environment (ambiente) equation (equação):</p>
+<p>[sourcecode language="latex"]<br />
+\begin{equation}<br />
+\vec{z} = \mathbf{B}^{-1}\vec{\delta{x}}<br />
+\end{equation}<br />
+[/sourcecode]</p>
+<p>O texto acima, deve ser renderizado como:</p>
+<p>$latex \vec{z} = \mathbf{B}^{-1}\vec{\delta{x}}$</p>
+<p>O mesmo pode ser utilizado dentro de um texto Markdown, sem a necessidade de alterações. Por outro lado, para incluir símbolos e equações inline, ou seja, dentro de um parágrafo de texto, deve-se fazer (exemplo):</p>
+<p>[sourcecode language="latex"]<br />
+Esta nova variável será utilizada para calcular $\nabla_{\vec{\delta{x}}}J=0$.<br />
+[/sourcecode]</p>
+<p>O texto acima, deve ser renderizado como:</p>
+<p>Esta nova variável será utilizada para calcular $latex \nabla_{\vec{\delta{x}}}J=0$.</p>
+<p>Observe que o texto foi escrito utilizando os delimitadores $ $, da mesma forma como se faz em um texto LaTeX. Fórmulas complexas podem ser escritas, da mesma forma como se faz em um arquivo LaTeX.</p>
+<p><strong>Conclusões</strong></p>
+<p>A sintaxe Markdown é mais uma alternativa para a escrita de texto puro com marcação direta. Nesta sintaxe, ao invés de se formatar o texto, este é marcado com a vantagem de se escrever o texto na forma como ele deve ser apresentado. Neste artigo foi mostrado como incluir a sintaxe LaTeX dentro de um arquivo Markdown utilizando-se o script MathJax.js, de forma que equações possam ser renderizadas.</p>
+<p><strong>Referência</strong></p>
+<ul>
+<li><a href="http://www.mathjax.org/download/" target="_blank">http://www.mathjax.org/download/</a></li>
+</ul>

@@ -1,7 +1,7 @@
 # Site settings
 title: cfbastarz.github.io
 url: "https://cfbastarz.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
-baseurl: "https://cfbastarz.github.io" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
+baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 timezone: America/Sao_Paulo
 description: >
   Aqui escrevo sobre problemas binários em geral.

@@ -1,0 +1,45 @@
+---
+layout: post
+title: SSH sem senha no OS X Mountain Lion
+date: 2013-07-14 15:14:47.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- Mountain Lion
+- OS X
+- SSH
+- SSH sem senha
+meta:
+  _publicize_pending: '1'
+  _oembed_9f628f4a0a63ecd9532c81e372b8e00e: "{{unknown}}"
+  _oembed_303ed15b2baf9ebeb88094bdb5ca23be: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2013/07/14/ssh-sem-senha-no-os-x-mountain-lion/"
+---
+<p>O SSH é um serviço de rede que permite fazer um login seguro em máquinas remotas. Basicamente, informa-se o login, o nome (ou endereço) da máquina à qual deseja-se conectar e depois a senha. Dependendo do uso que se faz do SSH, pode ser necessário e/ou conveniente configurar o software para guardar as senha com uma chave pública de forma que o login é feito de forma automática, sem a necessidade de perdir uma senha a cada pedido de login. De forma semelhante, quando trabalha-se com processamente paralelo utiizando, por exemplo, o MPI, é necessário que a máquina seja configurada para fazer o login no localhost sem pedir senha. Neste caso, isto acontece porque cluster são geralmente configurados em rede e para que a compilação possa aproveitar os processadores das diferentes máquinas localmente, é necessário que todas as máquinas sejam acessíveis na rede. Você consegue imaginar como seria a compilação e a execução de uma grande software de forma paralela em um ambiente de rede e tendo que digitar a senha de login das máquinas a todo instante? No caso dos processadores multicore, a situação é bastante semelhante: os softwares que podem tirar vantagem de máquinas com este tipo de processadore, enxergam cada um dos cores como um processador independente. Então, torna-se necessário configuarar a máquina em questão para que ela possa acessar ela mesma através do terminal via SSH. Confuso? É um pouco, mas é bastante simples.</p>
+<p>Em uma máquina Linux, podemos gerar uma chave pública com os seguintes comandos:</p>
+<pre>$ ssh-keygen -t rsa </pre>
+<pre>$ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys2</pre>
+<p>No OS X Mountain Lion, o processo é bastante semelhante e requer uma configuração adicional:</p>
+<pre>$ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa</pre>
+<pre>$ cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys</pre>
+<p>Mas para que tudo funcione, é preciso configurar o OS X Mountain Lion para permitir logins remotos. Para isto, basta abrir o painel de "Preferências do Sistema" (System Preferences), clicar no ícone "Compartilhamento" (Sharing) e marcar a opção "Login Remoto" (Remote Login).</p>
+<p><img style="display:block;margin-left:auto;margin-right:auto;" title="syspref.png" src="{{ site.baseurl }}/assets/syspref.png" alt="Painel de Preferências do Sistema" width="600" height="492" border="0" /></p>
+<p>Depois disso, basta testar:</p>
+<pre>$ ssh localhost</pre>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/7134535/setup-passphraseless-ssh-to-localhost-on-os-x">http://stackoverflow.com/questions/7134535/setup-passphraseless-ssh-to-localhost-on-os-x</a></li>
+<li><a href="http://www.vivaolinux.com.br/dica/SSH-sem-senha/">http://www.vivaolinux.com.br/dica/SSH-sem-senha/</a></li>
+</ul>

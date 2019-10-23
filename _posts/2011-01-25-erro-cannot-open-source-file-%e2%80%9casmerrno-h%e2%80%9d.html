@@ -1,0 +1,36 @@
+---
+layout: post
+title: 'Erro: cannot open source file “asm/errno.h”'
+date: 2011-01-25 17:18:40.000000000 -02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Tudo
+- Tutoriais
+tags:
+- C
+- Compilação
+- fortran
+- GCC
+- Header
+- ifort
+meta:
+  _edit_last: '13386696'
+  _oembed_7b9951e0af1a70686fb567efaefa01d8: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2011/01/25/erro-cannot-open-source-file-%e2%80%9casmerrno-h%e2%80%9d/"
+---
+<p>Se você está tentando compilar algum programa em linguagem C ou que precisa ler algum reader do sistema escrito em linguagem C e o compilador fortran da Intel (ifort) não consegue encontrar o header correto (no caso errno.h) e recebe o seguinte erro:</p>
+<pre>catastrophic error: cannot open source file "asm/errno.h"</pre>
+<p>Pode ser que você não tenha as bibliotecas extras do GCC instaladas por completo no seu sistema. Para resolver, basta instalar o pacote gcc-multilib:</p>
+<pre>$ sudo apt-get install gcc-multilib</pre>
+<p>Referência: <a href="http://secure-software.intel.com/en-us/forums/showpost.php?p=149314" rel="noreferrer">http://secure-software.intel.com/en-us/forums/showpost.php?p=149314</a></p>

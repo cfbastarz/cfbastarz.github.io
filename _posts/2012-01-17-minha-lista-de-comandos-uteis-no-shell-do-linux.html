@@ -1,0 +1,107 @@
+---
+layout: post
+title: Minha lista de comandos úteis no shell do linux
+date: 2012-01-17 08:21:06.000000000 -02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Ciência
+- Tudo
+- Tutoriais
+tags:
+- awk
+- comando
+- ksh
+- Linux
+- sed
+- Shell
+meta:
+  _edit_last: '13386696'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2012/01/17/minha-lista-de-comandos-uteis-no-shell-do-linux/"
+---
+<p>Depois de algum tempo fazendo scripts e tentando lançar uma solução aqui e ali, montei uma lista de alguns comando do shell do linux que me quebram uma galhão. Espero que lhe ajude também! Só para melhorar a diagramação dos comando, coloquei alguns "\n" para quebrar a linha, mas você suprimir esta parte e colocar tudo em uma linha só:</p>
+<p><strong>1. Operações de busca com o comando find</strong></p>
+<pre><code class="Bash">$ find &lt;diretorio&gt; -name ""</code></pre>
+<p><strong>Exemplos:</strong></p>
+<p><strong>1.1 Procurar arquivos com o nome "run" na pasta atual em diante</strong></p>
+<pre><code class="Bash"> $ find . -name "run" </code></pre>
+<p><strong>1.2 Procurar arquivo com a extensão ".ksh" na pasta /etc</strong></p>
+<pre><code class="Bash"> $ find /etc -name "*.ksh" </code></pre>
+<p><strong>1.3 Procurar por links simbólicos na pasta atual em diante</strong></p>
+<pre><code class="Bash"> $ find . type -l </code></pre>
+<p><strong>1.4 Procurar por links simbólicos na pasta atual em diante, com saída formatada (indicando a origem e o destino do link)</strong></p>
+<pre><code class="Bash"> $ find . -type l -printf "%p -&gt; %l\n" </code></pre>
+<p><strong>1.5 Apagar todos os links simbólicos encontrados utilizando o comando xargs</strong></p>
+<pre><code class="Bash"> $ find . -type l | xargs rm -rf </code></pre>
+<p><strong>1.6 Procurar todos os arquivos de nome "monitor.t" em pastas com nome sequencial formatado de "001" a "040", na pasta atual</strong></p>
+<pre><code class="Bash"> $ for pasta in $(seq -f "%03g" 1 40); do echo $pasta; cd $pasta; \n </code>
+<code class="Bash"> if test ! -e monitor.t; then echo "&gt;&gt;&gt; $pasta falhou"; fi; cd -; done </code></pre>
+<p><strong>2. Operações de pesquisa em arquivos com o comando grep</strong></p>
+<pre><code class="Bash">$ grep &lt;opcoes&gt; &lt;expressao&gt; &lt;arquivo(s)&gt;</code></pre>
+<p><span style="text-decoration:underline;"><strong>Exemplos:</strong></span></p>
+<p><strong>2.1 Pesquisa recursiva pela expressão "letkf" em todos os scripts ksh na pasta atual em diante</strong></p>
+<pre><code class="Bash"> $ grep -R "letkf" *.ksh </code></pre>
+<p><strong>2.2 Pesquisa recursiva pela exporessão "letkf" ou "LETKF" (ou uma mistura de maiúsculas/minúsculas) em todos os scripts ksh na pasta atual em diante</strong></p>
+<pre><code class="Bash"> $ grep -iR "letkf" *.ksh </code></pre>
+<p><strong>3. Operações com arquivos utilizando o comando awk</strong></p>
+<pre><code class="Bash"> $ awk &lt;opcoes&gt; &lt;comandos&gt; &lt;arquivo&gt;</code></pre>
+<p>ou</p>
+<pre><code> $ cat &lt;arquivo&gt; | awk &lt;opcoes&gt; &lt;comandos&gt;</code></pre>
+<p><span style="text-decoration:underline;"><strong>Exemplos:</strong></span></p>
+<p><strong>3.1 Filtrando um arquivo com colunas separadas por espaços, mostrando apenas a coluna "n"</strong></p>
+<pre><code> $ cat &lt;arquivo&gt; | awk -F " " '{print $n}'</code></pre>
+<p><strong>4. Operações com arquivos utilizando o comando sed</strong></p>
+<pre><code> $ sed &lt;opcoes&gt; &lt;comandos&gt; &lt;arquivo(s)&gt;</code></pre>
+<p>ou</p>
+<pre><code> $ cat &lt;arqvuivo&gt; | sed &lt;opcoes&gt; &lt;comandos&gt;</code></pre>
+<p><span style="text-decoration:underline;"><strong>Exemplos:</strong></span></p>
+<p><strong>4.1 Substituindo todas as ocorrências da string "A" pela string "B" em todos os scripts .ksh (apenas na pasta atual)</strong></p>
+<pre><code class="Bash"> $ sed -i "s,A,B,g" *.ksh </code></pre>
+<p><strong>4.2 Comentando a linha "n" em um arquivo (comentário é dados por #)</strong></p>
+<pre><code class="Bash"> $ sed -i 'ns/^/#/' </code></pre>
+<p><strong>4.3 Inserindo um comentário na primeira linha de um arquivo</strong></p>
+<pre><code class="Bash"> $ sed -i "1s/^/# Comentario/" &gt; </code></pre>
+<p><strong>5. Criando uma sequência de números no shell com o comando seq</strong></p>
+<pre><code> $(seq &lt;inicio&gt; &lt;fim&gt;)</code></pre>
+<p><span style="text-decoration:underline;"><strong>Exemplos:</strong></span></p>
+<p><strong>5.1 Imprimir no shell a sequencia de 1 a 20</strong></p>
+<pre><code class="Bash"> $ echo $(seq 1 20) </code></pre>
+<p><strong>6. Operações com loops no shell:</strong></p>
+<p><strong>Comando for; do; done</strong></p>
+<p><span style="text-decoration:underline;"><strong>Exemplos:</strong></span></p>
+<p><strong>6.1 Imprimir a sequência de 1 a 30 utilizando o comando de laço for</strong></p>
+<pre><code class="Bash"> $ for i in $(seq 1 30); do echo $i; done </code></pre>
+<p><strong>6.2 Renomear todos os arquivos com extensão .txt adicionando uma nova extensão .dat</strong></p>
+<pre><code class="Bash"> $ for i in `find . -name *.txt`; do mv ${i} ${i}.dat; done </code></pre>
+<p><strong>6.3 Alterar todos os arquivos com a extensão .TQ0213L042 para .T213L42, utilizando o for e o sed</strong></p>
+<pre><code class="Bash"> $ for arq1 in `ls *.TQ0213L042`; do arq2=`echo ${arq1} | sed "s,TQ0213L042,T213L42,g"`; \n </code>
+<code class="Bash"> cp ${arq1} ${arq2}; done </code></pre>
+<p><strong>Comando until; do; done</strong></p>
+<p><span style="text-decoration:underline;"><strong>Exemplos:</strong></span></p>
+<p><strong>6.4 Aguardar até que um arquivo esteja disponível</strong></p>
+<pre><code> $ until [ -e &lt;arquivo&gt; ]; do sleep .1s; done</code></pre>
+<p><strong>Comando if; then; fi</strong></p>
+<p><span style="text-decoration:underline;"><strong>Exemplos:</strong></span></p>
+<p><strong>6.5 Verifica se uma pasta existe; se não existir, cria, se existir sai do teste</strong></p>
+<pre><code> $ if test ! -s &lt;pasta&gt;; then mkdir -p &lt;pasta&gt;; fi</code></pre>
+<p><strong>6.6 Lê um lista chamada "lista" com os nomes das pastas que contém um script de submissão, dá permissão de execução e executa </strong></p>
+<pre><code> $ for i in `cat lista`; do cd $i; chmod +x qsub_interface.g2s.$i; \n </code>
+<code> ./qsub_interface.g2s.$i; cd -; done</code></pre>
+<p><strong>Comando while; do; done</strong></p>
+<p><strong>6.6 Faz um loop em cima de datas; verifica se a primeira data é menor ou igual do que a segunda. Quando esta condição é alcançada, sai do loop</strong></p>
+<pre><code> $ while [ &lt;data_inicio&gt; -le &lt;data_fim&gt; ]; do &lt;operacoes&gt;; done</code></pre>
+<p><strong>Referências Úteis:</strong></p>
+<ul>
+<li><a href="http://aurelio.net/shell/canivete/" target="_blank">Canivete Suíço do Shell</a></li>
+<li><a href="http://thobias.org/doc/sosed.html" target="_blank">Só Sed</a></li>
+<li><a href="http://aurelio.net/sed/" target="_blank">SED</a></li>
+</ul>

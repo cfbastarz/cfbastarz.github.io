@@ -1,0 +1,36 @@
+---
+layout: post
+title: Instalando a biblioteca JPEG no linux
+date: 2011-01-25 17:16:14.000000000 -02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- JPEG
+- libjpeg
+meta:
+  _edit_last: '13386696'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2011/01/25/instalando-a-biblioteca-jpeg-no-linux/"
+---
+<p>Para instalar a biblioteca JPEG a partir do código-fonte é bastante fácil, mas para o usuário menos experiente, há que se considerar alguns detalhes:</p>
+<p>Antes de se executar o comando de instalação “make install-lib”, há que se criar manualmente os diretórios “include” e “lib”. Em sequência, os comandos para baixar, configurar e instalar o pacote são:</p>
+<pre>$ wget -c http://www.hdfgroup.org/ftp/lib-external/jpeg/src/jpegsrc.v6b.tar.gz
+$ tar -zxvf jpegsrc.v6b.tar.gz
+$ cd jpegsrc.v6b
+$ ./configure --prefix=/opt/jpegsrc.v6b
+$ make
+$ sudo mkdir /opt/jpegsrc.v6b/lib /opt/jpegsrc.v6b/include
+$ sudo make install-lib</pre>
+<p>Prontinho!</p>
+<p>&nbsp;</p>

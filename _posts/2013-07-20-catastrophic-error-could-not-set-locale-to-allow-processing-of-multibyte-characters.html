@@ -1,0 +1,46 @@
+---
+layout: post
+title: 'Catastrophic error: could not set locale "" to allow processing of multibyte
+  characters'
+date: 2013-07-20 11:18:12.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- C
+- catastrophic error
+- Compilação
+- fortran
+- icc
+- ifort
+- Intel
+- LANG=en_US.UTF-8
+- LC_ALL=en_US.UTF-8
+meta:
+  geo_public: '0'
+  _edit_last: '13386696'
+  _publicize_pending: '1'
+  _oembed_c344fc7efa29acdc4c01f4e42915cd3f: "{{unknown}}"
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2013/07/20/catastrophic-error-could-not-set-locale-to-allow-processing-of-multibyte-characters/"
+---
+<p>As mensagem de erro de compilação dos compiladores da Intel são bastante interessantes: "Catastrophic error...", ou "Erro catastrófico..." :)</p>
+<p>Esse erro apareceu quando executei o comando "make" para compilar um código fonte em uma máquina Linux (Ubuntu 11.04) utilizando os compiladores da Intel (ifort/icc). Esse erro apareceu porque o Makefile não conseguiu determinar qual é o "idioma" do terminal, muito embora a variável "LANG" estivesse ajustada para "en_US.UTF-8" (LANG=en_US.UTF-8).</p>
+<p>A solução foi ajustar mais uma variável de localização, a "LC_ALL" com o mesmo valor de "LANG", ou seja:</p>
+<pre>$ export LC_ALL=en_US.UTF-8</pre>
+<p>Você pode colocar no seu .bashrc ou ainda em /etc/bash.bashrc, e problema resolvido!</p>
+<p><strong>Referência:</strong></p>
+<ul>
+<li><a href="http://software.intel.com/en-us/articles/cdiag912" target="_blank">http://software.intel.com/en-us/articles/cdiag912</a></li>
+</ul>
+<p>&nbsp;</p>

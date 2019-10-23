@@ -1,0 +1,41 @@
+---
+layout: post
+title: Como e quando mudar de distribuição?
+date: 2011-01-25 17:58:25.000000000 -02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- distribuições
+- Kurumin
+- Linux
+- mandrake
+- Slackware
+- trocar de distribuição
+- VirtualBox
+- VMWare
+meta:
+  _edit_last: '13386696'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2011/01/25/como-e-quando-mudar-de-distribuicao/"
+---
+<p>Antes de se autoproclamar “linuxuser”, todo linuxista já passou por pelo menos 3 distribuições diferentes: ou uma baseada no Slackware, ou uma baseada no Debian … ou uma baseada no SuSe ou RedHat. Certamente, estas são as três grandes distribuições que deram origem a todo o ecosistema de distribuições que temos hoje em dia. Nesse processo, toda mudança é uma verdadeira aventura no começo e à medida em que os conhecimentos vão sendo agragados, a brincadeira fica cada vez mais divertida. A minha primeira distribuição linux foi a saudosa Mandrake 8.2 Freq. que comprei na banca de jornal.</p>
+<p><a href="http://craftmind.wordpress.com/2011/01/25/como-e-quando-mudar-de-distribuicao/madrake8-2/" rel="attachment wp-att-1146"><img class="aligncenter size-full wp-image-1146" title="madrake8-2" src="{{ site.baseurl }}/assets/madrake8-2.gif" alt="" width="420" height="315" /></a></p>
+<p>Naquela época, de internet discada, era quase que impossível baixar uma distribuição desse porte, a menos que fosse o Kurumin (mas ainda sim esperando algumas semanas para o download terminar!). Lembro-me que demorei algumas semanas tentando juntar um pouco de coragem para instalar no meu primeiro e novo computador. Que tempo aquele! Tudo era novo, nunca havia aberto o meu computador, o que também foi uma grande aventura… Depois de algum tempo pensando e depois de ter feito um belo backup em disquetes, estava pronto para a minha primeira experiência com o linux! As primeiras tentativas foram um tanto quanto emocionantes, com o medo cercando todo o momento de estragar o computador e acabar com a máquina dos sonhos de minha irmã e eu. Meu pai foi um grande incentivo, porque ele nunca reclamou dos meus experimentos. Depois de instalado o sistema, os primeiros desafios foram a placa de vídeo (uma nVidia GeForce MX 400 de 64 MB) e o modem (um LG com chipset Netodragon). A placa de vídeo foi barbada, mas apanhei para entender o que faziam os comandos no terminal. Essa segunda etapa foi um grande aprendizado, aprendi muito (para quem não sabia nada!). Depois de alguns meses de intensa pesquisa e muita persistência, finalmente consegui instalar o modem e assim inaugurei a minha era do linux com internet. Tudo foi muito fantástico! Depois do Mandrake, que eu acompanhei até a versão 10.0 (que eu comprei no GuiadoHardware!), vieram o Kurimun (diversas versões), o Slackware (desde a versão 8.0 até as mais atuais), o Debian (que sempre tentei, mas nunca conseguia instalar com sucesso – faltavam mais conhecimentos!), o Gentoo (que nunca consegui instalar devido à minha conexão discada…) e finalmente o Ubuntu (que uso até hoje, desde a versão 5.04) entre muitas outras distros menores e selvagens. Cheguei num ponto de pensar na minha própria distribuição, começando do zero mesmo (linux from scratch!) chamada Aetos Linux (Aetos é um nome legal, que significa pipa em grego (:D).</p>
+<p>Depois dessa salada toda, a pergunta que fica é: quando e como mudar, experimentar, testar uma nova distribuição?</p>
+<p>Há diversas maneiras de se fazer isso. Mas com o passar dos anos, aprendi que é sempre melhor fazer as coisas do jeito mais simples, sem pressa, pensando na produtividade, estabilidade e benefício. Certamente, os mais apressados instalam uma distribuição por cima da outra. Simples assim. Os mais apressados e também cautelosos, sempre mantém uma partição /home separada, assim os riscos são minimizados, mas não totalmente eliminados, pois ainda sim corre-se o risco de se cometer um erro crasso e formatar a partição errada… Há também a opção de se fazer dual boot (ou multiboot) e ter várias distribuições instaladas ao mesmo tempo, lado a lado. Eu mesmo já fiz isso e o meu recorde foi 4 distribuições, todas compartilhando o mesmo /home. Nisso, perde-se em espaço, mas hoje em dia com HD’s enormes, dá tranquilo para manter várias distribuições no mesmo HD sem ter que expremer os dados pessoais. Mesmo assim, o método mais seguro de se testar uma nova versão de uma determinada distribuição ou uma completa e nova distribuição, é utilizando uma máquina virtual.</p>
+<p><a href="http://craftmind.wordpress.com/2011/01/25/como-e-quando-mudar-de-distribuicao/multiboot/" rel="attachment wp-att-1147"><img class="aligncenter size-full wp-image-1147" title="multiboot" src="{{ site.baseurl }}/assets/multiboot.png" alt="" width="450" height="332" /></a></p>
+<p>A praticidade desta alternativa é bastante atrativa, visto que não se corre o risco de perder dados pessoais e pode-se tentar o quanto for necessário. Em contra-partida, a máquina hospedeira (host) tem que dividir os recursos (processador, memória, espaço em disco etc) com a máquina convidade (guest). Em máquinas mais antigas, a menos que se tenha pelo menos 1 GB de ram e um processador com pelo menos 1 GHz de frequência, não é uma boa idéia utilizar uma máquina virtual. Bons softwares (tanto para linux quanto para Windows) de virtualização, são o VirtualBox (meu preferido) e o VMware.</p>
+<p><a href="http://craftmind.wordpress.com/2011/01/25/como-e-quando-mudar-de-distribuicao/virtual/" rel="attachment wp-att-1148"><img class="aligncenter size-full wp-image-1148" title="virtual" src="{{ site.baseurl }}/assets/virtual.png" alt="" width="450" height="194" /></a></p>
+<p>Ambos tem suas vantagens e desvantagens, o que acaba fazendo com que os usuários prefiram uma à outra. Em minha opinião, acho que o VirtualBox é mais flexível para os hosts linux do que o VMware. Mas esse papo é outra história…</p>
+<p>Finalmente, resta-nos pensar quando mudar de distrubuição. Esta pergunta acaba sendo muito pessoal, e cada um sente uma necessidade diferente. No meu caso, por exemplo, sinto que as últimas versões do Ubuntu tem se distanciado bastante do projeto Gnome (meu gerenciador de janelas predileto). Isto me incomoda um pouco, apesar de que esta direção irá revelar mais um opção em termos de gerenciador de janelas, com seus atrativos etc. Imagine, então, que os usuários mais acostumados a anos de uso do Gnome, com todas as suas facilidades, vantagens e desvantagens, se encontrem perdidos em relação à distribuição que mais utilizam no trabalho, na escola ou no computador pessoal. Essa situação, para quem sempre tem as últimas atualizações (como eu), pode ser ruim porque os seus recursos computacionais pouco-a-pouco deixaram de ter o suporte que sempre tiveram. O que fazer então? Mudar de distribuição pode ser uma alternativa. Como o Ubuntu é baseado no Debian e este mantém firme e forte o Gnome, pode ser uma alternativa. Por outro lado, os pacotes disponíveis na versão estável do Debian são mais antigos e pode acontecer de alguns recursos que mais utilizava nas últimas versões do Gnome disponível no Ubuntu, ainda não estajam disponíveis na última versão do Debian… e por aí vai. Uma mudança mais drástica seria mudar completamente de distribuição, indo, por exemplo, para um Gentoo, ou um ArchLinux que são distribuições do tipo rolling release, ou seja, são frequentemente atualizadas. De novo, caímos na balança dos prós e contras. Isso sempre irá acontecer quando o assunto for “que distribuição utilizar” ou “quando mudar de distribuição”. Há alguns anos que uso linux no meu trabalho e há vários anos antes já utilizava em casa. Acabei me acostumando com o estilo Debian pela praticidade de instalação dos pacotes e resolução de dependências. Acabei me acostumando com o Gnome, pela levaza, simplicidade e o visual da biblioteca GTK, além dos aplicativos padrão. O que resta, então, é escolher uma nova distribuição que leve em conta estes fatores e torcer para que mais anos de uso contínuo venham pela frente!</p>

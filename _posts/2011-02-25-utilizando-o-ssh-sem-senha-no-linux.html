@@ -1,0 +1,49 @@
+---
+layout: post
+title: Utilizando o SSH sem senha no linux
+date: 2011-02-25 17:20:29.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Internet
+- Tudo
+- Tutoriais
+tags:
+- openssh-server
+- SSH sem senha
+meta:
+  _edit_last: '13386696'
+  _thumbnail_id: '1203'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_fb: '1'
+  _wpas_skip_ms: '1'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2011/02/25/utilizando-o-ssh-sem-senha-no-linux/"
+---
+<p>O SSH ou “Secure SHell” é um programa cliente/servidor (no sentido de que pode-se executar apenas o cliente – o básico, ou o servidor – o completo) que permite o usuário fazer conexões remotas utilizando o shell do linux de forma segura. Um recurso bastante interessante do SSH é que ele pode ser executado sem senha, o que facilita bastante a vida de quem precisa desse recurso, como por exemplo, em ambientes de execução de códigos paralelizados, em que são necessárias conexões seguras entre os nós de processamento, que são feitas via SSH. Então, para habilitar este recurso (ssh sem senha), basta seguir os passos abaixo (considerando a utilização do Ubuntu ou algum derivado do Debian):</p>
+<p>Instalar o servidor do SSH</p>
+<pre>$ sudo apt-get install openssh-server</pre>
+<p>Criar uma chave pública do SSH</p>
+<pre>$ ssh-keygen -t rsa</pre>
+<p>* Neste passo, pode-se aceitar tanto a passphrase em branco quanto o local de armazenamento da chave, geralmente em $HOME/.ssh</p>
+<p>Adicionar o conteúdo da chave para o arquivo que será lido pelo servidor (authorized_keys)</p>
+<pre>$ cd $HOME/.ssh
+$ cat id_rsa.pub &gt;&gt; authorized_keys</pre>
+<p>Teste do ssh na máquina local (localhost)</p>
+<pre>$ ssh localhost whoami</pre>
+<p>Os provedimentos acima funcionam apenas para a máquina local. Caso queira-se fazer com que o acesso à um servidor ou máquina remota funcione da mesma forma, basta copiar a chave pública id_rsa.pub para o servidor (ou máquina local) e adicionar o seu conteúdo ao arquivo authorized_keys da máquina remota.</p>
+<p>Copiando o arquivo id_rsa.pub para a máquina remota utilizando o comando SCP:</p>
+<pre>$ cd $HOME/.ssh
+$ scp id_rsa.pub usuario@servidor/.ssh/id_rsa.pub.localhost
+$ ssh usuario@servidor
+$ cd $HOME/.ssh
+$ cat id_rsa.pub.localhost &gt;&gt; authorized_keys</pre>
+<p>Vale lembrar que a instalação do openssh-server é crucial para o funcionamento do SSH sem senha na máquina local, apenas.</p>

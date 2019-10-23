@@ -1,0 +1,52 @@
+---
+layout: post
+title: Ajustando a variável JAVA_HOME
+date: 2011-04-25 17:24:18.000000000 -03:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tudo
+- Tutoriais
+tags:
+- JAVA
+- Slackware
+- variável JAVA_HOME
+meta:
+  _edit_last: '13386696'
+  _thumbnail_id: '1187'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_fb: '1'
+  _wpas_skip_ms: '1'
+author:
+  login: craftmind
+  email: cfbastarz@gmail.com
+  display_name: cfbastarz
+  first_name: ''
+  last_name: ''
+permalink: "/2011/04/25/ajustando-a-variavel-java_home/"
+---
+<p>Se você digitar algum comando no terminal que necessite das bibliotecas do JAVA e você sabe que elas estão instaladas, mas por algum motivo não funcionam corretamente, o problema pode ser com a variável JAVA_HOME. No Slackware, toda vez que eu tentava rodar um script de conexão VPN, me aparecia a seguinte mensagem:</p>
+<pre>bash-4.1# sh carlos.frederico.sh start
+ which: no java in (/usr/local/sbin:/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin)
+ Error: JRE_HOME is not defined correctly.
+ We cannot execute</pre>
+<p>No entanto, quando eu tentava rodar como usuário comum, apenas utilizando o sudo, surgia uma outra mensagem:</p>
+<pre>carlos@darkstar:~/.keys/users/carlos.frederico$ sudo sh carlos.frederico.sh start
+ Password:
+ Checando atualizacoes
+ VERSIONS.xml
+ Nao ha atualizacoes
+ Finalizando atualizacoes
+ Lendo informacoes
+ Enviando informacoes
+ ACESSO LIBERADO
+ Iniciando a VPN...
+ carlos.frederico.sh: line 10: openvpn: command not found</pre>
+<p>Ou seja, o comando openvpn, embora instalado, não estava sendo executado porque dentro do script de execução da VPN, havia uma referência às bibliotecas do JAVA, que também estavam instaladas, mas mal configuradas.</p>
+<p>Neste caso, quando dei um “echo $JAVA_HOME” na minha conta de usuário, o resultado foi “/usr/lib/java”, enquanto que na conta de root, nada apareceu! Para descobrir onde está instalado o java, basta dar um “whereis java”. Então, bastou adicionar as seguintes linhas no .bashrc no home da conta de root (se não existir, basta criar!) e voialà!</p>
+<pre>export JAVA_HOME="/usr/lib/java"
+export PATH="/usr/lib/java/bin":${PATH}</pre>
+<p>Depois de adicionadas as variáveis, basta dar um source .bashrc para que as variáveis sejam exportadas.</p>
