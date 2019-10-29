@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Oct 2019 09:46:06 -0300</pubDate>
-    <lastBuildDate>Wed, 23 Oct 2019 09:46:06 -0300</lastBuildDate>
+    <pubDate>Mon, 28 Oct 2019 10:49:51 -0300</pubDate>
+    <lastBuildDate>Mon, 28 Oct 2019 10:49:51 -0300</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -62,8 +62,6 @@ $ xclip -o &amp;gt; arq.txt&lt;br /&gt;
         <category>.bash_aliases</category>
         
         
-        <category>wp</category>
-        
         <category>Linux</category>
         
         <category>Mac</category>
@@ -73,226 +71,272 @@ $ xclip -o &amp;gt; arq.txt&lt;br /&gt;
       </item>
     
       <item>
-        <title>Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</title>
-        <description>&lt;p&gt;Quem trabalha muito na frente do terminal, acaba desenvolvendo a habilidade de não utilizar o mouse. Boa parte do meu tempo no trabalho, é em frente ao terminal (seja um terminal do Linux ou do OS X) e raramente utilizo o mouse para alguma coisa, a não ser para interagir com a interface gráfica (como arrastar janelas ou coisas do gênero). Mas uma situação que sempre me forçou a usar o mouse na frente do terminal, era simplesmente copiar o endereço do local onde estou e colar dentro do editor vi (ou vim) ou em outro local. Para isso, sempre utilizei o comando “pwd” e usava o mouse para copiar e colar. Percebendo que essa era praticamente a única ação que me fazia tirar as mãos do teclado enquanto trabalhava com o terminal, revolvi procurar uma solução. Eu a encontrei e é bastante simples. Há basicamente dois comandos que podem ser utilizados para esta função. Um deles é o “pbcopy” que pode ser utilizado no OS X e o outro, é o “xclip” que pode ser utilizado no Linux.&lt;/p&gt;
-&lt;h1&gt;pbcopy no OS X&lt;/h1&gt;
-&lt;p&gt;No terminal do OS X, encontrei o comando “copypath”. Este comando é interno, ie., ele faz parte do conjunto de ferramentas do OS X e portanto, não é necessário instalar ele.&lt;/p&gt;
-&lt;h2&gt;Uso&lt;/h2&gt;
-&lt;p&gt;Um exemplo do seu uso é o seguinte:&lt;/p&gt;
-&lt;p&gt;[code language=&quot;plain&quot;]$ pwd | pbcopy&lt;/p&gt;
-&lt;p&gt;[/code]&lt;/p&gt;
-&lt;p&gt;Utilizando o atalho do teclado “CMD+v”, posso colar no terminal (ou em qualquer outro local) o caminho indicado pelo comando “pwd”:&lt;/p&gt;
-&lt;p&gt;[code language=&quot;plain&quot;]/Users/carlos&lt;/p&gt;
-&lt;p&gt;[/code]&lt;/p&gt;
-&lt;p&gt;Muito simples e funcional.&lt;/p&gt;
-&lt;h1&gt;xclip no Linux&lt;/h1&gt;
-&lt;p&gt;Como eu não sabia que o “pbcopy” é um comando interno do OS X, fui tentar no terminal do Linux e não deu certo. Fui procurar e acabei encontrando o comando “xclip”, que tem a mesma função e funciona muito bem. Porém, na máquina em que eu estava trabalhando, este comando não estava instalado, mas nada me impediu de instalar ele localmente.&lt;/p&gt;
-&lt;h2&gt;Instalação&lt;/h2&gt;
-&lt;p&gt;Para instalar o comando “xclip” em uma máquina a partir do código fonte do programa, basta seguir os passos abaixo:&lt;/p&gt;
-&lt;p&gt;[code language=&quot;plain&quot;]$ wget -c https://github.com/astrand/xclip/archive/master.zip&lt;br /&gt;
-$ unzip master.zip&lt;br /&gt;
-$ cd master/&lt;br /&gt;
-$ ./bootstrap&lt;br /&gt;
-$ ./configure --prefix=${PWD}&lt;br /&gt;
-$ make&lt;br /&gt;
-$ make install&lt;br /&gt;
-[/code]&lt;/p&gt;
-&lt;p&gt;Com esses comandos, você irá instalar o “xclip” no mesmo diretório do código fonte do programa. Serão criados dois novos diretórios, “bin” e “share”. Dentro do primeiro, deverão estar presentes os executáveis do “xclip” e dentro do segundo, os manuais. Para adicionar os novos comandos e manuais ao PATH do Shell, basta configurar o seu arquivo ~/.bashrc (ou ~/.bash_profile ou mesmo ~/.profile), adicionando as seguintes linhas ao final do arquivo:&lt;/p&gt;
-&lt;p&gt;[code language=&quot;plain&quot;]export PATH=“/caminho/para/o/diretorio/bin/do/xclip”:${PATH}&lt;br /&gt;
-export MANPATH=“/caminho/para/o/diretorio/share/man/do/xclip”:${MANPATH}&lt;br /&gt;
-[/code]&lt;/p&gt;
-&lt;p&gt;Com isso, basta dar um source no arquivo alterado (eg., “source ~/.bashrc”) ou abrir um nova aba no terminal.&lt;/p&gt;
-&lt;h2&gt;Uso&lt;/h2&gt;
-&lt;p&gt;O uso do comando “xclip” no Shell do Linux é bastante simples. Por exemplo, copiando o caminho atual e redirecionando a saida para dentro de um arquivo texto (arq.txt):&lt;/p&gt;
-&lt;p&gt;[code language=&quot;plain&quot;]$ pwd | xclip&lt;br /&gt;
-$ xclip -o &amp;gt; arq.txt&lt;br /&gt;
-[/code]&lt;/p&gt;
-&lt;p&gt;Para colar o caminho copiado com o xclip dentro do editor vim, basta digitar “SHIFT+p”.&lt;/p&gt;
+        <title>Calculando diferença entre duas datas no formato YYYYMMDDHH (Shell)</title>
+        <description>&lt;p&gt;Neste post vou apresentar um script que escrevi há alguns meses atrás para calcular a diferença entre duas datas quaisquer, no formato YYYYMMDDHH (ou seja, no formato ANO, MÊS, DIA, HORA SINÓTICA).&lt;/p&gt;
+&lt;h1&gt;Exemplo&lt;/h1&gt;
+&lt;p&gt;Qual a diferença (em dias ou em horas) entre as datas &quot;2013010100&quot; e &quot;2013011512&quot;?&lt;/p&gt;
+&lt;p&gt;O script irá calcular a diferença entre estas duas datas e o resultado será dado em dias e em horas:&lt;/p&gt;
+&lt;pre&gt;$ ./calc_date_diff.ksh 2013010100 2013011512&lt;/pre&gt;
+&lt;p&gt;14 dia(s) e 12 hora(s) ou 348 hora(s)&lt;/p&gt;
+&lt;h1&gt;Script&lt;/h1&gt;
+&lt;p&gt;O script possui o seguinte algorítmo:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Recebe as duas datas pela linha de comando;&lt;/li&gt;
+&lt;li&gt;As datas são fornecidas como argumentos para a função datediff;&lt;/li&gt;
+&lt;li&gt;Na função datediff, são separados os anos, os meses, os dias e os horários sinóticos;&lt;/li&gt;
+&lt;li&gt;A partir disso, são formatadas as datas data1 e data2 no formato 'YYYY-MM-DD HH:mm:ss UTC';&lt;/li&gt;
+&lt;li&gt;Verifica se a data2 é maior ou menor do que data1; se data2 for maior do que data1,&lt;/li&gt;
+&lt;li&gt;Verifica se HH da data2 é igual a zero e se não é igual a HH da data1;
+&lt;ol&gt;
+&lt;li&gt;Se esta verificação for verdadeira, então a diferença entre HH (horas) das datas Informadas será calculada por 24-HH da data1;&lt;/li&gt;
+&lt;li&gt;Caso contrário, a diferença entre HH (horas) das datas será calculada pela diferença entre os HH da data2 e data1;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Se HH da data1 for igual a zero e HH da data2 não for igual a HH da data1, então a diferença entre HH das datas é calculada por 24 menos HH da data2;
+&lt;ol&gt;
+&lt;li&gt;Caso contrário, esta diferença será calculada pela diferença entre HH da data2 e data1.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;br /&gt;
+#! /bin/ksh&lt;/p&gt;
+&lt;p&gt;#set -o xtrace&lt;/p&gt;
+&lt;p&gt;data_anl=${1}&lt;br /&gt;
+data_fct=${2}&lt;/p&gt;
+&lt;p&gt;datediff(){&lt;/p&gt;
+&lt;p&gt;  yyyy_anl=$(echo ${data_anl} | cut -c 1-4)&lt;br /&gt;
+  mm_anl=$(echo ${data_anl} | cut -c 5-6)&lt;br /&gt;
+  dd_anl=$(echo ${data_anl} | cut -c 7-8)&lt;br /&gt;
+  hh_anl=$(echo ${data_anl} | cut -c 9-10)&lt;/p&gt;
+&lt;p&gt;  yyyy_fct=$(echo ${data_fct} | cut -c 1-4)&lt;br /&gt;
+  mm_fct=$(echo ${data_fct} | cut -c 5-6)&lt;br /&gt;
+  dd_fct=$(echo ${data_fct} | cut -c 7-8)&lt;br /&gt;
+  hh_fct=$(echo ${data_fct} | cut -c 9-10)&lt;/p&gt;
+&lt;p&gt;  data1=$(date -d &amp;quot;${yyyy_anl}-${mm_anl}-${dd_anl} ${hh_anl}:00:00 UTC&amp;quot; &amp;quot;+%s&amp;quot;)&lt;br /&gt;
+  data2=$(date -d &amp;quot;${yyyy_fct}-${mm_fct}-${dd_fct} ${hh_fct}:00:00 UTC&amp;quot; &amp;quot;+%s&amp;quot;)&lt;/p&gt;
+&lt;p&gt;  if [ ${data2} -gt ${data1} ]&lt;br /&gt;
+  then&lt;br /&gt;
+    if [ ${hh_fct} -eq &amp;quot;0&amp;quot; -a ${hh_fct} -ne ${hh_anl} ]&lt;br /&gt;
+    then&lt;br /&gt;
+      hh_diff=$(( 24-${hh_anl} ))&lt;br /&gt;
+    else&lt;br /&gt;
+      hh_diff=$(( ${hh_fct}-${hh_anl} ))&lt;br /&gt;
+    fi&lt;br /&gt;
+  else&lt;br /&gt;
+    if [ ${hh_anl} -eq &amp;quot;0&amp;quot; -a ${hh_fct} -ne ${hh_anl} ]&lt;br /&gt;
+    then&lt;br /&gt;
+      hh_diff=$(( 24-${hh_fct} ))&lt;br /&gt;
+    else&lt;br /&gt;
+      hh_diff=$(( ${hh_anl}-${hh_fct} ))&lt;br /&gt;
+    fi&lt;br /&gt;
+  fi&lt;/p&gt;
+&lt;p&gt;  dd_diff=$(((${data2}-${data1}) / 86400))&lt;/p&gt;
+&lt;p&gt;  hh_tot=$((${dd_diff}*24+${hh_diff}))&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;datediff ${data_anl} ${data_fct}&lt;/p&gt;
+&lt;p&gt;echo &amp;quot;${dd_diff} dia(s) e ${hh_diff} hora(s) ou ${hh_tot} hora(s)&amp;quot;&lt;/p&gt;
+&lt;p&gt;exit 0&lt;/p&gt;
+&lt;/pre&gt;
+&lt;p&gt;É isso!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 23 Feb 2018 10:34:31 -0300</pubDate>
+        <link>http://localhost:4000/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell/</guid>
+        
+        <category>Datas</category>
+        
+        <category>ksh</category>
+        
+        <category>script</category>
+        
+        <category>Shell</category>
+        
+        
+        <category>Ciência</category>
+        
+        <category>Tudo</category>
+        
+        <category>Tutoriais</category>
+        
+      </item>
+    
+      <item>
+        <title>Problema com a libosmesa6 no Linux Mint 18.3 &quot;Sylvia&quot;</title>
+        <description>&lt;p&gt;Recentemente, formatei minha máquina de trabalho e aproveitei para fazer duas coisas: 1) fazer um RAID 0 entre dois HDs de 1TB disponíveis e 2) instalar o Linux Mint 18.3 &quot;Sylvia&quot;.&lt;/p&gt;
+&lt;p&gt;O RAID 0 foi uma solução melhor para o aproveitamento dos HDs da máquina e o Linux Mint, para sanar algumas coisas que já estavam me incomodando no Ubuntu. Obviamente, estas mesmas coisas continuam a me incomodar no Linux Mint, visto que ele é uma distribuição baseada no Ubuntu. Entre estas coisas, estão alguns problemas de instabilidade com o &lt;a href=&quot;https://gnometerminator.blogspot.com.br/p/introduction.html&quot;&gt;Terminator&lt;/a&gt; (emulador de terminal) que de vez em quanto fecha (com todas as minhas abas e seções). Mas uma coisa que estou gostando bastante no Linux Mint, é a forma com a qual trata as atualizações do sistema. O sistema de notificações é funcional e descomplicado.&lt;/p&gt;
+&lt;p&gt;Mas eis que precisei instalar o &lt;a href=&quot;https://www.gnu.org/software/octave/&quot;&gt;Octave&lt;/a&gt; e tive um problema com a &quot;&lt;a href=&quot;https://packages.ubuntu.com/trusty/libs/libosmesa6&quot;&gt;libosmesa6&lt;/a&gt;&quot;:&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2816&quot; align=&quot;aligncenter&quot; width=&quot;584&quot;]&lt;img class=&quot;size-full wp-image-2816&quot; src=&quot;/assets/libmesa_octave.png&quot; alt=&quot;&quot; width=&quot;584&quot; height=&quot;195&quot; /&gt; Problema com a instalação do Octave no Linux Mint 18.3 &quot;Sylvia&quot;[/caption]&lt;/p&gt;
+&lt;p&gt;Uma pequena busca no Google me levou a esta página do &lt;a href=&quot;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&quot;&gt;askubuntu&lt;/a&gt; com uma solução para um outro problema, e que resolveu o meu também. Neste caso, o repositório estava acusando uma versão diferente da &quot;libosmesa6&quot; enquanto a instalação do Octave requeria uma outra versão. Pelo &lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&quot;&gt;visto&lt;/a&gt;, isto é um bug e aparentemente já deveria ter sido disponibilizada para as distribuições baseadas no Ubuntu. A solução foi instalar o pacote do &quot;mesa-utils&quot; com a versão requerida, disponibilizada através de um repositório &quot;ppa&quot;.&lt;/p&gt;
+&lt;pre&gt;sudo add-apt-repository ppa:paulo-miguel-dias/pkppa
+sudo apt update
+sudo apt upgrade&lt;/pre&gt;
+&lt;p&gt;E depois disso, a instalação do Octave correu bem com um simples&lt;/p&gt;
+&lt;pre&gt;sudo apt install octave&lt;/pre&gt;
 &lt;p&gt;É isso!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Referências:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://langui.sh/2010/11/14/pbpaste-pbcopy-in-mac-os-x-or-terminal-clipboard-fun/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://langui.sh/2010/11/14/pbpaste-pbcopy-in-mac-os-x-or-terminal-clipboard-fun/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&quot;&gt;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&quot;&gt;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 16 Oct 2018 10:40:59 -0300</pubDate>
-        <link>http://localhost:4000/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/</guid>
+        <pubDate>Mon, 19 Feb 2018 16:33:42 -0300</pubDate>
+        <link>http://localhost:4000/2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia/</guid>
         
-        <category>.bashrc</category>
+        <category>libosmesa6</category>
+        
+        <category>Linux Mint</category>
+        
+        <category>Octave</category>
+        
+        
+        <category>Linux</category>
+        
+        <category>Tudo</category>
+        
+      </item>
+    
+      <item>
+        <title>Expandir uma sequência numérica incluindo caracteres (Shell)</title>
+        <description>&lt;p&gt;Escrever sequências numéricas no Shell é fácil. Você pode utilizar o comando &quot;seq&quot; para escrever sequências numéricas, inclusive formatando a quantidade de dígitos. Por exemplo:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1) Sequência de 1 a 5, com passo igual a 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;$ seq 1 5
+ 1
+ 2
+ 3
+ 4
+ 5&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;2) Sequência de 1 a 5, com passo igual a 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;$ seq 1 2 5
+ 1
+ 3
+ 5&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;3) Sequência de 1 a 5, com passo igual a 1, com dois dígitos:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;$ seq -f %02g 1 5
+ 01
+ 02
+ 03
+ 04
+ 05&lt;/pre&gt;
+&lt;p&gt;E assim por diante. Neste último exemplo, se quiséssemos escrever o resultado da sequência com três dígitos, bastaria fazer &quot;seq -f %03g 1 5&quot;, ou seja, basta alterar o modificador.&lt;/p&gt;
+&lt;p&gt;Mas, e se quiséssemos escrever uma sequência formatada com caracteres, como em &quot;01N 02N 03N&quot;? Neste caso, é mais fácil utilizar o comando de expansão &quot;{..}&quot;. Por exemplo:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4) Sequência de 1 a 5, com passo igual a 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;$ echo {1..5}
+1 2 3 4 5&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;5) Sequência de 1 a 5, com passo igual a 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;$ echo {1..5..2}
+1 3 5&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;6) Sequência de 1 a 5, compasso igual a 1, com dois dígitos:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;$ echo 0{1..5}
+01 02 03 04 05&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;7) Sequência de 1 a 5, com passo igual a 2, com três dígitos sendo o último, um carácter:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;$ echo 0{1..5..2}A
+01A 03A 05A&lt;/pre&gt;
+&lt;p&gt;Muito fácil, não é? Este tipo de estrutura de expansão faz parte do Bash e ele pode ser utilizado apenas com caracteres também. Em inglês, o termo é &quot;Bash Brace Expansion&quot;. Experimente também o comando: &quot;echo {a..z}&quot;.&lt;/p&gt;
+&lt;p&gt;É isso!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Referências (e muito mais exemplos):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.linuxjournal.com/content/bash-brace-expansion&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.linuxjournal.com/content/bash-brace-expansion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.bash-hackers.org/syntax/expansion/brace#increment&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://wiki.bash-hackers.org/syntax/expansion/brace#increment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 14 Feb 2018 10:27:43 -0200</pubDate>
+        <link>http://localhost:4000/2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell/</guid>
+        
+        <category>BASH</category>
+        
+        <category>Brace Expansion</category>
+        
+        <category>Shell</category>
+        
+        
+        <category>Tudo</category>
+        
+      </item>
+    
+      <item>
+        <title>Meus Computadores #2</title>
+        <description>&lt;p dir=&quot;auto&quot;&gt;Em 2011 fiz uma &lt;a href=&quot;https://craftmind.wordpress.com/2011/01/12/meus-computadores/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;postagem&lt;/a&gt; falando sobre os meus computadores, e sobre como eles era legais. Desde então, tive (e ainda tenho) 3 outros computadores. Estes novos computadores não são mais especiais do que aqueles que já tive, mas são computadores diferentes.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Em 2012, quando iniciei meu &lt;a href=&quot;http://mtc-m21b.sid.inpe.br/rep/sid.inpe.br/mtc-m21b/2017/06.20.12.39?metadatarepository=sid.inpe.br/mtc-m21b/2017/06.20.12.39.50&amp;amp;ibiurl.backgroundlanguage=pt&amp;amp;ibiurl.requiredsite=mtc-m21b.sid.inpe.br+804&amp;amp;requiredmirror=sid.inpe.br/mtc-m21b/2013/09.26.14.25.22&amp;amp;searchsite=bibdigital.sid.inpe.br:80&amp;amp;searchmirror=sid.inpe.br/bibdigital@80/2006/11.11.23.17&amp;amp;choice=briefTitleAuthorMisc&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;doutorado em Meteorologia&lt;/a&gt;, comprei um &lt;a href=&quot;https://support.apple.com/kb/sp645?locale=en_US&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MacBook Pro (Late 2011)&lt;/a&gt;. Estamos em 2018 e eu ainda o uso diariamente, sendo ele o meu computador “on the go”. Já fiz vários upgrades nele, o que me permite utilizá-lo ainda hoje. Mas antes, vamos às suas configurações originais:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;strong&gt;Macbook Pro (Late 2011)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Processador Core i5 de 2.4 GHz;&lt;/li&gt;
+&lt;li&gt;4 GB de memória RAM;&lt;/li&gt;
+&lt;li&gt;HD mecânico de 500 GB (5400 RPM);&lt;/li&gt;
+&lt;li&gt;Vídeo Intel HD graphics 3000.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p dir=&quot;auto&quot;&gt;Para a época, esta foi uma excelente máquina (e ainda hoje me permite fazer tudo o que preciso). Como o passar do tempo, com aproximadamente 1 ano de uso, a primeira coisa que fiz foi trocar a bateria. Sim, a bateria original desse MacBook Pro começou a apresentar problemas com 1 ano de uso, logo depois que a garantia dele expirou. Fiz um post sobre a duração da bateria dele &lt;a href=&quot;https://craftmind.wordpress.com/2013/04/24/service-battery-resolvendo-problemas-de-bateria-do-macbook-pro/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;aqui&lt;/a&gt;. Essa bateria começou a apresentar problemas de cansaço com aproximadamente 250 ciclos, o que não é razoável, e por ser uma bateria original, deveria ter durado pelos menos mais uns 200 ciclos a mais (veja o referido post para entender o que representa um ciclo de uma bateria de polímero de lítio). Como era um usuário Apple de primeira viagem (e como sou muito chato com as minhas coisas), acabei trocando a bateria do MacBook Pro. Comprei uma bateria nova no Mercado Livre e, pasmem, essa bateria foi muito superior em relação à durabilidade, quando em comparação com a bateria original. Apesar disso, o tempo de duração dela não foi igual ao tempo de duração da bateria original. Mas era o suficiente para ter entre 3 e 4 horas de autonomia (nada mal). Atualmente, ainda estou utilizando esta mesma bateria (ela já tem durado quase 6 anos!) e ela já está mostrando seus sinais de cansaço. Apesar disso e, com um pouco mais de experiência, não me incomodo mais com as mensagens do OS X pedindo para verificar a bateria (em inglês, “Service Battery”), porque ela ainda aguenta umas 2 horas de carga e eu sei que não vou ficar na mão de uma hora para outra.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Além da bateria, troquei também o vergonhoso carregador do Macbook, com o seu pavoroso cordão elétrico de pífia qualidade. Comprei um parelelo no Mercado Livre, o qual tem me servido bem (apesar de não recomendar qualquer carregador chinês, principalmente se a sua bateria ainda for a original). Um amigo do trabalho me deu um carregador, também paralelo, mas com o cordão elétrico também estragado. Eu tentei consertar o carregador original com a troca do cordão elétrico (também adquirido pelo Mercado Livre), mas acabei estragando este. Então, acabei consertando o carregador que meu amigo me deu e desde então, utilizo os dois. Deixo um em casa e outro no meu trabalho, assim não preciso mais ficar enrolando e desenrolando o fio e esperando eles estragarem. Aliás, ter dois carregadores, tem se mostrado como uma excelente solução. Ainda no quesito carregador de Macbook, quando estive nos Estados Unidos em 2014, comprei pela Amazon um protetor de silicone que evita que os cabos se dobrem demasidamanete, evitando que eles se rompam. O nome desse protetor é “&lt;a href=&quot;https://pythoncords.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PythonCord&lt;/a&gt;” e vale a pena, funciona muito bem.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Logo após a substituição da bateria, o próximo upgrade foi o HD. Na época, já com um ano e meio de uso, resolvi que queria trocar o HD por um maior e de melhor performance. Como naquela época os SSDs ainda possuíam preços proibitivos por aqui, comprei um &lt;a href=&quot;https://www.seagate.com/br/pt/solutions/solid-state-hybrid/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HD híbrido da Seagate&lt;/a&gt;, com 1 TB. Esse HD torna o boot mais rápido e o acesso aos aplicativos também. Embora tenha um desempenho intermediário, entre o HD mecânico e o SSD, foi um bom upgrade.&lt;/p&gt;
+&lt;p&gt;Acho que o sucesso do tempo de duração dessa “nova” bateria, em parte, se deve à substituição do HD mecânico por um HD de melhor performance, um &lt;a href=&quot;http://www.crucial.com/usa/en/storage-ssd-mx100&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SSD Crucial MX 100&lt;/a&gt; de 500 GB. Comprei esse SSD em 2015 (ainda nos Estados Unidos), e com certeza, foi o melhor upgrade que poderia fazer nessa máquina. Depois de instalado, meu Macbook Pro parecia novo em folha, muito rápido. Nesta época, eu também já havia feito o upgrade para 8 Gb de memória RAM, que foi o segundo melhor upgrade da máquina (obviamente, em uma máquina como essas, não há muitas outras opções de upgrade que não sejam a memória RAM e o HD). Ainda sim, poderia levar os upgrades dessa máquina mais adiante, substituindo o leitor de DVD (SuperDrive) por um &lt;a href=&quot;https://informatica.mercadolivre.com.br/caddy-macbook&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;caddy&lt;/a&gt; e então incluir mais um SSD e fazer um RAID 0 entre eles e ter velocidade de leitura e escrita próximos a 1 Gb/s (se não mais), uma vez que essa máquina possui SATA III (de 6 Gb/s). Mas como ela me atende muito bem para o que preciso, não penso que compense fazer isso. Atualmente, as limitações dessa máquina que já vai completar seus 6 anos de uso, está no aspecto gráfico: a placa de vídeo Intel HD graphics 3000 já está muito defasada, além do que a resolução da tela ser também inferior com os seus 1280x800 px. As telas retinas dos Macbooks mais recentes e os monitores externos full HD entregam uma experiência muito mais agradável. Apesar disso, pelo menos a Intel HD graphics 3000 apresenta uma vantagem: a quantidade de memória RAM que é compartilhada com o sistema, aumenta se a memória RAM do sistema for aumentada. Então, quando aumentei de 4 GB para 8 GB, a placa de vídeo também pode ser beneficiada, o que é bastante desejável, ao contrário do que acontece com os Mac Minis com placa de vídeo dedicada (e que não compartilham a memória RAM do sistema).&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;Em 2016, já percebendo uma necessidade de ter um computador desktop que me permitisse ter mais espaço de armazenamento e uma placa de vídeo e monitores melhores, decidi pesquisar no Mercado Livre e encontrei um &lt;a href=&quot;https://support.apple.com/kb/SP632?locale=en_US&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mac Mini (Mid 2011)&lt;/a&gt;. O preço que paguei por essa máquina estava dentro dos limites indicados pelo &lt;a href=&quot;https://macmagazine.com.br/usados-apple/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mac Magazine&lt;/a&gt;, e foi uma boa compra, pois apesar de ser usada, ela veio na caixa original, com os manuais, cabo de força e adaptador HDMI/DVI originais.&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;&lt;strong&gt;Mac Mini (Mid 2011)&lt;/p&gt;
+&lt;p&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Processador Core i5 de 2.5 GHz;&lt;/li&gt;
+&lt;li&gt;4 Gb de memória RAM;&lt;/li&gt;
+&lt;li&gt;HD mecânico de 500 Gb (5400 RPM);&lt;/li&gt;
+&lt;li&gt;Vídeo ATI Radeon HD 6630M (256 Mb, GDDR5).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A maior vantagem desta máquina era a possibilidade de se adicionar mais um HD. Como eu estava com o HD híbrido guardado, comprei mais um SSD de 480 Gb (um SanDisk Pro) e fiz um &lt;a href=&quot;http://www.techtudo.com.br/artigos/noticia/2012/10/entenda-o-fusion-drive-o-armazenamento-hibrido-da-apple.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fusion Drive&lt;/a&gt; com esses dois discos. Só que para fazer isso, tive que comprar um kit de upgrade para o segundo HD no Mac Mini. Esse kit, também adquirido pelo Mercado Livre, inclui uma espátula de plástico, uma ferramenta de remoção da placa mãe do Mac Mini, o cabo flat do segundo HD e as borrachinhas de fixação do HD. O único problema dessa instalação, é que é necessário desmontar todo o Mac Mini para instalar o segundo HD. Feito isso, e configurado o Fusion Drive, essa máquina funcionou muito bem e atendeu as minhas expectativas, em termos de espaço e desempenho. Para efeito de comparação, o desempenho do Fusion Drive foi melhor do que o HD híbrido (o que era esperado), mas muito próximo do SSD (puro). Um aspecto que gosto bastante nesta máquina é que a sua placa gráfica é uma ATI Radeon HD 6630M, com 256 Mb (o que é muito pouco), mas com banda GDDR5, o que é muito bom. Comparativamente, a Intel HD graphics 3000 só ganha na quantidade de memória. Os jogos que mais gosto (Dirt 2, Dirt 3 e Grid) rodam relativamente melhor na ATI Radeon HD 6630M do que na Intel graphics HD 3000, apesar da pouca memória RAM. Depois do upgrade nos HDs, aumentei a memória RAM para 16 GB, o que foi excelente, permitindo que a máquina se mostrasse em pé de equivalência com os Mac Minis mais atuais em termos de configurações. A vantagem destas máquinas mais antigas é que elas são flexíveis, ainda são atualizáeis (em termos de software) e possuem bons processadores (com dois ou mais núcleos).&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;Eu sempre admirei as torres de alumínio dos Mac Pro, desde os incríveis modelos de arquitetura PowerPC G5 originais, com resfriamento líquido, até os mais modernos com arquitetura Intel de 2012. Os novos modelos de 2013, foram revolucionários no design, mas prenderam os usuário aos caríssimos dispositivos Thunderbolt com seus preços malucos. Mas em contrapartida, fizeram com que essas máquinas fantásticas de alumínio tivessem seus preço reduzidos. Então, comecei a olhar de vez em quando aqui e ali e dei pesquisei qual modelo de Mac Pro seria mais seguro e sensato investir. Essa era apenas uma possibilidade, e não fazia planos reais, mas olhar e estudar a viabilidade de se ter uma máquinas dessa em casa, não custava nada.&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;Comecei a olhar os modelos de Mac Pro disponíveis no mercado. Como os modelos 3,1; 4,1 e 5,1 são idênticos por fora, então percebi que há muita gente vendendo máquinas mais antigas por aí como se fossem as mais recentes (até 2012). Para se ter uma idéia mais clara: estamos falando de Workstations, e não computadores pessoais e essas máquinas tem um propósito bastante diferentes quando comparadas com Macbooks e Mac Minis. Mac Pros são máquina que podem ser configuradas com até dois processadores de 6 núcleos cada (totalizando 24 núcleos) e até 128 Gb de memória RAM. São máquinas utilizadas em estúdios de gravação, estúdios de produção de vídeos e animações, renderização de modelos tridimensionais e computação científica. Esta última área, pelo manos aqui no Brasil, não é tão “popular” porque é muito mais barato comprar uma Dell Precision com dois processadores, uma tonelada de memória RAM e rodar o Linux para as aplicações que se deseja.&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;Mas, para qual finalidade eu estava procurando um Mac Pro? Armazenamento: estas máquinas (pelo menos as 4,1 e 5,1) suportam até 12 TB, contanto com 4 baias para HDs de até 3 GB; Processamento gráfico: os modelos 4,1 e 5,1 já vinham de fábrica com a ATI Radeon HD 5770 ou 5870 (com memória GDDR5 e pelo menos 1 GB de RAM); Memória RAM: já falei que essas máquinas suportam até 128 GB de RAM? Bem, é claro que comprar uma máquina dessas com uma configuração mediana e depois fazer os upgrades desejados, pode acabar saindo caro. Então, é melhor pesquisar a máquina com o melhor custo benefício. Para o que eu queria, a máquina com essa relação foi o &lt;a href=&quot;https://support.apple.com/kb/SP589?locale=en_US&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mac Pro (Mid 2010)&lt;/a&gt;. As diferenças entre ela e a versão de 2012, é apenas a velocidade dos processadores. Eis as especificações da máquina que consegui encontrar (na minha cidade!!):&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;&lt;strong&gt;Mac Pro (Mid 2010)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 x 2,4 Ghs (Quad-Core Intel Xeon);&lt;/li&gt;
+&lt;li&gt;6 Gb de memória RAM;&lt;/li&gt;
+&lt;li&gt;Placa gráfica ATI Radeon HD 5770 (1 GB, GDDR5);&lt;/li&gt;
+&lt;li&gt;7 Tb de armazenamento (2 discos de 3 GB e 1 disco de 1 GB).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Encontrei esta máquina na minha cidade, há 800 metros de onde moro. Foi um achado, e esta máquina, assim como o Mac Mini, ainda possui a caixa original, com o teclado e mouse (também originais), toda a documentação e as mídias de instalação. Por ser uma máquina de 2010, as condições dela são impecáveis: limpa por dentro (sem poeira) e sempre utilizada em um estúdio com ar condicionado, ambiente de não fumante e nobreak. Realmente, uma máquina difícil de se encontrar. Comprar uma dessas pelos correios, poderia ser um pouco arriscado, dado os seus mais de 18 Kg. Tenho utilizando esta máquina na seguinte forma: configurei um JBOD (acrônimo para “Just a Bunch of Disks) - eu poderia ter feito um RAID 0, mas tenho um disco de 500 GB que queria utilizar junto com os outros discos de 3 TB. Por enquanto ela está com 6 GB de memória RAM, mas já estão à caminho os upgrades: 32 GB de memória RAM, uma placa PCIe para colocar o SSD de 480 GB que tenho utilizado nela pela interface SATA II (3 Gb/s) - ainda sim, é muito melhor do que pelo HD mecânico convencional, e mais uma placa PCIe USB 3.0 (com 4 portas). Nela armazeno todas as minhas fotos, vídeos, jogos e backups de alguns anos. Mas com uma máquina dessa, é importante manter pelo manos um backup: faço o backup dos dados mais importantes em um HD da Seagate de 5 TB. Tenho algumas idéias para explorar os recursos desta máquina, visto que ela é um monstro. Como ela tem vários núcleos e em breve terá uma quantidade generosa de memória RAM, poderei rodar alguns modelos nela, trabalhar com computação científica entre outras aplicações.&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;Com isso, essas são as minhas três novas máquinas. Acho que posso dizer que migrei quase que definitivamente para os Macs. Eu gosto do sistema operacional (embora alguns aspectos nele me incomodem); gosto da solução de backups (pelo TimeMachine) e da estabilidade (raramente apresentam algum problema). Em relação aos novos Macs, o fato de não permitirem upgrades, fazem com que sejam produtos de nicho, com prazo de validade. Os Macs mais antigos estão aí para quem os querem, e para quem quer explorá-los ao máximo.&lt;/p&gt;
+&lt;p&gt;É isso!&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 13 Feb 2018 12:25:00 -0200</pubDate>
+        <link>http://localhost:4000/2018/02/13/meus-computadores-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/13/meus-computadores-2/</guid>
+        
+        <category>Apple</category>
+        
+        <category>Mac</category>
+        
+        <category>Mac Mini</category>
+        
+        <category>Mac Pro</category>
+        
+        <category>Macbook</category>
+        
+        <category>MacBook Pro</category>
+        
+        
+        <category>Tudo</category>
+        
+      </item>
+    
+      <item>
+        <title>Open any kind of file from the terminal with an “open” command (Linux)</title>
+        <description>&lt;p&gt;Mac OS X has a handy script called &quot;open&quot; that lets you open basically any kind of file from command line inside it's default application. For example, if you are navigantig through the terminal and there is a file called &quot;document.pdf&quot; and you need to open it, you can simply do: &quot;open document.pdf&quot; and it will open the document inside the Preview app. Another example is: &quot;open picture.png&quot; and the open command will do the same thing. As simple as that.&lt;/p&gt;
+&lt;p&gt;But as a Linux user, I was wondering if there is such a command to use from the terminal emulator under my Linux box. If you try the &quot;open&quot; command, it will probably not work, unless the word &quot;open&quot; is an alias pointing to whathever program/script you have. But it happens that we do have the command &quot;xdg-open&quot; built-in the Linux shell that will get the job done. You can invoke, from the command line, the very same commands (but using the &quot;xdg-open” command instead). For example: &quot;xdg-open document.pdf&quot; and it will open the document inside eg., Evince (it will depend on your desktop environment). You can do &quot;xdg-open picture.png&quot; and it will open the picture inside the Eye of Gnome or whaterever picture viewer you have as a default.&lt;/p&gt;
+&lt;p&gt;If you want to keep things common between the two systems, specially if you are a command line user in both, just make an alias called “open&quot; pointing to &quot;xdg-open”:&lt;/p&gt;
+&lt;pre&gt;$ alias open=&quot;/usr/bin/xdg-open&quot;&lt;/pre&gt;
+&lt;p&gt;In fact, almost every desktop environment has its built-in &quot;open&quot; command, but &quot;xdg-open&quot; is more generic.&lt;/p&gt;
+&lt;p&gt;That's it!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reference:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://https://budts.be/weblog/2011/07/xdf-open-vs-exo-open&quot;&gt;http://https://budts.be/weblog/2011/07/xdf-open-vs-exo-open&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Jan 2017 11:36:37 -0200</pubDate>
+        <link>http://localhost:4000/2017/01/22/open-any-kind-of-file-from-the-terminal-with-an-open-command-linux/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/22/open-any-kind-of-file-from-the-terminal-with-an-open-command-linux/</guid>
         
         <category>.bash_aliases</category>
         
+        <category>BASH</category>
+        
         
         <category>Linux</category>
-        
-        <category>Mac</category>
-        
-        <category>Tudo</category>
-        
-      </item>
-    
-      <item>
-        <title>Memória</title>
-        <description>&lt;p&gt;Faz tempo que não escrevo...&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Memória&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Tudo é memória:&lt;br /&gt;
-enquanto a música toca,&lt;br /&gt;
-enquanto eu ando,&lt;br /&gt;
-enquanto você dança,&lt;br /&gt;
-enquanto eu descanso.&lt;/p&gt;
-&lt;p&gt;Tudo muda de passo:&lt;br /&gt;
-fica mais devagar,&lt;br /&gt;
-fica mais intenso,&lt;br /&gt;
-fica mais concentrado,&lt;br /&gt;
-fica menos pretenso.&lt;/p&gt;
-&lt;p&gt;Tudo tem memória e tudo tem um tempo:&lt;br /&gt;
-Minhas memórias parecem pequenas diante do que sinto,&lt;br /&gt;
-parecem pequenos veios de fluxo intenso.&lt;br /&gt;
-Pulsam com muita força durante um pequeno momento:&lt;br /&gt;
-Construo um caminho para os meus argumentos,&lt;br /&gt;
-enquanto contemplo as luzes que passam, e invadem meus pensamentos.&lt;/p&gt;
-&lt;p&gt;Tudo está na minha memória:&lt;br /&gt;
-enquanto eu danço,&lt;br /&gt;
-enquanto lhe observo,&lt;br /&gt;
-enquanto eu rezo,&lt;br /&gt;
-enquanto lhe tenho.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 15 Oct 2018 18:25:56 -0300</pubDate>
-        <link>http://localhost:4000/2018/10/15/memoria/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/10/15/memoria/</guid>
-        
-        
-        <category>wp</category>
-        
-        <category>Textos</category>
-        
-        <category>Tudo</category>
-        
-      </item>
-    
-      <item>
-        <title>Memória</title>
-        <description>&lt;p&gt;Faz tempo que não escrevo...&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Memória&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Tudo é memória:&lt;br /&gt;
-enquanto a música toca,&lt;br /&gt;
-enquanto eu ando,&lt;br /&gt;
-enquanto você dança,&lt;br /&gt;
-enquanto eu descanso.&lt;/p&gt;
-&lt;p&gt;Tudo muda de passo:&lt;br /&gt;
-fica mais devagar,&lt;br /&gt;
-fica mais intenso,&lt;br /&gt;
-fica mais concentrado,&lt;br /&gt;
-fica menos pretenso.&lt;/p&gt;
-&lt;p&gt;Tudo tem memória e tudo tem um tempo:&lt;br /&gt;
-Minhas memórias parecem pequenas diante do que sinto,&lt;br /&gt;
-parecem pequenos veios de fluxo intenso.&lt;br /&gt;
-Pulsam com muita força durante um pequeno momento:&lt;br /&gt;
-Construo um caminho para os meus argumentos,&lt;br /&gt;
-enquanto contemplo as luzes que passam, e invadem meus pensamentos.&lt;/p&gt;
-&lt;p&gt;Tudo está na minha memória:&lt;br /&gt;
-enquanto eu danço,&lt;br /&gt;
-enquanto lhe observo,&lt;br /&gt;
-enquanto eu rezo,&lt;br /&gt;
-enquanto lhe tenho.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 15 Oct 2018 18:25:56 -0300</pubDate>
-        <link>http://localhost:4000/2018/10/15/memoria/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/10/15/memoria/</guid>
-        
-        
-        <category>Textos</category>
-        
-        <category>Tudo</category>
-        
-      </item>
-    
-      <item>
-        <title>Calculando diferença entre duas datas no formato YYYYMMDDHH (Shell)</title>
-        <description>&lt;p&gt;Neste post vou apresentar um script que escrevi há alguns meses atrás para calcular a diferença entre duas datas quaisquer, no formato YYYYMMDDHH (ou seja, no formato ANO, MÊS, DIA, HORA SINÓTICA).&lt;/p&gt;
-&lt;h1&gt;Exemplo&lt;/h1&gt;
-&lt;p&gt;Qual a diferença (em dias ou em horas) entre as datas &quot;2013010100&quot; e &quot;2013011512&quot;?&lt;/p&gt;
-&lt;p&gt;O script irá calcular a diferença entre estas duas datas e o resultado será dado em dias e em horas:&lt;/p&gt;
-&lt;pre&gt;$ ./calc_date_diff.ksh 2013010100 2013011512&lt;/pre&gt;
-&lt;p&gt;14 dia(s) e 12 hora(s) ou 348 hora(s)&lt;/p&gt;
-&lt;h1&gt;Script&lt;/h1&gt;
-&lt;p&gt;O script possui o seguinte algorítmo:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Recebe as duas datas pela linha de comando;&lt;/li&gt;
-&lt;li&gt;As datas são fornecidas como argumentos para a função datediff;&lt;/li&gt;
-&lt;li&gt;Na função datediff, são separados os anos, os meses, os dias e os horários sinóticos;&lt;/li&gt;
-&lt;li&gt;A partir disso, são formatadas as datas data1 e data2 no formato 'YYYY-MM-DD HH:mm:ss UTC';&lt;/li&gt;
-&lt;li&gt;Verifica se a data2 é maior ou menor do que data1; se data2 for maior do que data1,&lt;/li&gt;
-&lt;li&gt;Verifica se HH da data2 é igual a zero e se não é igual a HH da data1;
-&lt;ol&gt;
-&lt;li&gt;Se esta verificação for verdadeira, então a diferença entre HH (horas) das datas Informadas será calculada por 24-HH da data1;&lt;/li&gt;
-&lt;li&gt;Caso contrário, a diferença entre HH (horas) das datas será calculada pela diferença entre os HH da data2 e data1;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Se HH da data1 for igual a zero e HH da data2 não for igual a HH da data1, então a diferença entre HH das datas é calculada por 24 menos HH da data2;
-&lt;ol&gt;
-&lt;li&gt;Caso contrário, esta diferença será calculada pela diferença entre HH da data2 e data1.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;[code language=&quot;bash&quot;]&lt;br /&gt;
-#! /bin/ksh&lt;/p&gt;
-&lt;p&gt;#set -o xtrace&lt;/p&gt;
-&lt;p&gt;data_anl=${1}&lt;br /&gt;
-data_fct=${2}&lt;/p&gt;
-&lt;p&gt;datediff(){&lt;/p&gt;
-&lt;p&gt;  yyyy_anl=$(echo ${data_anl} | cut -c 1-4)&lt;br /&gt;
-  mm_anl=$(echo ${data_anl} | cut -c 5-6)&lt;br /&gt;
-  dd_anl=$(echo ${data_anl} | cut -c 7-8)&lt;br /&gt;
-  hh_anl=$(echo ${data_anl} | cut -c 9-10)&lt;/p&gt;
-&lt;p&gt;  yyyy_fct=$(echo ${data_fct} | cut -c 1-4)&lt;br /&gt;
-  mm_fct=$(echo ${data_fct} | cut -c 5-6)&lt;br /&gt;
-  dd_fct=$(echo ${data_fct} | cut -c 7-8)&lt;br /&gt;
-  hh_fct=$(echo ${data_fct} | cut -c 9-10)&lt;/p&gt;
-&lt;p&gt;  data1=$(date -d &amp;quot;${yyyy_anl}-${mm_anl}-${dd_anl} ${hh_anl}:00:00 UTC&amp;quot; &amp;quot;+%s&amp;quot;)&lt;br /&gt;
-  data2=$(date -d &amp;quot;${yyyy_fct}-${mm_fct}-${dd_fct} ${hh_fct}:00:00 UTC&amp;quot; &amp;quot;+%s&amp;quot;)&lt;/p&gt;
-&lt;p&gt;  if [ ${data2} -gt ${data1} ]&lt;br /&gt;
-  then&lt;br /&gt;
-    if [ ${hh_fct} -eq &amp;quot;0&amp;quot; -a ${hh_fct} -ne ${hh_anl} ]&lt;br /&gt;
-    then&lt;br /&gt;
-      hh_diff=$(( 24-${hh_anl} ))&lt;br /&gt;
-    else&lt;br /&gt;
-      hh_diff=$(( ${hh_fct}-${hh_anl} ))&lt;br /&gt;
-    fi&lt;br /&gt;
-  else&lt;br /&gt;
-    if [ ${hh_anl} -eq &amp;quot;0&amp;quot; -a ${hh_fct} -ne ${hh_anl} ]&lt;br /&gt;
-    then&lt;br /&gt;
-      hh_diff=$(( 24-${hh_fct} ))&lt;br /&gt;
-    else&lt;br /&gt;
-      hh_diff=$(( ${hh_anl}-${hh_fct} ))&lt;br /&gt;
-    fi&lt;br /&gt;
-  fi&lt;/p&gt;
-&lt;p&gt;  dd_diff=$(((${data2}-${data1}) / 86400))&lt;/p&gt;
-&lt;p&gt;  hh_tot=$((${dd_diff}*24+${hh_diff}))&lt;/p&gt;
-&lt;p&gt;}&lt;/p&gt;
-&lt;p&gt;datediff ${data_anl} ${data_fct}&lt;/p&gt;
-&lt;p&gt;echo &amp;quot;${dd_diff} dia(s) e ${hh_diff} hora(s) ou ${hh_tot} hora(s)&amp;quot;&lt;/p&gt;
-&lt;p&gt;exit 0&lt;br /&gt;
-[/code]&lt;/p&gt;
-&lt;p&gt;É isso!&lt;/p&gt;
-</description>
-        <pubDate>Fri, 23 Feb 2018 10:34:31 -0300</pubDate>
-        <link>http://localhost:4000/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell/</guid>
-        
-        <category>Datas</category>
-        
-        <category>ksh</category>
-        
-        <category>script</category>
-        
-        <category>Shell</category>
-        
-        
-        <category>wp</category>
-        
-        <category>Ciência</category>
         
         <category>Tudo</category>
         
@@ -301,88 +345,151 @@ data_fct=${2}&lt;/p&gt;
       </item>
     
       <item>
-        <title>Calculando diferença entre duas datas no formato YYYYMMDDHH (Shell)</title>
-        <description>&lt;p&gt;Neste post vou apresentar um script que escrevi há alguns meses atrás para calcular a diferença entre duas datas quaisquer, no formato YYYYMMDDHH (ou seja, no formato ANO, MÊS, DIA, HORA SINÓTICA).&lt;/p&gt;
-&lt;h1&gt;Exemplo&lt;/h1&gt;
-&lt;p&gt;Qual a diferença (em dias ou em horas) entre as datas &quot;2013010100&quot; e &quot;2013011512&quot;?&lt;/p&gt;
-&lt;p&gt;O script irá calcular a diferença entre estas duas datas e o resultado será dado em dias e em horas:&lt;/p&gt;
-&lt;pre&gt;$ ./calc_date_diff.ksh 2013010100 2013011512&lt;/pre&gt;
-&lt;p&gt;14 dia(s) e 12 hora(s) ou 348 hora(s)&lt;/p&gt;
-&lt;h1&gt;Script&lt;/h1&gt;
-&lt;p&gt;O script possui o seguinte algorítmo:&lt;/p&gt;
+        <title>Quick fix for dropbox icons appearance (Linux)</title>
+        <description>&lt;p&gt;If you tried to use the &lt;a href=&quot;https://github.com/bil-elmoussaoui/Hardcode-Tray&quot;&gt;hardcode-tray&lt;/a&gt; script to fix the appearance of the tray icons under Linux desktops, you may have noticed that dropbox icons still look the same. This might happen if you install dropbox from &lt;a href=&quot;https://www.dropbox.com/install-linux&quot;&gt;here&lt;/a&gt;, instead from your linux official repository. If this is your case, you can use this easy fix to get the correct icons:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Recebe as duas datas pela linha de comando;&lt;/li&gt;
-&lt;li&gt;As datas são fornecidas como argumentos para a função datediff;&lt;/li&gt;
-&lt;li&gt;Na função datediff, são separados os anos, os meses, os dias e os horários sinóticos;&lt;/li&gt;
-&lt;li&gt;A partir disso, são formatadas as datas data1 e data2 no formato 'YYYY-MM-DD HH:mm:ss UTC';&lt;/li&gt;
-&lt;li&gt;Verifica se a data2 é maior ou menor do que data1; se data2 for maior do que data1,&lt;/li&gt;
-&lt;li&gt;Verifica se HH da data2 é igual a zero e se não é igual a HH da data1;
-&lt;ol&gt;
-&lt;li&gt;Se esta verificação for verdadeira, então a diferença entre HH (horas) das datas Informadas será calculada por 24-HH da data1;&lt;/li&gt;
-&lt;li&gt;Caso contrário, a diferença entre HH (horas) das datas será calculada pela diferença entre os HH da data2 e data1;&lt;/li&gt;
+&lt;li&gt;First you need to locate the correct dropbox icons within your icon theme installation. In my case, I am using the &lt;a href=&quot;https://github.com/PapirusDevelopmentTeam/papirus-icon-theme&quot;&gt;Papirus&lt;/a&gt; icon theme. On my Linux, they are located at &quot;/usr/share/icons/Papirus/&quot;;&lt;/li&gt;
+&lt;li&gt;Under the Papirus directory, you will find a folder named &quot;22x22/panel&quot;, where are the target dropbox icons. Note that I'm using the &quot;22x22&quot; size. Copy the following icons to &quot;~$USER/.dropbox-dist/dropbox-lnx.x86_64-20.3.15/images/hicolor/16x16/status&quot;. Note that your dropbox version might be different!&lt;/li&gt;
+&lt;li&gt;Convert the SVG icons to PNG (it got to be PNG, otherwise dropbox will show no icons in the system tray). Use the following command to convert the icons properly:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Se HH da data1 for igual a zero e HH da data2 não for igual a HH da data1, então a diferença entre HH das datas é calculada por 24 menos HH da data2;
-&lt;ol&gt;
-&lt;li&gt;Caso contrário, esta diferença será calculada pela diferença entre HH da data2 e data1.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;[code language=&quot;bash&quot;]&lt;br /&gt;
-#! /bin/ksh&lt;/p&gt;
-&lt;p&gt;#set -o xtrace&lt;/p&gt;
-&lt;p&gt;data_anl=${1}&lt;br /&gt;
-data_fct=${2}&lt;/p&gt;
-&lt;p&gt;datediff(){&lt;/p&gt;
-&lt;p&gt;  yyyy_anl=$(echo ${data_anl} | cut -c 1-4)&lt;br /&gt;
-  mm_anl=$(echo ${data_anl} | cut -c 5-6)&lt;br /&gt;
-  dd_anl=$(echo ${data_anl} | cut -c 7-8)&lt;br /&gt;
-  hh_anl=$(echo ${data_anl} | cut -c 9-10)&lt;/p&gt;
-&lt;p&gt;  yyyy_fct=$(echo ${data_fct} | cut -c 1-4)&lt;br /&gt;
-  mm_fct=$(echo ${data_fct} | cut -c 5-6)&lt;br /&gt;
-  dd_fct=$(echo ${data_fct} | cut -c 7-8)&lt;br /&gt;
-  hh_fct=$(echo ${data_fct} | cut -c 9-10)&lt;/p&gt;
-&lt;p&gt;  data1=$(date -d &amp;quot;${yyyy_anl}-${mm_anl}-${dd_anl} ${hh_anl}:00:00 UTC&amp;quot; &amp;quot;+%s&amp;quot;)&lt;br /&gt;
-  data2=$(date -d &amp;quot;${yyyy_fct}-${mm_fct}-${dd_fct} ${hh_fct}:00:00 UTC&amp;quot; &amp;quot;+%s&amp;quot;)&lt;/p&gt;
-&lt;p&gt;  if [ ${data2} -gt ${data1} ]&lt;br /&gt;
-  then&lt;br /&gt;
-    if [ ${hh_fct} -eq &amp;quot;0&amp;quot; -a ${hh_fct} -ne ${hh_anl} ]&lt;br /&gt;
-    then&lt;br /&gt;
-      hh_diff=$(( 24-${hh_anl} ))&lt;br /&gt;
-    else&lt;br /&gt;
-      hh_diff=$(( ${hh_fct}-${hh_anl} ))&lt;br /&gt;
-    fi&lt;br /&gt;
-  else&lt;br /&gt;
-    if [ ${hh_anl} -eq &amp;quot;0&amp;quot; -a ${hh_fct} -ne ${hh_anl} ]&lt;br /&gt;
-    then&lt;br /&gt;
-      hh_diff=$(( 24-${hh_fct} ))&lt;br /&gt;
-    else&lt;br /&gt;
-      hh_diff=$(( ${hh_anl}-${hh_fct} ))&lt;br /&gt;
-    fi&lt;br /&gt;
-  fi&lt;/p&gt;
-&lt;p&gt;  dd_diff=$(((${data2}-${data1}) / 86400))&lt;/p&gt;
-&lt;p&gt;  hh_tot=$((${dd_diff}*24+${hh_diff}))&lt;/p&gt;
-&lt;p&gt;}&lt;/p&gt;
-&lt;p&gt;datediff ${data_anl} ${data_fct}&lt;/p&gt;
-&lt;p&gt;echo &amp;quot;${dd_diff} dia(s) e ${hh_diff} hora(s) ou ${hh_tot} hora(s)&amp;quot;&lt;/p&gt;
-&lt;p&gt;exit 0&lt;br /&gt;
-[/code]&lt;/p&gt;
-&lt;p&gt;É isso!&lt;/p&gt;
+&lt;p&gt;[code language=&quot;plain&quot;]inkscape -z -e output.png -w 22 -h 22 input.svg&lt;/p&gt;
+&lt;p&gt;[/code]&lt;/p&gt;
+&lt;p&gt;This command will get the job done. But as dropbox use several icons to indicate each state, then you have to use the same command to convert each icon. To get all icons converted at once, use a modified version of this command:&lt;/p&gt;
+&lt;p&gt;[code language=&quot;plain&quot;]for i in $(ls *svg); do j=$(echo $i | sed &amp;quot;s,.svg,,g&amp;quot;); inkscape -z -e $j.png -w 22 -h 22 $i; done&lt;/p&gt;
+&lt;p&gt;[/code]&lt;/p&gt;
+&lt;p&gt;This command list all SVG files, strip the &quot;.svg&quot; extension; run the inkscape command and done! Note that the icons will be converted to 22px x 22px. If this is not your case, just change the output size accordingly.&lt;/p&gt;
+&lt;p&gt;Images:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Before&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;aligncenter&quot; src=&quot;/assets/1484246670.png&quot; alt=&quot;img-alternative-text&quot; align=&quot;middle&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;After&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;aligncenter&quot; src=&quot;/assets/1484246685.png&quot; alt=&quot;img-alternative-text&quot; align=&quot;middle&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Thats all!&lt;/p&gt;
 </description>
-        <pubDate>Fri, 23 Feb 2018 10:34:31 -0300</pubDate>
-        <link>http://localhost:4000/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell/</guid>
-        
-        <category>Datas</category>
-        
-        <category>ksh</category>
-        
-        <category>script</category>
-        
-        <category>Shell</category>
+        <pubDate>Sun, 15 Jan 2017 20:26:00 -0200</pubDate>
+        <link>http://localhost:4000/2017/01/15/quick-fix-for-dropbox-icons-appearance-linux/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/15/quick-fix-for-dropbox-icons-appearance-linux/</guid>
         
         
-        <category>Ciência</category>
+        <category>dropbox</category>
+        
+        <category>hardcode-tray</category>
+        
+        <category>icons</category>
+        
+        <category>inkscape</category>
+        
+        <category>Linux</category>
+        
+        <category>papirus</category>
+        
+        <category>Tudo</category>
+        
+      </item>
+    
+      <item>
+        <title>NCARG/NCL no Ubuntu 15.10</title>
+        <description>&lt;p&gt;Esta dica é rápida, e é para quem precisa utilizar o &lt;a href=&quot;https://www.ncl.ucar.edu&quot; target=&quot;_blank&quot;&gt;NCL&lt;/a&gt; no &lt;a href=&quot;http://www.ubuntu.com&quot; target=&quot;_blank&quot;&gt;Ubuntu&lt;/a&gt; 15.10. O NCL (NCAR Command Language) pode ser instalado através do apt-get com o seguinte comando:&lt;/p&gt;
+&lt;pre&gt;$ sudo apt-get install ncl-ncarg&lt;/pre&gt;
+&lt;p&gt;Quando você tenta executar algum script com o NCL logo após tê-lo instalado com o comando acima, você pode receber a seguinte mensagem:&lt;/p&gt;
+&lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
+&lt;pre&gt;$ ncl gsi_be_plots.ncl
+ Copyright (C) 1995-2015 - All Rights Reserved
+ University Corporation for Atmospheric Research
+ NCAR Command Language Version 6.3.0
+ The use of this software is governed by a License Agreement.
+ See http://www.ncl.ucar.edu/ for more details.
+ fatal:Could not open ($NCARG_ROOT/nclscripts/csm/gsn_code.ncl)
+ fatal:error at line 1 in file gsi_be_plots.ncl&lt;/pre&gt;
+&lt;pre&gt;fatal:syntax error: line -1 before or near&lt;/pre&gt;
+&lt;pre&gt;^&lt;/pre&gt;
+&lt;pre&gt;fatal:error in statement&lt;/pre&gt;
+&lt;p&gt;Ou seja, não funciona &quot;de primeira&quot; e é um problema de instalação. Para contornar este problema, é necessário exportar duas variáveis de ambiente para o ncl, que podem ser inseridas dentro do seu &quot;.bashrc&quot;. Por padrão, quando instalado a partir dos repositório do Ubuntu, o executável do ncl fica armazenado em &quot;/usr/bin/ncl&quot; e os demais arquivos da distribuição ficam em &quot;/usr/share/ncarg&quot;. Segundo o manual do ncl, a variável &quot;NCARG_ROOT&quot; deve ser exportada refletindo o caminho que aponta para o executável, e é aí que a solução do problema falha:&lt;/p&gt;
+&lt;pre&gt;export NCARG_ROOT=&quot;/usr/bin&quot;&lt;/pre&gt;
+&lt;p&gt;Neste caso, a solução do problema de inicialização do ncl falha porque o executável está fora da pasta &quot;/usr/share/ncl&quot;, onde estão os arquivos auxiliares da distribuição. Então, você pode pensar em exportar a variável &quot;NCARG_ROOT&quot; da seguinte forma:&lt;/p&gt;
+&lt;p&gt;Esta dica é rápida, e é para quem precisa utilizar o NCL no Ubuntu 15.10. O NCL (NCAR Command Language) pode ser instalado através do apt-get com o seguinte comando:&lt;/p&gt;
+&lt;pre&gt;$ sudo apt-get install ncl-ncarg&lt;/pre&gt;
+&lt;p&gt;Quando você inicia o NCL logo após tê-lo instalado com o comando acim, você recebe a seguinte mensagem:&lt;/p&gt;
+&lt;pre&gt;$ ncl
+ Copyright (C) 1995-2015 - All Rights Reserved
+ University Corporation for Atmospheric Research
+ NCAR Command Language Version 6.3.0
+ The use of this software is governed by a License Agreement.
+ See http://www.ncl.ucar.edu/ for more details.
+ warning:Unable to Get System Resource File Name?
+ warning:Unable to load System Resource File (null)
+ fatal:GetSysAppDir:Unable to get a default value for the system App Resource directory
+ warning:[&quot;Resources.c&quot;:734]:Unable to set appSysDir to default value - Using NULL
+ fatal:GetSysAppDir:Unable to get a default value for the system App Resource directory
+ warning:[&quot;Resources.c&quot;:734]:Unable to set appSysDir to default value - Using NULL
+ warning:Unable to Get System Resource File Name?
+ warning:WorkstationClassInitialize:Unable to access rgb color database - named colors unsupported:[errno=2]
+ NDV_COLORMAP_PATH environment variable not set:
+ defaulting to .:$NCARG_ROOT/lib/ncarg/colormaps
+ warning:[&quot;Palette.c&quot;:1844]:NhlLoadColormapFiles: Invalid directory encountered in colormap path specification
+ Segmentation fault&lt;/pre&gt;
+&lt;p&gt;Ou seja, não funciona &quot;de primeira&quot;. Para contornar este problema, é necessário exportar duas variáveis de ambiente para o ncl, que podem ser inseridas dentro do seu &quot;.bashrc&quot;. Por padrão, quando instalado a partir dos repositório do Ubuntu, o executável do ncl fica armazenado em &quot;/usr/bin/ncl&quot; e os demais arquivos da distribuição ficam em &quot;/usr/share/ncarg&quot;. Segundo o manual do ncl, a variável &quot;NCARG_ROOT&quot; deve ser exportada refletindo o caminho que aponta para o executável, e é aí que a solução do problema falha:&lt;/p&gt;
+&lt;pre&gt;export NCARG_ROOT=&quot;/usr/share/ncarg&quot;&lt;/pre&gt;
+&lt;p&gt;Da mesma forma, não vai funcionar porque o executável continua fora da pasta. Então, por que não criar uma pasta &quot;bin&quot; dentro de &quot;/usr/share/ncarg&quot; e fazer um link simbólico de &quot;/usr/bin/ncl&quot; para &quot;/usr/share/ncarg/bin/ncl&quot;? Não vai funcionar também, porque o executável vai continuar dentro de &quot;/usr/bin&quot;.&lt;/p&gt;
+&lt;p&gt;Então, como resolver? A melhor forma que encontrei, foi baixando o pacote pré-compilado do ncl para o Debian aqui.&lt;/p&gt;
+&lt;p&gt;Para instalar este pacote, siga os passos abaixo:&lt;/p&gt;
+&lt;p&gt;Cria uma pasta chama &quot;ncarg&quot; em &quot;/opt&quot;&lt;/p&gt;
+&lt;pre&gt;$ sudo mkdir -p /opt/ncarg&lt;/pre&gt;
+&lt;p&gt;Altera o dono da pasta para o usuário:&lt;/p&gt;
+&lt;pre&gt;$ sudo chown usuario -R /opt/ncarg&lt;/pre&gt;
+&lt;p&gt;Descompacte o arquivo baixado para a pasta criada:&lt;/p&gt;
+&lt;pre&gt;$ tar -zxvf arquivo.tar.gz -C /opt/ncarg&lt;/pre&gt;
+&lt;p&gt;Todos os executáveis, bibliotecas e demais arquivos e scripts necessários para a utilização do ncl estarão, portanto, em &quot;/opt/ncarg&quot;.&lt;/p&gt;
+&lt;p&gt;Não se esqueça de exportar a variável de ambiente &quot;NCARG_ROOT&quot;, apontando-a para a pasta &quot;/opt/ncarg&quot;; introduza o seguinte comando no seu &quot;.bashrc&quot;:&lt;/p&gt;
+&lt;pre&gt;export NCARG_ROOT=&quot;/opt/ncarg&quot;&lt;/pre&gt;
+&lt;p&gt;Abra uma nova seção do terminal, ou simplesmente dê um &quot;source&quot; no seu &quot;.bashrc&quot;. Tente executar o comando &quot;ncl&quot;:&lt;/p&gt;
+&lt;pre&gt;$ ncl
+ ncl: error while loading shared libraries: librtmp.so.0: cannot open shared object file: No such file or directory&lt;/pre&gt;
+&lt;p&gt;Mais um problema! Precisamos da &quot;librtmp&quot;. Para instalá-la, precisamos dos seguintes pacotes: &quot;librtmp1&quot; e &quot;librtmp-dev&quot;:&lt;/p&gt;
+&lt;pre&gt;$ sudo apt-get librtmp0 librtpm-dev&lt;/pre&gt;
+&lt;p&gt;Neste ponto, com a biblioteca instalada, você ainda não será capaz de abrir o ncl. A versão da biblioteca que o ncl utiliza é &quot;0&quot;, e a que está nos respositórios do Ubuntu 15.10, é a versão &quot;1&quot;. Então, para resolver este último detalhe, faça um link simbólico da biblioteca instalada para o local correto (&quot;/usr/lib&quot;) e com o nome correto (&quot;librtmp.so.0&quot;). Para descobrir onde foi instalada a biblioteca librtmp, digite o comando:&lt;br /&gt;
+$ locate &quot;librtmp&quot;&lt;/p&gt;
+&lt;p&gt;E para fazer o link simbólico, digite:&lt;/p&gt;
+&lt;pre&gt;$ cd /usr/lib&lt;/pre&gt;
+&lt;pre&gt;$ sudo ln -s /usr/lib/x86_64-linux-gnu/librtmp.so.1 librtmp.so.0&lt;/pre&gt;
+&lt;p&gt;Agora você será capaz de abrir o ncl, mas ainda sim vai receber uma mensagem de erro:&lt;/p&gt;
+&lt;pre&gt;$ ncl
+ Copyright (C) 1995-2015 - All Rights Reserved
+ University Corporation for Atmospheric Research
+ NCAR Command Language Version 6.3.0
+ The use of this software is governed by a License Agreement.
+ See http://www.ncl.ucar.edu/ for more details.
+ warning:Unable to Get System Resource File Name?
+ warning:Unable to load System Resource File (null)
+ fatal:GetSysAppDir:Unable to get a default value for the system App Resource directory
+ warning:[&quot;Resources.c&quot;:734]:Unable to set appSysDir to default value - Using NULL
+ fatal:GetSysAppDir:Unable to get a default value for the system App Resource directory
+ warning:[&quot;Resources.c&quot;:734]:Unable to set appSysDir to default value - Using NULL
+ warning:Unable to Get System Resource File Name?
+ warning:WorkstationClassInitialize:Unable to access rgb color database - named colors unsupported:[errno=2]
+ NDV_COLORMAP_PATH environment variable not set:
+ defaulting to .:$NCARG_ROOT/lib/ncarg/colormaps
+ warning:[&quot;Palette.c&quot;:1844]:NhlLoadColormapFiles: Invalid directory encountered in colormap path specification
+ Segmentation fault&lt;/pre&gt;
+&lt;p&gt;Para resolver isso, exporte duas variáveis de ambiente (coloque-as dentro do seu .bashrc): &quot;NCARG_ROOT&quot; e &quot;NDV_COLORMAP_PATH&quot;:&lt;/p&gt;
+&lt;pre&gt;export NCARG_ROOT=&quot;/opt/ncarg&quot;
+ export NDV_COLORMAP_PATH=&quot;/opt/ncarg/colormaps&quot;&lt;/pre&gt;
+&lt;p&gt;Abra uma nova seção do terminal e utilize o ncl.&lt;/p&gt;
+&lt;p&gt;É isso!&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Mar 2016 21:08:43 -0300</pubDate>
+        <link>http://localhost:4000/2016/03/22/ncargncl-no-ubuntu-15-10/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/03/22/ncargncl-no-ubuntu-15-10/</guid>
+        
+        <category>NCARG</category>
+        
+        <category>NCL</category>
+        
+        <category>Ubuntu 15.10</category>
+        
         
         <category>Tudo</category>
         
@@ -391,194 +498,121 @@ data_fct=${2}&lt;/p&gt;
       </item>
     
       <item>
-        <title>Problema com a libosmesa6 no Linux Mint 18.3 &quot;Sylvia&quot;</title>
-        <description>&lt;p&gt;Recentemente, formatei minha máquina de trabalho e aproveitei para fazer duas coisas: 1) fazer um RAID 0 entre dois HDs de 1TB disponíveis e 2) instalar o Linux Mint 18.3 &quot;Sylvia&quot;.&lt;/p&gt;
-&lt;p&gt;O RAID 0 foi uma solução melhor para o aproveitamento dos HDs da máquina e o Linux Mint, para sanar algumas coisas que já estavam me incomodando no Ubuntu. Obviamente, estas mesmas coisas continuam a me incomodar no Linux Mint, visto que ele é uma distribuição baseada no Ubuntu. Entre estas coisas, estão alguns problemas de instabilidade com o &lt;a href=&quot;https://gnometerminator.blogspot.com.br/p/introduction.html&quot;&gt;Terminator&lt;/a&gt; (emulador de terminal) que de vez em quanto fecha (com todas as minhas abas e seções). Mas uma coisa que estou gostando bastante no Linux Mint, é a forma com a qual trata as atualizações do sistema. O sistema de notificações é funcional e descomplicado.&lt;/p&gt;
-&lt;p&gt;Mas eis que precisei instalar o &lt;a href=&quot;https://www.gnu.org/software/octave/&quot;&gt;Octave&lt;/a&gt; e tive um problema com a &quot;&lt;a href=&quot;https://packages.ubuntu.com/trusty/libs/libosmesa6&quot;&gt;libosmesa6&lt;/a&gt;&quot;:&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_2816&quot; align=&quot;aligncenter&quot; width=&quot;584&quot;]&lt;img class=&quot;size-full wp-image-2816&quot; src=&quot;/assets/libmesa_octave.png&quot; alt=&quot;&quot; width=&quot;584&quot; height=&quot;195&quot; /&gt; Problema com a instalação do Octave no Linux Mint 18.3 &quot;Sylvia&quot;[/caption]&lt;/p&gt;
-&lt;p&gt;Uma pequena busca no Google me levou a esta página do &lt;a href=&quot;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&quot;&gt;askubuntu&lt;/a&gt; com uma solução para um outro problema, e que resolveu o meu também. Neste caso, o repositório estava acusando uma versão diferente da &quot;libosmesa6&quot; enquanto a instalação do Octave requeria uma outra versão. Pelo &lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&quot;&gt;visto&lt;/a&gt;, isto é um bug e aparentemente já deveria ter sido disponibilizada para as distribuições baseadas no Ubuntu. A solução foi instalar o pacote do &quot;mesa-utils&quot; com a versão requerida, disponibilizada através de um repositório &quot;ppa&quot;.&lt;/p&gt;
-&lt;pre&gt;sudo add-apt-repository ppa:paulo-miguel-dias/pkppa
-sudo apt update
-sudo apt upgrade&lt;/pre&gt;
-&lt;p&gt;E depois disso, a instalação do Octave correu bem com um simples&lt;/p&gt;
-&lt;pre&gt;sudo apt install octave&lt;/pre&gt;
+        <title>Editando Textile no Geany</title>
+        <description>&lt;h2&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;O &lt;a href=&quot;http://txstyle.org/&quot; target=&quot;_blank&quot;&gt;Textile&lt;/a&gt; é uma linguagem de marcação própria para hypertexto do tipo &lt;a href=&quot;https://pt.wikipedia.org/wiki/Wiki&quot; target=&quot;_blank&quot;&gt;Wiki&lt;/a&gt;. É simples e fácil de usar, sendo muito mais prática do que o &lt;a href=&quot;http://www.w3schools.com/html/&quot; target=&quot;_blank&quot;&gt;HTML&lt;/a&gt;. Assim como no &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot; target=&quot;_blank&quot;&gt;Markdown&lt;/a&gt; (uma outra linguagem de marcação - veja um post sobre o Markdown &lt;a href=&quot;https://craftmind.wordpress.com/2014/04/14/markdown-mathjax-uma-alternativa-ao-latex/&quot; target=&quot;_blank&quot;&gt;aqui&lt;/a&gt;), o Textile permite que você se concentre no conteúdo que está escrevendo, e não na linguagem em si. Linguagens como o HTML, requerem que você saiba exatamente quais são as tags que devem ser utilizadas, obrigando o programador a se concentrar muito mais nas estruturas da linguagem do que no conteúdo em sí. É claro que ninguém escreve textos utilizando as tags do HTML, e é por isso que as linguagem de marcação, como o Textile, existem.&lt;/p&gt;
+&lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;No meu trabalho temos o costume de utilizar o &lt;a href=&quot;http://www.redmine.org/&quot; target=&quot;_blank&quot;&gt;Redmine&lt;/a&gt;, um excelente gerenciador de projetos, com suporte ao &lt;a href=&quot;https://pt.wikipedia.org/wiki/Subversion&quot; target=&quot;_blank&quot;&gt;SVN&lt;/a&gt; (subversion) e outras ferramentes de versionamento de código. Nele temos a opção de criar páginas Wiki para documentar os processos envolvidos nos desenvolvimentos e o Textile é a linguagem utilizada. Muitas vezes ocorre de eu querer escrever um texto fora do Redmine e utilizar o que escrevi para coloborar na documentação de algum processo. Se eu não estiver preocupado em escrever para apenas depois formatar, então abro o bloco de notas ou mesmo um editor de textos mais avançado e escrevo o que precisar. Depois que o texto estiver pronto, copio e colo na Wiki do Redmine e formato por lá mesmo, utilizando as ferramentas de edição que ele oferece. Mas e se eu quiser escrever e formatar direto em Textile, comofaz? Uma opção que encontrei foi com o super editor &lt;a href=&quot;http://www.geany.org/&quot; target=&quot;_blank&quot;&gt;Geany&lt;/a&gt;, e é esta que vou mostrar aqui.&lt;/p&gt;
+&lt;p&gt;O Geany é uma excelente &lt;a href=&quot;https://en.wikipedia.org/wiki/Integrated_development_environment&quot; target=&quot;_blank&quot;&gt;IDE&lt;/a&gt; (do inglês &quot;Integrated Development Environment&quot;) para programação e oferece suporte para diversas linguagens, possibilitando a compilação através de &lt;a href=&quot;https://en.wikipedia.org/wiki/Makefile&quot; target=&quot;_blank&quot;&gt;Makefiles&lt;/a&gt; dentro da própria IDE. Além disso, posso utilizar o Geany para editar em Textile e &quot;compilar&quot; meus textos, de forma a visualizá-los em HTML dentro de um navegador, se eu quiser. A vantagem de se utilizar o Geany para esta tarefa, desta maneira (utilizando o HTML), é que eu posso  incluir &lt;a href=&quot;http://www.w3schools.com/css/&quot; target=&quot;_blank&quot;&gt;CSS&lt;/a&gt; (do inglês &quot;Cascading Style Sheets&quot;, ou simplesmente Folhas de Estilo) e tornar meu texto visualmente mais bonito, ou com o estilo que eu bem entender.&lt;/p&gt;
+&lt;p&gt;Para podermos utilizar o Geany com suporte ao Textile, ie., de forma a podermos &quot;compilar&quot; um texto Textile e mostrar o resultado em uma página HTML, vamos precisar do &lt;a href=&quot;http://www.w3schools.com/php/&quot; target=&quot;_blank&quot;&gt;PHP&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Instalação rápida do PHP(5)&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Neste artigo, estou assumindo que você esteja trabalhado no Ubuntu (minha versão é a 15.10 - Wily Werewolf). Para instalar o PHP, você pode procurar nos repositórios da sua distribuição. Como o objetivo deste artigo não é propriamente mostrar como instalar o PHP, vou utilizar um &lt;a href=&quot;http://askubuntu.com/questions/4983/what-are-ppas-and-how-do-i-use-them&quot; target=&quot;_blank&quot;&gt;PPA&lt;/a&gt; de um terceiro para instalar o PHP5. Se você já possui o PHP instalado e funcionando em sua máquina, você pode pular para a próxima seção.&lt;/p&gt;
+&lt;p&gt;Para instalar o PHP5 no Ubuntu 15.10, utilize os comando abaixo:&lt;/p&gt;
+&lt;pre&gt;$ sudo add-apt-repository ppa:ondrej/php5
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install php5&lt;/pre&gt;
+&lt;p&gt;Observe que aqui estamos instalando apenas o PHP. A maioria dos tutoriais que mostram como instalar o PHP, mostram como instalar um servidor Web completo - uma tarefa um pouco mais complexa.&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Preparando o Geany&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Uma vez que temos o suporte a PHP instalado na máquina, vamos preparar o Geany a compilar um texto escrito em Textile. O primeiro passo, é obter uma cópia do plugin textile para o PHP. Para isso, iremos utilizar o seguinte comando para baixar os pacotes necessários. Sugiro que você baixe o pacote a seguir em um local seguro, onde você não corra o risco de apagar por engano. No meu caso, vou baixar na mesma pasta em que pretendo trabalhar com meus textos em Textile (eg., /home/carlos/Textile):&lt;/p&gt;
+&lt;pre&gt;$ cd /home/carlos/Textile&lt;/pre&gt;
+&lt;pre&gt;$ svn export http://textpattern.googlecode.com/svn/development/4.x/ textpattern-read-only&lt;/pre&gt;
+&lt;p&gt;Depois disso, precisaremos procurar pelo script &quot;classTextile.php&quot; e lincá-lo na pasta corrente:&lt;/p&gt;
+&lt;pre&gt;$ find . -name classTextile.php&lt;/pre&gt;
+&lt;pre&gt;$ ln -s ./textpattern-read-only/textpattern/lib/classTextile.php .&lt;/pre&gt;
+&lt;p&gt;Feito o link, iremos apenas criar um script chamado &quot;textile.php&quot; que irá ficar na mesma pasta que o &quot;classTextile.php&quot;. O conteúdo deste novo script será (copie o conteúdo abaixo, cole no arquivo e salve com o nome &quot;textile.php&quot;):&lt;/p&gt;
+&lt;p&gt;[code language=&quot;php&quot;]&lt;br /&gt;
+&amp;amp;lt;?php&lt;/p&gt;
+&lt;p&gt;// takes a filename from the commandline and converts its contents&lt;br /&gt;
+// to a html format&lt;/p&gt;
+&lt;p&gt;require_once('classTextile.php');&lt;/p&gt;
+&lt;p&gt;$textile = new Textile;&lt;/p&gt;
+&lt;p&gt;$file_parts = pathinfo($argv[1]);&lt;/p&gt;
+&lt;p&gt;$wiki = file_get_contents($file_parts['basename']);&lt;/p&gt;
+&lt;p&gt;$html = $textile-&amp;amp;gt;TextileThis($wiki);&lt;/p&gt;
+&lt;p&gt;file_put_contents($file_parts['filename'].&amp;amp;quot;.html&amp;amp;quot;, $html);&lt;/p&gt;
+&lt;p&gt;// For untrusted user input, use TextileRestricted instead:&lt;br /&gt;
+// echo $textile-&amp;amp;gt;TextileRestricted($in);&lt;/p&gt;
+&lt;p&gt;?&amp;amp;gt;&lt;br /&gt;
+[/code]&lt;br /&gt;
+Com isso, iremos configurar o Geany de forma a obtermos um comando que utilize o script &quot;textile.php&quot; para compilar os nossos textos com marcação Textile, fazendo uso da classe &quot;classTextile.php&quot; que acabamos lincamos. Para isso, abra o Geany e no menu &quot;Build&quot; (meu Ubuntu está em inglês), clique na opção &quot;Set Build Commands&quot;:&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2568&quot; align=&quot;aligncenter&quot; width=&quot;271&quot;]&lt;img class=&quot;wp-image-2568 size-full&quot; src=&quot;/assets/menu_005.png&quot; alt=&quot;Menu_005&quot; width=&quot;271&quot; height=&quot;218&quot; /&gt; No menu &quot;Build&quot; do Geany, aponte o mouse para &quot;Set Build Commands&quot;.[/caption]&lt;/p&gt;
+&lt;p&gt;Na janela que abrir, clique no primeiro botão logo abaixo de &quot;Label&quot;, e digite um rótulo para o novo comando a ser criado, no meu caso, escolhi &quot;Make Textile&quot;. Além disso, insira o comando abaixo no campo à direita do botão criado:&lt;/p&gt;
+&lt;pre&gt;php textile.php %f&lt;/pre&gt;
+&lt;p&gt;Este é o comando que será executado quando clicarmos na opção &quot;Make Textile&quot; que irá aparecer no meu &quot;Build&quot; quando um arquivo Textile estiver sendo editado.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2573&quot; align=&quot;aligncenter&quot; width=&quot;562&quot;]&lt;img class=&quot;wp-image-2573 size-full&quot; src=&quot;/assets/set-build-commands_012.png&quot; alt=&quot;Set Build Commands_012&quot; width=&quot;562&quot; height=&quot;509&quot; /&gt; Na caixa de edição dos comandos, defina um label para o novo comando &quot;Make Textile&quot; e insira o comando &quot;php textile.php %f&quot;.[/caption]&lt;/p&gt;
+&lt;p&gt;Com estas opções ajustadas, chegou a hora de editar um documento utilizando a marcação Textile. Para isso, crie um novo arquivo no Geany e a salve com a extensão &quot;.txl&quot; (na realidade, pode ser outra), mas é importante que o nome do arquivo seja &quot;wiki&quot;. Para mostrar o exemplo deste artigo, o arquivo que estou editando está &lt;a href=&quot;https://github.com/textile/textile-mark/blob/master/README.textile&quot; target=&quot;_blank&quot;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2574&quot; align=&quot;aligncenter&quot; width=&quot;700&quot;]&lt;img class=&quot;wp-image-2574 size-full&quot; src=&quot;/assets/wiki-txl-home-carlos-documents-inpe2016-gdad-spcon-texto-wiki-geany_011.png&quot; alt=&quot;wiki.txl - -home-carlos-Documents-INPE2016-GDAD-SPCON-Texto Wiki - Geany_011&quot; width=&quot;700&quot; height=&quot;609&quot; /&gt; No Geany, digite o texto com a marcação Textile e salve o arquivo com o nome &quot;wiki.txl&quot;.[/caption]&lt;/p&gt;
+&lt;p&gt;Com o documento aberto, clique novamente no menu &quot;Build&quot; e veja que uma nova opção surgiu: &quot;Make Textile&quot;, que é justamente a opção para o comando que inserimos anteriormente para podermos &quot;compilar&quot; nosso documento escrito com marcação Textile.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2571&quot; align=&quot;aligncenter&quot; width=&quot;271&quot;]&lt;img class=&quot;wp-image-2571 size-full&quot; src=&quot;/assets/menu_009.png&quot; alt=&quot;Menu_009&quot; width=&quot;271&quot; height=&quot;218&quot; /&gt; Depois de digitar o texto na janela de edição do Geany, clique no menu &quot;Build&quot; e aponte o mouse para o novo comando criado &quot;Make Textile&quot;.[/caption]&lt;/p&gt;
+&lt;p&gt;Para se certificar de que a compilação ocorreu corretamente, no rodapé do editor deverá surgir a seguinte mensagem em azul:&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2576&quot; align=&quot;aligncenter&quot; width=&quot;700&quot;]&lt;img class=&quot;size-full wp-image-2576&quot; src=&quot;/assets/selection_013.png&quot; alt=&quot;Uma vez que o comando é completado com sucesso, você verá a mensagem abaixo, em azul.&quot; width=&quot;700&quot; height=&quot;142&quot; /&gt; Uma vez que o comando é completado com sucesso, você verá a mensagem abaixo, em azul.[/caption]&lt;/p&gt;
+&lt;p&gt;Se tudo correu bem, você deverá obter um arquivo chamado &quot;wiki.html&quot; que poderá ser aberto no seu navegador. Este arquivo será criado na mesma pasta em que o arquivo &quot;wiki.txl&quot; foi salvo.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2575&quot; align=&quot;aligncenter&quot; width=&quot;700&quot;]&lt;img class=&quot;wp-image-2575 size-full&quot; src=&quot;/assets/mozilla-firefox_0101.png&quot; alt=&quot;Mozilla Firefox_010&quot; width=&quot;700&quot; height=&quot;665&quot; /&gt; Com o documento compilado, abre o arquivo &quot;wiki.html&quot; no seu navegador e veja o resultado![/caption]&lt;/p&gt;
+&lt;h2&gt;Conclusão&lt;/h2&gt;
+&lt;p&gt;Neste artigo vimos como utilizar a IDE do Geany para escrevermos textos com marcação Textile sem a necessidade de termos uma Wiki instalada no computador (e sem termos que instalar um servidor Web para isso). O Geany tem muitas possibilidades e funcionalidades e isso permite que novos formatos possam ser utilizados por ele.&lt;/p&gt;
+&lt;p&gt;Utilizando uma página em HTML para visualizar o arquivo formatado, é ainda possível modificá-lo e adicionar marcação CSS para modificar a apresentação do texto.&lt;/p&gt;
 &lt;p&gt;É isso!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Referências:&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Referências&lt;/strong&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&quot;&gt;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&quot;&gt;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.geany.org/using_geany_a_textile_wiki_editor&quot; target=&quot;_blank&quot;&gt;http://wiki.geany.org/using_geany_a_textile_wiki_editor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://askubuntu.com/questions/462673/installing-php-5-3-in-ubuntu-14-04&quot; target=&quot;_blank&quot;&gt;http://askubuntu.com/questions/462673/installing-php-5-3-in-ubuntu-14-04&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://code.google.com/p/textpattern/source/browse/development/4.x/textpattern/lib/classTextile.php?r=3359&quot; target=&quot;_blank&quot;&gt;https://code.google.com/p/textpattern/source/browse/development/4.x/textpattern/lib/classTextile.php?r=3359&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/textile/textile-mark/blob/master/README.textile&quot; target=&quot;_blank&quot;&gt;https://github.com/textile/textile-mark/blob/master/README.textile&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 19 Feb 2018 16:33:42 -0300</pubDate>
-        <link>http://localhost:4000/2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia/</guid>
+        <pubDate>Mon, 25 Jan 2016 16:19:41 -0200</pubDate>
+        <link>http://localhost:4000/2016/01/25/editando-textile-no-geany/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/01/25/editando-textile-no-geany/</guid>
         
-        <category>libosmesa6</category>
+        <category>Geany</category>
         
-        <category>Linux Mint</category>
-        
-        <category>Octave</category>
-        
-        
-        <category>wp</category>
+        <category>HTML</category>
         
         <category>Linux</category>
         
+        <category>PHP</category>
+        
+        <category>Redmine</category>
+        
+        <category>SVN</category>
+        
+        <category>Textile</category>
+        
+        <category>Ubuntu</category>
+        
+        <category>Wiki</category>
+        
+        
+        <category>Internet</category>
+        
         <category>Tudo</category>
+        
+        <category>Tutoriais</category>
         
       </item>
     
       <item>
-        <title>Problema com a libosmesa6 no Linux Mint 18.3 &quot;Sylvia&quot;</title>
-        <description>&lt;p&gt;Recentemente, formatei minha máquina de trabalho e aproveitei para fazer duas coisas: 1) fazer um RAID 0 entre dois HDs de 1TB disponíveis e 2) instalar o Linux Mint 18.3 &quot;Sylvia&quot;.&lt;/p&gt;
-&lt;p&gt;O RAID 0 foi uma solução melhor para o aproveitamento dos HDs da máquina e o Linux Mint, para sanar algumas coisas que já estavam me incomodando no Ubuntu. Obviamente, estas mesmas coisas continuam a me incomodar no Linux Mint, visto que ele é uma distribuição baseada no Ubuntu. Entre estas coisas, estão alguns problemas de instabilidade com o &lt;a href=&quot;https://gnometerminator.blogspot.com.br/p/introduction.html&quot;&gt;Terminator&lt;/a&gt; (emulador de terminal) que de vez em quanto fecha (com todas as minhas abas e seções). Mas uma coisa que estou gostando bastante no Linux Mint, é a forma com a qual trata as atualizações do sistema. O sistema de notificações é funcional e descomplicado.&lt;/p&gt;
-&lt;p&gt;Mas eis que precisei instalar o &lt;a href=&quot;https://www.gnu.org/software/octave/&quot;&gt;Octave&lt;/a&gt; e tive um problema com a &quot;&lt;a href=&quot;https://packages.ubuntu.com/trusty/libs/libosmesa6&quot;&gt;libosmesa6&lt;/a&gt;&quot;:&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_2816&quot; align=&quot;aligncenter&quot; width=&quot;584&quot;]&lt;img class=&quot;size-full wp-image-2816&quot; src=&quot;/assets/libmesa_octave.png&quot; alt=&quot;&quot; width=&quot;584&quot; height=&quot;195&quot; /&gt; Problema com a instalação do Octave no Linux Mint 18.3 &quot;Sylvia&quot;[/caption]&lt;/p&gt;
-&lt;p&gt;Uma pequena busca no Google me levou a esta página do &lt;a href=&quot;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&quot;&gt;askubuntu&lt;/a&gt; com uma solução para um outro problema, e que resolveu o meu também. Neste caso, o repositório estava acusando uma versão diferente da &quot;libosmesa6&quot; enquanto a instalação do Octave requeria uma outra versão. Pelo &lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&quot;&gt;visto&lt;/a&gt;, isto é um bug e aparentemente já deveria ter sido disponibilizada para as distribuições baseadas no Ubuntu. A solução foi instalar o pacote do &quot;mesa-utils&quot; com a versão requerida, disponibilizada através de um repositório &quot;ppa&quot;.&lt;/p&gt;
-&lt;pre&gt;sudo add-apt-repository ppa:paulo-miguel-dias/pkppa
-sudo apt update
-sudo apt upgrade&lt;/pre&gt;
-&lt;p&gt;E depois disso, a instalação do Octave correu bem com um simples&lt;/p&gt;
-&lt;pre&gt;sudo apt install octave&lt;/pre&gt;
-&lt;p&gt;É isso!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Referências:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&quot;&gt;https://askubuntu.com/questions/943647/intel-graphic-installer-2-0-2-fails-on-fresh-ubuntu-16-04&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&quot;&gt;https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/1709823&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+        <title>O Tempo e o Silêncio</title>
+        <description>&lt;p&gt;Dizem que o silêncio é a melhor resposta e que o tempo é o melhor remédio para muita coisa. Mas muitas vezes o silêncio é um veneno, é o soro da ignorância, é o que mantém o estado do que se vê. E o tempo... bem, o tempo não tem nada de diferente: ele simplesmente passa.&lt;/p&gt;
+&lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;O Tempo e o Silêncio&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;De que adianta atares minhas mãos,&lt;br /&gt;
+se não queres me machucar?&lt;/p&gt;
+&lt;p&gt;De que adianta enfrentar situações,&lt;br /&gt;
+as quais não posso suportar?&lt;/p&gt;
+&lt;p&gt;De que adianta adiar o inevitável,&lt;br /&gt;
+se o encontro for pesado demais?&lt;/p&gt;
+&lt;p&gt;Muitas vezes me calo para não machucar.&lt;/p&gt;
+&lt;p&gt;E o tempo tem seus efeitos...&lt;br /&gt;
+...e o silêncio é um veneno.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 19 Feb 2018 16:33:42 -0300</pubDate>
-        <link>http://localhost:4000/2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia/</guid>
-        
-        <category>libosmesa6</category>
-        
-        <category>Linux Mint</category>
-        
-        <category>Octave</category>
+        <pubDate>Fri, 06 Nov 2015 17:25:48 -0200</pubDate>
+        <link>http://localhost:4000/2015/11/06/o-tempo-e-o-silencio/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/06/o-tempo-e-o-silencio/</guid>
         
         
-        <category>Linux</category>
-        
-        <category>Tudo</category>
-        
-      </item>
-    
-      <item>
-        <title>Expandir uma sequência numérica incluindo caracteres (Shell)</title>
-        <description>&lt;p&gt;Escrever sequências numéricas no Shell é fácil. Você pode utilizar o comando &quot;seq&quot; para escrever sequências numéricas, inclusive formatando a quantidade de dígitos. Por exemplo:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1) Sequência de 1 a 5, com passo igual a 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ seq 1 5
- 1
- 2
- 3
- 4
- 5&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;2) Sequência de 1 a 5, com passo igual a 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ seq 1 2 5
- 1
- 3
- 5&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;3) Sequência de 1 a 5, com passo igual a 1, com dois dígitos:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ seq -f %02g 1 5
- 01
- 02
- 03
- 04
- 05&lt;/pre&gt;
-&lt;p&gt;E assim por diante. Neste último exemplo, se quiséssemos escrever o resultado da sequência com três dígitos, bastaria fazer &quot;seq -f %03g 1 5&quot;, ou seja, basta alterar o modificador.&lt;/p&gt;
-&lt;p&gt;Mas, e se quiséssemos escrever uma sequência formatada com caracteres, como em &quot;01N 02N 03N&quot;? Neste caso, é mais fácil utilizar o comando de expansão &quot;{..}&quot;. Por exemplo:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4) Sequência de 1 a 5, com passo igual a 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ echo {1..5}
-1 2 3 4 5&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;5) Sequência de 1 a 5, com passo igual a 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ echo {1..5..2}
-1 3 5&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;6) Sequência de 1 a 5, compasso igual a 1, com dois dígitos:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ echo 0{1..5}
-01 02 03 04 05&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;7) Sequência de 1 a 5, com passo igual a 2, com três dígitos sendo o último, um carácter:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ echo 0{1..5..2}A
-01A 03A 05A&lt;/pre&gt;
-&lt;p&gt;Muito fácil, não é? Este tipo de estrutura de expansão faz parte do Bash e ele pode ser utilizado apenas com caracteres também. Em inglês, o termo é &quot;Bash Brace Expansion&quot;. Experimente também o comando: &quot;echo {a..z}&quot;.&lt;/p&gt;
-&lt;p&gt;É isso!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Referências (e muito mais exemplos):&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.linuxjournal.com/content/bash-brace-expansion&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.linuxjournal.com/content/bash-brace-expansion&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://wiki.bash-hackers.org/syntax/expansion/brace#increment&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://wiki.bash-hackers.org/syntax/expansion/brace#increment&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 14 Feb 2018 10:27:43 -0200</pubDate>
-        <link>http://localhost:4000/2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell/</guid>
-        
-        <category>BASH</category>
-        
-        <category>Brace Expansion</category>
-        
-        <category>Shell</category>
-        
-        
-        <category>wp</category>
-        
-        <category>Tudo</category>
-        
-      </item>
-    
-      <item>
-        <title>Expandir uma sequência numérica incluindo caracteres (Shell)</title>
-        <description>&lt;p&gt;Escrever sequências numéricas no Shell é fácil. Você pode utilizar o comando &quot;seq&quot; para escrever sequências numéricas, inclusive formatando a quantidade de dígitos. Por exemplo:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1) Sequência de 1 a 5, com passo igual a 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ seq 1 5
- 1
- 2
- 3
- 4
- 5&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;2) Sequência de 1 a 5, com passo igual a 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ seq 1 2 5
- 1
- 3
- 5&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;3) Sequência de 1 a 5, com passo igual a 1, com dois dígitos:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ seq -f %02g 1 5
- 01
- 02
- 03
- 04
- 05&lt;/pre&gt;
-&lt;p&gt;E assim por diante. Neste último exemplo, se quiséssemos escrever o resultado da sequência com três dígitos, bastaria fazer &quot;seq -f %03g 1 5&quot;, ou seja, basta alterar o modificador.&lt;/p&gt;
-&lt;p&gt;Mas, e se quiséssemos escrever uma sequência formatada com caracteres, como em &quot;01N 02N 03N&quot;? Neste caso, é mais fácil utilizar o comando de expansão &quot;{..}&quot;. Por exemplo:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4) Sequência de 1 a 5, com passo igual a 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ echo {1..5}
-1 2 3 4 5&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;5) Sequência de 1 a 5, com passo igual a 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ echo {1..5..2}
-1 3 5&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;6) Sequência de 1 a 5, compasso igual a 1, com dois dígitos:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ echo 0{1..5}
-01 02 03 04 05&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;7) Sequência de 1 a 5, com passo igual a 2, com três dígitos sendo o último, um carácter:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;$ echo 0{1..5..2}A
-01A 03A 05A&lt;/pre&gt;
-&lt;p&gt;Muito fácil, não é? Este tipo de estrutura de expansão faz parte do Bash e ele pode ser utilizado apenas com caracteres também. Em inglês, o termo é &quot;Bash Brace Expansion&quot;. Experimente também o comando: &quot;echo {a..z}&quot;.&lt;/p&gt;
-&lt;p&gt;É isso!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Referências (e muito mais exemplos):&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.linuxjournal.com/content/bash-brace-expansion&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.linuxjournal.com/content/bash-brace-expansion&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://wiki.bash-hackers.org/syntax/expansion/brace#increment&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://wiki.bash-hackers.org/syntax/expansion/brace#increment&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 14 Feb 2018 10:27:43 -0200</pubDate>
-        <link>http://localhost:4000/2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell/</guid>
-        
-        <category>BASH</category>
-        
-        <category>Brace Expansion</category>
-        
-        <category>Shell</category>
-        
+        <category>Textos</category>
         
         <category>Tudo</category>
         
