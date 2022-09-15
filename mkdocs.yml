@@ -5,8 +5,8 @@ site_author: Carlos Frederico Bastarz
 site_description: Since 1982
 
 # Repository
-repo_name: cfbastarz/blog
-repo_url: https://github.com/cfbastarz/blog
+repo_name: cfbastarz
+repo_url: https://github.com/cfbastarz
 edit_uri: edit/master/docs/
 
 # Page tree
