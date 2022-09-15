@@ -1,0 +1,62 @@
+# Project information
+#site_name: Atas das Reuniões do Comitê Científico do MONAN 
+site_name: cfbasz
+site_author: Carlos Frederico Bastarz
+site_description: Since 1982
+
+# Repository
+repo_name: cfbastarz/blog
+repo_url: https://github.com/cfbastarz/blog
+edit_uri: edit/master/docs/
+
+# Page tree
+#nav:
+#  - Atas 2021: index.md
+#    - '05 de Maio de 2021': index.md
+nav:
+  - Home: index.md
+  - 'Curriculum Vitae': cv.md
+
+# Configuration
+theme: 
+  name: null
+  custom_dir: 'cinder'
+  language: pt-BR
+#  logo: assets/logo_monan_all_white.png
+
+extra:
+    social:
+      - icon: fontawesome/brands/youtube
+        link: https://www.youtube.com/channel/UCYl-EgRTESHnSLlpKUxWrrg
+      - icon: fontawesome/brands/github
+        link: https://github.com/cfbastarz
+      - icon: fontawesome/solid/paper-plane
+        link: mailto:cfbastarz@gmail.com
+
+# PDF page style
+#extra_css:
+#  - css/pdfstyle.css
+
+# Extensions
+markdown_extensions:
+  - footnotes
+  - tables
+  - admonition
+  - abbr
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# Plugins
+plugins:
+  - mkdocs-video
+  - search
+#  - pdf-export
+#  - mkpdfs
