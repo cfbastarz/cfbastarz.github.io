@@ -21,7 +21,7 @@ I earned my Master and PhD degrees at the National Institute of Space Research s
 * Atmospheric data assimilation with methods like PSAS, 3DVar, EnKF and 3DEnVar;
 * NMC method for the calculation of the background error covariance matrix for the Brazilian Atmospheric Model ([BAM](https://journals.ametsoc.org/view/journals/wefo/31/5/waf-d-16-0062_1.xml)), for the sigma and hybrid vertical coordinates;
 * Ensemble Forecasting using an EOF based perturbation method for the BAM model;
-* Objective model evaluation using the SCANTEC and SCANPLOT softwares.
+* Objective model evaluation using the [SCANTEC](https://github.com/GAM-DIMNT-CPTEC/SCANTEC) and [SCANPLOT](https://github.com/GAM-DIMNT-CPTEC/SCANPLOT) softwares.
 
 ## Outside Work
 
