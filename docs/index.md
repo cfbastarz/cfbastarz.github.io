@@ -8,7 +8,7 @@ My name is Carlos Frederico Bastarz. I am a technologist at the National Institu
 
 ## Academics
 
-You can find my full CV [here](cv.md)
+You can find my full CV [here](cv.md).
 
 I earned my Master and PhD degrees at the National Institute of Space Research studying Meteorology and Data Assimilation, in 2010 and 2017, respectively. My undergraduation is in Mathematics teaching.
 

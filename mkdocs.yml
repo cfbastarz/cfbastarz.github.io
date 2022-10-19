@@ -16,6 +16,7 @@ edit_uri: edit/master/docs/
 nav:
   - Home: index.md
   - 'Curriculum Vitae': cv.md
+  - Videos: videos.md
 
 # Configuration
 theme: 
