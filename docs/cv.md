@@ -64,6 +64,7 @@
 
 ## Refereed Publications
 
+* DE OLIVEIRA JÚNIOR, CÉSAR MAGNO LEITE; SAPUCCI, L. F.; BASTARZ, C. F.; DE MATTOS, J. G. Z.; KUBOTA, P. Y.; BAÑOS, Y. H.; EICHHOLZ, C. W.; NEGRI, R. G.; SILVEIRA, B. B.: [Assimilação de Dados de Radiância do Sensor AMSU-A no GSI: Visão Geral sobre sua Importância para a Qualidade das Condições Iniciais na PNT do CPTEC](https://www.scielo.br/j/rbmet/a/4BMRT8gDdSzV5kSD6cjCmck/abstract/?lang=en) Revista Brasileira de Meteorologia, v. 37(3), 2022. (In Portuguese).
 * NOBRE, JOÃO PEDRO GONÇALVES; VENDRASCO, E. P.; BASTARZ, C. F.: [Impact of Ensemble-Variational data assimilation in heavy rain forecast over Brazilian Northeast](https://www.mdpi.com/2073-4433/12/9/1201). Atmosphere, v. 12(9), p. 1-20, 2021.
 * GUIMARÃES, BRUNO DOS SANTOS; COELHO, C. A.; WOOLNOUGH, S. J.; KUBOTA, P. Y.; BASTARZ, C. F.; FIGUEROA, S. N.; BONATTI, J. P.; DE SOUZA, D. C.: [An inter-comparison performance assessment of a Brazilian global sub-seasonal prediction model against four sub-seasonal to seasonal (S2S) prediction project models](https://link.springer.com/article/10.1007/s00382-020-05589-5). Climate Dynamics, v. 1, p. 1-17, 2021.
 * BAÑOS, Ivette Hernández; SAPUCCI, L. F.; CUCURULL, L.; BASTARZ, C. F.; SILVEIRA, B. B.: [Assimilation of GPSRO Bending Angle Profiles into the Brazilian Global Atmospheric Model](https://www.mdpi.com/2072-4292/11/3/256). Remote Sensing, v. 11, p. 1-19, 2019.
@@ -84,7 +85,8 @@
 ## Languages Known
 
 * English (advanced, TOEFL ITP paper-based score 543, as of September, 20th 2014);
-* Portuguese (native).
+* Portuguese (native);
+* Spanish (limited working proficiency).
 
 ## Declaration
 
