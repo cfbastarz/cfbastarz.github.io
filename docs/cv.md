@@ -87,7 +87,3 @@
 * English (advanced, TOEFL ITP paper-based score 543, as of September, 20th 2014);
 * Portuguese (native);
 * Spanish (limited working proficiency).
-
-## Declaration
-
-I hereby declare that all the information provided above are true and would be responsible for any untoward discrepancy.
