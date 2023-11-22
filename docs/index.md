@@ -35,6 +35,7 @@ The best way to reach me is via [email](mailto:cfbastarz@gmail.com).
 
 ---
 
-> Never let yourself be diverted, either by what you wish to believe, or what you think could have beneficent social effects if it were believed; but look only and solely at what are the facts.
->
-> -- <cite>Bertrand Russel</cite>
+<div style="text-align: right; font-size: 12px">Never let yourself be diverted, either by what you wish to believe, or what you think could have beneficent social effects if it were believed; but look only and solely at what are the facts.
+<br/>
+ -- <cite>Bertrand Russel</cite>
+</div>
