@@ -11,19 +11,15 @@ edit_uri: edit/master/docs/
 
 # Page tree
 #nav:
-#  - Atas 2021: index.md
-#    - '05 de Maio de 2021': index.md
-nav:
-  - Home: index.md
-  - 'Curriculum Vitae': cv.md
-  - Videos: videos.md
+#  - Home: index.md
+#  - 'Curriculum Vitae': cv.md
+#  - Videos: videos.md
 
 # Configuration
 theme: 
   name: null
   custom_dir: 'cinder'
   language: pt-BR
-#  logo: assets/logo_monan_all_white.png
 
 extra:
     social:
@@ -33,10 +29,6 @@ extra:
         link: https://github.com/cfbastarz
       - icon: fontawesome/solid/paper-plane
         link: mailto:cfbastarz@gmail.com
-
-# PDF page style
-#extra_css:
-#  - css/pdfstyle.css
 
 # Extensions
 markdown_extensions:
@@ -59,5 +51,7 @@ markdown_extensions:
 plugins:
   - mkdocs-video
   - search
-#  - pdf-export
-#  - mkpdfs
+  - blog:
+      format: "[%y/%m/%d]"
+      text-align: "left"
+  - awesome-pages

@@ -1,4 +1,4 @@
-# Carlos Frederico Bastarz
+# Curriculum Vitae
 
 ## Professional Address
 
