@@ -16,4 +16,5 @@ jobs:
       - run: pip install mkdocs-pdf-export-plugin
       - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-blog-plugin
+      - run: pip install mkdocs-matplotlib
       - run: mkdocs gh-deploy --force

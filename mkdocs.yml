@@ -51,7 +51,8 @@ markdown_extensions:
 plugins:
   - mkdocs-video
   - search
+  - awesome-pages
   - blog:
       format: "[%y/%m/%d]"
       text-align: "left"
-  - awesome-pages
+  - mkdocs_matplotlib
