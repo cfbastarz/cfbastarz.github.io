@@ -39,3 +39,7 @@ The best way to reach me is via [email](mailto:cfbastarz@gmail.com).
 <br/>
  -- <cite>Bertrand Russel</cite>
 </div>
+
+---
+
+![](https://komarev.com/ghpvc/?username=cfbastarz&label=PROFILE+VIEWS)
