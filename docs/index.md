@@ -42,4 +42,4 @@ The best way to reach me is via [email](mailto:cfbastarz@gmail.com).
 
 ---
 
-![](https://komarev.com/ghpvc/?username=cfbastarz&label=PROFILE+VIEWS)
+![](https://komarev.com/ghpvc/?username=cfbastarz&label=VISITOR+COUNTER)
