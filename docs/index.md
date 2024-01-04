@@ -27,7 +27,7 @@ I earned my Master and PhD degrees at the National Institute of Space Research s
 
 ## Outside Work
 
-I am most interested in personal computing in general and I also like to tinker with electronics devices. I am also a music passionate (classic rock and metal) and I also play guitar (acoustic and electric).
+I am most interested in personal computing in general. I am a music passionate and I also play guitar.
 
 ## Contact
 
