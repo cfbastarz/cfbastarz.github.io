@@ -4,7 +4,7 @@
 
 Welcome!
 
-My name is Carlos Frederico Bastarz. I am a technologist at the National Institute for Space Research ([Instituto Nacional de Pesquisas Espaciais - INPE](https://www.gov.br/inpe/pt-br)) in Brazil. My work interests are numerical weather prediction, data assimilation, ensemble forecasting, model verification and post-processing. You can find some of my work developments in [GAD-DIMNT-CPTEC](https://github.com/GAD-DIMNT-CPTEC) and [GAM-DIMNT-CPTEC](https://github.com/GAM-DIMNT-CPTEC) organizations.
+My name is Carlos Frederico Bastarz. I am a technologist at the National Institute for Space Research ([Instituto Nacional de Pesquisas Espaciais - INPE](https://www.gov.br/inpe/pt-br)) in Brazil. My work interests are numerical weather prediction, data assimilation, ensemble forecasting, model verification and post-processing. You can find some of my work developments in [GAD-DIMNT-CPTEC](https://github.com/GAD-DIMNT-CPTEC) and [GAM-DIMNT-CPTEC](https://github.com/GAM-DIMNT-CPTEC) organizations. 
 
 ## Academics
 

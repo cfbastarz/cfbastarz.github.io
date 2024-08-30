@@ -17,4 +17,6 @@ jobs:
       - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-blog-plugin
       - run: pip install mkdocs-matplotlib
+      - run: pip install mkdocs-pdf
+      - run: pip install neoteroi-mkdocs
       - run: mkdocs gh-deploy --force

@@ -31,6 +31,9 @@ extra:
       - icon: fontawesome/solid/paper-plane
         link: mailto:cfbastarz@gmail.com
 
+          #extra_css:
+          #  - css/neoteroi-mkdocs.css
+
 # Extensions
 markdown_extensions:
   - footnotes
@@ -45,6 +48,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - attr_list
+    #  - neoteroi.timeline  
   - pymdownx.tabbed:
       alternate_style: true
 
@@ -57,3 +62,4 @@ plugins:
       format: "[%Y/%m/%d]"
       text-align: "left"
   - mkdocs_matplotlib
+  - mkdocs-pdf
