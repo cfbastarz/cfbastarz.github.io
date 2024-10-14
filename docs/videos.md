@@ -15,6 +15,10 @@ Here are listed links to some video recordings of scientific and technical commu
 
 ## Technical
 
+### 2024
+
+* [Introdução ao GNU/Linux](https://youtu.be/O0dVJeDJPYk)
+
 ### 2022
 
 * [Sistema de Controle de Versões - Git e GitHub (INPE)](https://youtu.be/wZLr6ARrGIU)
