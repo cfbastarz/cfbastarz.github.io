@@ -68,6 +68,7 @@
 
 ## Refereed Publications
 
+* COELHO, C., ROBERTSON, A., GUIMARÃES, B., DE ANDRADE, F., KUBOTA, P., SOUZA, D., FIGUEROA, S., BASTARZ, C., NEVES, ., FERNANDES, A., CARDOSO, D., VASCONCELOS JUNIOR, F., & MARTINS, E.: [Numerical Subseasonal Predictions in South America](https://oxfordre.com/climatescience/view/10.1093/acrefore/9780190228620.001.0001/acrefore-9780190228620-e-973). Oxford Research Encyclopedia of Climate Science, 2025.
 * DE OLIVEIRA JÚNIOR, CÉSAR MAGNO LEITE; SAPUCCI, L. F.; BASTARZ, C. F.; DE MATTOS, J. G. Z.; KUBOTA, P. Y.; BAÑOS, Y. H.; EICHHOLZ, C. W.; NEGRI, R. G.; SILVEIRA, B. B.: [Assimilação de Dados de Radiância do Sensor AMSU-A no GSI: Visão Geral sobre sua Importância para a Qualidade das Condições Iniciais na PNT do CPTEC](https://www.scielo.br/j/rbmet/a/4BMRT8gDdSzV5kSD6cjCmck/abstract/?lang=en) Revista Brasileira de Meteorologia, v. 37(3), 2022. (In Portuguese).
 * NOBRE, JOÃO PEDRO GONÇALVES; VENDRASCO, E. P.; BASTARZ, C. F.: [Impact of Ensemble-Variational data assimilation in heavy rain forecast over Brazilian Northeast](https://www.mdpi.com/2073-4433/12/9/1201). Atmosphere, v. 12(9), p. 1-20, 2021.
 * GUIMARÃES, BRUNO DOS SANTOS; COELHO, C. A.; WOOLNOUGH, S. J.; KUBOTA, P. Y.; BASTARZ, C. F.; FIGUEROA, S. N.; BONATTI, J. P.; DE SOUZA, D. C.: [An inter-comparison performance assessment of a Brazilian global sub-seasonal prediction model against four sub-seasonal to seasonal (S2S) prediction project models](https://link.springer.com/article/10.1007/s00382-020-05589-5). Climate Dynamics, v. 1, p. 1-17, 2021.
