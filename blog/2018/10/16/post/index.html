@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Since 1982">
+    <meta name="author" content="Carlos Frederico Bastarz">
+    
+    <link rel="shortcut icon" href="../../../../../img/favicon.ico">
+
+    
+    <title>[2018/10/16] Copying the current path (pwd) in the Shell without using the mouse - cfbasz</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../../../../..">cfbasz</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../cv/">Curriculum Vitae</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../met563-3/">MET 563-3</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../videos/">Videos</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../../2023/12/05/gsiberrorv1.1.0/">[2023/12/05] GSIBerror V1.1.0</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../../2023/11/23/matplotlib/">[2023/11/23] Test</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../../2023/11/22/hello_world/">[2023/11/22] Hello World!</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../../2023/11/21/test/">[2023/11/21] Markdown Test Page</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">[2018/10/16] Copying the current path (pwd) in the Shell without using the mouse</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../../2009/05/05/post/">[2009/05/05] On this day...</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../../../2009/05/05/post/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../../../../2023/11/21/test/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/cfbastarz/cfbastarz.github.io/edit/master/docs/blog/2018/10/16/post.md">Edit on cfbastarz</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#copying-the-current-path-pwd-in-the-shell-without-using-the-mouse">Copying the current path (pwd) in the Shell without using the mouse</a></li>
+            <li class="second-level"><a href="#pbcopy-on-os-x">pbcopy on OS X</a></li>
+                
+                <li class="third-level"><a href="#usage">Usage</a></li>
+            <li class="second-level"><a href="#xclip-on-linux">xclip on Linux</a></li>
+                
+                <li class="third-level"><a href="#installation">Installation</a></li>
+                <li class="third-level"><a href="#usage_1">Usage</a></li>
+            <li class="second-level"><a href="#references">References</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<div><h1 id="copying-the-current-path-pwd-in-the-shell-without-using-the-mouse">Copying the current path (pwd) in the Shell without using the mouse</h1>
+<p>Those who work a lot in front of the terminal eventually develop the skill of not using the mouse. A good part of my work time is spent in front of the terminal (whether a Linux terminal or OS X), and I rarely use the mouse for anything, except to interact with the graphical interface (like dragging windows or similar tasks). But one situation that always forced me to use the mouse at the terminal was simply copying the current directory path and pasting it into the vi (or vim) editor or somewhere else. To do this, I always used the <code>pwd</code> command and used the mouse to copy and paste. Realizing that this was practically the only action that made me take my hands off the keyboard while working with the terminal, I decided to look for a solution. I found one, and it's quite simple. There are basically two commands that can be used for this function. One of them is <code>pbcopy</code>, which can be used on OS X, and the other is <code>xclip</code>, which can be used on Linux.</p>
+<h2 id="pbcopy-on-os-x">pbcopy on OS X</h2>
+<p>In the OS X terminal, I found the <code>copypath</code> command. This command is built-in, meaning it's part of OS X's toolset, so there's no need to install it.</p>
+<h3 id="usage">Usage</h3>
+<p>An example of its use is as follows:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">pwd</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>pbcopy
+</code></pre></div>
+<p>Using the keyboard shortcut <code>CMD+v</code>, I can paste the path indicated by the <code>pwd</code> command into the terminal (or anywhere else):</p>
+<div class="highlight"><pre><span></span><code>/Users/carlos
+</code></pre></div>
+<p>Very simple and functional.</p>
+<h2 id="xclip-on-linux">xclip on Linux</h2>
+<p>Since I didn't know that <code>pbcopy</code> was an internal command on OS X, I tried it in the Linux terminal, and it didn't work. I searched and found the <code>xclip</code> command, which has the same function and works very well. However, on the machine I was working on, this command wasn't installed, but nothing prevented me from installing it locally.</p>
+<h3 id="installation">Installation</h3>
+<p>To install the <code>xclip</code> command on a machine from the program's source code, just follow the steps below:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>wget<span class="w"> </span>-c<span class="w"> </span>https://github.com/astrand/xclip/archive/master.zip
+$<span class="w"> </span>unzip<span class="w"> </span>master.zip
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>master/
+$<span class="w"> </span>./bootstrap
+$<span class="w"> </span>./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>
+$<span class="w"> </span>make
+$<span class="w"> </span>make<span class="w"> </span>install
+</code></pre></div>
+<p>With these commands, you will install <code>xclip</code> in the same directory as the program's source code. Two new directories, <code>bin</code> and <code>share</code>, will be created. The <code>xclip</code> executables should be in the first one, and the manuals should be in the second. To add the new commands and manuals to the shell's PATH, just configure your <code>~/.bashrc</code> (or <code>~/.bash_profile</code> or even <code>~/.profile</code>) file by adding the following lines at the end of the file:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/path/to/xclip/bin/directory"</span>:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MANPATH</span><span class="o">=</span><span class="s2">"/path/to/xclip/share/man/directory"</span>:<span class="si">${</span><span class="nv">MANPATH</span><span class="si">}</span>
+</code></pre></div>
+<p>With that done, just source the modified file (e.g., <code>source ~/.bashrc</code>) or open a new tab in the terminal.</p>
+<h3 id="usage_1">Usage</h3>
+<p>Using the <code>xclip</code> command in the Linux shell is quite simple. For example, copying the current path and redirecting the output to a text file (<code>arq.txt</code>):</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">pwd</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xclip
+$<span class="w"> </span>xclip<span class="w"> </span>-o<span class="w"> </span>&gt;<span class="w"> </span>arq.txt
+</code></pre></div>
+<p>To paste the path copied with xclip into the vim editor, just type <code>SHIFT+p</code>.</p>
+<p>That's it!</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard/">https://www.cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard/</a></li>
+<li><a href="https://langui.sh/2010/11/14/pbpaste-pbcopy-in-mac-os-x-or-terminal-clipboard-fun/">https://langui.sh/2010/11/14/pbpaste-pbcopy-in-mac-os-x-or-terminal-clipboard-fun/</a></li>
+</ul></div></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../../../../.."</script>
+    
+    <script src="../../../../../js/base.js"></script>
+    <script src="../../../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

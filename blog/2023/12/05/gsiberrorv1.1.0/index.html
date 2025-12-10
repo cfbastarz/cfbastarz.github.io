@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Since 1982">
+    <meta name="author" content="Carlos Frederico Bastarz">
+    
+    <link rel="shortcut icon" href="../../../../../img/favicon.ico">
+
+    
+    <title>[2023/12/05] GSIBerror V1.1.0 - cfbasz</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../../../../..">cfbasz</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../cv/">Curriculum Vitae</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../met563-3/">MET 563-3</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../videos/">Videos</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">[2023/12/05] GSIBerror V1.1.0</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../11/23/matplotlib/">[2023/11/23] Test</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../11/22/hello_world/">[2023/11/22] Hello World!</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../11/21/test/">[2023/11/21] Markdown Test Page</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../../2018/10/16/post/">[2018/10/16] Copying the current path (pwd) in the Shell without using the mouse</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../../2009/05/05/post/">[2009/05/05] On this day...</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../../11/23/matplotlib/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/cfbastarz/cfbastarz.github.io/edit/master/docs/blog/2023/12/05/gsiberrorv1.1.0.md">Edit on cfbastarz</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#gsiberror-v110">GSIBerror V1.1.0</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<div><h1 id="gsiberror-v110">GSIBerror V1.1.0</h1>
+<p>Today I released the GSIBerror V1.1.0 package! The GSIBerror is a Python package aimed to read the records and attributes from the background error covariance matrices compatible with the Gridpoint Statistical Interpolation (in the .gcv file format, global grid).</p>
+<p>I made a short video demonstrating the basic function of the package and release it in the <a href="https://pypi.org/project/GSIBerror/">PyPi</a> as well!</p>
+<p></p><div class="video-container"><iframe allowfullscreen="" alt="type:video" frameborder="0" src="https://youtube.com/embed/utEsGoTVE4o" style="position:relative;width:100%;height:22.172vw"></iframe></div>
+<p>The usage is very simple:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">gsiberror</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gb</span>
+
+<span class="n">bfile</span> <span class="o">=</span> <span class="n">gb</span><span class="o">.</span><span class="n">Berror</span><span class="p">(</span><span class="s1">'gsi_berror_file.gcv'</span><span class="p">)</span>
+
+<span class="n">bfile</span><span class="o">.</span><span class="n">read_amplitudes</span><span class="p">()</span>
+
+<span class="n">bfile</span><span class="o">.</span><span class="n">nlat</span><span class="p">,</span> <span class="n">bfile</span><span class="o">.</span><span class="n">nlon</span><span class="p">,</span> <span class="n">bfile</span><span class="o">.</span><span class="n">nlev</span>
+
+<span class="n">bfile</span><span class="o">.</span><span class="n">amplitude</span><span class="p">[</span><span class="s1">'sf'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">()</span>
+</code></pre></div>
+<p>The documentation of the package is <a href="https://gad-dimnt-cptec.github.io/GSIBerror/">here</a> and the GitHub repository is <a href="https://github.com/GAD-DIMNT-CPTEC/GSIBerror">here</a>.</p>
+<p>Cheers,</p>
+<p>cfbasz</p></div></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../../../../.."</script>
+    
+    <script src="../../../../../js/base.js"></script>
+    <script src="../../../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
