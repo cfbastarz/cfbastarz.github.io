@@ -1,0 +1,20 @@
+<div class="site-preferences notranslate" role="group" aria-label="Preferências do site" translate="no" hidden>
+  <label for="site-theme">Tema</label>
+  <select id="site-theme" aria-label="Tema do site">
+    <option value="system">Sistema</option>
+    <option value="light">Claro</option>
+    <option value="dark">Escuro</option>
+  </select>
+  {% if page and not page.file.src_uri.startswith('blog/') %}
+  <details class="language-picker">
+    <summary>Idioma</summary>
+    <div class="language-menu">
+      <p>Tradução automática · Google</p>
+      {% set original_url = 'https://cfbastarz.github.io/' ~ page.url %}
+      <a href="https://translate.google.com/translate?sl=auto&amp;tl=en&amp;u={{ original_url|urlencode }}" target="_blank" rel="noopener noreferrer" lang="en">English ↗</a>
+      <a href="https://translate.google.com/translate?sl=auto&amp;tl=es&amp;u={{ original_url|urlencode }}" target="_blank" rel="noopener noreferrer" lang="es">Español ↗</a>
+      <small>Abre esta página no Google Translate. A tradução pode conter imprecisões.</small>
+    </div>
+  </details>
+  {% endif %}
+</div>

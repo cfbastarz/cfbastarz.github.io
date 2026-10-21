@@ -88,3 +88,18 @@ abaixo do título, incluindo apresentações. A data vem da pasta, a mesma fonte
 usada no arquivo cronológico e no menu. O hook gera um elemento HTML `time`
 com data ISO e texto em português. Arquivos e páginas de tags não recebem data
 de publicação. Novos posts recebem essa informação automaticamente.
+
+## Tema e idiomas
+
+O painel de preferências oferece os temas Sistema, Claro e Escuro. A escolha
+fica no navegador (`localStorage`); Sistema acompanha a preferência do sistema
+operacional. O script de inicialização aplica a paleta antes dos estilos para
+evitar um clarão ao carregar. O tema altera a interface, preservando imagens,
+vídeos e slides com suas cores originais.
+
+Home, currículo, curso e vídeos oferecem links para tradução automática em
+inglês e espanhol. Cada link abre a URL pública daquela página no Google
+Translate, em outra aba. Não são versões locais revisadas. Não há scripts do
+Google carregados no site: o serviço é acessado somente ao clicar no idioma.
+Na prévia localhost, o link traduz a página publicada correspondente.
+O blog não oferece tradução; seu conteúdo permanece no idioma original.
