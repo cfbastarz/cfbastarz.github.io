@@ -1,3 +1,8 @@
+---
+tags:
+  - Markdown
+---
+
 # Markdown Test Page
 
 * [Headings](#Headings)

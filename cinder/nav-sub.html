@@ -3,12 +3,14 @@
     <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
 </li>
 {% else %}
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">{{ nav_item.title }}</a>
-    <ul class="dropdown-menu">
-        {% for nav_item in nav_item.children %}
-            {% include "nav-sub.html" %}
-        {% endfor %}
+<li class="archive-group">
+  <details {% if nav_item.active %}open{% endif %}>
+    <summary>{{ nav_item.title }}</summary>
+    <ul class="list-unstyled">
+    {% for nav_item in nav_item.children %}
+      {% include "nav-sub.html" %}
+    {% endfor %}
     </ul>
-  </li>
+  </details>
+</li>
 {% endif %}

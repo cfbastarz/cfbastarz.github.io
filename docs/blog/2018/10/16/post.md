@@ -1,3 +1,9 @@
+---
+tags:
+  - Linux
+  - Shell
+---
+
 # Copying the current path (pwd) in the Shell without using the mouse
 
 Those who work a lot in front of the terminal eventually develop the skill of not using the mouse. A good part of my work time is spent in front of the terminal (whether a Linux terminal or OS X), and I rarely use the mouse for anything, except to interact with the graphical interface (like dragging windows or similar tasks). But one situation that always forced me to use the mouse at the terminal was simply copying the current directory path and pasting it into the vi (or vim) editor or somewhere else. To do this, I always used the `pwd` command and used the mouse to copy and paste. Realizing that this was practically the only action that made me take my hands off the keyboard while working with the terminal, I decided to look for a solution. I found one, and it's quite simple. There are basically two commands that can be used for this function. One of them is `pbcopy`, which can be used on OS X, and the other is `xclip`, which can be used on Linux.

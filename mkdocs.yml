@@ -58,8 +58,12 @@ plugins:
   - mkdocs-video
   - search
   - awesome-pages
-  - blog:
-      format: "[%Y/%m/%d]"
-      text-align: "left"
   - mkdocs_matplotlib
   - mkdocs-pdf
+
+# Preserve dated post URLs and generate chronological navigation and tags.
+hooks:
+  - hooks/blog.py
+
+extra_css:
+  - css/blog.css

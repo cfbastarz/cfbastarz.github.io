@@ -1,3 +1,9 @@
+---
+tags:
+  - Python
+  - Assimilação de dados
+---
+
 # GSIBerror V1.1.0
 
 Today I released the GSIBerror V1.1.0 package! The GSIBerror is a Python package aimed to read the records and attributes from the background error covariance matrices compatible with the Gridpoint Statistical Interpolation (in the .gcv file format, global grid).
