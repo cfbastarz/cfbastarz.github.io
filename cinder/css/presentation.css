@@ -1,4 +1,4 @@
-.presentation-page { padding-bottom: 32px; }
+.presentation-page { padding-bottom: 32px; max-width: 910px; margin: 0 auto; float: none; }
 .presentation-intro { max-width: 880px; margin: 0 auto 28px; }
 .presentation-eyebrow { color: #4c777b; font-size: 12px; letter-spacing: .09em; text-transform: uppercase; }
 .presentation-intro h1 { font-size: clamp(28px, 3.6vw, 44px); line-height: 1.15; }
