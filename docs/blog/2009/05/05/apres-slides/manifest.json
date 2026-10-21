@@ -1,0 +1,166 @@
+{
+  "slides": [
+    {
+      "image": "slide-001.webp",
+      "text": "Assimilação de Precipitação\nutilizando um Sistema\nEstatístico em Espaço Físico\nCarlos Frederico Bastarz\ncarlos.frederico@cptec.inpe.br\n\nCPTEC/INPE\nhttp://www.cptec.inpe.br\nhttp://www.inpe.br\n\nSão Paulo, Maio 2009\n01/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-002.webp",
+      "text": "Sumário\nIntrodução\n\n●\n\nAssimilação de Dados\n\n●\n\nAssimilação de Precipitação\n\n●\n\nRPSAS\n\n●\n\nResultados Preliminares\n\n●\n\nConsiderações Finais\n\n●\n\n02/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-003.webp",
+      "text": "Introdução\nA América do Sul:\nGrande parte está situada em uma faixa\n\n●\n\ntropical do globo;\nÉ uma área extremamente chuvosa;\n\n●\n\nPossui um enorme potencial hídrico;\n\n●\n\n03/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-004.webp",
+      "text": "Introdução\nGrande variedade de Sistemas Ambientais e Meteorológicos!\n\n04/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-005.webp",
+      "text": "Introdução\nAs Chuvas:\nInfluenciam as atividades do homem\n\n●\n\n(planejamento agrícola, energético e hídrico);\nFator determinante do clima e do tipo de\n\n●\n\nvegetação de diversas regiões;\n\n05/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-006.webp",
+      "text": "Introdução\nA escassez e o excesso de chuva podem trazer diversas\nconsequências à população!\n\n(Fonte: http://www.metsul.com.br)\n\nConhecer os diferentes regimes de chuvas (distribuição e quantidade)\né crucial para melhorar o entendimento do ciclo hidrológico e sua\ninteração com as atividades do homem.\n06/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-007.webp",
+      "text": "Introdução\nHemisfério Sul possui mais partes oceânicas\n\n●\n\ndo que continentais;\nA rede de cobertura meteorológica é menor\n\n●\n\nse comparada com a do Hemisfério Norte;\nHá uma grande necessidade de se obter\n\n●\n\nmais informações sobre a atmosfera;\nA Assimilação de Dados é uma ferramenta\n\n●\n\nindispensável para o aprimoramento da PNT;\n07/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-008.webp",
+      "text": "Assimilação de Dados\nA Assimilação de Dados pode ser definida como a\nforma mais acurada possível de se reconstruir\no fluxo atmosférico utilizando todas as informações\npossíveis no momento de sua geração.\n(Talagrand, 1997)\n\n08/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-009.webp",
+      "text": "Assimilação de Dados\n\nA análise é a condição inicial dos modelos\nnuméricos de Previsão:\nAnálise = Modelagem + Observações*\n*Convencionais (sondagens e estações de superfície) e\nNão-Convencionais (dados estimados por satélite.\n\n09/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-010.webp",
+      "text": "Assimilação de Dados\n\n10/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-011.webp",
+      "text": "Assimilação de Precipitação\nPor que assimilar precipitação?\nA previsão de precipitação é um\nproduto do modelo.\nAs parametrizações de convecção são\nresponsáveis pela representação dos\nprocessos convectivos\nformadores de nuvem e chuva.\n11/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-012.webp",
+      "text": "Assimilação de Precipitação\nPor que assimilar precipitação?\nPor isso, os modelos (que não são perfeitos),\nmuitas erram o cálculo da força do gradiente\nde pressão em encostas de topografia íngrime\n(e. g., Cordilheira dos Andes).\nUma solução: utilização da coordenada Eta\n(vs. Sigma).\n12/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-013.webp",
+      "text": "Assimilação de Precipitação\nPor que assimilar precipitação?\nAlém disso, as condições iniciais dos processos\nconvectivos (umidade do solo e temperatura) são\nfundamentais para uma correta simulação\nda estrutura convectiva das nuvens.\nUm problema: não temos uma rede de\nobservações de umidade do solo.\n13/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-014.webp",
+      "text": "Assimilação de Precipitação\nPor que assimilar precipitação?\nNesse sentido, a assimilação de precipitação tem\nsido proposta como uma forma de melhorar a\nrepresentação desses campos iniciais de\ntemperatura e umidade do solo.\n\n14/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-015.webp",
+      "text": "Assimilação de Precipitação\nDados assimilados: Tropical Rainfall Measuring Mission (TRMM3B42).\n\n15/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-016.webp",
+      "text": "RPSAS\nRegional Physical-space Statistical Analysis System:\n\nÉ o atual sistema de regional de assimilação de\n\n●\n\ndados do CPTEC;\nÉ utilizado em conjunto com o modelo Eta e com\n\n●\n\no modelo global (GPSAS);\nPossui 40 km de resolução espacial (operacional\n\n●\n\ne 20 km em modo pesquisa);\nAssimila dados de satélite e dados convencionais;\n\n●\n\n16/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-017.webp",
+      "text": "RPSAS\nDados Convencionais\nAssimilados\n23/01/2003, 00Z\n989 observações:\n●\n\nObservações de Radiossonda: 450\n\n●\n\nNavios/Altura Geopotencial: 15\n\n●\n\nSYNOP/Altura Geopotencial: 468\n\n●\n\nBóias/Altura Geopotencial: 42\n\n●\n\nAviões/Vento: 14\nhttp://assimila.cptec.inpe.br\n18/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-018.webp",
+      "text": "Atualmente o CPTEC está se preparando para\nutilizar o LETKF\n(Local Ensamble Transform Kalman Filter),\num sistema muito mais moderno e que\nrepresenta o estado da\narte em assimilação de dados!\n\n17/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-019.webp",
+      "text": "Resultados Preliminares\n\nAfim de que fosse possível estudar o impacto\nda assimilação de precipitação na previsão de\ntempo, realizou-se um estudo de caso de\nComplexos Convectivos de Mesoescala.\n\n19/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-020.webp",
+      "text": "Resultados Preliminares\nComplexo Convectivo:\nCiclo de vida: ~ 18 horas. Início às 18Z do dia\n\n●\n\n22 de Janeiro de 2003 e término às 12Z do dia\n23 de Janeiro de 2003;\nLocalização: Norte da Argentina;\n\n●\n\n20/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-021.webp",
+      "text": "Resultados Preliminares\nComplexo Convectivo:\n\nA\n\nB\n\nC\n\nD\n\nE\n\nF\n\nG\n\nH\n\nImagens do Satélite GOES 8 no canal 4 (infravermelho). Evolução de um complexo convectivo\nde meso-escala. Nas figuras: (a) 20030122_18Z; (b) 20030122_21Z; (c) 20030123_00Z;\n(d) 20030123_03Z; (e) 20030123_06Z; (f) 20030123_09Z; (g) 20030123_12Z; (h) 2003012315Z.\n21/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-022.webp",
+      "text": "Resultados Preliminares\nPrecipitação Observada:\n\nA\n\nB\n\nC\n\nPrecipitação Observada Diária SALLJEX, acumulado 12Z.\nNas figuras: (a) 20030122_12Z; (b) 20030123_12Z; (c) 20030124_12Z.\n22/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-023.webp",
+      "text": "Resultados Preliminares\nPrecipitação Estimada (TRMM3B42):\n\nA\n\nB\n\nC\n\nPrecipitação Estimada (TRMM3B42).\nNas figuras: (a) 20030123_00Z; (b) 20030123_06Z; (c) 20030123_12Z.\n23/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-024.webp",
+      "text": "Resultados Preliminares\nSimulações Eta+RPSAS 20km:\nA\n\nB\n\nC\n\nD\n\nPrecipitação Prevista pelo modelo Eta+RPSAS 20 km no dia 23/01/2003.\nNas figuras: (a) Imagem do Satélite GOES canal infravermelho (20030123_12Z);\n(b) precipitação Observada SALLJEX (20030123_12Z); (c) previsão Eta+RPSAS 20km sem\nassimilação de precipitação; (d) previsão Eta+RPSAS 20km com assimilação de precipitação.\n24/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-025.webp",
+      "text": "Considerações Finais\n\nEmbora os resultados sejam preliminares, visto que há a\nnecessidade de se calcular estatísticas para identificar quais\nsão os erros sistemáticos do modelo na previsão da precipitação\nsobre a região estudada, pode-se perceber que a assimilação\nde precipitação é capaz de modificar a previsão de curto prazo.\n\n25/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-026.webp",
+      "text": "Obrigado!\nCarlos Frederico Bastarz\ncarlos.frederico@cptec.inpe.br\nhttp://assimila.cptec.inpe.br\nhttp://www.cptec.inpe.br\nhttp://www.inpe.br\n26/26",
+      "width": 1800,
+      "height": 1349
+    },
+    {
+      "image": "slide-027.webp",
+      "text": "",
+      "width": 1800,
+      "height": 1349
+    }
+  ]
+}

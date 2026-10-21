@@ -115,3 +115,24 @@ def on_page_markdown(markdown, page, config, files):
         if tags:
             markdown += '\n\nTags: ' + ' · '.join(link(tag, tag_path(tag), page.file.src_uri) for tag in tags) + '\n'
     return markdown
+
+
+def on_page_context(context, page, config, nav):
+    """Load a prepared, local presentation for the reusable slide template."""
+    presentation = page.meta.get('presentation')
+    if not presentation:
+        return context
+    import json
+    from pathlib import Path
+    from mkdocs.utils import get_relative_url
+    folder = PurePosixPath(page.file.src_uri).parent
+    slide_folder = folder / presentation['slides']
+    manifest = Path(config.docs_dir, str(slide_folder), 'manifest.json')
+    slides = json.loads(manifest.read_text())['slides']
+    slides = slides[:presentation.get('last_slide', len(slides))]
+    context['presentation_slides'] = [
+        {'url': get_relative_url(str(slide_folder / slide['image']), page.url), 'text': slide['text'], 'width': slide['width'], 'height': slide['height']}
+        for slide in slides
+    ]
+    context['presentation_pdf_url'] = get_relative_url(str(folder / presentation['pdf']), page.url)
+    return context

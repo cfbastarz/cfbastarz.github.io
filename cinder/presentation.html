@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block extrahead %}
+<link href="{{ 'css/presentation.css'|url }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<main class="col-md-12 presentation-page" id="main-content">
+  <div class="presentation-intro">
+    <p class="presentation-eyebrow">Apresentações · {{ page.meta.presentation.event }} · {{ page.meta.presentation.date }}</p>
+    {{ page.content }}
+  </div>
+  <section class="slide-viewer" aria-label="Visualizador de apresentação" tabindex="0" data-slides='{{ presentation_slides|tojson|forceescape }}'>
+    <div class="slide-stage">
+      <img class="slide-image" src="{{ presentation_slides[0].url }}" alt="Slide 1 de {{ presentation_slides|length }}" width="{{ presentation_slides[0].width }}" height="{{ presentation_slides[0].height }}" fetchpriority="high">
+    </div>
+    <div class="slide-toolbar" hidden>
+      <div class="slide-navigation">
+        <button type="button" data-action="previous" aria-label="Slide anterior">←</button>
+        <label class="slide-label">Slide <select aria-label="Ir para o slide">{% for slide in presentation_slides %}<option value="{{ loop.index }}">{{ loop.index }}</option>{% endfor %}</select> / {{ presentation_slides|length }}</label>
+        <button type="button" data-action="next" aria-label="Próximo slide">→</button>
+      </div>
+      <div class="slide-actions">
+        <button type="button" data-action="share">Copiar link do slide</button>
+        <button type="button" data-action="fullscreen">Tela cheia</button>
+      </div>
+    </div>
+    <p class="slide-status" role="status" aria-live="polite"></p>
+  </section>
+  <div class="presentation-resources">
+    <p>Use as setas para navegar. No teclado, foque o visualizador e use ← e →.</p>
+    <div class="presentation-links">
+      <a href="{{ presentation_pdf_url }}" target="_blank" rel="noopener">Abrir PDF ↗</a>
+      <a href="{{ presentation_pdf_url }}" download>Baixar apresentação (PDF · {{ page.meta.presentation.size }})</a>
+    </div>
+  </div>
+  <details class="slide-transcript">
+    <summary>Texto do slide <span data-slide-number>1</span></summary>
+    <pre data-slide-text>{{ presentation_slides[0].text }}</pre>
+  </details>
+  <noscript><p>Para navegar por todos os slides, <a href="{{ presentation_pdf_url }}">abra o PDF completo</a>.</p></noscript>
+</main>
+<script src="{{ 'js/presentation.js'|url }}" defer></script>
+{% endblock %}
