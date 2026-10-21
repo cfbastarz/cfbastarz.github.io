@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.meta.lang if page and page.meta.lang else ('pt-BR' if page and (page.file.src_uri.startswith('blog/') or page.file.src_uri == 'met563-3.md') else 'en') }}">
 
 <head>
     <meta charset="utf-8">
+    <script src="{{ 'js/theme-init.js'|url }}"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if page and page.file.src_uri.startswith('blog/') %}
@@ -65,12 +66,16 @@
     </script>
     {% endif %}
 
+    <link href="{{ 'css/preferences.css'|url }}" rel="stylesheet">
+    <script src="{{ 'js/preferences.js'|url }}" defer></script>
+
     {% block extrahead %} {% endblock %}
 </head>
 
 <body{% if page and page.is_homepage %} class="homepage" {% endif %}>
 
     {% include "nav.html" %}
+    {% include "preferences.html" %}
 
     <div class="container">
         {% block content %}
