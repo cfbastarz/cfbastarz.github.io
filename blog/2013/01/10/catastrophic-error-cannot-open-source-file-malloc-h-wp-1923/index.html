@@ -1,0 +1,3912 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <script src="../../../../../js/theme-init.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex, noimageindex">
+    
+    <meta name="description" content="Since 1982">
+    <meta name="author" content="Carlos Frederico Bastarz">
+    
+    <link rel="shortcut icon" href="../../../../../img/favicon.ico">
+
+    
+    <title>catastrophic error: cannot open source file "malloc.h" - cfbasz</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/dracula.min.css">
+        
+    
+    <link href="../../../../../css/blog.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+    <link href="../../../../../css/preferences.css" rel="stylesheet">
+    <script src="../../../../../js/preferences.js" defer></script>
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../../../../..">cfbasz</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../cv/">Curriculum Vitae</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../met563-3/">MET 563-3</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../../../videos/">Videos</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../../">Blog</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../../tags/">Tags</a>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2023</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2023/12/05/gsiberrorv1.1.0/">GSIBerror V1.1.0</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>23</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2023/11/23/matplotlib/">Test</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>22</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2023/11/22/hello_world/">Hello World!</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>21</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2023/11/21/test/">Markdown Test Page</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2018</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>16</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse-wp-2831/">Copiando o caminho atual (pwd) no Shell sem utilizar o mouse</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2018/10/16/post/">Copying the current path (pwd) in the Shell without using the mouse</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>15</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2018/10/15/memoria-wp-2840/">Memória</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>23</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell-wp-2823/">Calculando diferença entre duas datas no formato YYYYMMDDHH (Shell)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>19</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia-wp-2815/">Problema com a libosmesa6 no Linux Mint 18.3 "Sylvia"</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>14</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell-wp-2807/">Expandir uma sequência numérica incluindo caracteres (Shell)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>13</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2018/02/13/meus-computadores-2-wp-2803/">Meus Computadores #2</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2017</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>18</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2017/11/18/atrofia-muscular-espinhal-ame-wp-2796/">Atrofia Muscular Espinhal (AME)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>22</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2017/01/22/open-any-kind-of-file-from-the-terminal-with-an-open-command-linux-wp-2779/">Open any kind of file from the terminal with an “open” command (Linux)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>15</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2017/01/15/quick-fix-for-dropbox-icons-appearance-linux-wp-2770/">Quick fix for dropbox icons appearance (Linux)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2016</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2016/10/12/jason-beckers-new-album-campaign-wp-2764/">Jason Becker’s New Album Campaign</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2016/06/05/some-devil-wp-2745/">Some Devil</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>03</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>22</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2016/03/22/ncargncl-no-ubuntu-15-10-wp-2674/">NCARG/NCL no Ubuntu 15.10</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>25</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2016/01/25/editando-textile-no-geany-wp-2563/">Editando Textile no Geany</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2015</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2015/11/06/o-tempo-e-o-silencio-wp-2550/">O Tempo e o Silêncio</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2015/10/09/fazendo-um-loop-entre-duas-data-no-python-wp-2533/">Fazendo um loop entre duas datas no Python</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2015/10/05/inserir-espaco-extra-entre-as-colunas-de-um-arquivo-wp-2526/">Inserir espaço extra entre as colunas de um arquivo</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>20</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2015/06/20/vamos-ajudar-campanha-wp-2520/">Vamos ajudar? (Campanha)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>22</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2015/05/22/rebloqueando-o-bootloader-e-restaurando-a-imagem-de-fabrica-do-moto-x-2013-primeira-geracao-wp-2505/">Rebloqueando o bootloader e restaurando a imagem de fábrica do Moto X (2013, primeira geração)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2015/05/12/heaven-adores-you-wp-2502/">Heaven Adores You</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>03</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2015/03/11/decomposicao-cholesky-wp-2426/">Decomposição Cholesky</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2015/03/11/makefile-minimo-wp-2411/">Makefile (mínimo!)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2014</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>20</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/11/20/shell-fazendo-o-inverso-dos-padroes-wildcards-wp-2404/">Shell: fazendo o inverso dos padrões (wildcards)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>17</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/10/17/migrando-o-macports-para-o-os-x-yosemite-wp-2374/">Migrando o Macports para o OS X Yosemite</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>29</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/06/29/consertando-o-macports-2-3-0-no-os-x-mavericks-wp-2367/">Consertando o Macports 2.3.0 no OS X Mavericks</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>04</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>14</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/04/14/markdown-mathjax-uma-alternativa-ao-latex-wp-2330/">Markdown + MathJax: Uma alternativa ao LaTeX</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>04</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/04/04/instalando-a-suite-free-pgi-no-os-x-e-mais-um-pouco-wp-2320/">Instalando a suite Free PGI no OS X (e mais um pouco)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>03</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>16</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/03/16/review-kit-sram-entusiasta-wp-2196/">Review: Kit SRAM Entusiasta</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2014/03/16/transferindo-arquivos-para-o-motorola-razr-d3-xt920-com-o-android-file-transfer-no-os-x-wp-2295/">Transferindo arquivos para o Motorola Razr D3 (XT920) com o Android File Transfer no OS X</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>19</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/02/19/ferramentas-para-manutencao-de-bicicletas-wp-2200/">Ferramentas para manutenção de bicicletas</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>16</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/02/16/comando-weather-no-os-x-previsao-do-tempo-wp-2212/">Comando weather no OS X (condições do tempo)</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2014/02/16/transferindo-arquivos-do-os-x-para-um-dispositivo-android-wp-2216/">Transferindo arquivos do OS X para um dispositivo Android</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>14</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2014/01/14/os-numeros-de-2013-wp-2194/">Os números de 2013</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details open>
+    <summary>2013</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>14</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../11/14/derivacao-da-equacao-de-analise-a-partir-da-funcao-custo-variacional-tridimensional-wp-2155/">Derivaçao da Equação de Análise a partir da Função Custo Variacional Tridimensional</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../11/12/atualizando-macports-no-os-x-mavericks-wp-2153/">Atualizando Macports no OS X Mavericks</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../09/10/sincronizando-o-macports-atraves-do-http-wp-2147/">Sincronizando o Macports através do HTTP</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>07</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>20</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../07/20/catastrophic-error-could-not-set-locale-to-allow-processing-of-multibyte-characters-wp-2134/">Catastrophic error: could not set locale "" to allow processing of multibyte characters</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../07/20/compilando-lapack-e-blas-com-ifort-wp-2138/">Compilando LAPACK e BLAS com ifort</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>14</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../07/14/runtime-error-dyld-library-not-loaded-libiomp5-dylib-wp-2131/">Runtime error: "dyld: Library not loaded: libiomp5.dylib"</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../07/14/ssh-sem-senha-no-os-x-mountain-lion-wp-2128/">SSH sem senha no OS X Mountain Lion</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>13</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../06/13/sobrevivendo-com-um-ubuntu-antigo-wp-2121/">Sobrevivendo com um Ubuntu antigo</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../06/11/habilitar-modo-ad-hoc-da-broadcom-bcm4313-no-ubuntu-13-04-wp-2118/">Habilitar modo Ad-Hoc da Broadcom BCM4313 no Ubuntu 13.04</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>04</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>24</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../04/24/service-battery-resolvendo-problemas-de-bateria-do-macbook-pro-wp-2112/">Service Battery: resolvendo problemas de bateria do Macbook Pro</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>03</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../03/10/comando-nao-encontrado-add-apt-repository-ubuntu-12-10-wp-1995/">Comando não encontrado: add-apt-repository (Ubuntu 12.10)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>17</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../02/17/panoply-software-de-visualizacao-de-dados-em-ponto-de-grade-wp-1983/">Panoply: Software de Visualização de Dados em Ponto de Grade</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>16</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../02/16/quanto-vale-o-seu-siteblog-2-wp-1971/">Quanto vale o seu site/blog? #2</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../02/16/transformando-scripts-em-apps-no-mac-os-x-wp-1975/">Transformando Scripts em Apps no Mac OS X</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../02/12/gruse-aus-osterreich-wp-1954/">Grüße aus Österreich</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../02/12/icu-wp-1962/">ICU</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../02/12/teste-de-argumentos-em-korn-shell-wp-1949/">Teste de argumentos em Korn Shell</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../02/12/trilha-sonora-o-fabuloso-destino-de-amelie-poulain-wp-1968/">Trilha Sonora: O Fabuloso destino de Amélie Poulain</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../02/12/trocando-windows-pelo-linux-lol-wp-1966/">Trocando Windows pelo Linux (lol)</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../02/12/vortices-de-von-karman-wp-1959/">Vórtices de Von Kármán</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details open>
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details open>
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="active">
+    <a href="./">catastrophic error: cannot open source file "malloc.h"</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../06/aquarela-wp-1912/">Aquarela</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2012</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/12/01/habilitando-o-servidor-apache-no-mac-os-x-mountain-lion-wp-1905/">Habilitando o servidor Apache no Mac OS X Mountain Lion</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>13</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/11/13/applescript-dropbox-blogthistrack-wp-1878/">AppleScript + Dropbox = BlogThisTrack!</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>07</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/10/07/instalando-gcc-gfortran-zlib-hdf5-netcdf4-e-openmpi-no-mac-os-x-wp-1852/">Instalando GCC, GFORTRAN, ZLIB, HDF5, NETCDF4 e OpenMPI no Mac OS X</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/10/05/removendo-gcc-e-gfortran-pacote-hpc-nao-nativo-do-mac-os-x-wp-1838/">Removendo GCC e GFORTRAN (pacote HPC, não nativo) do Mac OS X</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/10/02/abrir-aba-do-iterm2-no-mesmo-diretorio-wp-1825/">Abrir aba do iTerm2 no mesmo diretório</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>29</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/09/29/waltz-wp-1821/">Waltz</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>28</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/09/28/cirrus-wp-1818/">Cirrus</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>26</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/09/26/abrir-o-terminal-em-uma-determinada-pasta-do-finder-wp-1812/">Abrir o Terminal em uma determinada pasta do Finder</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>25</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/09/25/utilizando-a-vpn-atraves-do-tunnelblick-wp-1801/">Utilizando a VPN através do Tunnelblick</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>24</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/09/24/backup-local-simples-com-o-rsync-wp-1793/">Backup local simples com o rsync</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/09/24/mouse-e-trackpad-com-rolagem-diferente-no-mac-os-x-wp-1795/">Mouse e Trackpad com rolagem diferente no Mac OS X</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>21</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator-wp-1769/">Ajustando as propriedades de visualização de todas as pastas no Finder utilizando o Automator</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/09/21/utilizando-o-automator-para-baixar-arquivos-pdf-abertos-no-safari-wp-1783/">Utilizando o Automator para baixar arquivos PDF abertos no Safari</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>08</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>24</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/08/24/erro-no-such-instruction-vzeroupper-do-pgf90-12-8-1-wp-1766/">Erro: no such instruction: `vzeroupper' do PGF90 12.8-1</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>14</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/08/14/instalando-o-mpich2-pelo-homebrew-compilado-com-o-ifort-wp-1763/">Instalando o MPICH2 pelo HomeBrew compilado com o Ifort</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/08/14/removendo-o-macports-e-instalando-o-brew-no-mac-os-x-wp-1750/">Removendo o MacPorts e instalando o HomeBrew no Mac OS X</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>07</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/08/07/os-x-mountain-lion-vale-a-pena-wp-1738/">OS X Mountain Lion: vale a pena!</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>07</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>13</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/07/13/converta-grib-em-netcdf-com-o-ncl-wp-1722/">Converta arquivos em GRIB para NetCDF com o NCL</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/07/13/converta-arquivos-em-netcdf-para-grib-com-o-cdo-wp-1727/">Converta arquivos em NetCDF para GRIB com o CDO</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/07/13/ncarg-no-mac-os-x-wp-1713/">NCARG/NCL no Mac OS X</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/07/13/utilize-o-script-grib2ctl-pl-para-gerar-ctls-a-partir-de-arquivos-grb-wp-1710/">Utilize o script grib2ctl.pl para gerar ctl's a partir de arquivos GRIB</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/07/12/hush-terminal-you-do-not-have-mail-wp-1703/">Hush Terminal: You DO NOT have mail!</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>04</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/07/04/baixe-a-reanalise-era-interim-do-ecmwf-utilizando-um-script-perl-wp-1691/">Baixe a reanálise ERA Interim do ECMWF utilizando um script Perl</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>20</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/06/20/quanto-vale-o-seu-siteblog-wp-1680/">Quanto vale o seu site/blog?</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/06/11/insira-assinaturas-digitalizadas-em-documentos-pdf-com-o-preview-no-mac-os-x-wp-1668/">Insira assinaturas digitalizadas em documentos PDF com o Preview no Mac OS X</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/06/10/doacao-de-orgaos-4-wp-1660/">Doação de órgãos</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/06/10/qual-e-a-sua-posicao-no-mundo-wp-1646/">Qual é a sua posição no mundo?</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>08</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/06/08/ballad-of-a-thin-man-wp-1604/">Ballad of a Thin Man</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/06/08/quando-eles-te-acham-brasileiro-demais-wp-1599/">Quando eles te acham brasileiro demais</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/06/01/5000-visitas-3-wp-1596/">5000 visitas!</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>29</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/29/a-propaganda-e-o-qualquer-coisa-wp-1584/">A propaganda e o qualquer coisa</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>23</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/23/mono-wp-1571/">Mono</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>20</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/20/to-chegando-la-wp-1564/">Tô chegando lá.</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>17</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/17/habilitando-o-servidor-apache-com-php-no-mac-os-x-lion-wp-1558/">Habilitando o servidor Apache com PHP no Mac OS X Lion</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>13</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/13/gravando-uma-imagem-iso-em-um-pendrive-pela-linha-de-comando-no-mac-os-x-wp-1550/">Gravando uma imagem iso em um pendrive pela linha de comando no Mac OS X</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/11/imprimir-uma-lista-em-linha-wp-1547/">Imprimir uma lista em linha</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/06/ntfs-no-mac-os-x-lion-wp-1533/">NTFS no Mac OS X Lion</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/05/zerando-a-mbr-wp-1530/">Zerando a MBR</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>03</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/05/03/configurando-o-terminal-do-mac-os-x-wp-1515/">Configurando o terminal do Mac OS X</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/05/03/opcoes-avancadas-na-barra-de-menus-do-mac-os-x-lion-wp-1506/">Opções avançadas na barra de menus do Mac OS X Lion</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/05/03/vpn-no-mac-os-x-lion-wp-1488/">VPN no Mac OS X Lion</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>04</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/04/11/dicas-para-quem-esta-iniciando-em-modelagem-wp-1495/">Dicas para quem está iniciando em "modelagem"</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/04/05/instalando-manualmente-o-jre-no-ubuntu-12-04-wp-1484/">Instalando manualmente o JRE no Ubuntu 12.04</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>03</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>04</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/03/04/sem-mais-palavras-wp-1475/">Sem Mais Palavras</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/03/04/voces-dois-wp-1480/">Vocês Dois</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/02/11/sinal-3g-no-brasil-wp-1467/">Sinal 3G no Brasil</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/02/09/instalando-o-yad-no-ubuntu-wp-1459/">Instalando o YAD no Ubuntu</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>17</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/01/17/minha-lista-de-comandos-uteis-no-shell-do-linux-wp-1442/">Minha lista de comandos úteis no shell do linux</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/01/17/svn-merge-jeito-simples-wp-1453/">svn merge (jeito simples)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/01/11/consolacao-wp-1421/">Consolação</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/01/11/umportugues-com-wp-1426/">UmPortugues.com</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2012/01/02/al-anon-all-alone-wp-1406/">Al Anon, All Alone</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/01/02/bumerangues-pipas-e-as-dores-remanescentes-de-2011-wp-1378/">Bumerangues, pipas e as dores remanescentes de 2011</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/01/02/devoto-cristiano-pinho-wp-1375/">Devoto - Cristiano Pinho</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/01/02/empadao-de-frango-do-good-wp-1380/">Empadão de frango. Do Good.</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2012/01/02/michel-tel-wp-1369/">Michel Tel...</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2011</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>17</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/12/17/zero-fill-wp-1361/">Zero Fill</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>16</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/12/16/ler-uma-lista-de-arquivos-em-uma-rotina-fortran-wp-1336/">Ler uma lista de arquivos em uma rotina fortran</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/12/16/o-vento-wp-1357/">O Vento</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/12/16/svn-diff-com-outra-revisao-wp-1339/">svn diff com outra revisão</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/12/16/the-queen-is-dead-wp-1342/">The Queen is Dead</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/12/16/valor-maximo-e-minimo-em-um-arquivo-wp-1333/">Valor Máximo e Mínimo em um arquivo</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/12/01/silent-lucidity-wp-1320/">Silent Lucidity</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>22</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/11/22/conhecimento-livre-wp-1317/">Conhecimento Livre</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>21</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/11/21/hoje-estou-me-sentindo-wp-1313/">Hoje estou me sentindo...</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/11/21/teardrop-musica-wp-1304/">Teardrop (música)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>19</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/11/19/pedala-neutrino-wp-1291/">Pedala Neutrino</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>18</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/11/18/livro-aquecimento-global-wp-740/">Livro: Aquecimento Global?</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>17</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/10/17/consumo-excessivo-de-memoria-ram-no-linux-wp-1261/">Consumo excessivo de memória RAM no Linux</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/10/17/instalacao-do-ferret-no-ubuntu-11-04-wp-1259/">Instalação do Ferret no Ubuntu 11.04</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/09/06/catastrophic-error-cannot-open-source-file-asmparam-h-wp-1252/">Erro: cannot open source file "asm/param.h"</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/09/06/recuperando-o-carregamento-do-windows-no-grub-wp-1255/">Recuperando o carregamento do Windows no GRUB</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>07</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>22</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/07/22/calmaria-wp-1249/">Calmaria</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>14</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/06/14/devaneio-wp-1086/">Devaneio</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>31</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/05/31/concurso-cultural-wp-1058/">Concurso Cultural! (Encerrado)</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>16</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/05/16/distante-wp-1053/">Distante</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>04</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>25</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/04/25/ajustando-a-variavel-java_home-wp-1126/">Ajustando a variável JAVA_HOME</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/04/25/criando-um-repositorio-svn-local-wp-1130/">Criando um repositório SVN local</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/04/25/variaveis-de-ambiente-para-programas-fonte-wp-1137/">Variáveis de ambiente para programas-fonte</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>24</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/04/24/pena-wp-1048/">Pena</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>03</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>25</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/03/25/fortune-fortune-baby-wp-1041/">Fortune, fortune, baby!</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/03/25/obtendo-informacoes-de-hardware-com-o-comando-dmidecode-wp-1124/">Obtendo informações de hardware com o comando dmidecode</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/03/25/um-pouco-sobre-o-comando-xargs-wp-1128/">Um pouco sobre o comando xargs</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>08</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/03/08/chega-de-carnaval-wp-1035/">Chega de Carnaval</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/03/02/livro-viajando-com-o-cerebro-de-einstein-wp-1024/">Livro: Viajando com o cérebro de Einstein</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>25</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/02/25/batterystatus-no-gnome-wp-1151/">BatteryStatus no Gnome</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/02/25/configuracoes-basicas-do-bash-wp-1140/">Configurações básicas do Bash</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/02/25/executando-comandos-remotamente-dentro-de-uma-rede-linux-com-o-ssh-wp-1135/">Executando comandos remotamente dentro de uma rede linux com o SSH</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/02/25/o-que-nao-fazer-quando-o-hd-apresenta-falhas-wp-1133/">O que não fazer quando o HD apresenta falhas</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/02/25/utilizando-o-ssh-sem-senha-no-linux-wp-1122/">Utilizando o SSH sem senha no linux</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>23</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/02/23/minuta-wp-1018/">Minuta</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/02/11/livro-o-ultimo-teorema-de-fermat-wp-959/">O Último Teorema de Fermat</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>04</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/02/04/o-maior-vendedor-do-mundo-wp-911/">O Maior Vendedor do Mundo</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/02/02/livro-no-que-acredito-wp-889/">Livro: No que acredito</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/02/01/contornos-wp-864/">Contornos</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>25</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/01/25/como-e-quando-mudar-de-distribuicao-wp-1145/">Como e quando mudar de distribuição?</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/01/25/erro-cannot-open-source-file--asmerrno-h-wp-1120/">Erro: cannot open source file “asm/errno.h”</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/01/25/instalando-a-biblioteca-jpeg-no-linux-wp-1118/">Instalando a biblioteca JPEG no linux</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/01/25/transferindo-graficamente-arquivos-via-ftp-seguro-wp-1107/">Transferindo graficamente arquivos via ftp seguro</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/01/12/meus-computadores-wp-734/">Meus Computadores</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/01/11/sebo-elementary-matrix-theory-wp-724/">Livro: Elementary Matrix Theory</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/01/10/meu-quarto-minha-vida-wp-705/">Meu quarto, minha vida...</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>08</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2011/01/08/ano-novo-2011-wp-684/">Ano Novo, 2011</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/01/08/livro-a-cabana-wp-686/">Livro: A Cabana</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/01/08/lobao-50-anos-a-mil-wp-668/">Livro: Lobão 50 anos a mil</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/01/08/sermao-dos-erros-wp-695/">Sermão dos Erros</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2011/01/08/viver-wp-691/">Viver</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2010</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/12/12/minha-experiencia-matematica-wp-656/">Minha experiência matemática</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/12/09/algumas-beatlesongs-wp-646/">Algumas BeatleSongs</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2010/12/09/balanco-de-novembro-wp-632/">Balanço de Novembro</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>11</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>22</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/11/22/verdades-wp-627/">Verdades</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>17</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/11/17/outra-vez-nao-sei-wp-623/">Outra vez, não sei...</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>12</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/11/12/apoema-wp-615/">Apoema</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/11/09/hipnoise-saber-wp-612/">Saber</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>03</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/11/03/ilusoes-wp-600/">Ilusões</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>31</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/31/balanco-de-outubro-wp-592/">Balanço de Outubro</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>25</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/25/cidade-wp-584/">Cidades</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>23</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/23/hipnoise-lembrancas-wp-580/">Lembranças</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>21</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/21/chegada-wp-571/">Chegada</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>17</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/17/hipnoise-estacao-wp-565/">Estação</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>15</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/15/filme-o-fabuloso-destino-de-amelie-poulain-wp-554/">Filme: O Fabuloso destino de Amélie Poulain</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>14</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/14/ilusorio-wp-546/">Ilusório</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>10</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/10/recomecar-wp-544/">Recomeçar</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/09/silencio-wp-540/">Silêncio</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>06</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/06/dilema-wp-534/">Dilemas</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/05/balanco-de-setembro-wp-510/">Balanço de Setembro</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2010/10/05/instante-wp-530/">Instante</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/10/01/hipnoise-outubro-wp-491/">Outubro</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>09</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>30</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/09/30/hipnoise-solitude-wp-476/">Solitude</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>27</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/09/27/lugar-nenhum-wp-464/">Lugar Nenhum</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2010/09/27/passagem-wp-468/">Passagem</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2010/09/27/tudo-amar-wp-456/">Tudo Amar</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>20</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/09/20/hipnoise-despertar-wp-425/">Despertar</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>19</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/09/19/filme-nosso-lar-wp-349/">Filme: Nosso Lar</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2010/09/19/gerador-de-lero-lero-wp-154/">Gerador de Lero-Lero</a>
+</li>
+
+    
+      
+<li >
+    <a href="../../../../2010/09/19/stone-temple-pilots-wp-159/">Playlist: Stone Temple Pilots</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>08</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/09/08/o-peso-do-mundo-wp-368/">O Peso do Mundo</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>02</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/09/02/filme-o-livro-de-eli-wp-337/">Filme: O Livro de Eli</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>01</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/09/01/balanco-de-agosto-wp-325/">Balanço de Agosto</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>08</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>30</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/08/30/playlist-1-elliott-smith-wp-291/">Playlist: Elliott Smith</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>23</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/08/23/fumo-passivo-cancer-ativo-wp-285/">Fumo passivo, cancer ativo</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>19</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/08/19/quando-a-musica-toca-o-musico-wp-275/">Quando a música toca o músico</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>18</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/08/18/deviantart-fredericorama2-wp-205/">Deviantart - fredericorama2</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>07</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2010/08/07/review-fones-philips-hp195-e-shp2500-wp-177/">Review Fones Philips HP195 e SHP2500</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                            
+<li class="archive-group">
+  <details >
+    <summary>2009</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li class="archive-group">
+  <details >
+    <summary>05</summary>
+    <ul class="list-unstyled">
+    
+      
+<li >
+    <a href="../../../../2009/05/05/post/">Assimilação de Precipitação — Climatempo, 2009</a>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+    
+    </ul>
+  </details>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../06/aquarela-wp-1912/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="../../../02/12/gruse-aus-osterreich-wp-1954/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/cfbastarz/cfbastarz.github.io/edit/master/docs/blog/2013/01/10/catastrophic-error-cannot-open-source-file-malloc-h-wp-1923.md">Edit on cfbastarz</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div class="site-preferences notranslate" role="group" aria-label="Preferências do site" translate="no" hidden>
+  <label for="site-theme">Tema</label>
+  <select id="site-theme" aria-label="Tema do site">
+    <option value="system">Sistema</option>
+    <option value="light">Claro</option>
+    <option value="dark">Escuro</option>
+  </select>
+  
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#catastrophic-error-cannot-open-source-file-malloch">catastrophic error: cannot open source file &quot;malloc.h&quot;</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<div><h1 id="catastrophic-error-cannot-open-source-file-malloch">catastrophic error: cannot open source file "malloc.h"</h1>
+<p class="post-publication-date">Publicado em <time datetime="2013-01-10">10 de janeiro de 2013</time></p>
+<p>Esse erro apareceu quando uma rotina que eu estava tentando compilar não conseguiu abrir o "malloc.h" (uma função para alocamento de memória) no OS X Mountain Lion:</p>
+<div class="highlight"><pre><span></span><code>bacio.v1.3.c(14): catastrophic error: cannot open source file "malloc.h"
+  #include 
+                     ^
+
+compilation aborted for bacio.v1.3.c (code 4)
+make[1]: *** [bacio.v1.3.o] Error 4
+make: *** [linux] Error 2
+</code></pre></div>
+<p>Pesquisando na internet, encontrei que uma solução é modificar a rotina com um condicional, o qual funcionou perfeitamente para o meu caso. Basta fazer o seguinte: abra a rotina que está dando o problema (no meu caso, uma rotina chamada "bacio.v1.3.c"), localize a linha de include do "malloc".h e edite da seguinte forma:</p>
+<p><strong>Forma original:</strong></p>
+<div class="highlight"><pre><span></span><code>#include
+</code></pre></div>
+<p><strong>Forma modificada:</strong></p>
+<div class="highlight"><pre><span></span><code>#if !defined(__APPLE__)
+#include 
+#endif
+</code></pre></div>
+<p>Fazendo isso, o header "malloc.h" poderá ser encontrado no Mac OS, que fica alocado em "/usr/include/sys".</p>
+<p>É isso!</p>
+<p><strong>Referências:</strong></p>
+<ul>
+<li><a href="http://code.google.com/p/gil-contributions/issues/attachmentText?id=9&amp;aid=90001000&amp;name=patch.diff&amp;token=1K_Hd3RrRHPPTMORjKqmQni0iv8%3A1357837426761">http://code.google.com/p/gil-contributions/issues/attachmentText?id=9&amp;aid=90001000&amp;name=patch.diff&amp;token=1K_Hd3RrRHPPTMORjKqmQni0iv8%3A1357837426761</a></li>
+<li><a href="http://hintsforums.macworld.com/showthread.php?t=2023">http://hintsforums.macworld.com/showthread.php?t=2023</a></li>
+<li><a href="http://www.idevgames.com/forums/thread-3429.html">http://www.idevgames.com/forums/thread-3429.html</a></li>
+</ul>
+<p>Tags: <a href="../../../../tags/4525b3604934ed94/">Mac OS X</a> · <a href="../../../../tags/a929d4f0a71677e9/">Tudo</a> · <a href="../../../../tags/73e6d0659ba4213e/">Tutoriais</a> · <a href="../../../../tags/c39b34aba60aacdb/">bacio.v1.3.c</a> · <a href="../../../../tags/9afc40981ea32e57/">malloc.h</a></p></div></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../../../../.."</script>
+    
+    <script src="../../../../../js/base.js"></script>
+    <script src="../../../../../js/blog.js"></script>
+    <script src="../../../../../js/mathjax.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+    <script src="../../../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

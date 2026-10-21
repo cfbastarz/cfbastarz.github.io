@@ -1,0 +1,11 @@
+.navbar .dropdown-menu { max-height: 75vh; overflow-y: auto; }
+.archive-group { padding: 4px 20px; }
+.archive-group summary { cursor: pointer; padding: 4px 0; }
+.archive-group a { display: block; padding: 5px 0; white-space: normal; }
+.archive-group .archive-group { padding-left: 16px; padding-right: 0; }
+.navbar .archive-group summary { display: list-item; color: #eee; }
+.navbar .archive-group a { color: #eee; }
+.navbar .archive-group a:hover, .navbar .archive-group summary:hover { color: #fff; background: #262626; }
+/* Keep long equations from widening the page on small screens. */
+div.arithmatex { overflow-x: auto; max-width: 100%; }
+.post-publication-date { color: #626b70; font-size: 13px; margin: 10px 0 24px; }
