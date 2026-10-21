@@ -136,3 +136,21 @@ def on_page_context(context, page, config, nav):
     ]
     context['presentation_pdf_url'] = get_relative_url(str(folder / presentation['pdf']), page.url)
     return context
+
+
+def on_page_content(html, page, config, files):
+    """Show the same publication date used by the chronological navigation."""
+    match = re.fullmatch(r'blog/(\d{4})/(\d{2})/(\d{2})/[^/]+\.md', page.file.src_uri)
+    if not match:
+        return html
+    published = date(*map(int, match.groups()))
+    months = ('janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+              'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro')
+    label = f'{published.day} de {months[published.month - 1]} de {published.year}'
+    stamp = (f'<p class="post-publication-date">Publicado em '
+             f'<time datetime="{published.isoformat()}">{label}</time></p>')
+    # Insert after the title in rendered HTML, outside any code or Markdown blocks.
+    title = re.search(r'</h1>', html, re.I)
+    if title:
+        return html[:title.end()] + '\n' + stamp + html[title.end():]
+    return stamp + '\n' + html
