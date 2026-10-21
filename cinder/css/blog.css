@@ -1,0 +1,8 @@
+.navbar .dropdown-menu { max-height: 75vh; overflow-y: auto; }
+.archive-group { padding: 4px 20px; }
+.archive-group summary { cursor: pointer; padding: 4px 0; }
+.archive-group a { display: block; padding: 5px 0; white-space: normal; }
+.archive-group .archive-group { padding-left: 16px; padding-right: 0; }
+.navbar .archive-group summary { display: list-item; color: #eee; }
+.navbar .archive-group a { color: #eee; }
+.navbar .archive-group a:hover, .navbar .archive-group summary:hover { color: #fff; background: #262626; }

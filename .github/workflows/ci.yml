@@ -11,11 +11,11 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x 
+      - run: pip install "mkdocs>=1.6,<2"
       - run: pip install mkdocs-material 
       - run: pip install mkdocs-video
       - run: pip install mkdocs-pdf-export-plugin
       - run: pip install mkdocs-awesome-pages-plugin
-      - run: pip install mkdocs-blog-plugin
       - run: pip install mkdocs-matplotlib
       - run: pip install mkdocs-pdf
       - run: pip install neoteroi-mkdocs
