@@ -67,3 +67,6 @@ hooks:
 
 extra_css:
   - css/blog.css
+
+extra_javascript:
+  - js/blog.js
