@@ -28,3 +28,16 @@ no cabeçalho de cada post.
 
 Requer MkDocs >=1.6,<2. O workflow instala essa versão e não utiliza mais
 `mkdocs-blog-plugin`. Execute `mkdocs build` antes de publicar.
+
+## Indexação por buscadores
+
+Todas as páginas em `blog/` (incluindo arquivo e tags gerados) recebem
+`<meta name="robots" content="noindex, noimageindex">` no tema Cinder. Isso
+solicita que os buscadores compatíveis não indexem as páginas e as imagens
+nelas exibidas. As demais seções do site continuam com o comportamento anterior.
+
+Não bloqueie `/blog/` no `robots.txt`: os buscadores precisam acessar o HTML
+para ler o `noindex`. URLs já indexadas podem demorar a sair dos resultados.
+A regra não se aplica ao WordPress antigo, ao repositório público nem impede
+acesso direto, cópias, robôs que ignorem a instrução ou indexação de arquivos
+por outros links. Conteúdo que precise ser privado exige controle de acesso.
