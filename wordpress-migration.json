@@ -1,0 +1,1238 @@
+{
+  "published_posts": 198,
+  "draft_posts_excluded": 42,
+  "copied_media": 215,
+  "copied_bytes": 76509131,
+  "missing_export_media": {},
+  "external_media": {
+    "http://dl.dropbox.com/u/1029421/Music/Sem%20Mais%20Palavras.mp3": [
+      "1475"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/Voc%C3%AAs%20Dois.mp3": [
+      "1480"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/despertar_cfb.mp3": [
+      "425"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/devaneio_cfb.mp3": [
+      "1086"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/estacao_cfb.mp3": [
+      "565"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/lembranca_cfb.mp3": [
+      "580"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/mono_cfb.mp3": [
+      "1571"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/outubro_cfb.mp3": [
+      "491"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/saber_cfb.mp3": [
+      "612"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/solitude_cfb.mp3": [
+      "476"
+    ],
+    "http://dl.dropbox.com/u/1029421/Music/waltz_cfb.mp3": [
+      "1821"
+    ],
+    "http://www.wordpress.com/wp-content/mu-plugins/annual-reports/img/2012-emailteaser.png": [
+      "2194"
+    ],
+    "https://dl.dropbox.com/u/1029421/Music/cirrus_cfb.mp3": [
+      "1818"
+    ]
+  },
+  "posts": [
+    {
+      "id": 177,
+      "title": "Review Fones Philips HP195 e SHP2500",
+      "original_url": "https://craftmind.wordpress.com/2010/08/07/review-fones-philips-hp195-e-shp2500/",
+      "path": "blog/2010/08/07/review-fones-philips-hp195-e-shp2500-wp-177.md"
+    },
+    {
+      "id": 205,
+      "title": "Deviantart - fredericorama2",
+      "original_url": "https://craftmind.wordpress.com/2010/08/18/deviantart-fredericorama2/",
+      "path": "blog/2010/08/18/deviantart-fredericorama2-wp-205.md"
+    },
+    {
+      "id": 275,
+      "title": "Quando a música toca o músico",
+      "original_url": "https://craftmind.wordpress.com/2010/08/19/quando-a-musica-toca-o-musico/",
+      "path": "blog/2010/08/19/quando-a-musica-toca-o-musico-wp-275.md"
+    },
+    {
+      "id": 285,
+      "title": "Fumo passivo, cancer ativo",
+      "original_url": "https://craftmind.wordpress.com/2010/08/23/fumo-passivo-cancer-ativo/",
+      "path": "blog/2010/08/23/fumo-passivo-cancer-ativo-wp-285.md"
+    },
+    {
+      "id": 154,
+      "title": "Gerador de Lero-Lero",
+      "original_url": "https://craftmind.wordpress.com/2010/09/19/gerador-de-lero-lero/",
+      "path": "blog/2010/09/19/gerador-de-lero-lero-wp-154.md"
+    },
+    {
+      "id": 159,
+      "title": "Playlist: Stone Temple Pilots",
+      "original_url": "https://craftmind.wordpress.com/2010/09/19/stone-temple-pilots/",
+      "path": "blog/2010/09/19/stone-temple-pilots-wp-159.md"
+    },
+    {
+      "id": 291,
+      "title": "Playlist: Elliott Smith",
+      "original_url": "https://craftmind.wordpress.com/2010/08/30/playlist-1-elliott-smith/",
+      "path": "blog/2010/08/30/playlist-1-elliott-smith-wp-291.md"
+    },
+    {
+      "id": 325,
+      "title": "Balanço de Agosto",
+      "original_url": "https://craftmind.wordpress.com/2010/09/01/balanco-de-agosto/",
+      "path": "blog/2010/09/01/balanco-de-agosto-wp-325.md"
+    },
+    {
+      "id": 337,
+      "title": "Filme: O Livro de Eli",
+      "original_url": "https://craftmind.wordpress.com/2010/09/02/filme-o-livro-de-eli/",
+      "path": "blog/2010/09/02/filme-o-livro-de-eli-wp-337.md"
+    },
+    {
+      "id": 349,
+      "title": "Filme: Nosso Lar",
+      "original_url": "https://craftmind.wordpress.com/2010/09/19/filme-nosso-lar/",
+      "path": "blog/2010/09/19/filme-nosso-lar-wp-349.md"
+    },
+    {
+      "id": 368,
+      "title": "O Peso do Mundo",
+      "original_url": "https://craftmind.wordpress.com/2010/09/08/o-peso-do-mundo/",
+      "path": "blog/2010/09/08/o-peso-do-mundo-wp-368.md"
+    },
+    {
+      "id": 425,
+      "title": "Despertar",
+      "original_url": "https://craftmind.wordpress.com/2010/09/20/hipnoise-despertar/",
+      "path": "blog/2010/09/20/hipnoise-despertar-wp-425.md"
+    },
+    {
+      "id": 456,
+      "title": "Tudo Amar",
+      "original_url": "https://craftmind.wordpress.com/2010/09/27/tudo-amar/",
+      "path": "blog/2010/09/27/tudo-amar-wp-456.md"
+    },
+    {
+      "id": 464,
+      "title": "Lugar Nenhum",
+      "original_url": "https://craftmind.wordpress.com/2010/09/27/lugar-nenhum/",
+      "path": "blog/2010/09/27/lugar-nenhum-wp-464.md"
+    },
+    {
+      "id": 468,
+      "title": "Passagem",
+      "original_url": "https://craftmind.wordpress.com/2010/09/27/passagem/",
+      "path": "blog/2010/09/27/passagem-wp-468.md"
+    },
+    {
+      "id": 476,
+      "title": "Solitude",
+      "original_url": "https://craftmind.wordpress.com/2010/09/30/hipnoise-solitude/",
+      "path": "blog/2010/09/30/hipnoise-solitude-wp-476.md"
+    },
+    {
+      "id": 491,
+      "title": "Outubro",
+      "original_url": "https://craftmind.wordpress.com/2010/10/01/hipnoise-outubro/",
+      "path": "blog/2010/10/01/hipnoise-outubro-wp-491.md"
+    },
+    {
+      "id": 510,
+      "title": "Balanço de Setembro",
+      "original_url": "https://craftmind.wordpress.com/2010/10/05/balanco-de-setembro/",
+      "path": "blog/2010/10/05/balanco-de-setembro-wp-510.md"
+    },
+    {
+      "id": 530,
+      "title": "Instante",
+      "original_url": "https://craftmind.wordpress.com/2010/10/05/instante/",
+      "path": "blog/2010/10/05/instante-wp-530.md"
+    },
+    {
+      "id": 534,
+      "title": "Dilemas",
+      "original_url": "https://craftmind.wordpress.com/2010/10/06/dilema/",
+      "path": "blog/2010/10/06/dilema-wp-534.md"
+    },
+    {
+      "id": 540,
+      "title": "Silêncio",
+      "original_url": "https://craftmind.wordpress.com/2010/10/09/silencio/",
+      "path": "blog/2010/10/09/silencio-wp-540.md"
+    },
+    {
+      "id": 544,
+      "title": "Recomeçar",
+      "original_url": "https://craftmind.wordpress.com/2010/10/10/recomecar/",
+      "path": "blog/2010/10/10/recomecar-wp-544.md"
+    },
+    {
+      "id": 546,
+      "title": "Ilusório",
+      "original_url": "https://craftmind.wordpress.com/2010/10/14/ilusorio/",
+      "path": "blog/2010/10/14/ilusorio-wp-546.md"
+    },
+    {
+      "id": 554,
+      "title": "Filme: O Fabuloso destino de Amélie Poulain",
+      "original_url": "https://craftmind.wordpress.com/2010/10/15/filme-o-fabuloso-destino-de-amelie-poulain/",
+      "path": "blog/2010/10/15/filme-o-fabuloso-destino-de-amelie-poulain-wp-554.md"
+    },
+    {
+      "id": 565,
+      "title": "Estação",
+      "original_url": "https://craftmind.wordpress.com/2010/10/17/hipnoise-estacao/",
+      "path": "blog/2010/10/17/hipnoise-estacao-wp-565.md"
+    },
+    {
+      "id": 571,
+      "title": "Chegada",
+      "original_url": "https://craftmind.wordpress.com/2010/10/21/chegada/",
+      "path": "blog/2010/10/21/chegada-wp-571.md"
+    },
+    {
+      "id": 580,
+      "title": "Lembranças",
+      "original_url": "https://craftmind.wordpress.com/2010/10/23/hipnoise-lembrancas/",
+      "path": "blog/2010/10/23/hipnoise-lembrancas-wp-580.md"
+    },
+    {
+      "id": 584,
+      "title": "Cidades",
+      "original_url": "https://craftmind.wordpress.com/2010/10/25/cidade/",
+      "path": "blog/2010/10/25/cidade-wp-584.md"
+    },
+    {
+      "id": 592,
+      "title": "Balanço de Outubro",
+      "original_url": "https://craftmind.wordpress.com/2010/10/31/balanco-de-outubro/",
+      "path": "blog/2010/10/31/balanco-de-outubro-wp-592.md"
+    },
+    {
+      "id": 600,
+      "title": "Ilusões",
+      "original_url": "https://craftmind.wordpress.com/2010/11/03/ilusoes/",
+      "path": "blog/2010/11/03/ilusoes-wp-600.md"
+    },
+    {
+      "id": 612,
+      "title": "Saber",
+      "original_url": "https://craftmind.wordpress.com/2010/11/09/hipnoise-saber/",
+      "path": "blog/2010/11/09/hipnoise-saber-wp-612.md"
+    },
+    {
+      "id": 615,
+      "title": "Apoema",
+      "original_url": "https://craftmind.wordpress.com/2010/11/12/apoema/",
+      "path": "blog/2010/11/12/apoema-wp-615.md"
+    },
+    {
+      "id": 623,
+      "title": "Outra vez, não sei...",
+      "original_url": "https://craftmind.wordpress.com/2010/11/17/outra-vez-nao-sei/",
+      "path": "blog/2010/11/17/outra-vez-nao-sei-wp-623.md"
+    },
+    {
+      "id": 627,
+      "title": "Verdades",
+      "original_url": "https://craftmind.wordpress.com/2010/11/22/verdades/",
+      "path": "blog/2010/11/22/verdades-wp-627.md"
+    },
+    {
+      "id": 632,
+      "title": "Balanço de Novembro",
+      "original_url": "https://craftmind.wordpress.com/2010/12/09/balanco-de-novembro/",
+      "path": "blog/2010/12/09/balanco-de-novembro-wp-632.md"
+    },
+    {
+      "id": 646,
+      "title": "Algumas BeatleSongs",
+      "original_url": "https://craftmind.wordpress.com/2010/12/09/algumas-beatlesongs/",
+      "path": "blog/2010/12/09/algumas-beatlesongs-wp-646.md"
+    },
+    {
+      "id": 656,
+      "title": "Minha experiência matemática",
+      "original_url": "https://craftmind.wordpress.com/2010/12/12/minha-experiencia-matematica/",
+      "path": "blog/2010/12/12/minha-experiencia-matematica-wp-656.md"
+    },
+    {
+      "id": 668,
+      "title": "Livro: Lobão 50 anos a mil",
+      "original_url": "https://craftmind.wordpress.com/2011/01/08/lobao-50-anos-a-mil/",
+      "path": "blog/2011/01/08/lobao-50-anos-a-mil-wp-668.md"
+    },
+    {
+      "id": 684,
+      "title": "Ano Novo, 2011",
+      "original_url": "https://craftmind.wordpress.com/2011/01/08/ano-novo-2011/",
+      "path": "blog/2011/01/08/ano-novo-2011-wp-684.md"
+    },
+    {
+      "id": 686,
+      "title": "Livro: A Cabana",
+      "original_url": "https://craftmind.wordpress.com/2011/01/08/livro-a-cabana/",
+      "path": "blog/2011/01/08/livro-a-cabana-wp-686.md"
+    },
+    {
+      "id": 691,
+      "title": "Viver",
+      "original_url": "https://craftmind.wordpress.com/2011/01/08/viver/",
+      "path": "blog/2011/01/08/viver-wp-691.md"
+    },
+    {
+      "id": 695,
+      "title": "Sermão dos Erros",
+      "original_url": "https://craftmind.wordpress.com/2011/01/08/sermao-dos-erros/",
+      "path": "blog/2011/01/08/sermao-dos-erros-wp-695.md"
+    },
+    {
+      "id": 705,
+      "title": "Meu quarto, minha vida...",
+      "original_url": "https://craftmind.wordpress.com/2011/01/10/meu-quarto-minha-vida/",
+      "path": "blog/2011/01/10/meu-quarto-minha-vida-wp-705.md"
+    },
+    {
+      "id": 724,
+      "title": "Livro: Elementary Matrix Theory",
+      "original_url": "https://craftmind.wordpress.com/2011/01/11/sebo-elementary-matrix-theory/",
+      "path": "blog/2011/01/11/sebo-elementary-matrix-theory-wp-724.md"
+    },
+    {
+      "id": 734,
+      "title": "Meus Computadores",
+      "original_url": "https://craftmind.wordpress.com/2011/01/12/meus-computadores/",
+      "path": "blog/2011/01/12/meus-computadores-wp-734.md"
+    },
+    {
+      "id": 864,
+      "title": "Contornos",
+      "original_url": "https://craftmind.wordpress.com/2011/02/01/contornos/",
+      "path": "blog/2011/02/01/contornos-wp-864.md"
+    },
+    {
+      "id": 889,
+      "title": "Livro: No que acredito",
+      "original_url": "https://craftmind.wordpress.com/2011/02/02/livro-no-que-acredito/",
+      "path": "blog/2011/02/02/livro-no-que-acredito-wp-889.md"
+    },
+    {
+      "id": 911,
+      "title": "O Maior Vendedor do Mundo",
+      "original_url": "https://craftmind.wordpress.com/2011/02/04/o-maior-vendedor-do-mundo/",
+      "path": "blog/2011/02/04/o-maior-vendedor-do-mundo-wp-911.md"
+    },
+    {
+      "id": 959,
+      "title": "O Último Teorema de Fermat",
+      "original_url": "https://craftmind.wordpress.com/2011/02/11/livro-o-ultimo-teorema-de-fermat/",
+      "path": "blog/2011/02/11/livro-o-ultimo-teorema-de-fermat-wp-959.md"
+    },
+    {
+      "id": 1018,
+      "title": "Minuta",
+      "original_url": "https://craftmind.wordpress.com/2011/02/23/minuta/",
+      "path": "blog/2011/02/23/minuta-wp-1018.md"
+    },
+    {
+      "id": 1024,
+      "title": "Livro: Viajando com o cérebro de Einstein",
+      "original_url": "https://craftmind.wordpress.com/2011/03/02/livro-viajando-com-o-cerebro-de-einstein/",
+      "path": "blog/2011/03/02/livro-viajando-com-o-cerebro-de-einstein-wp-1024.md"
+    },
+    {
+      "id": 1035,
+      "title": "Chega de Carnaval",
+      "original_url": "https://craftmind.wordpress.com/2011/03/08/chega-de-carnaval/",
+      "path": "blog/2011/03/08/chega-de-carnaval-wp-1035.md"
+    },
+    {
+      "id": 1041,
+      "title": "Fortune, fortune, baby!",
+      "original_url": "https://craftmind.wordpress.com/2011/03/25/fortune-fortune-baby/",
+      "path": "blog/2011/03/25/fortune-fortune-baby-wp-1041.md"
+    },
+    {
+      "id": 1107,
+      "title": "Transferindo graficamente arquivos via ftp seguro",
+      "original_url": "https://craftmind.wordpress.com/2011/01/25/transferindo-graficamente-arquivos-via-ftp-seguro/",
+      "path": "blog/2011/01/25/transferindo-graficamente-arquivos-via-ftp-seguro-wp-1107.md"
+    },
+    {
+      "id": 1118,
+      "title": "Instalando a biblioteca JPEG no linux",
+      "original_url": "https://craftmind.wordpress.com/2011/01/25/instalando-a-biblioteca-jpeg-no-linux/",
+      "path": "blog/2011/01/25/instalando-a-biblioteca-jpeg-no-linux-wp-1118.md"
+    },
+    {
+      "id": 1120,
+      "title": "Erro: cannot open source file “asm/errno.h”",
+      "original_url": "https://craftmind.wordpress.com/2011/01/25/erro-cannot-open-source-file-%e2%80%9casmerrno-h%e2%80%9d/",
+      "path": "blog/2011/01/25/erro-cannot-open-source-file--asmerrno-h-wp-1120.md"
+    },
+    {
+      "id": 1122,
+      "title": "Utilizando o SSH sem senha no linux",
+      "original_url": "https://craftmind.wordpress.com/2011/02/25/utilizando-o-ssh-sem-senha-no-linux/",
+      "path": "blog/2011/02/25/utilizando-o-ssh-sem-senha-no-linux-wp-1122.md"
+    },
+    {
+      "id": 1124,
+      "title": "Obtendo informações de hardware com o comando dmidecode",
+      "original_url": "https://craftmind.wordpress.com/2011/03/25/obtendo-informacoes-de-hardware-com-o-comando-dmidecode/",
+      "path": "blog/2011/03/25/obtendo-informacoes-de-hardware-com-o-comando-dmidecode-wp-1124.md"
+    },
+    {
+      "id": 1128,
+      "title": "Um pouco sobre o comando xargs",
+      "original_url": "https://craftmind.wordpress.com/2011/03/25/um-pouco-sobre-o-comando-xargs/",
+      "path": "blog/2011/03/25/um-pouco-sobre-o-comando-xargs-wp-1128.md"
+    },
+    {
+      "id": 1133,
+      "title": "O que não fazer quando o HD apresenta falhas",
+      "original_url": "https://craftmind.wordpress.com/2011/02/25/o-que-nao-fazer-quando-o-hd-apresenta-falhas/",
+      "path": "blog/2011/02/25/o-que-nao-fazer-quando-o-hd-apresenta-falhas-wp-1133.md"
+    },
+    {
+      "id": 1135,
+      "title": "Executando comandos remotamente dentro de uma rede linux com o SSH",
+      "original_url": "https://craftmind.wordpress.com/2011/02/25/executando-comandos-remotamente-dentro-de-uma-rede-linux-com-o-ssh/",
+      "path": "blog/2011/02/25/executando-comandos-remotamente-dentro-de-uma-rede-linux-com-o-ssh-wp-1135.md"
+    },
+    {
+      "id": 1140,
+      "title": "Configurações básicas do Bash",
+      "original_url": "https://craftmind.wordpress.com/2011/02/25/configuracoes-basicas-do-bash/",
+      "path": "blog/2011/02/25/configuracoes-basicas-do-bash-wp-1140.md"
+    },
+    {
+      "id": 1145,
+      "title": "Como e quando mudar de distribuição?",
+      "original_url": "https://craftmind.wordpress.com/2011/01/25/como-e-quando-mudar-de-distribuicao/",
+      "path": "blog/2011/01/25/como-e-quando-mudar-de-distribuicao-wp-1145.md"
+    },
+    {
+      "id": 1151,
+      "title": "BatteryStatus no Gnome",
+      "original_url": "https://craftmind.wordpress.com/2011/02/25/batterystatus-no-gnome/",
+      "path": "blog/2011/02/25/batterystatus-no-gnome-wp-1151.md"
+    },
+    {
+      "id": 740,
+      "title": "Livro: Aquecimento Global?",
+      "original_url": "https://craftmind.wordpress.com/2011/11/18/livro-aquecimento-global/",
+      "path": "blog/2011/11/18/livro-aquecimento-global-wp-740.md"
+    },
+    {
+      "id": 1048,
+      "title": "Pena",
+      "original_url": "https://craftmind.wordpress.com/2011/04/24/pena/",
+      "path": "blog/2011/04/24/pena-wp-1048.md"
+    },
+    {
+      "id": 1053,
+      "title": "Distante",
+      "original_url": "https://craftmind.wordpress.com/2011/05/16/distante/",
+      "path": "blog/2011/05/16/distante-wp-1053.md"
+    },
+    {
+      "id": 1058,
+      "title": "Concurso Cultural! (Encerrado)",
+      "original_url": "https://craftmind.wordpress.com/2011/05/31/concurso-cultural/",
+      "path": "blog/2011/05/31/concurso-cultural-wp-1058.md"
+    },
+    {
+      "id": 1086,
+      "title": "Devaneio",
+      "original_url": "https://craftmind.wordpress.com/2011/06/14/devaneio/",
+      "path": "blog/2011/06/14/devaneio-wp-1086.md"
+    },
+    {
+      "id": 1126,
+      "title": "Ajustando a variável JAVA_HOME",
+      "original_url": "https://craftmind.wordpress.com/2011/04/25/ajustando-a-variavel-java_home/",
+      "path": "blog/2011/04/25/ajustando-a-variavel-java_home-wp-1126.md"
+    },
+    {
+      "id": 1130,
+      "title": "Criando um repositório SVN local",
+      "original_url": "https://craftmind.wordpress.com/2011/04/25/criando-um-repositorio-svn-local/",
+      "path": "blog/2011/04/25/criando-um-repositorio-svn-local-wp-1130.md"
+    },
+    {
+      "id": 1137,
+      "title": "Variáveis de ambiente para programas-fonte",
+      "original_url": "https://craftmind.wordpress.com/2011/04/25/variaveis-de-ambiente-para-programas-fonte/",
+      "path": "blog/2011/04/25/variaveis-de-ambiente-para-programas-fonte-wp-1137.md"
+    },
+    {
+      "id": 1249,
+      "title": "Calmaria",
+      "original_url": "https://craftmind.wordpress.com/2011/07/22/calmaria/",
+      "path": "blog/2011/07/22/calmaria-wp-1249.md"
+    },
+    {
+      "id": 1252,
+      "title": "Erro: cannot open source file \"asm/param.h\"",
+      "original_url": "https://craftmind.wordpress.com/2011/09/06/catastrophic-error-cannot-open-source-file-asmparam-h/",
+      "path": "blog/2011/09/06/catastrophic-error-cannot-open-source-file-asmparam-h-wp-1252.md"
+    },
+    {
+      "id": 1255,
+      "title": "Recuperando o carregamento do Windows no GRUB",
+      "original_url": "https://craftmind.wordpress.com/2011/09/06/recuperando-o-carregamento-do-windows-no-grub/",
+      "path": "blog/2011/09/06/recuperando-o-carregamento-do-windows-no-grub-wp-1255.md"
+    },
+    {
+      "id": 1259,
+      "title": "Instalação do Ferret no Ubuntu 11.04",
+      "original_url": "https://craftmind.wordpress.com/2011/10/17/instalacao-do-ferret-no-ubuntu-11-04/",
+      "path": "blog/2011/10/17/instalacao-do-ferret-no-ubuntu-11-04-wp-1259.md"
+    },
+    {
+      "id": 1261,
+      "title": "Consumo excessivo de memória RAM no Linux",
+      "original_url": "https://craftmind.wordpress.com/2011/10/17/consumo-excessivo-de-memoria-ram-no-linux/",
+      "path": "blog/2011/10/17/consumo-excessivo-de-memoria-ram-no-linux-wp-1261.md"
+    },
+    {
+      "id": 1291,
+      "title": "Pedala Neutrino",
+      "original_url": "https://craftmind.wordpress.com/2011/11/19/pedala-neutrino/",
+      "path": "blog/2011/11/19/pedala-neutrino-wp-1291.md"
+    },
+    {
+      "id": 1304,
+      "title": "Teardrop (música)",
+      "original_url": "https://craftmind.wordpress.com/2011/11/21/teardrop-musica/",
+      "path": "blog/2011/11/21/teardrop-musica-wp-1304.md"
+    },
+    {
+      "id": 1313,
+      "title": "Hoje estou me sentindo...",
+      "original_url": "https://craftmind.wordpress.com/2011/11/21/hoje-estou-me-sentindo/",
+      "path": "blog/2011/11/21/hoje-estou-me-sentindo-wp-1313.md"
+    },
+    {
+      "id": 1317,
+      "title": "Conhecimento Livre",
+      "original_url": "https://craftmind.wordpress.com/2011/11/22/conhecimento-livre/",
+      "path": "blog/2011/11/22/conhecimento-livre-wp-1317.md"
+    },
+    {
+      "id": 1320,
+      "title": "Silent Lucidity",
+      "original_url": "https://craftmind.wordpress.com/2011/12/01/silent-lucidity/",
+      "path": "blog/2011/12/01/silent-lucidity-wp-1320.md"
+    },
+    {
+      "id": 1333,
+      "title": "Valor Máximo e Mínimo em um arquivo",
+      "original_url": "https://craftmind.wordpress.com/2011/12/16/valor-maximo-e-minimo-em-um-arquivo/",
+      "path": "blog/2011/12/16/valor-maximo-e-minimo-em-um-arquivo-wp-1333.md"
+    },
+    {
+      "id": 1336,
+      "title": "Ler uma lista de arquivos em uma rotina fortran",
+      "original_url": "https://craftmind.wordpress.com/2011/12/16/ler-uma-lista-de-arquivos-em-uma-rotina-fortran/",
+      "path": "blog/2011/12/16/ler-uma-lista-de-arquivos-em-uma-rotina-fortran-wp-1336.md"
+    },
+    {
+      "id": 1339,
+      "title": "svn diff com outra revisão",
+      "original_url": "https://craftmind.wordpress.com/2011/12/16/svn-diff-com-outra-revisao/",
+      "path": "blog/2011/12/16/svn-diff-com-outra-revisao-wp-1339.md"
+    },
+    {
+      "id": 1342,
+      "title": "The Queen is Dead",
+      "original_url": "https://craftmind.wordpress.com/2011/12/16/the-queen-is-dead/",
+      "path": "blog/2011/12/16/the-queen-is-dead-wp-1342.md"
+    },
+    {
+      "id": 1357,
+      "title": "O Vento",
+      "original_url": "https://craftmind.wordpress.com/2011/12/16/o-vento/",
+      "path": "blog/2011/12/16/o-vento-wp-1357.md"
+    },
+    {
+      "id": 1361,
+      "title": "Zero Fill",
+      "original_url": "https://craftmind.wordpress.com/2011/12/17/zero-fill/",
+      "path": "blog/2011/12/17/zero-fill-wp-1361.md"
+    },
+    {
+      "id": 1369,
+      "title": "Michel Tel...",
+      "original_url": "https://craftmind.wordpress.com/2012/01/02/michel-tel/",
+      "path": "blog/2012/01/02/michel-tel-wp-1369.md"
+    },
+    {
+      "id": 1375,
+      "title": "Devoto - Cristiano Pinho",
+      "original_url": "https://craftmind.wordpress.com/2012/01/02/devoto-cristiano-pinho/",
+      "path": "blog/2012/01/02/devoto-cristiano-pinho-wp-1375.md"
+    },
+    {
+      "id": 1378,
+      "title": "Bumerangues, pipas e as dores remanescentes de 2011",
+      "original_url": "https://craftmind.wordpress.com/2012/01/02/bumerangues-pipas-e-as-dores-remanescentes-de-2011/",
+      "path": "blog/2012/01/02/bumerangues-pipas-e-as-dores-remanescentes-de-2011-wp-1378.md"
+    },
+    {
+      "id": 1380,
+      "title": "Empadão de frango. Do Good.",
+      "original_url": "https://craftmind.wordpress.com/2012/01/02/empadao-de-frango-do-good/",
+      "path": "blog/2012/01/02/empadao-de-frango-do-good-wp-1380.md"
+    },
+    {
+      "id": 1406,
+      "title": "Al Anon, All Alone",
+      "original_url": "https://craftmind.wordpress.com/2012/01/02/al-anon-all-alone/",
+      "path": "blog/2012/01/02/al-anon-all-alone-wp-1406.md"
+    },
+    {
+      "id": 1421,
+      "title": "Consolação",
+      "original_url": "https://craftmind.wordpress.com/2012/01/11/consolacao/",
+      "path": "blog/2012/01/11/consolacao-wp-1421.md"
+    },
+    {
+      "id": 1426,
+      "title": "UmPortugues.com",
+      "original_url": "https://craftmind.wordpress.com/2012/01/11/umportugues-com/",
+      "path": "blog/2012/01/11/umportugues-com-wp-1426.md"
+    },
+    {
+      "id": 1442,
+      "title": "Minha lista de comandos úteis no shell do linux",
+      "original_url": "https://craftmind.wordpress.com/2012/01/17/minha-lista-de-comandos-uteis-no-shell-do-linux/",
+      "path": "blog/2012/01/17/minha-lista-de-comandos-uteis-no-shell-do-linux-wp-1442.md"
+    },
+    {
+      "id": 1453,
+      "title": "svn merge (jeito simples)",
+      "original_url": "https://craftmind.wordpress.com/2012/01/17/svn-merge-jeito-simples/",
+      "path": "blog/2012/01/17/svn-merge-jeito-simples-wp-1453.md"
+    },
+    {
+      "id": 1459,
+      "title": "Instalando o YAD no Ubuntu",
+      "original_url": "https://craftmind.wordpress.com/2012/02/09/instalando-o-yad-no-ubuntu/",
+      "path": "blog/2012/02/09/instalando-o-yad-no-ubuntu-wp-1459.md"
+    },
+    {
+      "id": 1467,
+      "title": "Sinal 3G no Brasil",
+      "original_url": "https://craftmind.wordpress.com/2012/02/11/sinal-3g-no-brasil/",
+      "path": "blog/2012/02/11/sinal-3g-no-brasil-wp-1467.md"
+    },
+    {
+      "id": 1475,
+      "title": "Sem Mais Palavras",
+      "original_url": "https://craftmind.wordpress.com/2012/03/04/sem-mais-palavras/",
+      "path": "blog/2012/03/04/sem-mais-palavras-wp-1475.md"
+    },
+    {
+      "id": 1480,
+      "title": "Vocês Dois",
+      "original_url": "https://craftmind.wordpress.com/2012/03/04/voces-dois/",
+      "path": "blog/2012/03/04/voces-dois-wp-1480.md"
+    },
+    {
+      "id": 1484,
+      "title": "Instalando manualmente o JRE no Ubuntu 12.04",
+      "original_url": "https://craftmind.wordpress.com/2012/04/05/instalando-manualmente-o-jre-no-ubuntu-12-04/",
+      "path": "blog/2012/04/05/instalando-manualmente-o-jre-no-ubuntu-12-04-wp-1484.md"
+    },
+    {
+      "id": 1495,
+      "title": "Dicas para quem está iniciando em \"modelagem\"",
+      "original_url": "https://craftmind.wordpress.com/2012/04/11/dicas-para-quem-esta-iniciando-em-modelagem/",
+      "path": "blog/2012/04/11/dicas-para-quem-esta-iniciando-em-modelagem-wp-1495.md"
+    },
+    {
+      "id": 1506,
+      "title": "Opções avançadas na barra de menus do Mac OS X Lion",
+      "original_url": "https://craftmind.wordpress.com/2012/05/03/opcoes-avancadas-na-barra-de-menus-do-mac-os-x-lion/",
+      "path": "blog/2012/05/03/opcoes-avancadas-na-barra-de-menus-do-mac-os-x-lion-wp-1506.md"
+    },
+    {
+      "id": 1488,
+      "title": "VPN no Mac OS X Lion",
+      "original_url": "https://craftmind.wordpress.com/2012/05/03/vpn-no-mac-os-x-lion/",
+      "path": "blog/2012/05/03/vpn-no-mac-os-x-lion-wp-1488.md"
+    },
+    {
+      "id": 1515,
+      "title": "Configurando o terminal do Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2012/05/03/configurando-o-terminal-do-mac-os-x/",
+      "path": "blog/2012/05/03/configurando-o-terminal-do-mac-os-x-wp-1515.md"
+    },
+    {
+      "id": 1530,
+      "title": "Zerando a MBR",
+      "original_url": "https://craftmind.wordpress.com/2012/05/05/zerando-a-mbr/",
+      "path": "blog/2012/05/05/zerando-a-mbr-wp-1530.md"
+    },
+    {
+      "id": 1533,
+      "title": "NTFS no Mac OS X Lion",
+      "original_url": "https://craftmind.wordpress.com/2012/05/06/ntfs-no-mac-os-x-lion/",
+      "path": "blog/2012/05/06/ntfs-no-mac-os-x-lion-wp-1533.md"
+    },
+    {
+      "id": 1547,
+      "title": "Imprimir uma lista em linha",
+      "original_url": "https://craftmind.wordpress.com/2012/05/11/imprimir-uma-lista-em-linha/",
+      "path": "blog/2012/05/11/imprimir-uma-lista-em-linha-wp-1547.md"
+    },
+    {
+      "id": 1550,
+      "title": "Gravando uma imagem iso em um pendrive pela linha de comando no Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2012/05/13/gravando-uma-imagem-iso-em-um-pendrive-pela-linha-de-comando-no-mac-os-x/",
+      "path": "blog/2012/05/13/gravando-uma-imagem-iso-em-um-pendrive-pela-linha-de-comando-no-mac-os-x-wp-1550.md"
+    },
+    {
+      "id": 1558,
+      "title": "Habilitando o servidor Apache com PHP no Mac OS X Lion",
+      "original_url": "https://craftmind.wordpress.com/2012/05/17/habilitando-o-servidor-apache-com-php-no-mac-os-x-lion/",
+      "path": "blog/2012/05/17/habilitando-o-servidor-apache-com-php-no-mac-os-x-lion-wp-1558.md"
+    },
+    {
+      "id": 1564,
+      "title": "Tô chegando lá.",
+      "original_url": "https://craftmind.wordpress.com/2012/05/20/to-chegando-la/",
+      "path": "blog/2012/05/20/to-chegando-la-wp-1564.md"
+    },
+    {
+      "id": 1571,
+      "title": "Mono",
+      "original_url": "https://craftmind.wordpress.com/2012/05/23/mono/",
+      "path": "blog/2012/05/23/mono-wp-1571.md"
+    },
+    {
+      "id": 1584,
+      "title": "A propaganda e o qualquer coisa",
+      "original_url": "https://craftmind.wordpress.com/2012/05/29/a-propaganda-e-o-qualquer-coisa/",
+      "path": "blog/2012/05/29/a-propaganda-e-o-qualquer-coisa-wp-1584.md"
+    },
+    {
+      "id": 1596,
+      "title": "5000 visitas!",
+      "original_url": "https://craftmind.wordpress.com/2012/06/01/5000-visitas-3/",
+      "path": "blog/2012/06/01/5000-visitas-3-wp-1596.md"
+    },
+    {
+      "id": 1599,
+      "title": "Quando eles te acham brasileiro demais",
+      "original_url": "https://craftmind.wordpress.com/2012/06/08/quando-eles-te-acham-brasileiro-demais/",
+      "path": "blog/2012/06/08/quando-eles-te-acham-brasileiro-demais-wp-1599.md"
+    },
+    {
+      "id": 1604,
+      "title": "Ballad of a Thin Man",
+      "original_url": "https://craftmind.wordpress.com/2012/06/08/ballad-of-a-thin-man/",
+      "path": "blog/2012/06/08/ballad-of-a-thin-man-wp-1604.md"
+    },
+    {
+      "id": 1646,
+      "title": "Qual é a sua posição no mundo?",
+      "original_url": "https://craftmind.wordpress.com/2012/06/10/qual-e-a-sua-posicao-no-mundo/",
+      "path": "blog/2012/06/10/qual-e-a-sua-posicao-no-mundo-wp-1646.md"
+    },
+    {
+      "id": 1660,
+      "title": "Doação de órgãos",
+      "original_url": "https://craftmind.wordpress.com/2012/06/10/doacao-de-orgaos-4/",
+      "path": "blog/2012/06/10/doacao-de-orgaos-4-wp-1660.md"
+    },
+    {
+      "id": 1668,
+      "title": "Insira assinaturas digitalizadas em documentos PDF com o Preview no Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2012/06/11/insira-assinaturas-digitalizadas-em-documentos-pdf-com-o-preview-no-mac-os-x/",
+      "path": "blog/2012/06/11/insira-assinaturas-digitalizadas-em-documentos-pdf-com-o-preview-no-mac-os-x-wp-1668.md"
+    },
+    {
+      "id": 1680,
+      "title": "Quanto vale o seu site/blog?",
+      "original_url": "https://craftmind.wordpress.com/2012/06/20/quanto-vale-o-seu-siteblog/",
+      "path": "blog/2012/06/20/quanto-vale-o-seu-siteblog-wp-1680.md"
+    },
+    {
+      "id": 1691,
+      "title": "Baixe a reanálise ERA Interim do ECMWF utilizando um script Perl",
+      "original_url": "https://craftmind.wordpress.com/2012/07/04/baixe-a-reanalise-era-interim-do-ecmwf-utilizando-um-script-perl/",
+      "path": "blog/2012/07/04/baixe-a-reanalise-era-interim-do-ecmwf-utilizando-um-script-perl-wp-1691.md"
+    },
+    {
+      "id": 1703,
+      "title": "Hush Terminal: You DO NOT have mail!",
+      "original_url": "https://craftmind.wordpress.com/2012/07/12/hush-terminal-you-do-not-have-mail/",
+      "path": "blog/2012/07/12/hush-terminal-you-do-not-have-mail-wp-1703.md"
+    },
+    {
+      "id": 1710,
+      "title": "Utilize o script grib2ctl.pl para gerar ctl's a partir de arquivos GRIB",
+      "original_url": "https://craftmind.wordpress.com/2012/07/13/utilize-o-script-grib2ctl-pl-para-gerar-ctls-a-partir-de-arquivos-grb/",
+      "path": "blog/2012/07/13/utilize-o-script-grib2ctl-pl-para-gerar-ctls-a-partir-de-arquivos-grb-wp-1710.md"
+    },
+    {
+      "id": 1713,
+      "title": "NCARG/NCL no Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2012/07/13/ncarg-no-mac-os-x/",
+      "path": "blog/2012/07/13/ncarg-no-mac-os-x-wp-1713.md"
+    },
+    {
+      "id": 1722,
+      "title": "Converta arquivos em GRIB para NetCDF com o NCL",
+      "original_url": "https://craftmind.wordpress.com/2012/07/13/converta-grib-em-netcdf-com-o-ncl/",
+      "path": "blog/2012/07/13/converta-grib-em-netcdf-com-o-ncl-wp-1722.md"
+    },
+    {
+      "id": 1727,
+      "title": "Converta arquivos em NetCDF para GRIB com o CDO",
+      "original_url": "https://craftmind.wordpress.com/2012/07/13/converta-arquivos-em-netcdf-para-grib-com-o-cdo/",
+      "path": "blog/2012/07/13/converta-arquivos-em-netcdf-para-grib-com-o-cdo-wp-1727.md"
+    },
+    {
+      "id": 1738,
+      "title": "OS X Mountain Lion: vale a pena!",
+      "original_url": "https://craftmind.wordpress.com/2012/08/07/os-x-mountain-lion-vale-a-pena/",
+      "path": "blog/2012/08/07/os-x-mountain-lion-vale-a-pena-wp-1738.md"
+    },
+    {
+      "id": 1750,
+      "title": "Removendo o MacPorts e instalando o HomeBrew no Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2012/08/14/removendo-o-macports-e-instalando-o-brew-no-mac-os-x/",
+      "path": "blog/2012/08/14/removendo-o-macports-e-instalando-o-brew-no-mac-os-x-wp-1750.md"
+    },
+    {
+      "id": 1763,
+      "title": "Instalando o MPICH2 pelo HomeBrew compilado com o Ifort",
+      "original_url": "https://craftmind.wordpress.com/2012/08/14/instalando-o-mpich2-pelo-homebrew-compilado-com-o-ifort/",
+      "path": "blog/2012/08/14/instalando-o-mpich2-pelo-homebrew-compilado-com-o-ifort-wp-1763.md"
+    },
+    {
+      "id": 1766,
+      "title": "Erro: no such instruction: `vzeroupper' do PGF90 12.8-1",
+      "original_url": "https://craftmind.wordpress.com/2012/08/24/erro-no-such-instruction-vzeroupper-do-pgf90-12-8-1/",
+      "path": "blog/2012/08/24/erro-no-such-instruction-vzeroupper-do-pgf90-12-8-1-wp-1766.md"
+    },
+    {
+      "id": 1769,
+      "title": "Ajustando as propriedades de visualização de todas as pastas no Finder utilizando o Automator",
+      "original_url": "https://craftmind.wordpress.com/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator/",
+      "path": "blog/2012/09/21/ajustando-as-propriedades-de-visualizacao-de-todas-as-pastas-no-finder-utilizando-o-automator-wp-1769.md"
+    },
+    {
+      "id": 1783,
+      "title": "Utilizando o Automator para baixar arquivos PDF abertos no Safari",
+      "original_url": "https://craftmind.wordpress.com/2012/09/21/utilizando-o-automator-para-baixar-arquivos-pdf-abertos-no-safari/",
+      "path": "blog/2012/09/21/utilizando-o-automator-para-baixar-arquivos-pdf-abertos-no-safari-wp-1783.md"
+    },
+    {
+      "id": 1793,
+      "title": "Backup local simples com o rsync",
+      "original_url": "https://craftmind.wordpress.com/2012/09/24/backup-local-simples-com-o-rsync/",
+      "path": "blog/2012/09/24/backup-local-simples-com-o-rsync-wp-1793.md"
+    },
+    {
+      "id": 1795,
+      "title": "Mouse e Trackpad com rolagem diferente no Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2012/09/24/mouse-e-trackpad-com-rolagem-diferente-no-mac-os-x/",
+      "path": "blog/2012/09/24/mouse-e-trackpad-com-rolagem-diferente-no-mac-os-x-wp-1795.md"
+    },
+    {
+      "id": 1801,
+      "title": "Utilizando a VPN através do Tunnelblick",
+      "original_url": "https://craftmind.wordpress.com/2012/09/25/utilizando-a-vpn-atraves-do-tunnelblick/",
+      "path": "blog/2012/09/25/utilizando-a-vpn-atraves-do-tunnelblick-wp-1801.md"
+    },
+    {
+      "id": 1812,
+      "title": "Abrir o Terminal em uma determinada pasta do Finder",
+      "original_url": "https://craftmind.wordpress.com/2012/09/26/abrir-o-terminal-em-uma-determinada-pasta-do-finder/",
+      "path": "blog/2012/09/26/abrir-o-terminal-em-uma-determinada-pasta-do-finder-wp-1812.md"
+    },
+    {
+      "id": 1818,
+      "title": "Cirrus",
+      "original_url": "https://craftmind.wordpress.com/2012/09/28/cirrus/",
+      "path": "blog/2012/09/28/cirrus-wp-1818.md"
+    },
+    {
+      "id": 1821,
+      "title": "Waltz",
+      "original_url": "https://craftmind.wordpress.com/2012/09/29/waltz/",
+      "path": "blog/2012/09/29/waltz-wp-1821.md"
+    },
+    {
+      "id": 1825,
+      "title": "Abrir aba do iTerm2 no mesmo diretório",
+      "original_url": "https://craftmind.wordpress.com/2012/10/02/abrir-aba-do-iterm2-no-mesmo-diretorio/",
+      "path": "blog/2012/10/02/abrir-aba-do-iterm2-no-mesmo-diretorio-wp-1825.md"
+    },
+    {
+      "id": 1838,
+      "title": "Removendo GCC e GFORTRAN (pacote HPC, não nativo) do Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2012/10/05/removendo-gcc-e-gfortran-pacote-hpc-nao-nativo-do-mac-os-x/",
+      "path": "blog/2012/10/05/removendo-gcc-e-gfortran-pacote-hpc-nao-nativo-do-mac-os-x-wp-1838.md"
+    },
+    {
+      "id": 1852,
+      "title": "Instalando GCC, GFORTRAN, ZLIB, HDF5, NETCDF4 e OpenMPI no Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2012/10/07/instalando-gcc-gfortran-zlib-hdf5-netcdf4-e-openmpi-no-mac-os-x/",
+      "path": "blog/2012/10/07/instalando-gcc-gfortran-zlib-hdf5-netcdf4-e-openmpi-no-mac-os-x-wp-1852.md"
+    },
+    {
+      "id": 1878,
+      "title": "AppleScript + Dropbox = BlogThisTrack!",
+      "original_url": "https://craftmind.wordpress.com/2012/11/13/applescript-dropbox-blogthistrack/",
+      "path": "blog/2012/11/13/applescript-dropbox-blogthistrack-wp-1878.md"
+    },
+    {
+      "id": 1905,
+      "title": "Habilitando o servidor Apache no Mac OS X Mountain Lion",
+      "original_url": "https://craftmind.wordpress.com/2012/12/01/habilitando-o-servidor-apache-no-mac-os-x-mountain-lion/",
+      "path": "blog/2012/12/01/habilitando-o-servidor-apache-no-mac-os-x-mountain-lion-wp-1905.md"
+    },
+    {
+      "id": 1912,
+      "title": "Aquarela",
+      "original_url": "https://craftmind.wordpress.com/2013/01/06/aquarela/",
+      "path": "blog/2013/01/06/aquarela-wp-1912.md"
+    },
+    {
+      "id": 1923,
+      "title": "catastrophic error: cannot open source file \"malloc.h\"",
+      "original_url": "https://craftmind.wordpress.com/2013/01/10/catastrophic-error-cannot-open-source-file-malloc-h/",
+      "path": "blog/2013/01/10/catastrophic-error-cannot-open-source-file-malloc-h-wp-1923.md"
+    },
+    {
+      "id": 1949,
+      "title": "Teste de argumentos em Korn Shell",
+      "original_url": "https://craftmind.wordpress.com/2013/02/12/teste-de-argumentos-em-korn-shell/",
+      "path": "blog/2013/02/12/teste-de-argumentos-em-korn-shell-wp-1949.md"
+    },
+    {
+      "id": 1954,
+      "title": "Grüße aus Österreich",
+      "original_url": "https://craftmind.wordpress.com/2013/02/12/gruse-aus-osterreich/",
+      "path": "blog/2013/02/12/gruse-aus-osterreich-wp-1954.md"
+    },
+    {
+      "id": 1959,
+      "title": "Vórtices de Von Kármán",
+      "original_url": "https://craftmind.wordpress.com/2013/02/12/vortices-de-von-karman/",
+      "path": "blog/2013/02/12/vortices-de-von-karman-wp-1959.md"
+    },
+    {
+      "id": 1962,
+      "title": "ICU",
+      "original_url": "https://craftmind.wordpress.com/2013/02/12/icu/",
+      "path": "blog/2013/02/12/icu-wp-1962.md"
+    },
+    {
+      "id": 1966,
+      "title": "Trocando Windows pelo Linux (lol)",
+      "original_url": "https://craftmind.wordpress.com/2013/02/12/trocando-windows-pelo-linux-lol/",
+      "path": "blog/2013/02/12/trocando-windows-pelo-linux-lol-wp-1966.md"
+    },
+    {
+      "id": 1968,
+      "title": "Trilha Sonora: O Fabuloso destino de Amélie Poulain",
+      "original_url": "https://craftmind.wordpress.com/2013/02/12/trilha-sonora-o-fabuloso-destino-de-amelie-poulain/",
+      "path": "blog/2013/02/12/trilha-sonora-o-fabuloso-destino-de-amelie-poulain-wp-1968.md"
+    },
+    {
+      "id": 1971,
+      "title": "Quanto vale o seu site/blog? #2",
+      "original_url": "https://craftmind.wordpress.com/2013/02/16/quanto-vale-o-seu-siteblog-2/",
+      "path": "blog/2013/02/16/quanto-vale-o-seu-siteblog-2-wp-1971.md"
+    },
+    {
+      "id": 1975,
+      "title": "Transformando Scripts em Apps no Mac OS X",
+      "original_url": "https://craftmind.wordpress.com/2013/02/16/transformando-scripts-em-apps-no-mac-os-x/",
+      "path": "blog/2013/02/16/transformando-scripts-em-apps-no-mac-os-x-wp-1975.md"
+    },
+    {
+      "id": 1983,
+      "title": "Panoply: Software de Visualização de Dados em Ponto de Grade",
+      "original_url": "https://craftmind.wordpress.com/2013/02/17/panoply-software-de-visualizacao-de-dados-em-ponto-de-grade/",
+      "path": "blog/2013/02/17/panoply-software-de-visualizacao-de-dados-em-ponto-de-grade-wp-1983.md"
+    },
+    {
+      "id": 1995,
+      "title": "Comando não encontrado: add-apt-repository (Ubuntu 12.10)",
+      "original_url": "https://craftmind.wordpress.com/2013/03/10/comando-nao-encontrado-add-apt-repository-ubuntu-12-10/",
+      "path": "blog/2013/03/10/comando-nao-encontrado-add-apt-repository-ubuntu-12-10-wp-1995.md"
+    },
+    {
+      "id": 2112,
+      "title": "Service Battery: resolvendo problemas de bateria do Macbook Pro",
+      "original_url": "https://craftmind.wordpress.com/2013/04/24/service-battery-resolvendo-problemas-de-bateria-do-macbook-pro/",
+      "path": "blog/2013/04/24/service-battery-resolvendo-problemas-de-bateria-do-macbook-pro-wp-2112.md"
+    },
+    {
+      "id": 2118,
+      "title": "Habilitar modo Ad-Hoc da Broadcom BCM4313 no Ubuntu 13.04",
+      "original_url": "https://craftmind.wordpress.com/2013/06/11/habilitar-modo-ad-hoc-da-broadcom-bcm4313-no-ubuntu-13-04/",
+      "path": "blog/2013/06/11/habilitar-modo-ad-hoc-da-broadcom-bcm4313-no-ubuntu-13-04-wp-2118.md"
+    },
+    {
+      "id": 2121,
+      "title": "Sobrevivendo com um Ubuntu antigo",
+      "original_url": "https://craftmind.wordpress.com/2013/06/13/sobrevivendo-com-um-ubuntu-antigo/",
+      "path": "blog/2013/06/13/sobrevivendo-com-um-ubuntu-antigo-wp-2121.md"
+    },
+    {
+      "id": 2128,
+      "title": "SSH sem senha no OS X Mountain Lion",
+      "original_url": "https://craftmind.wordpress.com/2013/07/14/ssh-sem-senha-no-os-x-mountain-lion/",
+      "path": "blog/2013/07/14/ssh-sem-senha-no-os-x-mountain-lion-wp-2128.md"
+    },
+    {
+      "id": 2131,
+      "title": "Runtime error: \"dyld: Library not loaded: libiomp5.dylib\"",
+      "original_url": "https://craftmind.wordpress.com/2013/07/14/runtime-error-dyld-library-not-loaded-libiomp5-dylib/",
+      "path": "blog/2013/07/14/runtime-error-dyld-library-not-loaded-libiomp5-dylib-wp-2131.md"
+    },
+    {
+      "id": 2134,
+      "title": "Catastrophic error: could not set locale \"\" to allow processing of multibyte characters",
+      "original_url": "https://craftmind.wordpress.com/2013/07/20/catastrophic-error-could-not-set-locale-to-allow-processing-of-multibyte-characters/",
+      "path": "blog/2013/07/20/catastrophic-error-could-not-set-locale-to-allow-processing-of-multibyte-characters-wp-2134.md"
+    },
+    {
+      "id": 2138,
+      "title": "Compilando LAPACK e BLAS com ifort",
+      "original_url": "https://craftmind.wordpress.com/2013/07/20/compilando-lapack-e-blas-com-ifort/",
+      "path": "blog/2013/07/20/compilando-lapack-e-blas-com-ifort-wp-2138.md"
+    },
+    {
+      "id": 2147,
+      "title": "Sincronizando o Macports através do HTTP",
+      "original_url": "https://craftmind.wordpress.com/2013/09/10/sincronizando-o-macports-atraves-do-http/",
+      "path": "blog/2013/09/10/sincronizando-o-macports-atraves-do-http-wp-2147.md"
+    },
+    {
+      "id": 2153,
+      "title": "Atualizando Macports no OS X Mavericks",
+      "original_url": "https://craftmind.wordpress.com/2013/11/12/atualizando-macports-no-os-x-mavericks/",
+      "path": "blog/2013/11/12/atualizando-macports-no-os-x-mavericks-wp-2153.md"
+    },
+    {
+      "id": 2155,
+      "title": "Derivaçao da Equação de Análise a partir da Função Custo Variacional Tridimensional",
+      "original_url": "https://craftmind.wordpress.com/2013/11/14/derivacao-da-equacao-de-analise-a-partir-da-funcao-custo-variacional-tridimensional/",
+      "path": "blog/2013/11/14/derivacao-da-equacao-de-analise-a-partir-da-funcao-custo-variacional-tridimensional-wp-2155.md"
+    },
+    {
+      "id": 2194,
+      "title": "Os números de 2013",
+      "original_url": "https://craftmind.wordpress.com/2014/01/14/os-numeros-de-2013/",
+      "path": "blog/2014/01/14/os-numeros-de-2013-wp-2194.md"
+    },
+    {
+      "id": 2196,
+      "title": "Review: Kit SRAM Entusiasta",
+      "original_url": "https://craftmind.wordpress.com/2014/03/16/review-kit-sram-entusiasta/",
+      "path": "blog/2014/03/16/review-kit-sram-entusiasta-wp-2196.md"
+    },
+    {
+      "id": 2200,
+      "title": "Ferramentas para manutenção de bicicletas",
+      "original_url": "https://craftmind.wordpress.com/2014/02/19/ferramentas-para-manutencao-de-bicicletas/",
+      "path": "blog/2014/02/19/ferramentas-para-manutencao-de-bicicletas-wp-2200.md"
+    },
+    {
+      "id": 2212,
+      "title": "Comando weather no OS X (condições do tempo)",
+      "original_url": "https://craftmind.wordpress.com/2014/02/16/comando-weather-no-os-x-previsao-do-tempo/",
+      "path": "blog/2014/02/16/comando-weather-no-os-x-previsao-do-tempo-wp-2212.md"
+    },
+    {
+      "id": 2216,
+      "title": "Transferindo arquivos do OS X para um dispositivo Android",
+      "original_url": "https://craftmind.wordpress.com/2014/02/16/transferindo-arquivos-do-os-x-para-um-dispositivo-android/",
+      "path": "blog/2014/02/16/transferindo-arquivos-do-os-x-para-um-dispositivo-android-wp-2216.md"
+    },
+    {
+      "id": 2295,
+      "title": "Transferindo arquivos para o Motorola Razr D3 (XT920) com o Android File Transfer no OS X",
+      "original_url": "https://craftmind.wordpress.com/2014/03/16/transferindo-arquivos-para-o-motorola-razr-d3-xt920-com-o-android-file-transfer-no-os-x/",
+      "path": "blog/2014/03/16/transferindo-arquivos-para-o-motorola-razr-d3-xt920-com-o-android-file-transfer-no-os-x-wp-2295.md"
+    },
+    {
+      "id": 2320,
+      "title": "Instalando a suite Free PGI no OS X (e mais um pouco)",
+      "original_url": "https://craftmind.wordpress.com/2014/04/04/instalando-a-suite-free-pgi-no-os-x-e-mais-um-pouco/",
+      "path": "blog/2014/04/04/instalando-a-suite-free-pgi-no-os-x-e-mais-um-pouco-wp-2320.md"
+    },
+    {
+      "id": 2330,
+      "title": "Markdown + MathJax: Uma alternativa ao LaTeX",
+      "original_url": "https://craftmind.wordpress.com/2014/04/14/markdown-mathjax-uma-alternativa-ao-latex/",
+      "path": "blog/2014/04/14/markdown-mathjax-uma-alternativa-ao-latex-wp-2330.md"
+    },
+    {
+      "id": 2367,
+      "title": "Consertando o Macports 2.3.0 no OS X Mavericks",
+      "original_url": "https://craftmind.wordpress.com/2014/06/29/consertando-o-macports-2-3-0-no-os-x-mavericks/",
+      "path": "blog/2014/06/29/consertando-o-macports-2-3-0-no-os-x-mavericks-wp-2367.md"
+    },
+    {
+      "id": 2374,
+      "title": "Migrando o Macports para o OS X Yosemite",
+      "original_url": "https://craftmind.wordpress.com/2014/10/17/migrando-o-macports-para-o-os-x-yosemite/",
+      "path": "blog/2014/10/17/migrando-o-macports-para-o-os-x-yosemite-wp-2374.md"
+    },
+    {
+      "id": 2404,
+      "title": "Shell: fazendo o inverso dos padrões (wildcards)",
+      "original_url": "https://craftmind.wordpress.com/2014/11/20/shell-fazendo-o-inverso-dos-padroes-wildcards/",
+      "path": "blog/2014/11/20/shell-fazendo-o-inverso-dos-padroes-wildcards-wp-2404.md"
+    },
+    {
+      "id": 2411,
+      "title": "Makefile (mínimo!)",
+      "original_url": "https://craftmind.wordpress.com/2015/03/11/makefile-minimo/",
+      "path": "blog/2015/03/11/makefile-minimo-wp-2411.md"
+    },
+    {
+      "id": 2426,
+      "title": "Decomposição Cholesky",
+      "original_url": "https://craftmind.wordpress.com/2015/03/11/decomposicao-cholesky/",
+      "path": "blog/2015/03/11/decomposicao-cholesky-wp-2426.md"
+    },
+    {
+      "id": 2502,
+      "title": "Heaven Adores You",
+      "original_url": "https://craftmind.wordpress.com/2015/05/12/heaven-adores-you/",
+      "path": "blog/2015/05/12/heaven-adores-you-wp-2502.md"
+    },
+    {
+      "id": 2505,
+      "title": "Rebloqueando o bootloader e restaurando a imagem de fábrica do Moto X (2013, primeira geração)",
+      "original_url": "https://craftmind.wordpress.com/2015/05/22/rebloqueando-o-bootloader-e-restaurando-a-imagem-de-fabrica-do-moto-x-2013-primeira-geracao/",
+      "path": "blog/2015/05/22/rebloqueando-o-bootloader-e-restaurando-a-imagem-de-fabrica-do-moto-x-2013-primeira-geracao-wp-2505.md"
+    },
+    {
+      "id": 2520,
+      "title": "Vamos ajudar? (Campanha)",
+      "original_url": "https://craftmind.wordpress.com/2015/06/20/vamos-ajudar-campanha/",
+      "path": "blog/2015/06/20/vamos-ajudar-campanha-wp-2520.md"
+    },
+    {
+      "id": 2526,
+      "title": "Inserir espaço extra entre as colunas de um arquivo",
+      "original_url": "https://craftmind.wordpress.com/2015/10/05/inserir-espaco-extra-entre-as-colunas-de-um-arquivo/",
+      "path": "blog/2015/10/05/inserir-espaco-extra-entre-as-colunas-de-um-arquivo-wp-2526.md"
+    },
+    {
+      "id": 2533,
+      "title": "Fazendo um loop entre duas datas no Python",
+      "original_url": "https://craftmind.wordpress.com/2015/10/09/fazendo-um-loop-entre-duas-data-no-python/",
+      "path": "blog/2015/10/09/fazendo-um-loop-entre-duas-data-no-python-wp-2533.md"
+    },
+    {
+      "id": 2550,
+      "title": "O Tempo e o Silêncio",
+      "original_url": "https://craftmind.wordpress.com/2015/11/06/o-tempo-e-o-silencio/",
+      "path": "blog/2015/11/06/o-tempo-e-o-silencio-wp-2550.md"
+    },
+    {
+      "id": 2563,
+      "title": "Editando Textile no Geany",
+      "original_url": "https://craftmind.wordpress.com/2016/01/25/editando-textile-no-geany/",
+      "path": "blog/2016/01/25/editando-textile-no-geany-wp-2563.md"
+    },
+    {
+      "id": 2674,
+      "title": "NCARG/NCL no Ubuntu 15.10",
+      "original_url": "https://craftmind.wordpress.com/2016/03/22/ncargncl-no-ubuntu-15-10/",
+      "path": "blog/2016/03/22/ncargncl-no-ubuntu-15-10-wp-2674.md"
+    },
+    {
+      "id": 2745,
+      "title": "Some Devil",
+      "original_url": "https://craftmind.wordpress.com/2016/06/05/some-devil/",
+      "path": "blog/2016/06/05/some-devil-wp-2745.md"
+    },
+    {
+      "id": 2764,
+      "title": "Jason Becker’s New Album Campaign",
+      "original_url": "https://craftmind.wordpress.com/2016/10/12/jason-beckers-new-album-campaign/",
+      "path": "blog/2016/10/12/jason-beckers-new-album-campaign-wp-2764.md"
+    },
+    {
+      "id": 2770,
+      "title": "Quick fix for dropbox icons appearance (Linux)",
+      "original_url": "https://craftmind.wordpress.com/2017/01/15/quick-fix-for-dropbox-icons-appearance-linux/",
+      "path": "blog/2017/01/15/quick-fix-for-dropbox-icons-appearance-linux-wp-2770.md"
+    },
+    {
+      "id": 2779,
+      "title": "Open any kind of file from the terminal with an “open” command (Linux)",
+      "original_url": "https://craftmind.wordpress.com/2017/01/22/open-any-kind-of-file-from-the-terminal-with-an-open-command-linux/",
+      "path": "blog/2017/01/22/open-any-kind-of-file-from-the-terminal-with-an-open-command-linux-wp-2779.md"
+    },
+    {
+      "id": 2796,
+      "title": "Atrofia Muscular Espinhal (AME)",
+      "original_url": "https://craftmind.wordpress.com/2017/11/18/atrofia-muscular-espinhal-ame/",
+      "path": "blog/2017/11/18/atrofia-muscular-espinhal-ame-wp-2796.md"
+    },
+    {
+      "id": 2803,
+      "title": "Meus Computadores #2",
+      "original_url": "https://craftmind.wordpress.com/2018/02/13/meus-computadores-2/",
+      "path": "blog/2018/02/13/meus-computadores-2-wp-2803.md"
+    },
+    {
+      "id": 2807,
+      "title": "Expandir uma sequência numérica incluindo caracteres (Shell)",
+      "original_url": "https://craftmind.wordpress.com/2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell/",
+      "path": "blog/2018/02/14/expandir-uma-sequencia-numerica-incluindo-caracteres-shell-wp-2807.md"
+    },
+    {
+      "id": 2815,
+      "title": "Problema com a libosmesa6 no Linux Mint 18.3 \"Sylvia\"",
+      "original_url": "https://craftmind.wordpress.com/2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia/",
+      "path": "blog/2018/02/19/problema-com-a-libosmesa6-no-linux-mint-18-3-sylvia-wp-2815.md"
+    },
+    {
+      "id": 2823,
+      "title": "Calculando diferença entre duas datas no formato YYYYMMDDHH (Shell)",
+      "original_url": "https://craftmind.wordpress.com/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell/",
+      "path": "blog/2018/02/23/calculando-diferenca-entre-duas-datas-no-formato-yyyymmddhh-shell-wp-2823.md"
+    },
+    {
+      "id": 2831,
+      "title": "Copiando o caminho atual (pwd) no Shell sem utilizar o mouse",
+      "original_url": "https://craftmind.wordpress.com/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse/",
+      "path": "blog/2018/10/16/copiando-o-caminho-atual-pwd-no-shell-sem-utilizar-o-mouse-wp-2831.md"
+    },
+    {
+      "id": 2840,
+      "title": "Memória",
+      "original_url": "https://craftmind.wordpress.com/2018/10/15/memoria/",
+      "path": "blog/2018/10/15/memoria-wp-2840.md"
+    }
+  ]
+}

@@ -6,3 +6,5 @@
 .navbar .archive-group summary { display: list-item; color: #eee; }
 .navbar .archive-group a { color: #eee; }
 .navbar .archive-group a:hover, .navbar .archive-group summary:hover { color: #fff; background: #262626; }
+/* Keep long equations from widening the page on small screens. */
+div.arithmatex { overflow-x: auto; max-width: 100%; }

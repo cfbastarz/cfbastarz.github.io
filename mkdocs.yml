@@ -36,6 +36,8 @@ extra:
 
 # Extensions
 markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
   - footnotes
   - tables
   - admonition
@@ -70,3 +72,5 @@ extra_css:
 
 extra_javascript:
   - js/blog.js
+  - js/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js
