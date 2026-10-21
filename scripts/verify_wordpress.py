@@ -21,4 +21,5 @@ for p in report['posts']:
 print('Rendered posts:',rendered,'Images:',images,'Broken local links:',broken)
 assert not broken
 math=(site/'blog/2013/11/14/derivacao-da-equacao-de-analise-a-partir-da-funcao-custo-variacional-tridimensional-wp-2155/index.html').read_text();assert 'class="arithmatex"' in math
+assert '$$' not in BeautifulSoup(math, 'html.parser').select_one('[role=main]').get_text()
 print('Math markup verified. All published post IDs, metadata, shortcode conversion and local links verified.')

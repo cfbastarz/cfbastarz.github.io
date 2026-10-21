@@ -32,15 +32,7 @@ original_url: https://craftmind.wordpress.com/2011/02/11/livro-o-ultimo-teorema-
 
 O Último Teorema de Fermat conta a saga "épica" de [Andrew Wiles](http://www.princeton.edu/admission/whatsdistinctive/facultyprofiles/wiles/) na busca pela prova da última conjectura deixada por [Pierre de Fermat](http://pt.wikipedia.org/wiki/Pierre_de_Fermat) em 1670. A conjectura, agora um teorema, estabelece que não existe soluções para a equação
 
-
-
-$x^{n} + y^{n} = z^{n}$
-
- para 
-
-$n > 2$
-
-
+$x^{n} + y^{n} = z^{n}$ para $n > 2$
 
 Este problema permaneceu sem um prova por mais de 300 anos quando em 1995 o matemático inglês (radicado nos EUA) Andrew Wiles consegue a façanha - épica, de prová-lo como sendo falso. A prova pesquisada por Wiles demandou, ao todo, sete longos anos de estudos contando com numerosas técnicas matemáticas, conectadas por um raciocício lógico extremamente intrincado imerso em diversos teoremas demasiadamente abstratos.
 

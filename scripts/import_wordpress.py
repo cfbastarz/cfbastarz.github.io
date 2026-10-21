@@ -78,17 +78,17 @@ def main(xml_path, tar_path):
             return url
         body = field(item, 'content:encoded')
         protected = {}
-        def protect(content):
+        def protect(content, block=True):
             key = f'WORDPRESSBLOCK{len(protected)}TOKEN'
             protected[key] = content
-            return '\n\n' + key + '\n\n'
+            return '\n\n' + key + '\n\n' if block else key
         def code(match):
             language = re.search(r'language=["\']?([\w+-]+)', match.group(2))
             text = html.unescape(match.group(3)).strip('\n')
             fence = '`' * max(3, max([len(s) + 1 for s in re.findall(r'`+', text)] or [3]))
             return protect(f'{fence}{language.group(1) if language else ""}\n{text}\n{fence}')
         body = re.sub(r'\[(sourcecode|code)([^\]]*)\](.*?)\[/\1\]', code, body, flags=re.S|re.I)
-        body = re.sub(r'\$latex\s+(.*?)\$', lambda m: protect('$' + html.unescape(m.group(1)).strip() + '$'), body, flags=re.S)
+        body = re.sub(r'\$latex\s+(.*?)\$', lambda m: protect('$' + html.unescape(m.group(1)).strip() + '$', block=False), body, flags=re.S)
         def caption(match):
             attr, inner = match.groups()
             legacy = re.search(r'\bcaption="([^"]*)"', attr)
@@ -142,6 +142,7 @@ def main(xml_path, tar_path):
         converted = markdownify(str(soup), heading_style='ATX', bullets='-', escape_underscores=False, escape_asterisks=False)
         converted = converted.replace('WORDPRESSPARAGRAPHTOKEN', '\n\n')
         for key, value in protected.items(): converted = converted.replace(key, value)
+        converted = re.sub(r'^\$([^$\n]+)\$[ \t]*$', lambda m: '\n\n$$\n' + m.group(1) + '\n$$\n\n', converted, flags=re.M)
         categories = sorted({c.text for c in item.findall('category') if c.get('domain') == 'category'})
         tags = sorted({c.text for c in item.findall('category') if c.get('domain') == 'post_tag'} | set(categories))
         meta = {'title': html.unescape(field(item, 'title')), 'date': field(item, 'wp:post_date'), 'tags': tags, 'categories': categories, 'wordpress_id': int(post_id), 'original_url': field(item, 'link')}

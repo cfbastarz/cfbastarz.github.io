@@ -63,7 +63,13 @@ Para fazer com que seja possível utilizar a sintaxe LaTeX para renderizar equa�
    }},
  });
 &lt;/script&gt;
-$\newcommand{\const}{\mathrm{const}}$
+
+
+$$
+\newcommand{\const}{\mathrm{const}}
+$$
+
+
 ```
 
 As linhas acima invocam o script MathJax.js que está na pasta /opt/mathjax (observe que o caminho para o script MahJax.js deve ser indicado em src="caminho"). As linhas seguintes, fazem com que sejam definidos "escapes" de forma que seja possível escrever matemática em sintaxe LaTeX (neste caso, tudo o que estiver entre os delimitadores $ $, será interpretado como uma estrutura LaTeX). Para testar, experimente escrever alguma equação.
@@ -78,7 +84,13 @@ Em LaTeX, podemos escrever uma equação no corpo do texto da seguinte forma, u
 
 O texto acima, deve ser renderizado como:
 
-$\vec{z} = \mathbf{B}^{-1}\vec{\delta{x}}$
+
+
+$$
+\vec{z} = \mathbf{B}^{-1}\vec{\delta{x}}
+$$
+
+
 
 O mesmo pode ser utilizado dentro de um texto Markdown, sem a necessidade de alterações. Por outro lado, para incluir símbolos e equações inline, ou seja, dentro de um parágrafo de texto, deve-se fazer (exemplo):
 
@@ -88,11 +100,7 @@ Esta nova variável será utilizada para calcular $\nabla_{\vec{\delta{x}}}J=0$.
 
 O texto acima, deve ser renderizado como:
 
-Esta nova variável será utilizada para calcular 
-
-$\nabla_{\vec{\delta{x}}}J=0$
-
-.
+Esta nova variável será utilizada para calcular $\nabla_{\vec{\delta{x}}}J=0$.
 
 Observe que o texto foi escrito utilizando os delimitadores $ $, da mesma forma como se faz em um texto LaTeX. Fórmulas complexas podem ser escritas, da mesma forma como se faz em um arquivo LaTeX.
 
