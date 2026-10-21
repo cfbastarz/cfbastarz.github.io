@@ -8,3 +8,4 @@
 .navbar .archive-group a:hover, .navbar .archive-group summary:hover { color: #fff; background: #262626; }
 /* Keep long equations from widening the page on small screens. */
 div.arithmatex { overflow-x: auto; max-width: 100%; }
+.post-publication-date { color: #626b70; font-size: 13px; margin: 10px 0 24px; }

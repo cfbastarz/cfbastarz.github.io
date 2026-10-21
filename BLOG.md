@@ -80,3 +80,11 @@ portanto links e seleção de texto dentro dos slides estão disponíveis no PDF
 Use `last_slide` nos metadados para encerrar a navegação antes de páginas finais
 vazias. No exemplo de 2009, o visualizador mostra os 26 slides numerados e omite
 a última página preta do PDF; o download mantém o arquivo integral.
+
+## Data de publicação
+
+Todos os posts em `blog/AAAA/MM/DD/arquivo.md` exibem a data de publicação logo
+abaixo do título, incluindo apresentações. A data vem da pasta, a mesma fonte
+usada no arquivo cronológico e no menu. O hook gera um elemento HTML `time`
+com data ISO e texto em português. Arquivos e páginas de tags não recebem data
+de publicação. Novos posts recebem essa informação automaticamente.
